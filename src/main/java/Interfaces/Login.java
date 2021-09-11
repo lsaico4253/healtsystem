@@ -16,6 +16,8 @@ public class Login extends javax.swing.JFrame {
      */
     public Login() {
         initComponents();
+        this.setLocationRelativeTo(null);
+        
     }
 
     /**
@@ -27,21 +29,50 @@ public class Login extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        lblpassword = new javax.swing.JLabel();
+        lblusername = new javax.swing.JLabel();
+        btnexit = new javax.swing.JButton();
+        btnlogin = new javax.swing.JButton();
+        jTextField1 = new javax.swing.JTextField();
+        jPasswordField1 = new javax.swing.JPasswordField();
+        lbluser = new javax.swing.JLabel();
+        lblbackground = new javax.swing.JLabel();
 
-        javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
-        getContentPane().setLayout(layout);
-        layout.setHorizontalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 400, Short.MAX_VALUE)
-        );
-        layout.setVerticalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 300, Short.MAX_VALUE)
-        );
+        setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setUndecorated(true);
+        getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+
+        lblpassword.setText("Contraseña");
+        getContentPane().add(lblpassword, new org.netbeans.lib.awtextra.AbsoluteConstraints(170, 550, -1, -1));
+
+        lblusername.setText("Usuario");
+        getContentPane().add(lblusername, new org.netbeans.lib.awtextra.AbsoluteConstraints(170, 520, 60, -1));
+
+        btnexit.setText("Salir");
+        getContentPane().add(btnexit, new org.netbeans.lib.awtextra.AbsoluteConstraints(530, 10, 60, -1));
+
+        btnlogin.setText("Ingresar");
+        btnlogin.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnloginActionPerformed(evt);
+            }
+        });
+        getContentPane().add(btnlogin, new org.netbeans.lib.awtextra.AbsoluteConstraints(220, 610, 160, -1));
+        getContentPane().add(jTextField1, new org.netbeans.lib.awtextra.AbsoluteConstraints(270, 520, 170, -1));
+        getContentPane().add(jPasswordField1, new org.netbeans.lib.awtextra.AbsoluteConstraints(270, 550, 170, -1));
+
+        lbluser.setIcon(new javax.swing.ImageIcon(getClass().getResource("/media/user.png"))); // NOI18N
+        getContentPane().add(lbluser, new org.netbeans.lib.awtextra.AbsoluteConstraints(190, 180, -1, -1));
+
+        lblbackground.setIcon(new javax.swing.ImageIcon(getClass().getResource("/media/fondo.png"))); // NOI18N
+        getContentPane().add(lblbackground, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, -1, -1));
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
+
+    private void btnloginActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnloginActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_btnloginActionPerformed
 
     /**
      * @param args the command line arguments
@@ -59,25 +90,27 @@ public class Login extends javax.swing.JFrame {
                     break;
                 }
             }
-        } catch (ClassNotFoundException ex) {
-            java.util.logging.Logger.getLogger(Login.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        } catch (InstantiationException ex) {
-            java.util.logging.Logger.getLogger(Login.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        } catch (IllegalAccessException ex) {
-            java.util.logging.Logger.getLogger(Login.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        } catch (javax.swing.UnsupportedLookAndFeelException ex) {
+        } catch (ClassNotFoundException | InstantiationException | IllegalAccessException | javax.swing.UnsupportedLookAndFeelException ex) {
             java.util.logging.Logger.getLogger(Login.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         }
         //</editor-fold>
+        
+        //</editor-fold>
 
         /* Create and display the form */
-        java.awt.EventQueue.invokeLater(new Runnable() {
-            public void run() {
-                new Login().setVisible(true);
-            }
+        java.awt.EventQueue.invokeLater(() -> {
+            new Login().setVisible(true);
         });
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JButton btnexit;
+    private javax.swing.JButton btnlogin;
+    private javax.swing.JPasswordField jPasswordField1;
+    private javax.swing.JTextField jTextField1;
+    private javax.swing.JLabel lblbackground;
+    private javax.swing.JLabel lblpassword;
+    private javax.swing.JLabel lbluser;
+    private javax.swing.JLabel lblusername;
     // End of variables declaration//GEN-END:variables
 }
