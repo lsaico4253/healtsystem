@@ -16,7 +16,8 @@ public class Login extends javax.swing.JFrame {
      */
     public Login() {
         initComponents();
-        this.setLocationRelativeTo(null);
+        //this.setLocationRelativeTo(null);
+
         
     }
 
@@ -29,6 +30,8 @@ public class Login extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
+        lbltitle = new javax.swing.JLabel();
+        lblcopyright = new javax.swing.JLabel();
         lblpassword = new javax.swing.JLabel();
         lblusername = new javax.swing.JLabel();
         btnexit = new javax.swing.JButton();
@@ -42,15 +45,36 @@ public class Login extends javax.swing.JFrame {
         setUndecorated(true);
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
+        lbltitle.setFont(new java.awt.Font("Poppins Medium", 0, 24)); // NOI18N
+        lbltitle.setForeground(new java.awt.Color(255, 255, 255));
+        lbltitle.setText("Centro Odontológico M&M");
+        getContentPane().add(lbltitle, new org.netbeans.lib.awtextra.AbsoluteConstraints(140, 40, 330, -1));
+
+        lblcopyright.setFont(new java.awt.Font("Poppins", 0, 12)); // NOI18N
+        lblcopyright.setForeground(new java.awt.Color(255, 255, 255));
+        lblcopyright.setText("Health System 2021");
+        getContentPane().add(lblcopyright, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 770, -1, -1));
+
+        lblpassword.setFont(new java.awt.Font("Poppins Medium", 0, 18)); // NOI18N
+        lblpassword.setForeground(new java.awt.Color(255, 255, 255));
         lblpassword.setText("Contraseña");
-        getContentPane().add(lblpassword, new org.netbeans.lib.awtextra.AbsoluteConstraints(170, 550, -1, -1));
+        getContentPane().add(lblpassword, new org.netbeans.lib.awtextra.AbsoluteConstraints(130, 550, -1, -1));
 
+        lblusername.setFont(new java.awt.Font("Poppins Medium", 0, 18)); // NOI18N
+        lblusername.setForeground(new java.awt.Color(255, 255, 255));
         lblusername.setText("Usuario");
-        getContentPane().add(lblusername, new org.netbeans.lib.awtextra.AbsoluteConstraints(170, 520, 60, -1));
+        getContentPane().add(lblusername, new org.netbeans.lib.awtextra.AbsoluteConstraints(170, 520, 80, -1));
 
+        btnexit.setFont(new java.awt.Font("Poppins Medium", 0, 12)); // NOI18N
         btnexit.setText("Salir");
+        btnexit.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnexitActionPerformed(evt);
+            }
+        });
         getContentPane().add(btnexit, new org.netbeans.lib.awtextra.AbsoluteConstraints(530, 10, 60, -1));
 
+        btnlogin.setFont(new java.awt.Font("Poppins SemiBold", 0, 12)); // NOI18N
         btnlogin.setText("Ingresar");
         btnlogin.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -73,6 +97,11 @@ public class Login extends javax.swing.JFrame {
     private void btnloginActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnloginActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_btnloginActionPerformed
+
+    private void btnexitActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnexitActionPerformed
+        // TODO add your handling code here:
+        this.dispose();
+    }//GEN-LAST:event_btnexitActionPerformed
 
     /**
      * @param args the command line arguments
@@ -109,7 +138,9 @@ public class Login extends javax.swing.JFrame {
     private javax.swing.JPasswordField jPasswordField1;
     private javax.swing.JTextField jTextField1;
     private javax.swing.JLabel lblbackground;
+    private javax.swing.JLabel lblcopyright;
     private javax.swing.JLabel lblpassword;
+    private javax.swing.JLabel lbltitle;
     private javax.swing.JLabel lbluser;
     private javax.swing.JLabel lblusername;
     // End of variables declaration//GEN-END:variables
