@@ -10,5 +10,5 @@ package Clases;
  * @author lsaic
  */
 public class Doctor {
-    
+    private String nombre;
 }
