@@ -7,9 +7,8 @@ package Clases;
 
 /**
  *
- * @author lsaic
+ * @author HP
  */
-public class Administrador {
-    
+public class Juanito {
     
 }
