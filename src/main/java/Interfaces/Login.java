@@ -38,7 +38,7 @@ public class Login extends javax.swing.JFrame {
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         lbltitle.setFont(new java.awt.Font("Poppins Medium", 0, 24)); // NOI18N
-        lbltitle.setForeground(new java.awt.Color(255, 255, 255));
+        lbltitle.setForeground(new java.awt.Color(0, 0, 51));
         lbltitle.setText("Centro Odontológico M&M");
         getContentPane().add(lbltitle, new org.netbeans.lib.awtextra.AbsoluteConstraints(140, 40, 330, -1));
 
@@ -48,17 +48,15 @@ public class Login extends javax.swing.JFrame {
         getContentPane().add(lblcopyright, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 770, -1, -1));
 
         lblpassword.setFont(new java.awt.Font("Poppins Medium", 0, 18)); // NOI18N
-        lblpassword.setForeground(new java.awt.Color(255, 255, 255));
         lblpassword.setText("Contraseña");
         getContentPane().add(lblpassword, new org.netbeans.lib.awtextra.AbsoluteConstraints(130, 550, -1, -1));
 
         lblusername.setFont(new java.awt.Font("Poppins Medium", 0, 18)); // NOI18N
-        lblusername.setForeground(new java.awt.Color(255, 255, 255));
         lblusername.setText("Usuario");
         getContentPane().add(lblusername, new org.netbeans.lib.awtextra.AbsoluteConstraints(170, 520, 80, -1));
 
         btnexit.setFont(new java.awt.Font("Poppins Medium", 0, 12)); // NOI18N
-        btnexit.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Interfaces/Media/baseline_logout_black_24dp.png"))); // NOI18N
+        btnexit.setText("S");
         btnexit.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
         btnexit.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -77,11 +75,7 @@ public class Login extends javax.swing.JFrame {
         getContentPane().add(btnlogin, new org.netbeans.lib.awtextra.AbsoluteConstraints(220, 610, 160, -1));
         getContentPane().add(jTextField1, new org.netbeans.lib.awtextra.AbsoluteConstraints(270, 520, 170, -1));
         getContentPane().add(jPasswordField1, new org.netbeans.lib.awtextra.AbsoluteConstraints(270, 550, 170, -1));
-
-        lbluser.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Interfaces/Media/user.png"))); // NOI18N
         getContentPane().add(lbluser, new org.netbeans.lib.awtextra.AbsoluteConstraints(190, 180, -1, -1));
-
-        lblbackground.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Interfaces/Media/fondo.png"))); // NOI18N
         getContentPane().add(lblbackground, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, -1, -1));
 
         pack();
