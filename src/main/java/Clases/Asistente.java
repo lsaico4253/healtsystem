@@ -9,6 +9,29 @@ package Clases;
  *
  * @author lsaic
  */
-public class Asistente {
+public class Asistente extends Persona{
+    
+    private String horario;
+
+    public Asistente() {
+    }
+
+    public Asistente(String horario) {
+        this.horario = horario;
+    }
+
+    public Asistente(String horario, int id, String cedula, String nombre, String apellido, int edad, String direccion, String genero, String telefono) {
+        super(id, cedula, nombre, apellido, edad, direccion, genero, telefono);
+        this.horario = horario;
+    }
+
+    public String getHorario() {
+        return horario;
+    }
+
+    public void setHorario(String horario) {
+        this.horario = horario;
+    }
+    
     
 }
