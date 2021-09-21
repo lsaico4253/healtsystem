@@ -4,18 +4,30 @@
  * and open the template in the editor.
  */
 package Interfaces;
+import Clases.Paciente;
+import java.util.ArrayList;
 
 /**
  *
  * @author lsaic
  */
 public class Pacientes extends javax.swing.JFrame {
-
+    
+    ArrayList<Paciente> listapaciente= new ArrayList <>();
+    Paciente paciente1=new Paciente("00012","Seguro",02,"0150367860","Juan","lopez",25,"Looooo","masculino","0985860636");
+    Paciente paciente2=new Paciente("00024","Seguro",02,"0104103080","Pedro","Torres",25,"Looooo","masculino","0985860636");
+    Paciente paciente3=new Paciente("00345","Seguro",02,"0104882790","Martina","Fernandez",25,"Looooo","femenino","0985860636");
+    listapaciente.add(paciente1);
+    listapaciente.add(paciente2);
+    listapaciente.add(paciente3);
+    String cedula;
+    
     /**
      * Creates new form Pacientes
      */
     public Pacientes() {
         initComponents();
+        this.setLocationRelativeTo(null);
     }
 
     /**
@@ -28,26 +40,36 @@ public class Pacientes extends javax.swing.JFrame {
     private void initComponents() {
 
         jScrollPane1 = new javax.swing.JScrollPane();
-        jTable1 = new javax.swing.JTable();
+        jTablepacientes = new javax.swing.JTable();
         jButton1 = new javax.swing.JButton();
         jButton2 = new javax.swing.JButton();
         jButton3 = new javax.swing.JButton();
-        jTextField1 = new javax.swing.JTextField();
+        jTextFieldbcedula = new javax.swing.JTextField();
+        jButtonRegresarD = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setUndecorated(true);
 
-        jTable1.setModel(new javax.swing.table.DefaultTableModel(
+        jTablepacientes.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
-                {null, null, null, null},
-                {null, null, null, null},
-                {null, null, null, null},
-                {null, null, null, null}
+                {null, null, null, null, null, null, null, null, null, null, null, null},
+                {null, null, null, null, null, null, null, null, null, null, null, null},
+                {null, null, null, null, null, null, null, null, null, null, null, null},
+                {null, null, null, null, null, null, null, null, null, null, null, null}
             },
             new String [] {
-                "Title 1", "Title 2", "Title 3", "Title 4"
+                "Cédula", "1. Nombre", "2. Nombre", "1. Apellido", "2. Apellido", "Edad", "Genero", "Teléfono 1", "Teléfono 2", "Dirección", "numficha", "afiliacion"
             }
-        ));
-        jScrollPane1.setViewportView(jTable1);
+        ) {
+            boolean[] canEdit = new boolean [] {
+                false, true, true, true, false, true, true, true, true, true, true, true
+            };
+
+            public boolean isCellEditable(int rowIndex, int columnIndex) {
+                return canEdit [columnIndex];
+            }
+        });
+        jScrollPane1.setViewportView(jTablepacientes);
 
         jButton1.setText("Agregar");
         jButton1.addActionListener(new java.awt.event.ActionListener() {
@@ -57,6 +79,11 @@ public class Pacientes extends javax.swing.JFrame {
         });
 
         jButton2.setText("Buscar");
+        jButton2.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton2ActionPerformed(evt);
+            }
+        });
 
         jButton3.setText("Editar");
         jButton3.addActionListener(new java.awt.event.ActionListener() {
@@ -65,41 +92,60 @@ public class Pacientes extends javax.swing.JFrame {
             }
         });
 
-        jTextField1.setText("jTextField1");
+        jTextFieldbcedula.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jTextFieldbcedulaActionPerformed(evt);
+            }
+        });
+
+        jButtonRegresarD.setText("Regresar");
+        jButtonRegresarD.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButtonRegresarDActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addContainerGap()
-                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 680, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 50, Short.MAX_VALUE)
+                .addGap(19, 19, 19)
+                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 690, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                        .addComponent(jButton1, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addComponent(jButton2, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addComponent(jButton3, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                    .addComponent(jTextField1, javax.swing.GroupLayout.PREFERRED_SIZE, 82, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(35, 35, 35))
+                    .addGroup(layout.createSequentialGroup()
+                        .addGap(22, 22, 22)
+                        .addComponent(jTextFieldbcedula, javax.swing.GroupLayout.PREFERRED_SIZE, 92, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addContainerGap())
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(jButtonRegresarD, javax.swing.GroupLayout.Alignment.TRAILING)
+                            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                                    .addComponent(jButton1, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                    .addComponent(jButton2, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                    .addComponent(jButton3, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                                .addGap(46, 46, 46))))))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(layout.createSequentialGroup()
-                        .addContainerGap()
-                        .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addGroup(layout.createSequentialGroup()
-                        .addGap(46, 46, 46)
+                        .addComponent(jButtonRegresarD)
+                        .addGap(23, 23, 23)
                         .addComponent(jButton1)
                         .addGap(18, 18, 18)
+                        .addComponent(jTextFieldbcedula, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(8, 8, 8)
                         .addComponent(jButton2)
-                        .addGap(18, 18, 18)
-                        .addComponent(jButton3)
-                        .addGap(18, 18, 18)
-                        .addComponent(jTextField1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addContainerGap(102, Short.MAX_VALUE))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                        .addComponent(jButton3))
+                    .addGroup(layout.createSequentialGroup()
+                        .addContainerGap()
+                        .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 452, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addContainerGap(77, Short.MAX_VALUE))
         );
 
         pack();
@@ -114,6 +160,47 @@ public class Pacientes extends javax.swing.JFrame {
     private void jButton3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton3ActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_jButton3ActionPerformed
+
+    private void jTextFieldbcedulaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextFieldbcedulaActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jTextFieldbcedulaActionPerformed
+
+    private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
+        // Buscar
+        cedula=jTextFieldbcedula.getText();
+        var pacientefiltro = new ArrayList<Paciente>();
+        
+        listapaciente.forEach((e) -> {
+                if(e.getCedula().equals(cedula)){                    
+                    pacientefiltro.add(e); 
+                    }
+                });
+        String matriz[][] = new String [pacientefiltro.size()][9];
+            for( int j=0; j<pacientefiltro.size(); j++){
+                matriz[j][0] = pacientefiltro.get(j).getCedula();
+                matriz[j][2] = pacientefiltro.get(j).getNombre();
+                matriz[j][1] = pacientefiltro.get(j).getApellido();
+                matriz[j][3] = String.valueOf(pacientefiltro.get(j).getEdad());
+                matriz[j][4] = pacientefiltro.get(j).getGenero();
+                matriz[j][5] = pacientefiltro.get(j).getTelefono();
+                matriz[j][6] = pacientefiltro.get(j).getDireccion();
+                matriz[j][7] = pacientefiltro.get(j).getNum_ficha();
+                matriz[j][8] = pacientefiltro.get(j).getAfiliacion();
+                
+            }
+        jTablepacientes.setModel(new javax.swing.table.DefaultTableModel(
+        matriz,
+        new String [] {
+        "Cedula", "Nombre", "Apellido", "Edad", "Genero", "Telefono", "Direccion", "Num Ficha","Afiliacion"
+        }
+        ));
+    }//GEN-LAST:event_jButton2ActionPerformed
+
+    private void jButtonRegresarDActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonRegresarDActionPerformed
+        Dasboard menu=new Dasboard();
+        menu.setVisible(true);
+        this.dispose();
+    }//GEN-LAST:event_jButtonRegresarDActionPerformed
 
     /**
      * @param args the command line arguments
@@ -154,8 +241,9 @@ public class Pacientes extends javax.swing.JFrame {
     private javax.swing.JButton jButton1;
     private javax.swing.JButton jButton2;
     private javax.swing.JButton jButton3;
+    private javax.swing.JButton jButtonRegresarD;
     private javax.swing.JScrollPane jScrollPane1;
-    private javax.swing.JTable jTable1;
-    private javax.swing.JTextField jTextField1;
+    private javax.swing.JTable jTablepacientes;
+    private javax.swing.JTextField jTextFieldbcedula;
     // End of variables declaration//GEN-END:variables
 }
