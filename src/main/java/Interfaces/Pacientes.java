@@ -4,7 +4,13 @@
  * and open the template in the editor.
  */
 package Interfaces;
+import static Clases.ConexionBD.close;
+import static Clases.ConexionBD.getConnection;
 import Clases.Paciente;
+import java.sql.Connection;
+import java.sql.PreparedStatement;
+import java.sql.ResultSet;
+import java.sql.SQLException;
 import java.util.ArrayList;
 
 /**
@@ -14,11 +20,7 @@ import java.util.ArrayList;
 public class Pacientes extends javax.swing.JFrame {
     
     ArrayList<Paciente> listapaciente= new ArrayList <>();
-    Paciente paciente1=new Paciente("00012","Seguro",02,"0150367860","Juan","Armadillo","lopez","Juarez","25","Looooo","masculino","0985860636","0099999999");
-    Paciente paciente2=new Paciente("00024","Seguro",02,"0104103080","Pedro","Luis","Torres","Saico","29","Looooo","masculino","0985860636","");
-    Paciente paciente3=new Paciente("00345","Seguro",02,"0104882790","Martina","Mari","Fernandez","Chimbo","25","Looooo","femenino","0985860636","09999999");
-    
-    String cedula;
+    private static final String SQL_SELECT = "SELECT * FROM pacientes";
     
             
     
@@ -27,13 +29,56 @@ public class Pacientes extends javax.swing.JFrame {
      */
     public Pacientes() {
         initComponents();
-        listapaciente.add(paciente1);
-        listapaciente.add(paciente2);
-        listapaciente.add(paciente3);
         this.setLocationRelativeTo(null);
+        listapaciente=seleccionar();
         mostrar();
              
     }
+    
+    public ArrayList <Paciente> seleccionar() {
+        Connection conn = null;
+        PreparedStatement stmt = null;
+        ResultSet rs = null;
+        Paciente paciente = null;
+        ArrayList <Paciente> pacientes = new ArrayList<>();
+
+        try {
+            conn = getConnection();
+            stmt = conn.prepareStatement(SQL_SELECT);
+            rs = stmt.executeQuery();
+            while (rs.next()) {
+                int idPaciente = rs.getInt("id");
+                String primer_nombre = rs.getString("primernombre");
+                String segundo_nombre = rs.getString("segundoapellido");
+                String primer_apellido = rs.getString("primerapellido");
+                String segundo_apellido = rs.getString("segundoapellido");
+                String cedula2 = rs.getString("cedula");
+                String afiliacion = rs.getString("afiliacion");
+                String num_ficha = rs.getString("num_ficha");
+                String edad = rs.getString("edad");
+                String direccion = rs.getString("direccion");
+                String genero = rs.getString("genero");
+                String telefono1 = rs.getString("telefono1");
+                String telefono2 = rs.getString("telefono2");
+
+                paciente = new Paciente(num_ficha, afiliacion, idPaciente, cedula2, primer_nombre, segundo_nombre, primer_apellido, segundo_apellido, edad, direccion, genero, telefono1, telefono2);
+
+                pacientes.add(paciente);
+            }
+        } catch (SQLException ex) {
+            ex.printStackTrace(System.out);
+        } finally {
+            try {
+                close(rs);
+                close(stmt);
+                close(conn);
+            } catch (SQLException ex) {
+                ex.printStackTrace(System.out);
+            }
+        }
+        return pacientes;
+    }
+    
     public void mostrar(){
      String matrizp [][] = new String[listapaciente.size()][9];
      
@@ -56,10 +101,9 @@ public class Pacientes extends javax.swing.JFrame {
                 }
                  
         ));
-
     }
-   
-
+    
+    
     /**
      * This method is called from within the constructor to initialize the form.
      * WARNING: Do NOT modify this code. The content of this method is always
@@ -189,36 +233,33 @@ public class Pacientes extends javax.swing.JFrame {
 
     private void jButton3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton3ActionPerformed
         // editar
+       
         int seleccion = jTablepacientes.getSelectedRow();
-        cedula = jTablepacientes.getValueAt(seleccion, 0).toString();
-        
-        
+        String cedula = jTablepacientes.getValueAt(seleccion, 0).toString();        
         listapaciente.forEach((e) -> {
             if(e.getCedula().equals(cedula)){
-                e.setCedula(cedula);
-                e.setApellido("mogrovejo");
-                e.setNombre("marilyn");
-                e.setNum_ficha("0002");
-                e.setDireccion("Las juanitas");
-                e.setAfiliacion("Seguro");
-                e.setTelefono("098586063");
-                
+                int id = e.getId();
+                new AgregarPaciente(id).setVisible(true);
                 mostrar();
-        }
-            else{
-                System.out.println("La Persona no existe");
-            }            
+                jTextFieldbcedula.setText("");
+            }
         });
             
     }//GEN-LAST:event_jButton3ActionPerformed
 
+    public ArrayList <Paciente> editar(){
+    ArrayList <Paciente> editar_paciente = new ArrayList <>();
+    
+    return editar_paciente;
+    }
+    
     private void jTextFieldbcedulaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextFieldbcedulaActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_jTextFieldbcedulaActionPerformed
 
     private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
         // Buscar
-        cedula=jTextFieldbcedula.getText();
+        String cedula=jTextFieldbcedula.getText();
         var pacientefiltro = new ArrayList<Paciente>();
         
         listapaciente.forEach((e) -> {
@@ -248,8 +289,6 @@ public class Pacientes extends javax.swing.JFrame {
     }//GEN-LAST:event_jButton2ActionPerformed
 
     private void jButtonRegresarDActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonRegresarDActionPerformed
-        Dasboard menu=new Dasboard();
-        menu.setVisible(true);
         this.dispose();
     }//GEN-LAST:event_jButtonRegresarDActionPerformed
 
