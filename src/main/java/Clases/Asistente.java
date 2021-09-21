@@ -20,11 +20,12 @@ public class Asistente extends Persona{
         this.horario = horario;
     }
 
-    public Asistente(String horario, int id, String cedula, String nombre, String apellido, int edad, String direccion, String genero, String telefono) {
-        super(id, cedula, nombre, apellido, edad, direccion, genero, telefono);
+    public Asistente(String horario, int id, String cedula, String nombre, String segundo_nombre, String apellido, String segundo_apellido, String edad, String direccion, String genero, String telefono, String telefono2) {
+        super(id, cedula, nombre, segundo_nombre, apellido, segundo_apellido, edad, direccion, genero, telefono, telefono2);
         this.horario = horario;
     }
 
+   
     public String getHorario() {
         return horario;
     }

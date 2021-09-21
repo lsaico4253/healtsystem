@@ -3,19 +3,32 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package Interfaces;
 
+package Interfaces;
+import Clases.Paciente;
+import java.util.ArrayList;
+import javax.swing.JOptionPane;
 /**
  *
  * @author lsaic
  */
 public class AgregarPaciente extends javax.swing.JFrame {
 
-    /**
-     * Creates new form AgregarPaciente
-     */
+     String Cedula="";
+        String Nombre="";
+        String Segundo_nombre="";
+        String Apellido="";
+        String Segundo_apellido="";
+        String Edad="";
+        String telefono1="";
+        String telefono2="";
+        String genero="";
+        String Direccion="";
+        ArrayList<Paciente>listaPaciente= new ArrayList();
     public AgregarPaciente() {
         initComponents();
+       
+        
     }
 
     /**
@@ -27,7 +40,7 @@ public class AgregarPaciente extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        buttonGroup1 = new javax.swing.ButtonGroup();
+        Genero = new javax.swing.ButtonGroup();
         jLabel1 = new javax.swing.JLabel();
         jLabel2 = new javax.swing.JLabel();
         jLabel3 = new javax.swing.JLabel();
@@ -38,18 +51,18 @@ public class AgregarPaciente extends javax.swing.JFrame {
         jLabel8 = new javax.swing.JLabel();
         jLabel9 = new javax.swing.JLabel();
         jLabel10 = new javax.swing.JLabel();
-        jTextField1 = new javax.swing.JTextField();
-        jTextField2 = new javax.swing.JTextField();
-        jTextField3 = new javax.swing.JTextField();
-        jTextField4 = new javax.swing.JTextField();
-        jTextField5 = new javax.swing.JTextField();
-        jTextField7 = new javax.swing.JTextField();
-        jTextField8 = new javax.swing.JTextField();
-        jTextField9 = new javax.swing.JTextField();
-        jSpinner1 = new javax.swing.JSpinner();
+        textcedulapaciente = new javax.swing.JTextField();
+        textPrimerNombre = new javax.swing.JTextField();
+        textSegundoNombre = new javax.swing.JTextField();
+        textPrimerApellido = new javax.swing.JTextField();
+        textSegundoApellido = new javax.swing.JTextField();
+        textTelefono1 = new javax.swing.JTextField();
+        textTelefono2 = new javax.swing.JTextField();
+        textDireccion = new javax.swing.JTextField();
+        spinnerEdad = new javax.swing.JSpinner();
         jLabel11 = new javax.swing.JLabel();
-        jRadioButton1 = new javax.swing.JRadioButton();
-        jRadioButton2 = new javax.swing.JRadioButton();
+        genernoM = new javax.swing.JRadioButton();
+        generoF = new javax.swing.JRadioButton();
         jButton1 = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
@@ -75,44 +88,44 @@ public class AgregarPaciente extends javax.swing.JFrame {
 
         jLabel10.setText("Dirección");
 
-        jTextField1.setText("jTextField1");
-        jTextField1.addActionListener(new java.awt.event.ActionListener() {
+        textcedulapaciente.setText("jTextField1");
+        textcedulapaciente.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jTextField1ActionPerformed(evt);
+                textcedulapacienteActionPerformed(evt);
             }
         });
 
-        jTextField2.setText("jTextField2");
+        textPrimerNombre.setText("jTextField2");
 
-        jTextField3.setText("jTextField3");
+        textSegundoNombre.setText("jTextField3");
 
-        jTextField4.setText("jTextField4");
+        textPrimerApellido.setText("jTextField4");
 
-        jTextField5.setText("jTextField5");
+        textSegundoApellido.setText("jTextField5");
 
-        jTextField7.setText("jTextField7");
+        textTelefono1.setText("jTextField7");
 
-        jTextField8.setText("jTextField8");
+        textTelefono2.setText("jTextField8");
 
-        jTextField9.setText("jTextField9");
-        jTextField9.addActionListener(new java.awt.event.ActionListener() {
+        textDireccion.setText("jTextField9");
+        textDireccion.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jTextField9ActionPerformed(evt);
+                textDireccionActionPerformed(evt);
             }
         });
 
         jLabel11.setText("Genero");
 
-        buttonGroup1.add(jRadioButton1);
-        jRadioButton1.setText("M");
-        jRadioButton1.addActionListener(new java.awt.event.ActionListener() {
+        Genero.add(genernoM);
+        genernoM.setText("M");
+        genernoM.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jRadioButton1ActionPerformed(evt);
+                genernoMActionPerformed(evt);
             }
         });
 
-        buttonGroup1.add(jRadioButton2);
-        jRadioButton2.setText("F");
+        Genero.add(generoF);
+        generoF.setText("F");
 
         jButton1.setText("jButton1");
         jButton1.addActionListener(new java.awt.event.ActionListener() {
@@ -133,10 +146,10 @@ public class AgregarPaciente extends javax.swing.JFrame {
                             .addGroup(layout.createSequentialGroup()
                                 .addComponent(jLabel5)
                                 .addGap(42, 42, 42)
-                                .addComponent(jTextField4, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addComponent(textPrimerApellido, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                                 .addGap(36, 36, 36))
                             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                                .addComponent(jTextField7, javax.swing.GroupLayout.PREFERRED_SIZE, 88, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addComponent(textTelefono1, javax.swing.GroupLayout.PREFERRED_SIZE, 88, javax.swing.GroupLayout.PREFERRED_SIZE)
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)))
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                             .addGroup(layout.createSequentialGroup()
@@ -145,13 +158,13 @@ public class AgregarPaciente extends javax.swing.JFrame {
                                     .addGroup(layout.createSequentialGroup()
                                         .addComponent(jLabel11)
                                         .addGap(18, 18, 18)
-                                        .addComponent(jRadioButton1)))
+                                        .addComponent(genernoM)))
                                 .addGap(26, 26, 26)
-                                .addComponent(jTextField5, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                .addComponent(textSegundoApellido, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                             .addGroup(layout.createSequentialGroup()
                                 .addComponent(jLabel9)
                                 .addGap(18, 18, 18)
-                                .addComponent(jTextField8))))
+                                .addComponent(textTelefono2))))
                     .addGroup(layout.createSequentialGroup()
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addComponent(jLabel2)
@@ -161,23 +174,23 @@ public class AgregarPaciente extends javax.swing.JFrame {
                             .addComponent(jLabel10))
                         .addGap(42, 42, 42)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                            .addComponent(jTextField1)
+                            .addComponent(textcedulapaciente)
                             .addGroup(layout.createSequentialGroup()
-                                .addComponent(jTextField2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addComponent(textPrimerNombre, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                                 .addGap(36, 36, 36)
                                 .addComponent(jLabel4)
                                 .addGap(30, 30, 30)
-                                .addComponent(jTextField3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                .addComponent(textSegundoNombre, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                             .addGroup(layout.createSequentialGroup()
-                                .addComponent(jSpinner1)
+                                .addComponent(spinnerEdad)
                                 .addGap(140, 140, 140)
-                                .addComponent(jRadioButton2)
+                                .addComponent(generoF)
                                 .addGap(37, 37, 37))))
                     .addGroup(layout.createSequentialGroup()
                         .addGap(110, 110, 110)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                             .addComponent(jButton1)
-                            .addComponent(jTextField9, javax.swing.GroupLayout.PREFERRED_SIZE, 268, javax.swing.GroupLayout.PREFERRED_SIZE))))
+                            .addComponent(textDireccion, javax.swing.GroupLayout.PREFERRED_SIZE, 268, javax.swing.GroupLayout.PREFERRED_SIZE))))
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
@@ -192,40 +205,40 @@ public class AgregarPaciente extends javax.swing.JFrame {
                 .addGap(18, 18, 18)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel2)
-                    .addComponent(jTextField1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(textcedulapaciente, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(18, 18, 18)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel3)
-                    .addComponent(jTextField2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(textPrimerNombre, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jLabel4)
-                    .addComponent(jTextField3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(textSegundoNombre, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(18, 18, 18)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel5)
-                    .addComponent(jTextField4, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(textPrimerApellido, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jLabel6)
-                    .addComponent(jTextField5, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(textSegundoApellido, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(18, 18, 18)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel7)
-                    .addComponent(jSpinner1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(spinnerEdad, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jLabel11)
-                    .addComponent(jRadioButton1)
-                    .addComponent(jRadioButton2))
+                    .addComponent(genernoM)
+                    .addComponent(generoF))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(jLabel8, javax.swing.GroupLayout.Alignment.TRAILING)
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                         .addComponent(jLabel9)
-                        .addComponent(jTextField8, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addComponent(jTextField7, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                        .addComponent(textTelefono2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(textTelefono1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(layout.createSequentialGroup()
                         .addGap(24, 24, 24)
                         .addComponent(jLabel10))
                     .addGroup(layout.createSequentialGroup()
                         .addGap(18, 18, 18)
-                        .addComponent(jTextField9, javax.swing.GroupLayout.PREFERRED_SIZE, 55, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                        .addComponent(textDireccion, javax.swing.GroupLayout.PREFERRED_SIZE, 55, javax.swing.GroupLayout.PREFERRED_SIZE)))
                 .addGap(18, 18, 18)
                 .addComponent(jButton1)
                 .addContainerGap(33, Short.MAX_VALUE))
@@ -234,24 +247,91 @@ public class AgregarPaciente extends javax.swing.JFrame {
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    private void jRadioButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jRadioButton1ActionPerformed
+    private void genernoMActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_genernoMActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_jRadioButton1ActionPerformed
+    }//GEN-LAST:event_genernoMActionPerformed
 
-    private void jTextField1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField1ActionPerformed
+    private void textcedulapacienteActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_textcedulapacienteActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_jTextField1ActionPerformed
+    }//GEN-LAST:event_textcedulapacienteActionPerformed
 
-    private void jTextField9ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField9ActionPerformed
+    private void textDireccionActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_textDireccionActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_jTextField9ActionPerformed
+    }//GEN-LAST:event_textDireccionActionPerformed
 
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
         // TODO add your handling code here:
         new Pacientes().setVisible(true);
         this.dispose();
-    }//GEN-LAST:event_jButton1ActionPerformed
+        if(textcedulapaciente.getText().equals("") || textPrimerNombre.getText().equals(" ") || textPrimerApellido.getText().equals("") || textTelefono1.getText().equals("") ){
+            JOptionPane.showMessageDialog(null, "Hay campos vacios");
+        }else{
+            Paciente mipaciente = new Paciente();
+            Cedula=textcedulapaciente.getText();
+            Nombre=textPrimerNombre.getText();
+            Segundo_nombre=textSegundoNombre.getText();
+            Apellido=textPrimerApellido.getText();
+            Segundo_apellido=textSegundoApellido.getText();
+            Edad=spinnerEdad.getValue().toString();
+            telefono1=textTelefono1.getText();
+            telefono2=textTelefono2.getText();
+            Direccion=textDireccion.getText();
+            if(genernoM.isSelected()){
+                genero="Hombre";
+            }
+                if(generoF.isSelected()){
+                    genero="Mujer";
+                }
+                
+                mipaciente.setCedula(Cedula);
+                mipaciente.setNombre(Nombre);
+                mipaciente.setSegundo_nombre(Segundo_nombre);
+                mipaciente.setApellido(Apellido);
+                mipaciente.setSegundo_apellido(Segundo_apellido);
+                mipaciente.setEdad(Edad);
+                mipaciente.setGenero(genero);
+                mipaciente.setTelefono(telefono1);
+                mipaciente.setTelefono2(telefono2);
+                mipaciente.setDireccion(Direccion);
+                
+                listaPaciente.add(mipaciente);
+                mostrar();
+                
+                textDireccion.setText("");
+                textPrimerNombre.setText(""); 
+                textSegundoNombre.setText(""); 
+                textPrimerApellido.setText("");
+                textSegundoApellido.setText("");
+                textSegundoApellido.setText("");
+                textTelefono1.setText("");
+                textTelefono2.setText("");
+                textDireccion.setText("");
+                
+                //errores de la vida
+        }
 
+    }//GEN-LAST:event_jButton1ActionPerformed
+    
+    public void mostrar(){
+        String matrizpaciente [][] = new String[listaPaciente.size()][9];
+        for(int i=0;i<listaPaciente.size();i++){
+            matrizpaciente[i][0] = listaPaciente.get(i).getCedula();
+            matrizpaciente[i][1] = listaPaciente.get(i).getNombre();
+            matrizpaciente[i][2] = listaPaciente.get(i).getSegundo_nombre();
+            matrizpaciente[i][3] = listaPaciente.get(i).getApellido();
+            matrizpaciente[i][4] = listaPaciente.get(i).getSegundo_apellido();
+            matrizpaciente[i][5] = listaPaciente.get(i).getEdad();
+            matrizpaciente[i][6] = listaPaciente.get(i).getGenero();
+            matrizpaciente[i][7] = listaPaciente.get(i).getTelefono();
+            matrizpaciente[i][8] = listaPaciente.get(i).getTelefono2();
+            matrizpaciente[i][9] = listaPaciente.get(i).getDireccion();
+            
+            //jTablepacientes.setModel(new javax.swing.table.DefaultTableModel( matrizpaciente, new String[]{"Cédula", "Nombres", "Apellidos", "Correo","Edad","Curso","Sexo","Trabaja","Ciclo"} ));
+
+        }
+    }
+
+    
     /**
      * @param args the command line arguments
      */
@@ -288,7 +368,9 @@ public class AgregarPaciente extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.ButtonGroup buttonGroup1;
+    private javax.swing.ButtonGroup Genero;
+    private javax.swing.JRadioButton genernoM;
+    private javax.swing.JRadioButton generoF;
     private javax.swing.JButton jButton1;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel10;
@@ -301,16 +383,14 @@ public class AgregarPaciente extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel7;
     private javax.swing.JLabel jLabel8;
     private javax.swing.JLabel jLabel9;
-    private javax.swing.JRadioButton jRadioButton1;
-    private javax.swing.JRadioButton jRadioButton2;
-    private javax.swing.JSpinner jSpinner1;
-    private javax.swing.JTextField jTextField1;
-    private javax.swing.JTextField jTextField2;
-    private javax.swing.JTextField jTextField3;
-    private javax.swing.JTextField jTextField4;
-    private javax.swing.JTextField jTextField5;
-    private javax.swing.JTextField jTextField7;
-    private javax.swing.JTextField jTextField8;
-    private javax.swing.JTextField jTextField9;
+    private javax.swing.JSpinner spinnerEdad;
+    private javax.swing.JTextField textDireccion;
+    private javax.swing.JTextField textPrimerApellido;
+    private javax.swing.JTextField textPrimerNombre;
+    private javax.swing.JTextField textSegundoApellido;
+    private javax.swing.JTextField textSegundoNombre;
+    private javax.swing.JTextField textTelefono1;
+    private javax.swing.JTextField textTelefono2;
+    private javax.swing.JTextField textcedulapaciente;
     // End of variables declaration//GEN-END:variables
 }

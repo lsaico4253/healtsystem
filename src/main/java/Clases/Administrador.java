@@ -24,12 +24,15 @@ public class Administrador extends Persona{
         this.rol = rol;
     }
 
-    public Administrador(String usuario, String contraseña, String rol, int id, String cedula, String nombre, String apellido, int edad, String direccion, String genero, String telefono) {
-        super(id, cedula, nombre, apellido, edad, direccion, genero, telefono);
+    public Administrador(String usuario, String contraseña, String rol, int id, String cedula, String nombre, String segundo_nombre, String apellido, String segundo_apellido, String edad, String direccion, String genero, String telefono, String telefono2) {
+        super(id, cedula, nombre, segundo_nombre, apellido, segundo_apellido, edad, direccion, genero, telefono, telefono2);
         this.usuario = usuario;
         this.contraseña = contraseña;
         this.rol = rol;
     }
+
+  
+  
 
     public String getUsuario() {
         return usuario;
