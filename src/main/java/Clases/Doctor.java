@@ -26,13 +26,16 @@ public class Doctor extends Persona{
         this.universidad = universidad;
     }
 
-    public Doctor(String titulo, String jornada, String especialidad, String universidad, int id, String cedula, String nombre, String apellido, int edad, String direccion, String genero, String telefono) {
-        super(id, cedula, nombre, apellido, edad, direccion, genero, telefono);
+    public Doctor(String titulo, String jornada, String especialidad, String universidad, int id, String cedula, String nombre, String segundo_nombre, String apellido, String segundo_apellido, String edad, String direccion, String genero, String telefono, String telefono2) {
+        super(id, cedula, nombre, segundo_nombre, apellido, segundo_apellido, edad, direccion, genero, telefono, telefono2);
         this.titulo = titulo;
         this.jornada = jornada;
         this.especialidad = especialidad;
         this.universidad = universidad;
     }
+
+  
+   
     
     public void asignar(){
         

@@ -13,25 +13,34 @@ public abstract class Persona {
     private int id;
     private String cedula;
     private String nombre;
+    private String segundo_nombre;
     private String apellido;
-    private int edad;
+    private String segundo_apellido;
+    private String edad;
     private String direccion;
     private String genero;
     private String telefono;
+    private String telefono2;
 
     public Persona() {
     }
 
-    public Persona(int id, String cedula, String nombre, String apellido, int edad, String direccion, String genero, String telefono) {
+   
+
+    public Persona(int id, String cedula, String nombre, String segundo_nombre, String apellido, String segundo_apellido, String edad, String direccion, String genero, String telefono, String telefono2) {
         this.id = id;
         this.cedula = cedula;
         this.nombre = nombre;
+        this.segundo_nombre = segundo_nombre;
         this.apellido = apellido;
+        this.segundo_apellido = segundo_apellido;
         this.edad = edad;
         this.direccion = direccion;
         this.genero = genero;
         this.telefono = telefono;
+        this.telefono2 = telefono2;
     }
+    
 
     public int getId() {
         return id;
@@ -57,6 +66,14 @@ public abstract class Persona {
         this.nombre = nombre;
     }
 
+    public String getSegundo_nombre() {
+        return segundo_nombre;
+    }
+
+    public void setSegundo_nombre(String segundo_nombre) {
+        this.segundo_nombre = segundo_nombre;
+    }
+
     public String getApellido() {
         return apellido;
     }
@@ -65,11 +82,19 @@ public abstract class Persona {
         this.apellido = apellido;
     }
 
-    public int getEdad() {
+    public String getSegundo_apellido() {
+        return segundo_apellido;
+    }
+
+    public void setSegundo_apellido(String segundo_apellido) {
+        this.segundo_apellido = segundo_apellido;
+    }
+
+    public String getEdad() {
         return edad;
     }
 
-    public void setEdad(int edad) {
+    public void setEdad(String edad) {
         this.edad = edad;
     }
 
@@ -96,5 +121,15 @@ public abstract class Persona {
     public void setTelefono(String telefono) {
         this.telefono = telefono;
     }
+
+    public String getTelefono2() {
+        return telefono2;
+    }
+
+    public void setTelefono2(String telefono2) {
+        this.telefono2 = telefono2;
+    }
+
+   
   
 }

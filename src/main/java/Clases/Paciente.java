@@ -22,11 +22,12 @@ public class Paciente extends Persona{
         this.afiliacion = afiliacion;
     }
 
-    public Paciente(String num_ficha, String afiliacion, int id, String cedula, String nombre, String apellido, int edad, String direccion, String genero, String telefono) {
-        super(id, cedula, nombre, apellido, edad, direccion, genero, telefono);
+    public Paciente(String num_ficha, String afiliacion, int id, String cedula, String nombre, String segundo_nombre, String apellido, String segundo_apellido, String edad, String direccion, String genero, String telefono, String telefono2) {
+        super(id, cedula, nombre, segundo_nombre, apellido, segundo_apellido, edad, direccion, genero, telefono, telefono2);
         this.num_ficha = num_ficha;
         this.afiliacion = afiliacion;
     }
+
 
     public String getNum_ficha() {
         return num_ficha;
@@ -50,8 +51,5 @@ public class Paciente extends Persona{
     public void Reservar(){
         
     }
-    
-    
-    
-    
+
 }
