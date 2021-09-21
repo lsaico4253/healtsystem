@@ -5,6 +5,7 @@
  */
 
 package Interfaces;
+import Clases.ConexionBD;
 import Clases.Paciente;
 import java.util.ArrayList;
 import javax.swing.JOptionPane;
@@ -286,6 +287,8 @@ public class AgregarPaciente extends javax.swing.JFrame {
                 mipaciente.setDireccion(Direccion);
                 
                 listaPaciente.add(mipaciente);
+                ConexionBD bd = new ConexionBD();
+                bd.Ingreso(String.format("INSERT INTO public.pacientes(num_ficha, afiliacion, primernombre, segundonombre, primerapellido, segundoapellido, edad, direccion, genero, telefono1, telefono2)VALUES ('F01', 'No Afliado', "+Cedula+", "+Nombre+", "+Segundo_nombre+", "+Apellido+", "+Segundo_apellido+", "+Edad+", "+Direccion+", "+genero+", "+telefono1+", "+telefono2+");"));
                 mostrar();
                 
                 textDireccion.setText("");
@@ -297,6 +300,7 @@ public class AgregarPaciente extends javax.swing.JFrame {
                 textTelefono1.setText("");
                 textTelefono2.setText("");
                 textDireccion.setText("");
+                
                 
                 //errores de la vida
         }
