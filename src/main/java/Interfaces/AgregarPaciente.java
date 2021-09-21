@@ -134,6 +134,7 @@ public class AgregarPaciente extends javax.swing.JFrame {
 
         jLabel1.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabel1.setText("Registrar Paciente");
+        jLabel1.setBorder(javax.swing.BorderFactory.createEtchedBorder());
 
         jLabel2.setText("Cedula");
 
@@ -206,6 +207,9 @@ public class AgregarPaciente extends javax.swing.JFrame {
                 .addGap(41, 41, 41)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(layout.createSequentialGroup()
+                        .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 469, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(0, 0, Short.MAX_VALUE))
+                    .addGroup(layout.createSequentialGroup()
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addComponent(jLabel2)
                             .addComponent(jLabel3)
@@ -215,7 +219,7 @@ public class AgregarPaciente extends javax.swing.JFrame {
                         .addGap(42, 42, 42)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                                .addComponent(spinnerEdad)
+                                .addComponent(spinnerEdad, javax.swing.GroupLayout.DEFAULT_SIZE, 77, Short.MAX_VALUE)
                                 .addGap(107, 107, 107)
                                 .addComponent(generoF)
                                 .addGap(18, 18, 18)
@@ -266,10 +270,6 @@ public class AgregarPaciente extends javax.swing.JFrame {
                                         .addComponent(textPrimerApellido, javax.swing.GroupLayout.PREFERRED_SIZE, 130, javax.swing.GroupLayout.PREFERRED_SIZE)))
                                 .addGap(136, 136, 136)))
                         .addContainerGap())))
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 454, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(81, 81, 81))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
