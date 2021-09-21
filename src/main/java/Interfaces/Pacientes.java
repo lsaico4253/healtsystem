@@ -13,13 +13,9 @@ import java.util.ArrayList;
  */
 public class Pacientes extends javax.swing.JFrame {
     
-    ArrayList<Paciente> listapaciente= new ArrayList <>();
-    Paciente paciente1=new Paciente("00012","Seguro",02,"0150367860","Juan","lopez",25,"Looooo","masculino","0985860636");
-    Paciente paciente2=new Paciente("00024","Seguro",02,"0104103080","Pedro","Torres",25,"Looooo","masculino","0985860636");
-    Paciente paciente3=new Paciente("00345","Seguro",02,"0104882790","Martina","Fernandez",25,"Looooo","femenino","0985860636");
-    listapaciente.add(paciente1);
-    listapaciente.add(paciente2);
-    listapaciente.add(paciente3);
+    ArrayList<Paciente> listapaciente = new ArrayList <>();
+    
+    
     String cedula;
     
     /**
@@ -167,6 +163,15 @@ public class Pacientes extends javax.swing.JFrame {
 
     private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
         // Buscar
+        Paciente paciente1=new Paciente("00012","Seguro",02,"0150367860","Juan","lopez",25,"Looooo","masculino","0985860636");
+        Paciente paciente2=new Paciente("00024","Seguro",02,"0104103080","Pedro","Torres",25,"Looooo","masculino","0985860636");
+        Paciente paciente3=new Paciente("00345","Seguro",02,"0104882790","Martina","Fernandez",25,"Looooo","femenino","0985860636");
+        
+        listapaciente.add(paciente1);
+        listapaciente.add(paciente2);
+        listapaciente.add(paciente3);
+        
+        
         cedula=jTextFieldbcedula.getText();
         var pacientefiltro = new ArrayList<Paciente>();
         
