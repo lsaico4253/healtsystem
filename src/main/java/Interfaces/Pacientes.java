@@ -13,18 +13,52 @@ import java.util.ArrayList;
  */
 public class Pacientes extends javax.swing.JFrame {
     
-    ArrayList<Paciente> listapaciente = new ArrayList <>();
-    
+    ArrayList<Paciente> listapaciente= new ArrayList <>();
+    Paciente paciente1=new Paciente("00012","Seguro",02,"0150367860","Juan","Armadillo","lopez","Juarez","25","Looooo","masculino","0985860636","0099999999");
+    Paciente paciente2=new Paciente("00024","Seguro",02,"0104103080","Pedro","Luis","Torres","Saico","29","Looooo","masculino","0985860636","");
+    Paciente paciente3=new Paciente("00345","Seguro",02,"0104882790","Martina","Mari","Fernandez","Chimbo","25","Looooo","femenino","0985860636","09999999");
     
     String cedula;
+    
+            
     
     /**
      * Creates new form Pacientes
      */
     public Pacientes() {
         initComponents();
+        listapaciente.add(paciente1);
+        listapaciente.add(paciente2);
+        listapaciente.add(paciente3);
         this.setLocationRelativeTo(null);
+        mostrar();
+             
     }
+    public void mostrar(){
+     String matrizp [][] = new String[listapaciente.size()][9];
+     
+     for (int i = 0; i < listapaciente.size(); i++) {
+         matrizp[i][0] = listapaciente.get(i).getCedula();
+         matrizp[i][1] = listapaciente.get(i).getNombre();
+         matrizp[i][2] = listapaciente.get(i).getApellido();
+         matrizp[i][3] = listapaciente.get(i).getEdad();
+         matrizp[i][4]=listapaciente.get(i).getDireccion();
+         matrizp[i][5] = listapaciente.get(i).getNum_ficha();
+         matrizp[i][6] = listapaciente.get(i).getAfiliacion();
+         matrizp[i][7]=listapaciente.get(i).getTelefono();
+         matrizp[i][8]=listapaciente.get(i).getTelefono2();
+
+         }
+         jTablepacientes.setModel(new javax.swing.table.DefaultTableModel(
+                matrizp,
+                new String[]{
+                    "Cédula", "Nombres", "Apellidos", "Edad","Dirección","Num ficha","Afiliacion","Telefono","Telefono1"
+                }
+                 
+        ));
+
+    }
+   
 
     /**
      * This method is called from within the constructor to initialize the form.
@@ -154,7 +188,28 @@ public class Pacientes extends javax.swing.JFrame {
     }//GEN-LAST:event_jButton1ActionPerformed
 
     private void jButton3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton3ActionPerformed
-        // TODO add your handling code here:
+        // editar
+        int seleccion = jTablepacientes.getSelectedRow();
+        cedula = jTablepacientes.getValueAt(seleccion, 0).toString();
+        
+        
+        listapaciente.forEach((e) -> {
+            if(e.getCedula().equals(cedula)){
+                e.setCedula(cedula);
+                e.setApellido("mogrovejo");
+                e.setNombre("marilyn");
+                e.setNum_ficha("0002");
+                e.setDireccion("Las juanitas");
+                e.setAfiliacion("Seguro");
+                e.setTelefono("098586063");
+                
+                mostrar();
+        }
+            else{
+                System.out.println("La Persona no existe");
+            }            
+        });
+            
     }//GEN-LAST:event_jButton3ActionPerformed
 
     private void jTextFieldbcedulaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextFieldbcedulaActionPerformed
@@ -163,15 +218,6 @@ public class Pacientes extends javax.swing.JFrame {
 
     private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
         // Buscar
-        Paciente paciente1=new Paciente("00012","Seguro",02,"0150367860","Juan","lopez",25,"Looooo","masculino","0985860636");
-        Paciente paciente2=new Paciente("00024","Seguro",02,"0104103080","Pedro","Torres",25,"Looooo","masculino","0985860636");
-        Paciente paciente3=new Paciente("00345","Seguro",02,"0104882790","Martina","Fernandez",25,"Looooo","femenino","0985860636");
-        
-        listapaciente.add(paciente1);
-        listapaciente.add(paciente2);
-        listapaciente.add(paciente3);
-        
-        
         cedula=jTextFieldbcedula.getText();
         var pacientefiltro = new ArrayList<Paciente>();
         
