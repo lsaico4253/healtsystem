@@ -28,7 +28,7 @@ public class AgregarDoctor extends javax.swing.JFrame {
         String telefono2="";
         String genero="";
         String Direccion="";
-        ArrayList<Doctor>listaDoctor= new ArrayList();
+        ArrayList<Doctor>listadoctor= new ArrayList();
     public AgregarDoctor() {
         initComponents();
         btnedit.setVisible(false);
@@ -310,7 +310,7 @@ public class AgregarDoctor extends javax.swing.JFrame {
                 midoctor.setTelefono2(telefono2);
                 midoctor.setDireccion(Direccion);
                 
-                listaDoctor.add(midoctor);
+                listadoctor.add(midoctor);
               
                 
                 textceduladoctor.setText("");
@@ -335,7 +335,7 @@ public class AgregarDoctor extends javax.swing.JFrame {
 
     private void btneditActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btneditActionPerformed
         // TODO add your handling code here:
-        if(textceduladoctor.getText().equals("") || textPrimerNombredoctor.getText().equals(" ") || textPrimerApellidodoctor.getText().equals("") || textTelefono1doctor.getText().equals("") ){
+        if(textceduladoctor.getText().equals("") || textPrimerNombredoctor.getText().equals(" ")  || textSegundoNombredoctor.getText().equals(" ")|| textPrimerApellidodoctor.getText().equals("")|| textSegundoApellidodoctor.getText().equals("") || textTelefono1doctor.getText().equals("")|| textTelefono2doctor.getText().equals("") ){
             JOptionPane.showMessageDialog(null, "Hay campos vacios");
         }else{
             Paciente mipaciente = new Paciente();
@@ -367,7 +367,7 @@ public class AgregarDoctor extends javax.swing.JFrame {
                 mipaciente.setDireccion(Direccion);
                 
                 String SQL_UPDATE="UPDATE pacientes SET cedula=?, primernombre=?, segundonombre=?, primerapellido=?, segundoapellido=?, edad=?, direccion=?, genero=?, telefono1=?, telefono2=? WHERE id="+id+";";
-                textDirecciondoctor.setText("");
+                textceduladoctor.setText("");
                 textPrimerNombredoctor.setText(""); 
                 textSegundoNombredoctor.setText(""); 
                 textPrimerApellidodoctor.setText("");
@@ -384,21 +384,22 @@ public class AgregarDoctor extends javax.swing.JFrame {
     }//GEN-LAST:event_btneditActionPerformed
     
 public void mostrar(){
-        String matrizdoctor [][] = new String[listaDoctor.size()][9];
-       for(int i=0;i<listaDoctor.size();i++){
-           matrizdoctor[i][0] = listaDoctor.get(i).getCedula();
-           matrizdoctor[i][1] = listaDoctor.get(i).getNombre();
-           matrizdoctor[i][2] = listaDoctor.get(i).getSegundo_nombre();
-           matrizdoctor[i][3] = listaDoctor.get(i).getApellido();
-           matrizdoctor[i][4] = listaDoctor.get(i).getSegundo_apellido();
-           matrizdoctor[i][5] = listaDoctor.get(i).getEdad();
-           matrizdoctor[i][6] = listaDoctor.get(i).getGenero();
-           matrizdoctor[i][7] = listaDoctor.get(i).getTelefono();
-           matrizdoctor[i][8] = listaDoctor.get(i).getTelefono2();
-           matrizdoctor[i][9] = listaDoctor.get(i).getDireccion();
-          
-         //TABLADOCTORES.setModel(new javax.swing.table.DefaultTableModel( matrizdoctor, new String[]{"Cédula", "Nombres", "Apellidos", "Correo","Edad","Curso","Sexo","Trabaja","Ciclo"} ));
-
+        String matrizd [][] = new String[listadoctor.size()][9];
+       for(int i=0;i<listadoctor.size();i++){
+           matrizd[i][0] = listadoctor.get(i).getCedula();
+           matrizd[i][1] = listadoctor.get(i).getNombre();
+           matrizd[i][2] = listadoctor.get(i).getSegundo_nombre();
+           matrizd[i][3] = listadoctor.get(i).getApellido();
+           matrizd[i][4] = listadoctor.get(i).getSegundo_apellido();
+           matrizd[i][5] = listadoctor.get(i).getEdad();
+           matrizd[i][6] = listadoctor.get(i).getGenero();
+           matrizd[i][7] = listadoctor.get(i).getTelefono();
+           matrizd[i][8] = listadoctor.get(i).getTelefono2();
+           matrizd[i][9] = listadoctor.get(i).getDireccion();
+           
+           //TABLADOCTORES.setModel(new javax.swing.table.DefaultTableModel(matrizd,new String[]{"Cedula", "1 Nombre","2 Nombre", "1 Apellido","2 Apellido", "Edad","Dirección","Telefono","Telefono1"
+           
+                   
       }
 }
    
