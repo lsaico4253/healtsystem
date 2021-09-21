@@ -61,7 +61,7 @@
                               <EmptySpace type="unrelated" max="-2" attributes="0"/>
                               <Group type="103" groupAlignment="0" attributes="0">
                                   <Component id="textTelefono2doctor" min="-2" pref="103" max="-2" attributes="0"/>
-                                  <Component id="genernoMdoctor" min="-2" max="-2" attributes="0"/>
+                                  <Component id="generoMdoctor" min="-2" max="-2" attributes="0"/>
                               </Group>
                               <EmptySpace min="-2" pref="82" max="-2" attributes="0"/>
                           </Group>
@@ -135,7 +135,7 @@
               <Group type="103" groupAlignment="3" attributes="0">
                   <Component id="jLabel7" alignment="3" min="-2" max="-2" attributes="0"/>
                   <Component id="spinnerEdaddoctor" alignment="3" min="-2" max="-2" attributes="0"/>
-                  <Component id="genernoMdoctor" alignment="3" min="-2" max="-2" attributes="0"/>
+                  <Component id="generoMdoctor" alignment="3" min="-2" max="-2" attributes="0"/>
                   <Component id="generoFdoctor" alignment="3" min="-2" max="-2" attributes="0"/>
                   <Component id="jLabel11" alignment="3" min="-2" max="-2" attributes="0"/>
               </Group>
@@ -252,7 +252,7 @@
         <Property name="text" type="java.lang.String" value="Genero"/>
       </Properties>
     </Component>
-    <Component class="javax.swing.JRadioButton" name="genernoMdoctor">
+    <Component class="javax.swing.JRadioButton" name="generoMdoctor">
       <Properties>
         <Property name="buttonGroup" type="javax.swing.ButtonGroup" editor="org.netbeans.modules.form.RADComponent$ButtonGroupPropertyEditor">
           <ComponentRef name="Genero"/>
@@ -260,7 +260,7 @@
         <Property name="text" type="java.lang.String" value="M"/>
       </Properties>
       <Events>
-        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="genernoMdoctorActionPerformed"/>
+        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="generoMdoctorActionPerformed"/>
       </Events>
     </Component>
     <Component class="javax.swing.JRadioButton" name="generoFdoctor">

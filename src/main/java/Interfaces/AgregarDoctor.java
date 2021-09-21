@@ -11,9 +11,10 @@ import Clases.Paciente;
 
 import java.util.ArrayList;
 import javax.swing.JOptionPane;
+import javax.swing.SpinnerNumberModel;
 /**
  *
- * @author lsaic
+ * @author 
  */
 public class AgregarDoctor extends javax.swing.JFrame {
     int id=0;
@@ -32,8 +33,15 @@ public class AgregarDoctor extends javax.swing.JFrame {
         initComponents();
         btnedit.setVisible(false);
         this.setLocationRelativeTo(null); 
+         Genero.add(generoMdoctor);
+         Genero.add(generoFdoctor);
+        SpinnerNumberModel num= new SpinnerNumberModel();
+        num.setMaximum(100);
+        num.setMinimum(0);
+        num.setStepSize(1);
+        spinnerEdaddoctor.setModel(num);
     }
-
+ 
     
     /**
      * This method is called from within the constructor to initialize the form.
@@ -65,7 +73,7 @@ public class AgregarDoctor extends javax.swing.JFrame {
         textDirecciondoctor = new javax.swing.JTextField();
         spinnerEdaddoctor = new javax.swing.JSpinner();
         jLabel11 = new javax.swing.JLabel();
-        genernoMdoctor = new javax.swing.JRadioButton();
+        generoMdoctor = new javax.swing.JRadioButton();
         generoFdoctor = new javax.swing.JRadioButton();
         jButton1 = new javax.swing.JButton();
         btnedit = new javax.swing.JButton();
@@ -113,11 +121,11 @@ public class AgregarDoctor extends javax.swing.JFrame {
 
         jLabel11.setText("Genero");
 
-        Genero.add(genernoMdoctor);
-        genernoMdoctor.setText("M");
-        genernoMdoctor.addActionListener(new java.awt.event.ActionListener() {
+        Genero.add(generoMdoctor);
+        generoMdoctor.setText("M");
+        generoMdoctor.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                genernoMdoctorActionPerformed(evt);
+                generoMdoctorActionPerformed(evt);
             }
         });
 
@@ -173,7 +181,7 @@ public class AgregarDoctor extends javax.swing.JFrame {
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                                     .addComponent(textTelefono2doctor, javax.swing.GroupLayout.PREFERRED_SIZE, 103, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                    .addComponent(genernoMdoctor))
+                                    .addComponent(generoMdoctor))
                                 .addGap(82, 82, 82))))
                     .addGroup(layout.createSequentialGroup()
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -228,7 +236,7 @@ public class AgregarDoctor extends javax.swing.JFrame {
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel7)
                     .addComponent(spinnerEdaddoctor, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(genernoMdoctor)
+                    .addComponent(generoMdoctor)
                     .addComponent(generoFdoctor)
                     .addComponent(jLabel11))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
@@ -255,9 +263,9 @@ public class AgregarDoctor extends javax.swing.JFrame {
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    private void genernoMdoctorActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_genernoMdoctorActionPerformed
+    private void generoMdoctorActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_generoMdoctorActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_genernoMdoctorActionPerformed
+    }//GEN-LAST:event_generoMdoctorActionPerformed
 
     private void textceduladoctorActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_textceduladoctorActionPerformed
         // TODO add your handling code here:
@@ -284,7 +292,7 @@ public class AgregarDoctor extends javax.swing.JFrame {
             telefono1=textTelefono1doctor.getText();
             telefono2=textTelefono2doctor.getText();
             Direccion=textDirecciondoctor.getText();
-            if(genernoMdoctor.isSelected()){
+            if(generoMdoctor.isSelected()){
                 genero="Hombre";
             }
                 if(generoFdoctor.isSelected()){
@@ -340,7 +348,7 @@ public class AgregarDoctor extends javax.swing.JFrame {
             telefono1=textTelefono1doctor.getText();
             telefono2=textTelefono2doctor.getText();
             Direccion=textDirecciondoctor.getText();
-            if(genernoMdoctor.isSelected()){
+            if(generoMdoctor.isSelected()){
                 genero="Hombre";
             }
                 if(generoFdoctor.isSelected()){
@@ -435,8 +443,8 @@ public void mostrar(){
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.ButtonGroup Genero;
     private javax.swing.JButton btnedit;
-    private javax.swing.JRadioButton genernoMdoctor;
     private javax.swing.JRadioButton generoFdoctor;
+    private javax.swing.JRadioButton generoMdoctor;
     private javax.swing.JButton jButton1;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel10;
