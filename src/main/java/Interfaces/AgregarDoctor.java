@@ -3,21 +3,38 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
+
 package Interfaces;
 
+import Clases.Doctor;
+import Clases.Paciente;
+
+import java.util.ArrayList;
+import javax.swing.JOptionPane;
 /**
  *
- * @author USER
+ * @author lsaic
  */
 public class AgregarDoctor extends javax.swing.JFrame {
-
-    /**
-     * Creates new form AgregarDoctor
-     */
+    int id=0;
+     String Cedula="";
+        String Nombre="";
+        String Segundonombre="";
+        String Apellido="";
+        String Segundoapellido="";
+        String Edad="";
+        String telefono1="";
+        String telefono2="";
+        String genero="";
+        String Direccion="";
+        ArrayList<Doctor>listaDoctor= new ArrayList();
     public AgregarDoctor() {
         initComponents();
+        btnedit.setVisible(false);
+        this.setLocationRelativeTo(null); 
     }
 
+    
     /**
      * This method is called from within the constructor to initialize the form.
      * WARNING: Do NOT modify this code. The content of this method is always
@@ -27,22 +44,358 @@ public class AgregarDoctor extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
+        Genero = new javax.swing.ButtonGroup();
+        jLabel1 = new javax.swing.JLabel();
+        jLabel2 = new javax.swing.JLabel();
+        jLabel3 = new javax.swing.JLabel();
+        jLabel4 = new javax.swing.JLabel();
+        jLabel5 = new javax.swing.JLabel();
+        jLabel6 = new javax.swing.JLabel();
+        jLabel7 = new javax.swing.JLabel();
+        jLabel8 = new javax.swing.JLabel();
+        jLabel9 = new javax.swing.JLabel();
+        jLabel10 = new javax.swing.JLabel();
+        textceduladoctor = new javax.swing.JTextField();
+        textPrimerNombredoctor = new javax.swing.JTextField();
+        textSegundoNombredoctor = new javax.swing.JTextField();
+        textPrimerApellidodoctor = new javax.swing.JTextField();
+        textSegundoApellidodoctor = new javax.swing.JTextField();
+        textTelefono1doctor = new javax.swing.JTextField();
+        textTelefono2doctor = new javax.swing.JTextField();
+        textDirecciondoctor = new javax.swing.JTextField();
+        spinnerEdaddoctor = new javax.swing.JSpinner();
+        jLabel11 = new javax.swing.JLabel();
+        genernoMdoctor = new javax.swing.JRadioButton();
+        generoFdoctor = new javax.swing.JRadioButton();
+        jButton1 = new javax.swing.JButton();
+        btnedit = new javax.swing.JButton();
+
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+
+        jLabel1.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        jLabel1.setText("Registrar Paciente");
+
+        jLabel2.setText("Cedula");
+
+        jLabel3.setText("Primer Nombre");
+
+        jLabel4.setText("Segundo Nombre");
+
+        jLabel5.setText("Primer Apellido");
+
+        jLabel6.setText("Segundo Apellido");
+
+        jLabel7.setText("Edad");
+
+        jLabel8.setText("Telefono 1");
+
+        jLabel9.setText("Telefono 2");
+
+        jLabel10.setText("Dirección");
+
+        textceduladoctor.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                textceduladoctorActionPerformed(evt);
+            }
+        });
+
+        textSegundoApellidodoctor.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                textSegundoApellidodoctorActionPerformed(evt);
+            }
+        });
+
+        textDirecciondoctor.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                textDirecciondoctorActionPerformed(evt);
+            }
+        });
+
+        jLabel11.setText("Genero");
+
+        Genero.add(genernoMdoctor);
+        genernoMdoctor.setText("M");
+        genernoMdoctor.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                genernoMdoctorActionPerformed(evt);
+            }
+        });
+
+        Genero.add(generoFdoctor);
+        generoFdoctor.setText("F");
+
+        jButton1.setText("Guardar");
+        jButton1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton1ActionPerformed(evt);
+            }
+        });
+
+        btnedit.setText("Editar");
+        btnedit.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btneditActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 400, Short.MAX_VALUE)
+            .addGroup(layout.createSequentialGroup()
+                .addGap(41, 41, 41)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(layout.createSequentialGroup()
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(jLabel2)
+                            .addComponent(jLabel3)
+                            .addComponent(jLabel7)
+                            .addComponent(jLabel8)
+                            .addComponent(jLabel10))
+                        .addGap(42, 42, 42)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(textceduladoctor)
+                            .addGroup(layout.createSequentialGroup()
+                                .addComponent(textPrimerNombredoctor, javax.swing.GroupLayout.PREFERRED_SIZE, 81, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addComponent(jLabel4)
+                                .addGap(30, 30, 30)
+                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                                    .addComponent(textSegundoApellidodoctor, javax.swing.GroupLayout.DEFAULT_SIZE, 82, Short.MAX_VALUE)
+                                    .addComponent(textSegundoNombredoctor))
+                                .addGap(0, 0, Short.MAX_VALUE))
+                            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                                .addComponent(spinnerEdaddoctor)
+                                .addGap(18, 18, 18)
+                                .addComponent(jLabel11)
+                                .addGap(30, 30, 30)
+                                .addComponent(generoFdoctor)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addComponent(textTelefono2doctor, javax.swing.GroupLayout.PREFERRED_SIZE, 103, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addComponent(genernoMdoctor))
+                                .addGap(82, 82, 82))))
+                    .addGroup(layout.createSequentialGroup()
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addGroup(layout.createSequentialGroup()
+                                .addComponent(jLabel5)
+                                .addGap(42, 42, 42)
+                                .addComponent(textPrimerApellidodoctor, javax.swing.GroupLayout.PREFERRED_SIZE, 81, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addComponent(jLabel6))
+                            .addGroup(layout.createSequentialGroup()
+                                .addGap(110, 110, 110)
+                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addGroup(layout.createSequentialGroup()
+                                        .addComponent(textTelefono1doctor, javax.swing.GroupLayout.PREFERRED_SIZE, 88, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                        .addGap(26, 26, 26)
+                                        .addComponent(jLabel9))
+                                    .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
+                                        .addGroup(layout.createSequentialGroup()
+                                            .addComponent(btnedit)
+                                            .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                            .addComponent(jButton1))
+                                        .addComponent(textDirecciondoctor, javax.swing.GroupLayout.PREFERRED_SIZE, 268, javax.swing.GroupLayout.PREFERRED_SIZE)))))
+                        .addGap(0, 0, Short.MAX_VALUE)))
+                .addContainerGap())
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 454, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(81, 81, 81))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 300, Short.MAX_VALUE)
+            .addGroup(layout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 60, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(18, 18, 18)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel2)
+                    .addComponent(textceduladoctor, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(18, 18, 18)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel3)
+                    .addComponent(textPrimerNombredoctor, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jLabel4)
+                    .addComponent(textSegundoNombredoctor, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(18, 18, 18)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel5)
+                    .addComponent(textPrimerApellidodoctor, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jLabel6)
+                    .addComponent(textSegundoApellidodoctor, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(18, 18, 18)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel7)
+                    .addComponent(spinnerEdaddoctor, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(genernoMdoctor)
+                    .addComponent(generoFdoctor)
+                    .addComponent(jLabel11))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                        .addComponent(jLabel8)
+                        .addComponent(textTelefono1doctor, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(jLabel9))
+                    .addComponent(textTelefono2doctor, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(layout.createSequentialGroup()
+                        .addGap(24, 24, 24)
+                        .addComponent(jLabel10))
+                    .addGroup(layout.createSequentialGroup()
+                        .addGap(18, 18, 18)
+                        .addComponent(textDirecciondoctor, javax.swing.GroupLayout.PREFERRED_SIZE, 55, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addGap(18, 18, 18)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(jButton1)
+                    .addComponent(btnedit))
+                .addContainerGap(33, Short.MAX_VALUE))
         );
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
+    private void genernoMdoctorActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_genernoMdoctorActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_genernoMdoctorActionPerformed
+
+    private void textceduladoctorActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_textceduladoctorActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_textceduladoctorActionPerformed
+
+    private void textDirecciondoctorActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_textDirecciondoctorActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_textDirecciondoctorActionPerformed
+
+    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
+        // TODO add your handling code here:
+        new Doctores().setVisible(true);
+        this.dispose();
+        if(textceduladoctor.getText().equals("") || textPrimerNombredoctor.getText().equals(" ") || textPrimerApellidodoctor.getText().equals("") || textTelefono1doctor.getText().equals("") ){
+            JOptionPane.showMessageDialog(null, "Hay campos vacios");
+        }else{
+            Doctor midoctor = new Doctor();
+            Cedula=textceduladoctor.getText();
+            Nombre=textPrimerNombredoctor.getText();
+            Segundonombre=textSegundoNombredoctor.getText();
+            Apellido=textPrimerApellidodoctor.getText();
+            Segundoapellido=textSegundoApellidodoctor.getText();
+            Edad=spinnerEdaddoctor.getValue().toString();
+            telefono1=textTelefono1doctor.getText();
+            telefono2=textTelefono2doctor.getText();
+            Direccion=textDirecciondoctor.getText();
+            if(genernoMdoctor.isSelected()){
+                genero="Hombre";
+            }
+                if(generoFdoctor.isSelected()){
+                    genero="Mujer";
+                }
+                
+                midoctor.setCedula(Cedula);
+                midoctor.setNombre(Nombre);
+                midoctor.setSegundo_nombre(Segundonombre);
+                midoctor.setApellido(Apellido);
+                midoctor.setSegundo_apellido(Segundoapellido);
+                midoctor.setEdad(Edad);
+                midoctor.setGenero(genero);
+                midoctor.setTelefono(telefono1);
+                midoctor.setTelefono2(telefono2);
+                midoctor.setDireccion(Direccion);
+                
+                listaDoctor.add(midoctor);
+              
+                
+                textceduladoctor.setText("");
+                textPrimerNombredoctor.setText(""); 
+                textSegundoNombredoctor.setText(""); 
+                textPrimerApellidodoctor.setText("");
+                textSegundoApellidodoctor.setText("");
+                textSegundoApellidodoctor.setText("");
+                textTelefono1doctor.setText("");
+                textTelefono2doctor.setText("");
+                textDirecciondoctor.setText("");
+                
+                
+               
+        }
+
+    }//GEN-LAST:event_jButton1ActionPerformed
+
+    private void textSegundoApellidodoctorActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_textSegundoApellidodoctorActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_textSegundoApellidodoctorActionPerformed
+
+    private void btneditActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btneditActionPerformed
+        // TODO add your handling code here:
+        if(textceduladoctor.getText().equals("") || textPrimerNombredoctor.getText().equals(" ") || textPrimerApellidodoctor.getText().equals("") || textTelefono1doctor.getText().equals("") ){
+            JOptionPane.showMessageDialog(null, "Hay campos vacios");
+        }else{
+            Paciente mipaciente = new Paciente();
+            Cedula=textceduladoctor.getText();
+            Nombre=textPrimerNombredoctor.getText();
+            Segundonombre=textSegundoNombredoctor.getText();
+            Apellido=textPrimerApellidodoctor.getText();
+            Segundoapellido=textSegundoApellidodoctor.getText();
+            Edad=spinnerEdaddoctor.getValue().toString();
+            telefono1=textTelefono1doctor.getText();
+            telefono2=textTelefono2doctor.getText();
+            Direccion=textDirecciondoctor.getText();
+            if(genernoMdoctor.isSelected()){
+                genero="Hombre";
+            }
+                if(generoFdoctor.isSelected()){
+                    genero="Mujer";
+                }
+                
+                mipaciente.setCedula(Cedula);
+                mipaciente.setNombre(Nombre);
+                mipaciente.setSegundo_nombre(Segundonombre);
+                mipaciente.setApellido(Apellido);
+                mipaciente.setSegundo_apellido(Segundoapellido);
+                mipaciente.setEdad(Edad);
+                mipaciente.setGenero(genero);
+                mipaciente.setTelefono(telefono1);
+                mipaciente.setTelefono2(telefono2);
+                mipaciente.setDireccion(Direccion);
+                
+                String SQL_UPDATE="UPDATE pacientes SET cedula=?, primernombre=?, segundonombre=?, primerapellido=?, segundoapellido=?, edad=?, direccion=?, genero=?, telefono1=?, telefono2=? WHERE id="+id+";";
+                textDirecciondoctor.setText("");
+                textPrimerNombredoctor.setText(""); 
+                textSegundoNombredoctor.setText(""); 
+                textPrimerApellidodoctor.setText("");
+                textSegundoApellidodoctor.setText("");
+                textSegundoApellidodoctor.setText("");
+                textTelefono1doctor.setText("");
+                textTelefono2doctor.setText("");
+                textDirecciondoctor.setText("");
+                new Pacientes().setVisible(true);
+                this.dispose();
+                
+                
+        }
+    }//GEN-LAST:event_btneditActionPerformed
+    
+public void mostrar(){
+        String matrizdoctor [][] = new String[listaDoctor.size()][9];
+       for(int i=0;i<listaDoctor.size();i++){
+           matrizdoctor[i][0] = listaDoctor.get(i).getCedula();
+           matrizdoctor[i][1] = listaDoctor.get(i).getNombre();
+           matrizdoctor[i][2] = listaDoctor.get(i).getSegundo_nombre();
+           matrizdoctor[i][3] = listaDoctor.get(i).getApellido();
+           matrizdoctor[i][4] = listaDoctor.get(i).getSegundo_apellido();
+           matrizdoctor[i][5] = listaDoctor.get(i).getEdad();
+           matrizdoctor[i][6] = listaDoctor.get(i).getGenero();
+           matrizdoctor[i][7] = listaDoctor.get(i).getTelefono();
+           matrizdoctor[i][8] = listaDoctor.get(i).getTelefono2();
+           matrizdoctor[i][9] = listaDoctor.get(i).getDireccion();
+          
+         //TABLADOCTORES.setModel(new javax.swing.table.DefaultTableModel( matrizdoctor, new String[]{"Cédula", "Nombres", "Apellidos", "Correo","Edad","Curso","Sexo","Trabaja","Ciclo"} ));
+
+      }
+}
+   
+
+    
     /**
      * @param args the command line arguments
      */
@@ -69,6 +422,7 @@ public class AgregarDoctor extends javax.swing.JFrame {
             java.util.logging.Logger.getLogger(AgregarDoctor.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         }
         //</editor-fold>
+        
 
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
@@ -79,5 +433,30 @@ public class AgregarDoctor extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.ButtonGroup Genero;
+    private javax.swing.JButton btnedit;
+    private javax.swing.JRadioButton genernoMdoctor;
+    private javax.swing.JRadioButton generoFdoctor;
+    private javax.swing.JButton jButton1;
+    private javax.swing.JLabel jLabel1;
+    private javax.swing.JLabel jLabel10;
+    private javax.swing.JLabel jLabel11;
+    private javax.swing.JLabel jLabel2;
+    private javax.swing.JLabel jLabel3;
+    private javax.swing.JLabel jLabel4;
+    private javax.swing.JLabel jLabel5;
+    private javax.swing.JLabel jLabel6;
+    private javax.swing.JLabel jLabel7;
+    private javax.swing.JLabel jLabel8;
+    private javax.swing.JLabel jLabel9;
+    private javax.swing.JSpinner spinnerEdaddoctor;
+    private javax.swing.JTextField textDirecciondoctor;
+    private javax.swing.JTextField textPrimerApellidodoctor;
+    private javax.swing.JTextField textPrimerNombredoctor;
+    private javax.swing.JTextField textSegundoApellidodoctor;
+    private javax.swing.JTextField textSegundoNombredoctor;
+    private javax.swing.JTextField textTelefono1doctor;
+    private javax.swing.JTextField textTelefono2doctor;
+    private javax.swing.JTextField textceduladoctor;
     // End of variables declaration//GEN-END:variables
 }
