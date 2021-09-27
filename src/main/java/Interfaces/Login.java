@@ -1,10 +1,19 @@
 
 package Interfaces;
 
+import static Clases.ConexionBD.close;
+import static Clases.ConexionBD.getConnection;
+import java.sql.Connection;
+import java.sql.PreparedStatement;
+import java.sql.ResultSet;
+import java.sql.SQLException;
+import java.util.Arrays;
+import javax.swing.JOptionPane;
+
 
 public class Login extends javax.swing.JFrame {
-    String user;
-    String password;
+    String user, userb;
+    String password, passwordb;
   
     public Login() {
         initComponents();
@@ -85,11 +94,65 @@ public class Login extends javax.swing.JFrame {
 
     private void btnloginActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnloginActionPerformed
         // TODO add your handling code here:
-        user=txtuser.getText();
+        user = txtuser.getText();
         password= txtpass.getText();
         String SQL_SELECT="SELECT username, password, rol FROM public.usuarios where active = true and username='"+user+"';";
-        this.dispose();
-        new Dasboard().setVisible(true);
+        Connection conn = null;
+        PreparedStatement stmt = null;
+        ResultSet rs = null;
+        
+        try {
+            conn = getConnection();
+            stmt = conn.prepareStatement(SQL_SELECT);
+            rs = stmt.executeQuery();
+            if (rs.next()) {
+                String u = rs.getString("username");
+                String p = rs.getString("password");
+                //Rol de cada usuario, hasta ahora definidos 4 roles
+                int priv = rs.getInt("rol");
+                if(user.equals(u)){
+                    if(password.equals(p)){
+                        switch(priv){
+                            case 1:{
+                                this.dispose();
+                                new Dasboard().setVisible(true);
+                            }
+                            case 2:{
+                                this.dispose();
+                                new Dasboard().setVisible(true);
+                            }
+                            case 3:{
+                                this.dispose();
+                                new Dasboard().setVisible(true);
+                            }
+                            case 4:{
+                                this.dispose();
+                                new Dasboard().setVisible(true);
+                            }
+                        }
+                        
+                    }else{
+                        JOptionPane.showMessageDialog(null, "La contraseña es incorrecta");
+                    }
+                }else{
+                    JOptionPane.showMessageDialog(null, "El usuario no existe");
+                }
+            }else{
+                JOptionPane.showMessageDialog(null, "El usuario no existe");
+            }
+        } catch (SQLException ex) {
+            ex.printStackTrace(System.out);
+        } finally {
+            try {
+                close(rs);
+                close(stmt);
+                close(conn);
+            } catch (SQLException ex) {
+                ex.printStackTrace(System.out);
+            }
+        }
+        
+        
     }//GEN-LAST:event_btnloginActionPerformed
 
     private void btnexitActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnexitActionPerformed
