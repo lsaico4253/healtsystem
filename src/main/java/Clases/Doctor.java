@@ -34,6 +34,38 @@ public class Doctor extends Persona{
         this.universidad = universidad;
     }
 
+    public String getTitulo() {
+        return titulo;
+    }
+
+    public void setTitulo(String titulo) {
+        this.titulo = titulo;
+    }
+
+    public String getJornada() {
+        return jornada;
+    }
+
+    public void setJornada(String jornada) {
+        this.jornada = jornada;
+    }
+
+    public String getEspecialidad() {
+        return especialidad;
+    }
+
+    public void setEspecialidad(String especialidad) {
+        this.especialidad = especialidad;
+    }
+
+    public String getUniversidad() {
+        return universidad;
+    }
+
+    public void setUniversidad(String universidad) {
+        this.universidad = universidad;
+    }
+
   
    
     

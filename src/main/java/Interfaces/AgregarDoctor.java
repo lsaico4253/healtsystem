@@ -6,12 +6,16 @@
 
 package Interfaces;
 
+import static Clases.ConexionBD.close;
+import static Clases.ConexionBD.getConnection;
 import Clases.Doctor;
 import Clases.Paciente;
-
+import java.sql.Connection;
+import java.sql.PreparedStatement;
+import java.sql.ResultSet;
+import java.sql.SQLException;
 import java.util.ArrayList;
 import javax.swing.JOptionPane;
-import javax.swing.SpinnerNumberModel;
 /**
  *
  * @author 
@@ -29,19 +33,72 @@ public class AgregarDoctor extends javax.swing.JFrame {
         String genero="";
         String Direccion="";
         ArrayList<Doctor>listadoctor= new ArrayList();
+        
     public AgregarDoctor() {
+        
         initComponents();
         btnedit.setVisible(false);
-        this.setLocationRelativeTo(null); 
-         Genero.add(generoMdoctor);
-         Genero.add(generoFdoctor);
-        SpinnerNumberModel num= new SpinnerNumberModel();
-        num.setMaximum(100);
-        num.setMinimum(0);
-        num.setStepSize(1);
-        spinnerEdaddoctor.setModel(num);
+        this.setLocationRelativeTo(null);
     }
- 
+        
+    public AgregarDoctor(int id){
+        
+        initComponents();
+        this.id=id;
+        jButton1.setVisible(false);
+        this.setLocationRelativeTo(null); 
+        
+        Connection conn = null;
+        String SQL_SELECT = "SELECT * FROM pacientes WHERE id = "+id+";";
+        PreparedStatement stmt = null;
+        ResultSet rs = null;
+        
+        try {
+            conn = getConnection();
+            stmt = conn.prepareStatement(SQL_SELECT);
+            rs = stmt.executeQuery();
+            while (rs.next()) {
+                String primer_nombre = rs.getString("primernombre");                
+                String segundo_nombre = rs.getString("segundonombre");
+                String primer_apellido = rs.getString("primerapellido");
+                String segundo_apellido = rs.getString("segundoapellido");
+                String cedula2 = rs.getString("cedula");
+                String edad = rs.getString("edad");
+                String direccion = rs.getString("direccion");
+                String generoe = rs.getString("genero");
+                String telefono1e = rs.getString("telefono1");
+                String telefono2e = rs.getString("telefono2");
+                textceduladoctor.setText(cedula2);
+                textPrimerNombredoctor.setText(primer_nombre);   
+                textSegundoNombredoctor.setText(segundo_nombre);
+                textPrimerApellidodoctor.setText(primer_apellido);
+                textSegundoApellidodoctor.setText(segundo_apellido);
+                spinnerEdaddoctor.setValue(Integer.parseInt(edad));
+                textTelefono1doctor.setText(telefono1e);
+                textTelefono2doctor.setText(telefono2e);
+                textDirecciondoctor.setText(direccion);
+                if(generoe.equals("Mujer")){
+                    generoFdoctor.setSelected(true);
+                }else{
+                    generoMdoctor.setSelected(true);
+                }
+            }
+        } catch (SQLException ex) {
+            ex.printStackTrace(System.out);
+        } finally {
+            try {
+                close(rs);
+                close(stmt);
+                close(conn);
+            } catch (SQLException ex) {
+                ex.printStackTrace(System.out);
+            }
+        }
+        
+        
+    }
+        
+    
     
     /**
      * This method is called from within the constructor to initialize the form.
@@ -317,8 +374,29 @@ public class AgregarDoctor extends javax.swing.JFrame {
                 
                 listadoctor.add(midoctor);
               
+
                 
-                textceduladoctor.setText("");
+                listadoctor.add(midoctor);
+                Connection conn = null;
+                PreparedStatement stmt = null;
+                String SQL_INSERT="INSERT INTO pacientes(num_ficha, afiliacion, cedula, primernombre, segundonombre, primerapellido, segundoapellido, edad, direccion, genero, telefono1, telefono2)VALUES ('F01', 'No Afliado', '"+Cedula+"', '"+Nombre+"', '"+Segundonombre+"', '"+Apellido+"', '"+Segundoapellido+"', '"+Edad+"', '"+Direccion+"', '"+genero+"', '"+telefono1+"', '"+telefono2+"');";
+                try {
+                    conn = getConnection();
+                    stmt = conn.prepareStatement(SQL_INSERT);
+                    stmt.executeUpdate();
+                } catch (SQLException ex) {
+                    ex.printStackTrace(System.out);
+                }
+                finally{
+                    try {
+                        close(stmt);
+                        close(conn);
+                    } catch (SQLException ex) {
+                        ex.printStackTrace(System.out);
+                    }
+                }
+                
+                textDirecciondoctor.setText("");
                 textPrimerNombredoctor.setText(""); 
                 textSegundoNombredoctor.setText(""); 
                 textPrimerApellidodoctor.setText("");
@@ -329,8 +407,10 @@ public class AgregarDoctor extends javax.swing.JFrame {
                 textDirecciondoctor.setText("");
                 
                 
-               
+                //errores de la vida
         }
+
+                                            
 
     }//GEN-LAST:event_jButton1ActionPerformed
 
@@ -340,7 +420,8 @@ public class AgregarDoctor extends javax.swing.JFrame {
 
     private void btneditActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btneditActionPerformed
         // TODO add your handling code here:
-        if(textceduladoctor.getText().equals("") || textPrimerNombredoctor.getText().equals(" ")  || textSegundoNombredoctor.getText().equals(" ")|| textPrimerApellidodoctor.getText().equals("")|| textSegundoApellidodoctor.getText().equals("") || textTelefono1doctor.getText().equals("")|| textTelefono2doctor.getText().equals("") ){
+        
+        if(textceduladoctor.getText().equals("") || textPrimerNombredoctor.getText().equals(" ") || textPrimerApellidodoctor.getText().equals("") || textTelefono1doctor.getText().equals("") ){
             JOptionPane.showMessageDialog(null, "Hay campos vacios");
         }else{
             Paciente mipaciente = new Paciente();
@@ -371,8 +452,37 @@ public class AgregarDoctor extends javax.swing.JFrame {
                 mipaciente.setTelefono2(telefono2);
                 mipaciente.setDireccion(Direccion);
                 
-                String SQL_UPDATE="UPDATE pacientes SET cedula=?, primernombre=?, segundonombre=?, primerapellido=?, segundoapellido=?, edad=?, direccion=?, genero=?, telefono1=?, telefono2=? WHERE id="+id+";";
-                textceduladoctor.setText("");
+                Connection conn = null;
+                PreparedStatement stmt = null;
+                String SQL_INSERT="INSERT INTO pacientes(num_ficha, afiliacion, cedula, primernombre, segundonombre, primerapellido, segundoapellido, edad, direccion, genero, telefono1, telefono2)VALUES ('F01', 'No Afliado', '"+Cedula+"', '"+Nombre+"', '"+Segundonombre+"', '"+Apellido+"', '"+Segundoapellido+"', '"+Edad+"', '"+Direccion+"', '"+genero+"', '"+telefono1+"', '"+telefono2+"');";
+                try {
+                    conn = getConnection();
+                    stmt = conn.prepareStatement(SQL_INSERT);
+                    stmt.setString(1, mipaciente.getCedula());
+                    stmt.setString(2, mipaciente.getNombre());
+                    stmt.setString(3, mipaciente.getSegundo_nombre());
+                    stmt.setString(4, mipaciente.getApellido());
+                    stmt.setString(5, mipaciente.getSegundo_apellido());
+                    stmt.setString(6, mipaciente.getEdad());
+                    stmt.setString(7, mipaciente.getDireccion());
+                    stmt.setString(8, mipaciente.getGenero());
+                    stmt.setString(9, mipaciente.getTelefono());
+                    stmt.setString(10, mipaciente.getTelefono2());
+                    stmt.executeUpdate();
+                    
+                } catch (SQLException ex) {
+                    ex.printStackTrace(System.out);
+                }
+                finally{
+                    try {
+                        close(stmt);
+                        close(conn);
+                    } catch (SQLException ex) {
+                        ex.printStackTrace(System.out);
+                    }
+                }
+                
+                textDirecciondoctor.setText("");
                 textPrimerNombredoctor.setText(""); 
                 textSegundoNombredoctor.setText(""); 
                 textPrimerApellidodoctor.setText("");
@@ -384,33 +494,10 @@ public class AgregarDoctor extends javax.swing.JFrame {
                 new Pacientes().setVisible(true);
                 this.dispose();
                 
-                
+               
         }
     }//GEN-LAST:event_btneditActionPerformed
-    
-public void mostrar(){
-        String matrizd [][] = new String[listadoctor.size()][9];
-       for(int i=0;i<listadoctor.size();i++){
-           matrizd[i][0] = listadoctor.get(i).getCedula();
-           matrizd[i][1] = listadoctor.get(i).getNombre();
-           matrizd[i][2] = listadoctor.get(i).getSegundo_nombre();
-           matrizd[i][3] = listadoctor.get(i).getApellido();
-           matrizd[i][4] = listadoctor.get(i).getSegundo_apellido();
-           matrizd[i][5] = listadoctor.get(i).getEdad();
-           matrizd[i][6] = listadoctor.get(i).getGenero();
-           matrizd[i][7] = listadoctor.get(i).getTelefono();
-           matrizd[i][8] = listadoctor.get(i).getTelefono2();
-           matrizd[i][9] = listadoctor.get(i).getDireccion();
-           
-           //TABLADOCTORES.setModel(new javax.swing.table.DefaultTableModel(matrizd,new String[]{"Cedula", "1 Nombre","2 Nombre", "1 Apellido","2 Apellido", "Edad","Dirección","Telefono","Telefono1"
-           
-                   
-      }
-}
-   
-
-    
-    /**
+ /**
      * @param args the command line arguments
      */
     public static void main(String args[]) {
