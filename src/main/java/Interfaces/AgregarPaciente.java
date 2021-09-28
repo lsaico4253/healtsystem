@@ -31,6 +31,7 @@ public class AgregarPaciente extends javax.swing.JFrame {
         String genero="";
         String Direccion="";
         ArrayList<Paciente>listaPaciente= new ArrayList();
+        
     public AgregarPaciente() {
         initComponents();
         btnedit.setVisible(false);
