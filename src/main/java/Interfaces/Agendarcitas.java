@@ -103,6 +103,7 @@ public class Agendarcitas extends javax.swing.JFrame {
         jLabel13 = new javax.swing.JLabel();
         jTextFieldgenero = new javax.swing.JTextField();
         jButton1 = new javax.swing.JButton();
+        jButtonregresar = new javax.swing.JButton();
 
         jList1.setModel(new javax.swing.AbstractListModel<String>() {
             String[] strings = { "Item 1", "Item 2", "Item 3", "Item 4", "Item 5" };
@@ -378,6 +379,13 @@ public class Agendarcitas extends javax.swing.JFrame {
 
         jButton1.setText("Registrar Paciente");
 
+        jButtonregresar.setText("Regresar");
+        jButtonregresar.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButtonregresarActionPerformed(evt);
+            }
+        });
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
@@ -400,13 +408,20 @@ public class Agendarcitas extends javax.swing.JFrame {
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
                 .addGap(0, 0, Short.MAX_VALUE)
-                .addComponent(jButton1)
-                .addGap(143, 143, 143))
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                        .addComponent(jButton1)
+                        .addGap(143, 143, 143))
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                        .addComponent(jButtonregresar)
+                        .addContainerGap())))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addGap(18, 18, 18)
+                .addContainerGap()
+                .addComponent(jButtonregresar)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addComponent(jPanel2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -489,8 +504,8 @@ public class Agendarcitas extends javax.swing.JFrame {
                          jTextFieldtelefono.setText("");
                          jTextFieldhorai.setText("");
                          jTextFieldhoraf.setText("");
-                         new Citas().setVisible(true);
-                         this.dispose();
+                         //new Citas().setVisible(true);
+                         //this.dispose();
                 
 
                 }else{
@@ -505,6 +520,11 @@ public class Agendarcitas extends javax.swing.JFrame {
         }
         
     }//GEN-LAST:event_jButtonagendarActionPerformed
+
+    private void jButtonregresarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonregresarActionPerformed
+        // TODO add your handling code here:
+        new Citas().setVisible(true);
+    }//GEN-LAST:event_jButtonregresarActionPerformed
 
     /**
      * @param args the command line arguments
@@ -547,6 +567,7 @@ public class Agendarcitas extends javax.swing.JFrame {
     private javax.swing.JButton jButtonbuscar;
     private javax.swing.JButton jButtoncancelar;
     private javax.swing.JButton jButtoneditar;
+    private javax.swing.JButton jButtonregresar;
     private javax.swing.JComboBox<String> jComboBoxdoctor;
     private com.toedter.calendar.JDateChooser jDateChooser1;
     private javax.swing.JLabel jLabel1;
