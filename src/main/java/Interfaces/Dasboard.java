@@ -51,6 +51,7 @@ public class Dasboard extends javax.swing.JFrame {
         lbllogo.setText("Logo");
         lbllogo.setToolTipText("");
 
+        jButton1.setFont(new java.awt.Font("Poppins", 0, 14)); // NOI18N
         jButton1.setText("Pacientes");
         jButton1.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -58,6 +59,7 @@ public class Dasboard extends javax.swing.JFrame {
             }
         });
 
+        jButton2.setFont(new java.awt.Font("Poppins", 0, 14)); // NOI18N
         jButton2.setText("Doctor");
         jButton2.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -65,12 +67,15 @@ public class Dasboard extends javax.swing.JFrame {
             }
         });
 
+        jButton4.setFont(new java.awt.Font("Poppins", 0, 14)); // NOI18N
         jButton4.setText("Control de citas");
 
+        jButton6.setFont(new java.awt.Font("Poppins", 0, 14)); // NOI18N
         jButton6.setText("Reportes");
 
+        lblenterprise.setFont(new java.awt.Font("Poppins", 0, 24)); // NOI18N
         lblenterprise.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        lblenterprise.setText("Nombre de la empresa");
+        lblenterprise.setText("Centro Odontológico Integral \"M&M\"");
 
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
@@ -83,12 +88,16 @@ public class Dasboard extends javax.swing.JFrame {
             .addGap(0, 0, Short.MAX_VALUE)
         );
 
+        btnRecepcionista.setFont(new java.awt.Font("Poppins", 0, 14)); // NOI18N
         btnRecepcionista.setText("Recepcionista");
 
+        jButton8.setFont(new java.awt.Font("Poppins", 0, 12)); // NOI18N
         jButton8.setText("Ingresos/Egresos");
 
+        jButton3.setFont(new java.awt.Font("Poppins", 0, 14)); // NOI18N
         jButton3.setText("Administración");
 
+        jButton9.setFont(new java.awt.Font("Poppins", 0, 14)); // NOI18N
         jButton9.setText("Tratamiento");
 
         jMenuBar1.setFont(new java.awt.Font("Poppins", 0, 12)); // NOI18N

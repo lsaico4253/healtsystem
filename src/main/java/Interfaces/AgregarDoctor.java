@@ -46,9 +46,7 @@ public class AgregarDoctor extends javax.swing.JFrame {
         
         
         box02.setSelectedItem("Tipos");
-        box02.addItem("Matutino");
-        box02.addItem("Vespertino");
-        box02.addItem("Nocturno");
+        CargarHorarios();
     }
         
     public AgregarDoctor(int id){
@@ -108,6 +106,33 @@ public class AgregarDoctor extends javax.swing.JFrame {
         
     }
         
+    public void CargarHorarios(){
+    Connection conn = null;
+        String SQL_SELECT = "SELECT * FROM horarios";
+        PreparedStatement stmt = null;
+        ResultSet rs = null;
+        
+        try {
+            conn = getConnection();
+            stmt = conn.prepareStatement(SQL_SELECT);
+            rs = stmt.executeQuery();
+            while (rs.next()) {
+                box02.addItem(rs.getString("horainicio")+" "+rs.getString("horafin"));
+            }
+        } catch (SQLException ex) {
+            ex.printStackTrace(System.out);
+        } finally {
+            try {
+                close(rs);
+                close(stmt);
+                close(conn);
+            } catch (SQLException ex) {
+                ex.printStackTrace(System.out);
+            }
+        }
+        
+        
+    }
     
     
     /**
@@ -160,6 +185,7 @@ public class AgregarDoctor extends javax.swing.JFrame {
         generoMdoctor = new javax.swing.JRadioButton();
         spinnerEdaddoctor = new javax.swing.JSpinner();
         box02 = new javax.swing.JComboBox<>();
+        jButton2 = new javax.swing.JButton();
         jLabel16 = new javax.swing.JLabel();
         jLabel17 = new javax.swing.JLabel();
         btnCancelar = new javax.swing.JButton();
@@ -407,6 +433,18 @@ public class AgregarDoctor extends javax.swing.JFrame {
         });
 
         box02.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Horario" }));
+        box02.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                box02ActionPerformed(evt);
+            }
+        });
+
+        jButton2.setText("Agregar Horario");
+        jButton2.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton2ActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout jPanel6Layout = new javax.swing.GroupLayout(jPanel6);
         jPanel6.setLayout(jPanel6Layout);
@@ -424,8 +462,9 @@ public class AgregarDoctor extends javax.swing.JFrame {
                         .addComponent(spinnerEdaddoctor, javax.swing.GroupLayout.PREFERRED_SIZE, 67, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addGroup(jPanel6Layout.createSequentialGroup()
                         .addContainerGap()
-                        .addComponent(box02, javax.swing.GroupLayout.PREFERRED_SIZE, 83, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addContainerGap(25, Short.MAX_VALUE))
+                        .addComponent(box02, javax.swing.GroupLayout.PREFERRED_SIZE, 83, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(jButton2, javax.swing.GroupLayout.PREFERRED_SIZE, 118, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addContainerGap(26, Short.MAX_VALUE))
         );
         jPanel6Layout.setVerticalGroup(
             jPanel6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -438,7 +477,9 @@ public class AgregarDoctor extends javax.swing.JFrame {
                 .addComponent(spinnerEdaddoctor, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addComponent(box02, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(95, Short.MAX_VALUE))
+                .addGap(18, 18, 18)
+                .addComponent(jButton2)
+                .addContainerGap(54, Short.MAX_VALUE))
         );
 
         jLabel16.setText("Datos Personales");
@@ -484,7 +525,7 @@ public class AgregarDoctor extends javax.swing.JFrame {
                                         .addComponent(jPanel5, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                                         .addGap(35, 35, 35)
                                         .addComponent(jPanel6, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                                .addGap(0, 38, Short.MAX_VALUE))
+                                .addGap(0, 23, Short.MAX_VALUE))
                             .addGroup(layout.createSequentialGroup()
                                 .addGap(0, 0, Short.MAX_VALUE)
                                 .addComponent(jButton1)
@@ -730,6 +771,15 @@ public class AgregarDoctor extends javax.swing.JFrame {
     private void btnCancelarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnCancelarActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_btnCancelarActionPerformed
+
+    private void box02ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_box02ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_box02ActionPerformed
+
+    private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
+        // TODO add your handling code here:
+        new CrearHorario().setVisible(true);
+    }//GEN-LAST:event_jButton2ActionPerformed
  /**
      * @param args the command line arguments
      */
@@ -775,6 +825,7 @@ public class AgregarDoctor extends javax.swing.JFrame {
     private javax.swing.JRadioButton generoFdoctor;
     private javax.swing.JRadioButton generoMdoctor;
     private javax.swing.JButton jButton1;
+    private javax.swing.JButton jButton2;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel10;
     private javax.swing.JLabel jLabel11;
