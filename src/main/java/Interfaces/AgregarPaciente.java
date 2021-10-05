@@ -590,7 +590,7 @@ public class AgregarPaciente extends javax.swing.JFrame {
                 txtFicha.setText("");
                 
                 
-                //errores de la vida
+                
         }
 
     }//GEN-LAST:event_jButton1ActionPerformed
