@@ -5,17 +5,55 @@
  */
 package Interfaces;
 
+
+import Clases.Cita;
+import java.text.DateFormat;
+import java.util.ArrayList;
+import javax.swing.JOptionPane;
+
 /**
  *
  * @author HP
  */
 public class Agendarcitas extends javax.swing.JFrame {
+    DateFormat df= DateFormat.getDateInstance();
+    String Cedula="";
+        String Nombre="";
+        String Apellido="";
+        String Edad="";
+        String telefono1="";
+        String genero="";
+        String Direccion="";
+        String fecha="";
+        String horainicio ="";
+        String horafin ="";
+        String doctor ="";
+        ArrayList<Cita>listacita= new ArrayList();
 
     /**
      * Creates new form Agendarcitas
      */
     public Agendarcitas() {
         initComponents();
+        this.setLocationRelativeTo(null);
+        jComboBoxdoctor.setSelectedItem("Doctores");
+        jComboBoxdoctor.addItem("Luis Saico");
+        jComboBoxdoctor.addItem("Martha Lopez");
+        jComboBoxdoctor.addItem("Carlitos Segundo");
+        
+    }
+    public void leer(){
+        Cedula = jTextFieldcedula.getText();
+        Apellido = jTextFieldtelefono.getText();
+        Nombre = jTextFieldcedula.getText();
+        Direccion = jTextFielddireccion.getText();
+        Edad=jTextFieldedad.getText();
+        genero=jTextFieldgenero.getText();
+        horainicio=jTextFieldhorai.getText();
+        horafin=jTextFieldhoraf.getText();
+        doctor=jComboBoxdoctor.getSelectedItem().toString();
+        fecha = df.format(jDateChooser1.getDate());
+
     }
 
     /**
@@ -41,6 +79,7 @@ public class Agendarcitas extends javax.swing.JFrame {
         jTextFieldhoraf = new javax.swing.JTextField();
         jLabel11 = new javax.swing.JLabel();
         jComboBoxdoctor = new javax.swing.JComboBox<>();
+        jTextFieldfecha = new javax.swing.JTextField();
         jPanel3 = new javax.swing.JPanel();
         jButtonagendar = new javax.swing.JButton();
         jButtoncancelar = new javax.swing.JButton();
@@ -50,17 +89,20 @@ public class Agendarcitas extends javax.swing.JFrame {
         jTextFieldcedula = new javax.swing.JTextField();
         jButtonbuscar = new javax.swing.JButton();
         jPaneldatos = new javax.swing.JPanel();
-        jTextField1 = new javax.swing.JTextField();
+        jTextFieldnombre = new javax.swing.JTextField();
         jLabel3 = new javax.swing.JLabel();
-        jTextFieldapellido = new javax.swing.JTextField();
+        jTextFieldtelefono = new javax.swing.JTextField();
         jTextFieldedad = new javax.swing.JTextField();
         jTextFielddireccion = new javax.swing.JTextField();
         jLabel6 = new javax.swing.JLabel();
-        jTextFieldtelefono = new javax.swing.JTextField();
         jLabel12 = new javax.swing.JLabel();
         jLabel2 = new javax.swing.JLabel();
         jLabel4 = new javax.swing.JLabel();
         jLabel5 = new javax.swing.JLabel();
+        jTextFieldapellido = new javax.swing.JTextField();
+        jLabel13 = new javax.swing.JLabel();
+        jTextFieldgenero = new javax.swing.JTextField();
+        jButton1 = new javax.swing.JButton();
 
         jList1.setModel(new javax.swing.AbstractListModel<String>() {
             String[] strings = { "Item 1", "Item 2", "Item 3", "Item 4", "Item 5" };
@@ -119,7 +161,9 @@ public class Agendarcitas extends javax.swing.JFrame {
                     .addGroup(jPanelcitaLayout.createSequentialGroup()
                         .addComponent(jLabel8)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(jDateChooser1, javax.swing.GroupLayout.PREFERRED_SIZE, 90, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addComponent(jDateChooser1, javax.swing.GroupLayout.PREFERRED_SIZE, 90, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(18, 18, 18)
+                        .addComponent(jTextFieldfecha, javax.swing.GroupLayout.PREFERRED_SIZE, 107, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addGroup(jPanelcitaLayout.createSequentialGroup()
                         .addComponent(jLabel9)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
@@ -141,7 +185,8 @@ public class Agendarcitas extends javax.swing.JFrame {
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(jPanelcitaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                     .addComponent(jLabel8)
-                    .addComponent(jDateChooser1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(jDateChooser1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jTextFieldfecha, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(18, 18, 18)
                 .addGroup(jPanelcitaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel9)
@@ -156,6 +201,11 @@ public class Agendarcitas extends javax.swing.JFrame {
         );
 
         jButtonagendar.setText("Agendar");
+        jButtonagendar.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButtonagendarActionPerformed(evt);
+            }
+        });
 
         jButtoncancelar.setText("Cancelar");
 
@@ -222,17 +272,17 @@ public class Agendarcitas extends javax.swing.JFrame {
                     .addComponent(jButtonbuscar)))
         );
 
-        jTextField1.addActionListener(new java.awt.event.ActionListener() {
+        jTextFieldnombre.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jTextField1ActionPerformed(evt);
+                jTextFieldnombreActionPerformed(evt);
             }
         });
 
         jLabel3.setText("Apellido:");
 
-        jTextFieldapellido.addActionListener(new java.awt.event.ActionListener() {
+        jTextFieldtelefono.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jTextFieldapellidoActionPerformed(evt);
+                jTextFieldtelefonoActionPerformed(evt);
             }
         });
 
@@ -258,6 +308,8 @@ public class Agendarcitas extends javax.swing.JFrame {
 
         jLabel5.setText("Dirección:");
 
+        jLabel13.setText("Género:");
+
         javax.swing.GroupLayout jPaneldatosLayout = new javax.swing.GroupLayout(jPaneldatos);
         jPaneldatos.setLayout(jPaneldatosLayout);
         jPaneldatosLayout.setHorizontalGroup(
@@ -268,33 +320,36 @@ public class Agendarcitas extends javax.swing.JFrame {
                     .addGroup(jPaneldatosLayout.createSequentialGroup()
                         .addGroup(jPaneldatosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addGroup(jPaneldatosLayout.createSequentialGroup()
-                                .addComponent(jLabel2)
-                                .addGap(18, 18, 18)
-                                .addComponent(jTextField1, javax.swing.GroupLayout.PREFERRED_SIZE, 90, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addGap(18, 18, 18)
-                                .addComponent(jLabel3)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                                .addComponent(jTextFieldtelefono, javax.swing.GroupLayout.PREFERRED_SIZE, 119, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                .addComponent(jLabel4)
+                                .addGap(23, 23, 23))
+                            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPaneldatosLayout.createSequentialGroup()
+                                .addComponent(jLabel5)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)))
+                        .addGroup(jPaneldatosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(jTextFieldedad, javax.swing.GroupLayout.PREFERRED_SIZE, 45, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addGroup(jPaneldatosLayout.createSequentialGroup()
-                                .addGroup(jPaneldatosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addGroup(jPaneldatosLayout.createSequentialGroup()
-                                        .addComponent(jLabel4)
-                                        .addGap(23, 23, 23))
-                                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPaneldatosLayout.createSequentialGroup()
-                                        .addComponent(jLabel5)
-                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)))
-                                .addGroup(jPaneldatosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                                    .addComponent(jTextFielddireccion, javax.swing.GroupLayout.PREFERRED_SIZE, 140, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                    .addGroup(jPaneldatosLayout.createSequentialGroup()
-                                        .addComponent(jTextFieldedad, javax.swing.GroupLayout.PREFERRED_SIZE, 45, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                        .addComponent(jLabel6)))
-                                .addGap(18, 18, 18)
-                                .addComponent(jTextFieldapellido, javax.swing.GroupLayout.PREFERRED_SIZE, 119, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                                .addComponent(jTextFielddireccion, javax.swing.GroupLayout.PREFERRED_SIZE, 119, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                                .addComponent(jLabel13)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                                .addComponent(jTextFieldgenero, javax.swing.GroupLayout.PREFERRED_SIZE, 96, javax.swing.GroupLayout.PREFERRED_SIZE)))
                         .addGap(0, 0, Short.MAX_VALUE))
                     .addGroup(jPaneldatosLayout.createSequentialGroup()
                         .addComponent(jLabel12)
-                        .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))))
+                        .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                    .addGroup(jPaneldatosLayout.createSequentialGroup()
+                        .addComponent(jLabel2)
+                        .addGap(18, 18, 18)
+                        .addComponent(jTextFieldnombre, javax.swing.GroupLayout.PREFERRED_SIZE, 90, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(18, 18, Short.MAX_VALUE)
+                        .addComponent(jLabel3)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                        .addComponent(jTextFieldapellido, javax.swing.GroupLayout.PREFERRED_SIZE, 119, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPaneldatosLayout.createSequentialGroup()
+                        .addGap(0, 0, Short.MAX_VALUE)
+                        .addComponent(jLabel6)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                        .addComponent(jTextFieldtelefono, javax.swing.GroupLayout.PREFERRED_SIZE, 119, javax.swing.GroupLayout.PREFERRED_SIZE))))
         );
         jPaneldatosLayout.setVerticalGroup(
             jPaneldatosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -303,21 +358,25 @@ public class Agendarcitas extends javax.swing.JFrame {
                 .addComponent(jLabel12)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(jPaneldatosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jTextField1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jTextFieldnombre, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jLabel3)
-                    .addComponent(jTextFieldtelefono, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jLabel2))
+                    .addComponent(jLabel2)
+                    .addComponent(jTextFieldapellido, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addGroup(jPaneldatosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jTextFieldedad, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jLabel6)
-                    .addComponent(jTextFieldapellido, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jTextFieldtelefono, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jLabel4))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addGroup(jPaneldatosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jTextFielddireccion, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jLabel5)))
+                    .addComponent(jLabel5)
+                    .addComponent(jLabel13)
+                    .addComponent(jTextFieldgenero, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
         );
+
+        jButton1.setText("Registrar Paciente");
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -326,19 +385,23 @@ public class Agendarcitas extends javax.swing.JFrame {
             .addGroup(layout.createSequentialGroup()
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(layout.createSequentialGroup()
-                        .addGap(31, 31, 31)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(jPaneldatos, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(jPanelcita, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addGroup(layout.createSequentialGroup()
-                                .addGap(10, 10, 10)
-                                .addComponent(jPanel3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))))
-                    .addGroup(layout.createSequentialGroup()
                         .addGap(61, 61, 61)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(jPanel2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))))
+                            .addComponent(jPanel2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                    .addGroup(layout.createSequentialGroup()
+                        .addGap(31, 31, 31)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                            .addComponent(jPanelcita, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addGroup(layout.createSequentialGroup()
+                                .addGap(10, 10, 10)
+                                .addComponent(jPanel3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addComponent(jPaneldatos, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))))
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                .addGap(0, 0, Short.MAX_VALUE)
+                .addComponent(jButton1)
+                .addGap(143, 143, 143))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -347,13 +410,15 @@ public class Agendarcitas extends javax.swing.JFrame {
                 .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addComponent(jPanel2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jPaneldatos, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(18, 18, 18)
+                .addComponent(jPaneldatos, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(29, 29, 29)
                 .addComponent(jPanelcita, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addGap(18, 18, 18)
                 .addComponent(jPanel3, javax.swing.GroupLayout.PREFERRED_SIZE, 38, Short.MAX_VALUE)
-                .addGap(27, 27, 27))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addComponent(jButton1)
+                .addGap(21, 21, 21))
         );
 
         pack();
@@ -363,17 +428,17 @@ public class Agendarcitas extends javax.swing.JFrame {
         // TODO add your handling code here:
     }//GEN-LAST:event_jTextFieldcedulaActionPerformed
 
-    private void jTextField1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField1ActionPerformed
+    private void jTextFieldnombreActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextFieldnombreActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_jTextField1ActionPerformed
+    }//GEN-LAST:event_jTextFieldnombreActionPerformed
 
     private void jButtonbuscarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonbuscarActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_jButtonbuscarActionPerformed
 
-    private void jTextFieldapellidoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextFieldapellidoActionPerformed
+    private void jTextFieldtelefonoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextFieldtelefonoActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_jTextFieldapellidoActionPerformed
+    }//GEN-LAST:event_jTextFieldtelefonoActionPerformed
 
     private void jTextFieldedadActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextFieldedadActionPerformed
         // TODO add your handling code here:
@@ -386,6 +451,60 @@ public class Agendarcitas extends javax.swing.JFrame {
     private void jTextFieldhoraiActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextFieldhoraiActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_jTextFieldhoraiActionPerformed
+
+    private void jButtonagendarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonagendarActionPerformed
+        
+        if(jTextFieldcedula.getText().equals("") || jTextFieldnombre.getText().equals(" ") || jTextFieldapellido.getText().equals("") || jTextFieldedad.getText().equals("")|| jTextFielddireccion.getText().equals("")|| jTextFieldgenero.getText().equals("")|| jTextFieldhorai.getText().equals("")|| jTextFieldhoraf.getText().equals("")|| jComboBoxdoctor.getSelectedItem().equals("") ){
+            JOptionPane.showMessageDialog(null, "Hay campos vacios");
+        }else{ 
+        Cita micita = new Cita();
+        Cedula = jTextFieldcedula.getText();
+        Apellido = jTextFieldtelefono.getText();
+        Nombre = jTextFieldcedula.getText();
+        Direccion = jTextFielddireccion.getText();
+        Edad=jTextFieldedad.getText();
+        genero=jTextFieldgenero.getText();
+        horainicio=jTextFieldhorai.getText();
+        horafin=jTextFieldhoraf.getText();
+        telefono1=jTextFieldtelefono.getText();
+        doctor=jComboBoxdoctor.getSelectedItem().toString();
+        jTextFieldfecha.setText(fecha);
+        fecha = df.format(jDateChooser1.getDate());
+
+        if(Cedula.matches("^[0-9]{10}$")){
+            if(!horainicio.matches("^([01]?[0-9]|2[0-3]):[0-5][0-9]$")){
+                if(!horafin.matches("^([01]?[0-9]|2[0-3]):[0-5][0-9]$")){
+                        
+                         micita.setDoctor(doctor);
+                         micita.setFecha(fecha);
+                         micita.setHorafin(horafin);
+ 
+                         listacita.add(micita);
+                         jTextFieldcedula.setText("");
+                         jTextFieldnombre.setText(""); 
+                         jTextFieldapellido.setText(""); 
+                         jTextFieldedad.setText("");
+                         jTextFielddireccion.setText("");
+                         jTextFieldfecha.setText("");
+                         jTextFieldtelefono.setText("");
+                         jTextFieldhorai.setText("");
+                         jTextFieldhoraf.setText("");
+                         new Citas().setVisible(true);
+                         this.dispose();
+                
+
+                }else{
+                JOptionPane.showMessageDialog(this,"Formato de hora no válido"); 
+                }
+            }else{
+                JOptionPane.showMessageDialog(this,"Formato de hora no válido"); 
+            }
+        }else{
+             JOptionPane.showMessageDialog(this,"Cédula no válida"); 
+        }
+        }
+        
+    }//GEN-LAST:event_jButtonagendarActionPerformed
 
     /**
      * @param args the command line arguments
@@ -423,6 +542,7 @@ public class Agendarcitas extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JButton jButton1;
     private javax.swing.JButton jButtonagendar;
     private javax.swing.JButton jButtonbuscar;
     private javax.swing.JButton jButtoncancelar;
@@ -433,6 +553,7 @@ public class Agendarcitas extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel10;
     private javax.swing.JLabel jLabel11;
     private javax.swing.JLabel jLabel12;
+    private javax.swing.JLabel jLabel13;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
@@ -449,13 +570,15 @@ public class Agendarcitas extends javax.swing.JFrame {
     private javax.swing.JPanel jPanelcita;
     private javax.swing.JPanel jPaneldatos;
     private javax.swing.JScrollPane jScrollPane1;
-    private javax.swing.JTextField jTextField1;
     private javax.swing.JTextField jTextFieldapellido;
     private javax.swing.JTextField jTextFieldcedula;
     private javax.swing.JTextField jTextFielddireccion;
     private javax.swing.JTextField jTextFieldedad;
+    private javax.swing.JTextField jTextFieldfecha;
+    private javax.swing.JTextField jTextFieldgenero;
     private javax.swing.JTextField jTextFieldhoraf;
     private javax.swing.JTextField jTextFieldhorai;
+    private javax.swing.JTextField jTextFieldnombre;
     private javax.swing.JTextField jTextFieldtelefono;
     // End of variables declaration//GEN-END:variables
 }

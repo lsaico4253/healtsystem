@@ -407,6 +407,11 @@ public class AgregarDoctor extends javax.swing.JFrame {
         });
 
         box02.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Horario" }));
+        box02.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                box02ActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout jPanel6Layout = new javax.swing.GroupLayout(jPanel6);
         jPanel6.setLayout(jPanel6Layout);
@@ -627,7 +632,6 @@ public class AgregarDoctor extends javax.swing.JFrame {
                 txtEspecialidad.setText("");
                 txtUniversidad.setText("");
                 
-                //errores de la vida
         }
 
                                             
@@ -730,6 +734,10 @@ public class AgregarDoctor extends javax.swing.JFrame {
     private void btnCancelarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnCancelarActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_btnCancelarActionPerformed
+
+    private void box02ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_box02ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_box02ActionPerformed
  /**
      * @param args the command line arguments
      */
