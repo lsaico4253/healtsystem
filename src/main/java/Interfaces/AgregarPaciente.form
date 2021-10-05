@@ -498,6 +498,9 @@
       </Layout>
       <SubComponents>
         <Component class="javax.swing.JSpinner" name="spinnerEdad">
+          <Events>
+            <EventHandler event="ancestorAdded" listener="javax.swing.event.AncestorListener" parameters="javax.swing.event.AncestorEvent" handler="spinnerEdadAncestorAdded"/>
+          </Events>
         </Component>
         <Component class="javax.swing.JRadioButton" name="generoF">
           <Properties>

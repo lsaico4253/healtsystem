@@ -14,6 +14,7 @@ import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.util.ArrayList;
 import javax.swing.JOptionPane;
+import javax.swing.SpinnerNumberModel;
 /**
  *
  * @author lsaic
@@ -37,6 +38,12 @@ public class AgregarPaciente extends javax.swing.JFrame {
         initComponents();
         btnedit.setVisible(false);
         this.setLocationRelativeTo(null); 
+        
+        
+        SpinnerNumberModel spinner_Edad=new SpinnerNumberModel();
+        spinner_Edad.setMaximum(70);
+        spinner_Edad.setMinimum(0);
+        spinnerEdad.setModel(spinner_Edad);
     }
 
     public AgregarPaciente(int id) {
@@ -369,6 +376,16 @@ public class AgregarPaciente extends javax.swing.JFrame {
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
+        spinnerEdad.addAncestorListener(new javax.swing.event.AncestorListener() {
+            public void ancestorAdded(javax.swing.event.AncestorEvent evt) {
+                spinnerEdadAncestorAdded(evt);
+            }
+            public void ancestorMoved(javax.swing.event.AncestorEvent evt) {
+            }
+            public void ancestorRemoved(javax.swing.event.AncestorEvent evt) {
+            }
+        });
+
         Genero.add(generoF);
         generoF.setText("F");
 
@@ -693,6 +710,10 @@ public class AgregarPaciente extends javax.swing.JFrame {
     private void btnCancelarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnCancelarActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_btnCancelarActionPerformed
+
+    private void spinnerEdadAncestorAdded(javax.swing.event.AncestorEvent evt) {//GEN-FIRST:event_spinnerEdadAncestorAdded
+        // TODO add your handling code here:
+    }//GEN-LAST:event_spinnerEdadAncestorAdded
     
 //    public void mostrar(){
 //        String matrizpaciente [][] = new String[listaPaciente.size()][9];
