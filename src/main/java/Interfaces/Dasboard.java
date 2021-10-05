@@ -86,7 +86,7 @@ public class Dasboard extends javax.swing.JFrame {
         jPanel1.setLayout(jPanel1Layout);
         jPanel1Layout.setHorizontalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 1128, Short.MAX_VALUE)
+            .addGap(0, 1127, Short.MAX_VALUE)
         );
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -96,7 +96,7 @@ public class Dasboard extends javax.swing.JFrame {
         btnRecepcionista.setFont(new java.awt.Font("Poppins", 0, 14)); // NOI18N
         btnRecepcionista.setText("Recepcionista");
 
-        jButton8.setFont(new java.awt.Font("Poppins", 0, 12)); // NOI18N
+        jButton8.setFont(new java.awt.Font("Poppins", 0, 14)); // NOI18N
         jButton8.setText("Ingresos/Egresos");
 
         jButton3.setFont(new java.awt.Font("Poppins", 0, 14)); // NOI18N
@@ -147,7 +147,7 @@ public class Dasboard extends javax.swing.JFrame {
                     .addComponent(btnRecepcionista, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(lblenterprise, javax.swing.GroupLayout.DEFAULT_SIZE, 1128, Short.MAX_VALUE)
+                    .addComponent(lblenterprise, javax.swing.GroupLayout.DEFAULT_SIZE, 1127, Short.MAX_VALUE)
                     .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                 .addContainerGap())
         );

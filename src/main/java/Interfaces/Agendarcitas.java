@@ -524,6 +524,7 @@ public class Agendarcitas extends javax.swing.JFrame {
     private void jButtonregresarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonregresarActionPerformed
         // TODO add your handling code here:
         new Citas().setVisible(true);
+        new Agendarcitas().setVisible(false);
     }//GEN-LAST:event_jButtonregresarActionPerformed
 
     /**
