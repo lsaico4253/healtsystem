@@ -34,6 +34,7 @@ public class AgregarRecepcionista extends javax.swing.JFrame {
         String telefono2="";
         String genero="";
         String Direccion="";
+        String Horario ="";
         ArrayList<Recepcionista>listaasistente= new ArrayList();
     /**
      * Creates new form AgregarAsistente
@@ -44,6 +45,12 @@ public class AgregarRecepcionista extends javax.swing.JFrame {
         initComponents();
         btnedit.setVisible(false);
         this.setLocationRelativeTo(null); 
+        
+        box01.setSelectedItem("Tipos");
+        box01.addItem("Matutino");
+        box01.addItem("Vespertino");
+        box01.addItem("Nocturno");
+        
     }
     
     public AgregarRecepcionista(int id) {
@@ -81,6 +88,7 @@ public class AgregarRecepcionista extends javax.swing.JFrame {
                 txtTelefono1.setText(telefono1e);
                 txtTelefono2.setText(telefono2e);
                 txtDireccion.setText(direccion);
+               
                 if(generoe.equals("Mujer")){
                     generoFasistente.setSelected(true);
                 }else{
@@ -137,7 +145,7 @@ public class AgregarRecepcionista extends javax.swing.JFrame {
         generoFasistente = new javax.swing.JRadioButton();
         generoMAsistente = new javax.swing.JRadioButton();
         spinnerEdadAsistente = new javax.swing.JSpinner();
-        jComboBox1 = new javax.swing.JComboBox<>();
+        box01 = new javax.swing.JComboBox<>();
         jLabel13 = new javax.swing.JLabel();
         jPanel5 = new javax.swing.JPanel();
         jLabel8 = new javax.swing.JLabel();
@@ -298,7 +306,7 @@ public class AgregarRecepcionista extends javax.swing.JFrame {
         spinnerEdadAsistente.setMaximumSize(new java.awt.Dimension(0, 99));
         spinnerEdadAsistente.setMinimumSize(new java.awt.Dimension(99, 0));
 
-        jComboBox1.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
+        box01.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Horario" }));
 
         javax.swing.GroupLayout jPanel4Layout = new javax.swing.GroupLayout(jPanel4);
         jPanel4.setLayout(jPanel4Layout);
@@ -307,7 +315,7 @@ public class AgregarRecepcionista extends javax.swing.JFrame {
             .addGroup(jPanel4Layout.createSequentialGroup()
                 .addGap(21, 21, 21)
                 .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jComboBox1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(box01, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                         .addGroup(jPanel4Layout.createSequentialGroup()
                             .addComponent(generoMAsistente)
@@ -326,7 +334,7 @@ public class AgregarRecepcionista extends javax.swing.JFrame {
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addComponent(spinnerEdadAsistente, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(18, 18, 18)
-                .addComponent(jComboBox1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(box01, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
@@ -457,10 +465,9 @@ public class AgregarRecepcionista extends javax.swing.JFrame {
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                     .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                        .addComponent(jPanel4, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addComponent(jPanel3, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addComponent(jPanel2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
+                    .addComponent(jPanel4, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(jPanel3, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(jPanel2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                 .addGap(20, 20, 20)
                 .addComponent(jLabel14)
                 .addGap(18, 18, 18)
@@ -682,6 +689,7 @@ public class AgregarRecepcionista extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JComboBox<String> box01;
     private javax.swing.JButton btnCancelar;
     private javax.swing.JButton btnedit;
     private javax.swing.ButtonGroup buttonGroup1;
@@ -689,7 +697,6 @@ public class AgregarRecepcionista extends javax.swing.JFrame {
     private javax.swing.JRadioButton generoMAsistente;
     private javax.swing.JButton jButton1;
     private javax.swing.JButton jButton2;
-    private javax.swing.JComboBox<String> jComboBox1;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel10;
     private javax.swing.JLabel jLabel11;

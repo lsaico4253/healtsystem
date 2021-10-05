@@ -30,6 +30,7 @@ public class AgregarPaciente extends javax.swing.JFrame {
         String telefono2="";
         String genero="";
         String Direccion="";
+        String ficha = "";
         ArrayList<Paciente>listaPaciente= new ArrayList();
         
     public AgregarPaciente() {
@@ -75,6 +76,7 @@ public class AgregarPaciente extends javax.swing.JFrame {
                 textTelefono1.setText(telefono1e);
                 textTelefono2.setText(telefono2e);
                 textDireccion.setText(direccion);
+                txtFicha.setText(num_ficha);
                 if(generoe.equals("Mujer")){
                     generoF.setSelected(true);
                 }else{
@@ -136,10 +138,12 @@ public class AgregarPaciente extends javax.swing.JFrame {
         jPanel5 = new javax.swing.JPanel();
         jLabel7 = new javax.swing.JLabel();
         jLabel11 = new javax.swing.JLabel();
+        jLabel15 = new javax.swing.JLabel();
         jPanel6 = new javax.swing.JPanel();
         spinnerEdad = new javax.swing.JSpinner();
         generoF = new javax.swing.JRadioButton();
         genernoM = new javax.swing.JRadioButton();
+        txtFicha = new javax.swing.JTextField();
         btnRegresar = new javax.swing.JButton();
         jLabel13 = new javax.swing.JLabel();
         jLabel14 = new javax.swing.JLabel();
@@ -254,7 +258,7 @@ public class AgregarPaciente extends javax.swing.JFrame {
 
         jLabel10.setText("Dirección");
 
-        jLabel12.setText("Tiene seguro");
+        jLabel12.setText("Seguro IESS");
 
         javax.swing.GroupLayout jPanel3Layout = new javax.swing.GroupLayout(jPanel3);
         jPanel3.setLayout(jPanel3Layout);
@@ -339,15 +343,18 @@ public class AgregarPaciente extends javax.swing.JFrame {
 
         jLabel11.setText("Genero");
 
+        jLabel15.setText("N° Ficha");
+
         javax.swing.GroupLayout jPanel5Layout = new javax.swing.GroupLayout(jPanel5);
         jPanel5.setLayout(jPanel5Layout);
         jPanel5Layout.setHorizontalGroup(
             jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel5Layout.createSequentialGroup()
-                .addContainerGap(45, Short.MAX_VALUE)
+                .addContainerGap(40, Short.MAX_VALUE)
                 .addGroup(jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(jLabel11, javax.swing.GroupLayout.Alignment.TRAILING)
-                    .addComponent(jLabel7, javax.swing.GroupLayout.Alignment.TRAILING))
+                    .addComponent(jLabel7, javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addComponent(jLabel15, javax.swing.GroupLayout.Alignment.TRAILING))
                 .addContainerGap())
         );
         jPanel5Layout.setVerticalGroup(
@@ -357,6 +364,8 @@ public class AgregarPaciente extends javax.swing.JFrame {
                 .addComponent(jLabel11)
                 .addGap(28, 28, 28)
                 .addComponent(jLabel7)
+                .addGap(26, 26, 26)
+                .addComponent(jLabel15)
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
@@ -378,11 +387,13 @@ public class AgregarPaciente extends javax.swing.JFrame {
             .addGroup(jPanel6Layout.createSequentialGroup()
                 .addContainerGap()
                 .addGroup(jPanel6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(spinnerEdad, javax.swing.GroupLayout.PREFERRED_SIZE, 72, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addGroup(jPanel6Layout.createSequentialGroup()
                         .addComponent(generoF)
                         .addGap(18, 18, 18)
-                        .addComponent(genernoM)))
+                        .addComponent(genernoM))
+                    .addGroup(jPanel6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
+                        .addComponent(txtFicha, javax.swing.GroupLayout.Alignment.LEADING)
+                        .addComponent(spinnerEdad, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, 72, Short.MAX_VALUE)))
                 .addContainerGap(56, Short.MAX_VALUE))
         );
         jPanel6Layout.setVerticalGroup(
@@ -394,6 +405,8 @@ public class AgregarPaciente extends javax.swing.JFrame {
                     .addComponent(genernoM))
                 .addGap(18, 18, 18)
                 .addComponent(spinnerEdad, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(27, 27, 27)
+                .addComponent(txtFicha, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
@@ -422,33 +435,6 @@ public class AgregarPaciente extends javax.swing.JFrame {
             .addGroup(layout.createSequentialGroup()
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(layout.createSequentialGroup()
-                        .addGap(215, 215, 215)
-                        .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 295, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addComponent(btnRegresar))
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                        .addGap(28, 28, 28)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                            .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(jPanel3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addGap(36, 36, 36)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                            .addComponent(jPanel4, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(jPanel2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addGap(18, 18, 18)
-                        .addComponent(jPanel5, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addGroup(layout.createSequentialGroup()
-                                .addGap(66, 66, 66)
-                                .addComponent(jButton1)
-                                .addGap(18, 18, 18)
-                                .addComponent(btnedit)
-                                .addGap(18, 18, 18)
-                                .addComponent(btnCancelar))
-                            .addGroup(layout.createSequentialGroup()
-                                .addGap(32, 32, 32)
-                                .addComponent(jPanel6, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))))
-                    .addGroup(layout.createSequentialGroup()
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addGroup(layout.createSequentialGroup()
                                 .addContainerGap()
@@ -456,7 +442,35 @@ public class AgregarPaciente extends javax.swing.JFrame {
                             .addGroup(layout.createSequentialGroup()
                                 .addGap(19, 19, 19)
                                 .addComponent(jLabel14)))
-                        .addGap(0, 0, Short.MAX_VALUE)))
+                        .addGap(0, 0, Short.MAX_VALUE))
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                        .addContainerGap(28, Short.MAX_VALUE)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                                .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 295, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addGap(126, 126, 126)
+                                .addComponent(btnRegresar))
+                            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                                    .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addComponent(jPanel3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                .addGap(36, 36, 36)
+                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                                    .addComponent(jPanel4, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addComponent(jPanel2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                .addGap(18, 18, 18)
+                                .addComponent(jPanel5, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addGroup(layout.createSequentialGroup()
+                                        .addGap(66, 66, 66)
+                                        .addComponent(jButton1)
+                                        .addGap(18, 18, 18)
+                                        .addComponent(btnedit)
+                                        .addGap(18, 18, 18)
+                                        .addComponent(btnCancelar))
+                                    .addGroup(layout.createSequentialGroup()
+                                        .addGap(32, 32, 32)
+                                        .addComponent(jPanel6, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))))))
                 .addContainerGap())
         );
         layout.setVerticalGroup(
@@ -524,6 +538,7 @@ public class AgregarPaciente extends javax.swing.JFrame {
             telefono1=textTelefono1.getText();
             telefono2=textTelefono2.getText();
             Direccion=textDireccion.getText();
+            ficha = txtFicha.getText();
             if(genernoM.isSelected()){
                 genero="Hombre";
             }
@@ -541,6 +556,7 @@ public class AgregarPaciente extends javax.swing.JFrame {
                 mipaciente.setTelefono(telefono1);
                 mipaciente.setTelefono2(telefono2);
                 mipaciente.setDireccion(Direccion);
+                mipaciente.setNum_ficha(ficha);
                 
                 listaPaciente.add(mipaciente);
                 Connection conn = null;
@@ -571,6 +587,7 @@ public class AgregarPaciente extends javax.swing.JFrame {
                 textTelefono1.setText("");
                 textTelefono2.setText("");
                 textDireccion.setText("");
+                txtFicha.setText("");
                 
                 
                 //errores de la vida
@@ -597,6 +614,7 @@ public class AgregarPaciente extends javax.swing.JFrame {
             telefono1=textTelefono1.getText();
             telefono2=textTelefono2.getText();
             Direccion=textDireccion.getText();
+            ficha = txtFicha.getText();
             if(genernoM.isSelected()){
                 genero="Hombre";
             }
@@ -614,6 +632,7 @@ public class AgregarPaciente extends javax.swing.JFrame {
                 mipaciente.setTelefono(telefono1);
                 mipaciente.setTelefono2(telefono2);
                 mipaciente.setDireccion(Direccion);
+                mipaciente.setNum_ficha(ficha);
                 
                 String SQL_UPDATE="UPDATE pacientes SET cedula=?, primernombre=?, segundonombre=?, primerapellido=?, segundoapellido=?, edad=?, direccion=?, genero=?, telefono1=?, telefono2=? WHERE id="+id+";";
                 
@@ -632,6 +651,7 @@ public class AgregarPaciente extends javax.swing.JFrame {
                     stmt.setString(8, mipaciente.getGenero());
                     stmt.setString(9, mipaciente.getTelefono());
                     stmt.setString(10, mipaciente.getTelefono2());
+                    stmt.setString(11, mipaciente.getNum_ficha());
                     stmt.executeUpdate();
                 } catch (SQLException ex) {
                     ex.printStackTrace(System.out);
@@ -654,6 +674,7 @@ public class AgregarPaciente extends javax.swing.JFrame {
                 textTelefono1.setText("");
                 textTelefono2.setText("");
                 textDireccion.setText("");
+                txtFicha.setText("");
                 new Pacientes().setVisible(true);
                 this.dispose();
                 
@@ -743,6 +764,7 @@ public class AgregarPaciente extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel12;
     private javax.swing.JLabel jLabel13;
     private javax.swing.JLabel jLabel14;
+    private javax.swing.JLabel jLabel15;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
@@ -768,5 +790,6 @@ public class AgregarPaciente extends javax.swing.JFrame {
     private javax.swing.JTextField textTelefono1;
     private javax.swing.JTextField textTelefono2;
     private javax.swing.JTextField textcedulapaciente;
+    private javax.swing.JTextField txtFicha;
     // End of variables declaration//GEN-END:variables
 }
