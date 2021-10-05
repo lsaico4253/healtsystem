@@ -27,7 +27,6 @@ public class Odontograma extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        jCalendar1 = new org.netbeans.modules.form.InvalidComponent();
         jLabel1 = new javax.swing.JLabel();
         jScrollPane1 = new javax.swing.JScrollPane();
         text_cedula = new javax.swing.JTextPane();
@@ -1053,7 +1052,6 @@ public class Odontograma extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private org.netbeans.modules.form.InvalidComponent jCalendar1;
     private javax.swing.JCheckBox jCheckBox100;
     private javax.swing.JCheckBox jCheckBox101;
     private javax.swing.JCheckBox jCheckBox13;
