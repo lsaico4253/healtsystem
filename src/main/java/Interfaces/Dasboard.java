@@ -69,6 +69,11 @@ public class Dasboard extends javax.swing.JFrame {
 
         jButton4.setFont(new java.awt.Font("Poppins", 0, 14)); // NOI18N
         jButton4.setText("Control de citas");
+        jButton4.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton4ActionPerformed(evt);
+            }
+        });
 
         jButton6.setFont(new java.awt.Font("Poppins", 0, 14)); // NOI18N
         jButton6.setText("Reportes");
@@ -189,6 +194,12 @@ public class Dasboard extends javax.swing.JFrame {
         new Doctores().setVisible(true);
 
     }//GEN-LAST:event_jButton2ActionPerformed
+
+    private void jButton4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton4ActionPerformed
+        // TODO add your handling code here:
+        //Control de citas
+        new Citas().setVisible(true);
+    }//GEN-LAST:event_jButton4ActionPerformed
 
     /**
      * @param args the command line arguments
