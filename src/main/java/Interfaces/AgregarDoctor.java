@@ -213,6 +213,11 @@ public class AgregarDoctor extends javax.swing.JFrame {
         });
 
         btnRegresar.setText("Regresar al Inicio");
+        btnRegresar.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnRegresarActionPerformed(evt);
+            }
+        });
 
         jLabel3.setText("Primer Nombre:");
 
@@ -781,6 +786,10 @@ public class AgregarDoctor extends javax.swing.JFrame {
         // TODO add your handling code here:
         new CrearHorario().setVisible(true);
     }//GEN-LAST:event_jButton2ActionPerformed
+
+    private void btnRegresarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnRegresarActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_btnRegresarActionPerformed
  /**
      * @param args the command line arguments
      */
