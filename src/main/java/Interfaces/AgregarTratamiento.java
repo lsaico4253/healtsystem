@@ -197,13 +197,13 @@ public class AgregarTratamiento extends javax.swing.JFrame {
 
         tblTratamiento.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
-                {null, null, null, null, null},
-                {null, null, null, null, null},
-                {null, null, null, null, null},
-                {null, null, null, null, null}
+                {null, null, null, null, null, null},
+                {null, null, null, null, null, null},
+                {null, null, null, null, null, null},
+                {null, null, null, null, null, null}
             },
             new String [] {
-                "ID", "Nombre Tratamiento", "Tipo", "Duracion", "Costo"
+                "Nombre Tratamiento", "Tipo", "Duracion Año", "Duracion Mes", "Duracion", "Costo"
             }
         ));
         jScrollPane1.setViewportView(tblTratamiento);
@@ -224,14 +224,15 @@ public class AgregarTratamiento extends javax.swing.JFrame {
                             .addComponent(jLabel2, javax.swing.GroupLayout.PREFERRED_SIZE, 123, javax.swing.GroupLayout.PREFERRED_SIZE))
                         .addGap(0, 0, Short.MAX_VALUE))
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                        .addGap(0, 17, Short.MAX_VALUE)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                                .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 132, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addGap(81, 81, 81)
-                                .addComponent(btnRegresar))
-                            .addComponent(jScrollPane1, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))))
+                        .addGap(0, 179, Short.MAX_VALUE)
+                        .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 132, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(81, 81, 81)
+                        .addComponent(btnRegresar)))
                 .addContainerGap())
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 417, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(45, 45, 45))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -258,7 +259,7 @@ public class AgregarTratamiento extends javax.swing.JFrame {
         // TODO add your handling code here:
         
         this.dispose();
-        new Interfaces.AgregarTratamiento().setVisible(true);
+        new Tratamiento().setVisible(true);
     }//GEN-LAST:event_btnRegresarActionPerformed
 
     private void btnGuardarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnGuardarActionPerformed
@@ -271,10 +272,10 @@ public class AgregarTratamiento extends javax.swing.JFrame {
             
             nombre = txtNombre.getText();
 
-            if(nombre.matches("^[0-9]{10}$")){
+            if(nombre.matches("[a-z].*")){
                 //if(nombre01.matches("^[a-zA-z]{0,}$")){
 
-                    Tratamientoo mitratamiento = new Tratamientoo(txtNombre.getText(), txtTipo.getText(), txtCosto.getText(), box01.getSelectedItem().toString());
+                    Tratamientoo mitratamiento = new Tratamientoo(txtNombre.getText(), txtTipo.getText(),  box01.getSelectedItem().toString(), box02.getSelectedItem().toString(), box03.getSelectedItem().toString(), txtCosto.getText());
                     listatratamiento.add(mitratamiento);
 
                     mostrar();
@@ -299,14 +300,16 @@ public class AgregarTratamiento extends javax.swing.JFrame {
     public void mostrar(){
     
            
-        String matris[][] = new String[listatratamiento.size()][3];
+        String matris[][] = new String[listatratamiento.size()][6];
         
         for (int i = 0; i < listatratamiento.size(); i++) {
             
             matris [i][0] = listatratamiento.get(i).getNombre();
             matris [i][1] = listatratamiento.get(i).getTipo();
-            matris [i][2] = listatratamiento.get(i).getDuracion();
-            matris [i][3] = listatratamiento.get(i).getCosto();
+            matris [i][2] = listatratamiento.get(i).getDuracionaño();
+            matris [i][3] = listatratamiento.get(i).getDuracionmes();
+            matris [i][4] = listatratamiento.get(i).getDuraciondia();
+            matris [i][5] = listatratamiento.get(i).getCosto();
 
             
         }
@@ -315,9 +318,9 @@ public class AgregarTratamiento extends javax.swing.JFrame {
               
             matris,
             new String [] {
-                "ID", "Nombre Tratamiento", "Tipo", "Duracion", "Costo"
+                "Nombre Tratamiento", "Tipo", "Duracion Año", "Duracion Mes", "Duracion", "Costo"
             }
-        ));     
+        ));  
     }
     
         void nuevo(){

@@ -13,21 +13,22 @@ public class Tratamientoo {
     
     private String nombre;
     private String tipo;
-    private String duracion;   
+    private String duracionaño;
+    private String duracionmes;
+    private String duraciondia;
     private String costo;
 
     public Tratamientoo() {
     }
 
-    public Tratamientoo(String nombre, String tipo, String duracion, String costo) {
- 
+    public Tratamientoo(String nombre, String tipo, String duracionaño, String duracionmes, String duraciondia, String costo) {
         this.nombre = nombre;
         this.tipo = tipo;
-        this.duracion = duracion;
+        this.duracionaño = duracionaño;
+        this.duracionmes = duracionmes;
+        this.duraciondia = duraciondia;
         this.costo = costo;
     }
-
-
 
     public String getNombre() {
         return nombre;
@@ -45,12 +46,28 @@ public class Tratamientoo {
         this.tipo = tipo;
     }
 
-    public String getDuracion() {
-        return duracion;
+    public String getDuracionaño() {
+        return duracionaño;
     }
 
-    public void setDuracion(String duracion) {
-        this.duracion = duracion;
+    public void setDuracionaño(String duracionaño) {
+        this.duracionaño = duracionaño;
+    }
+
+    public String getDuracionmes() {
+        return duracionmes;
+    }
+
+    public void setDuracionmes(String duracionmes) {
+        this.duracionmes = duracionmes;
+    }
+
+    public String getDuraciondia() {
+        return duraciondia;
+    }
+
+    public void setDuraciondia(String duraciondia) {
+        this.duraciondia = duraciondia;
     }
 
     public String getCosto() {
@@ -60,6 +77,8 @@ public class Tratamientoo {
     public void setCosto(String costo) {
         this.costo = costo;
     }
+
+ 
     
     
 }
