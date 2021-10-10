@@ -5,12 +5,31 @@
  */
 package Interfaces;
 
+import Clases.Paciente;
+import java.util.ArrayList;
+import Clases.Ficha;
 /**
  *
  * @author Carlos
  */
 public class Ficha_medica extends javax.swing.JFrame {
-
+        String Cedula="";
+        String Nombre="";
+        String Apellido="";
+        String Telefono="";
+        String Edad="";
+        String Fecha="";
+        String Direccion="";
+        String alergia_Antibiotico="";
+        String alergia_alimentos="";
+        String especifi_antibiotico="";
+        String especif_alimentos="";
+        String cirugias="";
+        String enfermedad="";
+        String medicamento="";
+        String observacion="";
+        String nomb_medico="";
+        ArrayList<Ficha>lista_ficha= new ArrayList();
     /**
      * Creates new form Ficha_medica
      */
@@ -31,54 +50,54 @@ public class Ficha_medica extends javax.swing.JFrame {
         jLabel2 = new javax.swing.JLabel();
         jLabel3 = new javax.swing.JLabel();
         jScrollPane2 = new javax.swing.JScrollPane();
-        jTextPane2 = new javax.swing.JTextPane();
+        cedula_ficha = new javax.swing.JTextPane();
         jLabel4 = new javax.swing.JLabel();
         jLabel5 = new javax.swing.JLabel();
         jScrollPane1 = new javax.swing.JScrollPane();
-        jTextPane1 = new javax.swing.JTextPane();
+        nombre_ficha = new javax.swing.JTextPane();
         jScrollPane3 = new javax.swing.JScrollPane();
-        jTextPane3 = new javax.swing.JTextPane();
+        apellido_ficha = new javax.swing.JTextPane();
         jScrollPane4 = new javax.swing.JScrollPane();
-        jTextPane4 = new javax.swing.JTextPane();
+        telefono_ficha = new javax.swing.JTextPane();
         jLabel6 = new javax.swing.JLabel();
-        jSpinner1 = new javax.swing.JSpinner();
+        edad_ficha = new javax.swing.JSpinner();
         jLabel7 = new javax.swing.JLabel();
-        jDateChooser1 = new com.toedter.calendar.JDateChooser();
+        fecha_ficha = new com.toedter.calendar.JDateChooser();
         jLabel8 = new javax.swing.JLabel();
         jScrollPane5 = new javax.swing.JScrollPane();
-        jTextPane5 = new javax.swing.JTextPane();
+        direccion_ficha = new javax.swing.JTextPane();
         jLabel9 = new javax.swing.JLabel();
         jLabel10 = new javax.swing.JLabel();
         jLabel11 = new javax.swing.JLabel();
         jLabel12 = new javax.swing.JLabel();
-        jCheckBox1 = new javax.swing.JCheckBox();
-        jCheckBox2 = new javax.swing.JCheckBox();
+        check_antibiotico = new javax.swing.JCheckBox();
+        check_alimentos = new javax.swing.JCheckBox();
         jLabel14 = new javax.swing.JLabel();
         jLabel13 = new javax.swing.JLabel();
         jScrollPane6 = new javax.swing.JScrollPane();
-        jTextPane6 = new javax.swing.JTextPane();
+        especifique_antibioticos = new javax.swing.JTextPane();
         jScrollPane8 = new javax.swing.JScrollPane();
-        jTextPane8 = new javax.swing.JTextPane();
+        especifique_alimentos = new javax.swing.JTextPane();
         jLabel15 = new javax.swing.JLabel();
         jScrollPane9 = new javax.swing.JScrollPane();
-        jTextPane9 = new javax.swing.JTextPane();
+        otros_alergias = new javax.swing.JTextPane();
         jLabel16 = new javax.swing.JLabel();
         jLabel17 = new javax.swing.JLabel();
         jLabel18 = new javax.swing.JLabel();
         jLabel19 = new javax.swing.JLabel();
         jScrollPane10 = new javax.swing.JScrollPane();
-        jTextPane10 = new javax.swing.JTextPane();
+        cirugias_ficha = new javax.swing.JTextPane();
         jScrollPane11 = new javax.swing.JScrollPane();
-        jTextPane11 = new javax.swing.JTextPane();
+        enfermedad_ficha = new javax.swing.JTextPane();
         jScrollPane12 = new javax.swing.JScrollPane();
-        jTextPane12 = new javax.swing.JTextPane();
+        medicamento_ficha = new javax.swing.JTextPane();
         jScrollPane13 = new javax.swing.JScrollPane();
-        jTextArea1 = new javax.swing.JTextArea();
-        jButton1 = new javax.swing.JButton();
-        jButton2 = new javax.swing.JButton();
+        observaciones_ficha = new javax.swing.JTextArea();
+        boton_odontograma = new javax.swing.JButton();
+        boton_guardar = new javax.swing.JButton();
         jLabel20 = new javax.swing.JLabel();
         jScrollPane14 = new javax.swing.JScrollPane();
-        jTextPane13 = new javax.swing.JTextPane();
+        nombre_medico_ficha = new javax.swing.JTextPane();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -88,17 +107,17 @@ public class Ficha_medica extends javax.swing.JFrame {
 
         jLabel3.setText("Nombre");
 
-        jScrollPane2.setViewportView(jTextPane2);
+        jScrollPane2.setViewportView(cedula_ficha);
 
         jLabel4.setText("Apellido");
 
         jLabel5.setText("Telefono");
 
-        jScrollPane1.setViewportView(jTextPane1);
+        jScrollPane1.setViewportView(nombre_ficha);
 
-        jScrollPane3.setViewportView(jTextPane3);
+        jScrollPane3.setViewportView(apellido_ficha);
 
-        jScrollPane4.setViewportView(jTextPane4);
+        jScrollPane4.setViewportView(telefono_ficha);
 
         jLabel6.setText("Edad");
 
@@ -106,7 +125,7 @@ public class Ficha_medica extends javax.swing.JFrame {
 
         jLabel8.setText("Direccion");
 
-        jScrollPane5.setViewportView(jTextPane5);
+        jScrollPane5.setViewportView(direccion_ficha);
 
         jLabel9.setText("Antecedentes Medicos");
 
@@ -120,15 +139,15 @@ public class Ficha_medica extends javax.swing.JFrame {
 
         jLabel13.setText("Especifique");
 
-        jScrollPane6.setViewportView(jTextPane6);
+        jScrollPane6.setViewportView(especifique_antibioticos);
 
-        jScrollPane8.setViewportView(jTextPane8);
+        jScrollPane8.setViewportView(especifique_alimentos);
 
         jLabel15.setText("Otros");
 
-        jScrollPane9.setViewportView(jTextPane9);
+        jScrollPane9.setViewportView(otros_alergias);
 
-        jLabel16.setText("Anteriormente ha tenido cirujias?");
+        jLabel16.setText("Anteriormente ha tenido cirugias?");
 
         jLabel17.setText("Padece alguna enfermedad cronica?");
 
@@ -136,23 +155,33 @@ public class Ficha_medica extends javax.swing.JFrame {
 
         jLabel19.setText("Observaciones");
 
-        jScrollPane10.setViewportView(jTextPane10);
+        jScrollPane10.setViewportView(cirugias_ficha);
 
-        jScrollPane11.setViewportView(jTextPane11);
+        jScrollPane11.setViewportView(enfermedad_ficha);
 
-        jScrollPane12.setViewportView(jTextPane12);
+        jScrollPane12.setViewportView(medicamento_ficha);
 
-        jTextArea1.setColumns(20);
-        jTextArea1.setRows(5);
-        jScrollPane13.setViewportView(jTextArea1);
+        observaciones_ficha.setColumns(20);
+        observaciones_ficha.setRows(5);
+        jScrollPane13.setViewportView(observaciones_ficha);
 
-        jButton1.setText("Odontograma");
+        boton_odontograma.setText("Odontograma");
+        boton_odontograma.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                boton_odontogramaActionPerformed(evt);
+            }
+        });
 
-        jButton2.setText("Guardar");
+        boton_guardar.setText("Guardar");
+        boton_guardar.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                boton_guardarActionPerformed(evt);
+            }
+        });
 
         jLabel20.setText("Nombre del medico responsable");
 
-        jScrollPane14.setViewportView(jTextPane13);
+        jScrollPane14.setViewportView(nombre_medico_ficha);
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -183,11 +212,11 @@ public class Ficha_medica extends javax.swing.JFrame {
                             .addGroup(layout.createSequentialGroup()
                                 .addComponent(jLabel6)
                                 .addGap(34, 34, 34)
-                                .addComponent(jSpinner1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addComponent(edad_ficha, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                                 .addGap(39, 39, 39)
                                 .addComponent(jLabel7)
                                 .addGap(18, 18, 18)
-                                .addComponent(jDateChooser1, javax.swing.GroupLayout.PREFERRED_SIZE, 149, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                .addComponent(fecha_ficha, javax.swing.GroupLayout.PREFERRED_SIZE, 149, javax.swing.GroupLayout.PREFERRED_SIZE))
                             .addGroup(layout.createSequentialGroup()
                                 .addComponent(jLabel8)
                                 .addGap(18, 18, 18)
@@ -201,13 +230,13 @@ public class Ficha_medica extends javax.swing.JFrame {
                                 .addGap(110, 110, 110)
                                 .addComponent(jLabel12)
                                 .addGap(18, 18, 18)
-                                .addComponent(jCheckBox2)
+                                .addComponent(check_alimentos)
                                 .addGap(132, 132, 132))
                             .addGroup(layout.createSequentialGroup()
                                 .addGap(120, 120, 120)
                                 .addComponent(jLabel11)
                                 .addGap(18, 18, 18)
-                                .addComponent(jCheckBox1)
+                                .addComponent(check_antibiotico)
                                 .addGap(26, 26, 26)))
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                             .addGroup(layout.createSequentialGroup()
@@ -246,11 +275,11 @@ public class Ficha_medica extends javax.swing.JFrame {
                         .addGap(34, 34, 34)
                         .addComponent(jScrollPane14, javax.swing.GroupLayout.PREFERRED_SIZE, 232, javax.swing.GroupLayout.PREFERRED_SIZE)))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 93, Short.MAX_VALUE)
-                .addComponent(jButton1)
+                .addComponent(boton_odontograma)
                 .addGap(119, 119, 119))
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addComponent(jButton2)
+                .addComponent(boton_guardar)
                 .addGap(138, 138, 138))
         );
         layout.setVerticalGroup(
@@ -258,7 +287,7 @@ public class Ficha_medica extends javax.swing.JFrame {
             .addGroup(layout.createSequentialGroup()
                 .addGap(17, 17, 17)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                    .addComponent(jDateChooser1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(fecha_ficha, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addGroup(layout.createSequentialGroup()
                         .addComponent(jLabel1)
                         .addGap(18, 18, 18)
@@ -267,7 +296,7 @@ public class Ficha_medica extends javax.swing.JFrame {
                             .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                                 .addComponent(jLabel6)
-                                .addComponent(jSpinner1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addComponent(edad_ficha, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                                 .addComponent(jLabel7)))))
                 .addGap(12, 12, 12)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
@@ -299,12 +328,12 @@ public class Ficha_medica extends javax.swing.JFrame {
                         .addGap(18, 18, 18)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addGroup(layout.createSequentialGroup()
-                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                                     .addComponent(jLabel11)
-                                    .addComponent(jCheckBox1))
+                                    .addComponent(check_antibiotico))
                                 .addGap(18, 18, 18)
                                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addComponent(jCheckBox2)
+                                    .addComponent(check_alimentos)
                                     .addComponent(jLabel12)))
                             .addGroup(layout.createSequentialGroup()
                                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -332,9 +361,9 @@ public class Ficha_medica extends javax.swing.JFrame {
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addComponent(jButton1)
+                        .addComponent(boton_odontograma)
                         .addGap(40, 40, 40)
-                        .addComponent(jButton2)
+                        .addComponent(boton_guardar)
                         .addGap(162, 162, 162))
                     .addGroup(layout.createSequentialGroup()
                         .addGap(21, 21, 21)
@@ -350,6 +379,45 @@ public class Ficha_medica extends javax.swing.JFrame {
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
+
+    private void boton_odontogramaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_boton_odontogramaActionPerformed
+        new Odontograma().setVisible(true);
+    }//GEN-LAST:event_boton_odontogramaActionPerformed
+
+    private void boton_guardarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_boton_guardarActionPerformed
+        
+        Ficha mificha=new Ficha();
+        Cedula=cedula_ficha.getText();
+        Nombre=nombre_ficha.getText();
+        Apellido=apellido_ficha.getText();
+        Telefono=telefono_ficha.getText();
+        Edad=edad_ficha.getValue().toString();
+        
+        Direccion=direccion_ficha.getText();
+        alergia_Antibiotico=especifique_antibioticos.getText();
+        alergia_alimentos=especifique_alimentos.getText();
+        cirugias=cirugias_ficha.getText();
+        enfermedad=enfermedad_ficha.getText();
+        medicamento=medicamento_ficha.getText();
+        observacion=observaciones_ficha.getText();
+        nomb_medico=nombre_medico_ficha.getText();
+        
+        lista_ficha.add(mificha);
+        
+        cedula_ficha.setText("");
+        nombre_ficha.setText(""); 
+        apellido_ficha.setText(""); 
+        telefono_ficha.setText("");
+        direccion_ficha.setText("");
+        especifique_antibioticos.setText("");
+        especifique_alimentos.setText("");
+        cirugias_ficha.setText("");
+        enfermedad_ficha.setText("");
+        medicamento_ficha.setText("");
+        observaciones_ficha.setText("");
+        nombre_medico_ficha.setText("");
+
+    }//GEN-LAST:event_boton_guardarActionPerformed
 
     /**
      * @param args the command line arguments
@@ -387,11 +455,19 @@ public class Ficha_medica extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JButton jButton1;
-    private javax.swing.JButton jButton2;
-    private javax.swing.JCheckBox jCheckBox1;
-    private javax.swing.JCheckBox jCheckBox2;
-    private com.toedter.calendar.JDateChooser jDateChooser1;
+    private javax.swing.JTextPane apellido_ficha;
+    private javax.swing.JButton boton_guardar;
+    private javax.swing.JButton boton_odontograma;
+    private javax.swing.JTextPane cedula_ficha;
+    private javax.swing.JCheckBox check_alimentos;
+    private javax.swing.JCheckBox check_antibiotico;
+    private javax.swing.JTextPane cirugias_ficha;
+    private javax.swing.JTextPane direccion_ficha;
+    private javax.swing.JSpinner edad_ficha;
+    private javax.swing.JTextPane enfermedad_ficha;
+    private javax.swing.JTextPane especifique_alimentos;
+    private javax.swing.JTextPane especifique_antibioticos;
+    private com.toedter.calendar.JDateChooser fecha_ficha;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel10;
     private javax.swing.JLabel jLabel11;
@@ -425,19 +501,11 @@ public class Ficha_medica extends javax.swing.JFrame {
     private javax.swing.JScrollPane jScrollPane6;
     private javax.swing.JScrollPane jScrollPane8;
     private javax.swing.JScrollPane jScrollPane9;
-    private javax.swing.JSpinner jSpinner1;
-    private javax.swing.JTextArea jTextArea1;
-    private javax.swing.JTextPane jTextPane1;
-    private javax.swing.JTextPane jTextPane10;
-    private javax.swing.JTextPane jTextPane11;
-    private javax.swing.JTextPane jTextPane12;
-    private javax.swing.JTextPane jTextPane13;
-    private javax.swing.JTextPane jTextPane2;
-    private javax.swing.JTextPane jTextPane3;
-    private javax.swing.JTextPane jTextPane4;
-    private javax.swing.JTextPane jTextPane5;
-    private javax.swing.JTextPane jTextPane6;
-    private javax.swing.JTextPane jTextPane8;
-    private javax.swing.JTextPane jTextPane9;
+    private javax.swing.JTextPane medicamento_ficha;
+    private javax.swing.JTextPane nombre_ficha;
+    private javax.swing.JTextPane nombre_medico_ficha;
+    private javax.swing.JTextArea observaciones_ficha;
+    private javax.swing.JTextPane otros_alergias;
+    private javax.swing.JTextPane telefono_ficha;
     // End of variables declaration//GEN-END:variables
 }
