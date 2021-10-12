@@ -4,6 +4,7 @@
  * and open the template in the editor.
  */
 package Interfaces;
+
 import static Clases.ConexionBD.close;
 import static Clases.ConexionBD.getConnection;
 import Clases.Paciente;
