@@ -9,35 +9,107 @@ package Interfaces;
  *
  * @author USER
  */
+import static Clases.ConexionBD.close;
+import static Clases.ConexionBD.getConnection;
 import Clases.Doctor;
+import java.sql.Connection;
+import java.sql.PreparedStatement;
+import java.sql.ResultSet;
+import java.sql.SQLException;
 import java.util.ArrayList;
 public class Doctores extends javax.swing.JFrame {
  ArrayList<Doctor> listadoctor= new ArrayList <>();
+ 
     /**
      * Creates new form Doctores
      */
     public Doctores() {
         initComponents();
+        listadoctor=seleccionar();
+        mostrar();
     }
       public void mostrar(){
-     String matrizd [][] = new String[listadoctor.size()][9];
+     String matrizd [][] = new String[listadoctor.size()][8];
      
      for (int i = 0; i < listadoctor.size(); i++) {
          matrizd[i][0] = listadoctor.get(i).getCedula();
          matrizd[i][1] = listadoctor.get(i).getNombre();
          matrizd[i][2] = listadoctor.get(i).getApellido();
-         matrizd[i][3] = listadoctor.get(i).getEdad();
-         matrizd[i][4]=listadoctor.get(i).getDireccion();
-         matrizd[i][5] = listadoctor.get(i).getEdad();
-         matrizd[i][6] = listadoctor.get(i).getGenero();
+         matrizd[i][3] = listadoctor.get(i).getGenero();
+         matrizd[i][4]=listadoctor.get(i).getEdad();
+         matrizd[i][5] = listadoctor.get(i).getTitulo();
+         matrizd[i][6] = listadoctor.get(i).getEspecialidad();
          matrizd[i][7]=listadoctor.get(i).getTelefono();
-         matrizd[i][8]=listadoctor.get(i).getTelefono2();
+         //matrizd[i][8]=listadoctor.get(i).getTelefono2();
 
          }
-         TABLADOCTORES.setModel(new javax.swing.table.DefaultTableModel(matrizd,new String[]{"Cedula", "1 Nombre","2 Nombre", "1 Apellido","2 Apellido", "Edad","Dirección","Telefono","Telefono1"
+         TABLADOCTORES.setModel(new javax.swing.table.DefaultTableModel(matrizd,new String[]{"Cedula", "Nombre","Apellido", "Genero","Edad", "Titulo","Especialidad","Telefono"
                 }
                  
         ));
+    }
+      
+      
+      public ArrayList <Doctor> seleccionar() {
+        Connection conn = null;
+        PreparedStatement stmt = null;
+        ResultSet rs = null;
+        Doctor doctor = null;
+        ArrayList <Doctor> doctores = new ArrayList<>();
+        String SQL_SELECT="SELECT * FROM doctores";
+        
+        try {
+            conn = getConnection();
+            stmt = conn.prepareStatement(SQL_SELECT);
+            rs = stmt.executeQuery();
+            while (rs.next()) {
+                
+                Doctor aux = new Doctor();
+                
+                int id = rs.getInt("id_doctor");
+                String primer_nombre = rs.getString("primernombre");
+                String segundo_nombre = rs.getString("segundoapellido");
+                String primer_apellido = rs.getString("primerapellido");
+                String segundo_apellido = rs.getString("segundoapellido");
+                String cedula2 = rs.getString("cedula");
+                String edad = rs.getString("edad");
+                String direccion = rs.getString("direccion");
+                int genero = rs.getInt("genero");
+                String telefono1 = rs.getString("telefono1");
+                String telefono2 = rs.getString("telefono2");
+                String titulo = rs.getString("titulo");
+                String jornada = rs.getString("jornada");
+                String especialidad = rs.getString("especialidad");
+                String universidad = rs.getString("universidad");
+                
+                aux.setId(id);
+                aux.setCedula(cedula2);
+                aux.setNombre(primer_nombre);
+                aux.setApellido(primer_apellido);
+                if(genero==1){
+                    aux.setGenero("Hombre");
+                }else{
+                    aux.setGenero("Mujer");
+                }
+                aux.setEdad(edad);
+                aux.setTitulo(titulo);
+                aux.setEspecialidad(especialidad);
+                aux.setTelefono(telefono1);
+                
+                doctores.add(aux);
+            }
+        } catch (SQLException ex) {
+            ex.printStackTrace(System.out);
+        } finally {
+            try {
+                close(rs);
+                close(stmt);
+                close(conn);
+            } catch (SQLException ex) {
+                ex.printStackTrace(System.out);
+            }
+        }
+        return doctores;
     }
 
     /**
@@ -56,7 +128,7 @@ public class Doctores extends javax.swing.JFrame {
         jButton2 = new javax.swing.JButton();
         jButton3 = new javax.swing.JButton();
         jButton4 = new javax.swing.JButton();
-        jtextfielcedula = new javax.swing.JTextField();
+        jTextFieldbcedula = new javax.swing.JTextField();
         jButton5 = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
@@ -113,6 +185,11 @@ public class Doctores extends javax.swing.JFrame {
         });
 
         jButton5.setText("ACTUALIZAR");
+        jButton5.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton5ActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -129,7 +206,7 @@ public class Doctores extends javax.swing.JFrame {
                 .addComponent(jScrollPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 1141, Short.MAX_VALUE)
                 .addGap(18, 18, 18)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jtextfielcedula, javax.swing.GroupLayout.PREFERRED_SIZE, 95, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jTextFieldbcedula, javax.swing.GroupLayout.PREFERRED_SIZE, 95, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jButton2)
                     .addComponent(jButton1)
                     .addComponent(jButton3)
@@ -149,7 +226,7 @@ public class Doctores extends javax.swing.JFrame {
                     .addGroup(layout.createSequentialGroup()
                         .addComponent(jButton2)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(jtextfielcedula, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(jTextFieldbcedula, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGap(18, 18, 18)
                         .addComponent(jButton1)
                         .addGap(18, 18, 18)
@@ -180,7 +257,32 @@ public class Doctores extends javax.swing.JFrame {
     }//GEN-LAST:event_jButton2ActionPerformed
 
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
-    
+        String cedula=jTextFieldbcedula.getText();
+        var doctorfiltro = new ArrayList<Doctor>();
+        
+        listadoctor.forEach((e) -> {
+                if(e.getCedula().equals(cedula)){                    
+                    doctorfiltro.add(e); 
+                    }
+                });
+        String matrizd [][] = new String[doctorfiltro.size()][8];
+     
+     for (int i = 0; i < doctorfiltro.size(); i++) {
+         matrizd[i][0] = doctorfiltro.get(i).getCedula();
+         matrizd[i][1] = doctorfiltro.get(i).getNombre();
+         matrizd[i][2] = doctorfiltro.get(i).getApellido();
+         matrizd[i][3] = doctorfiltro.get(i).getGenero();
+         matrizd[i][4]=doctorfiltro.get(i).getEdad();
+         matrizd[i][5] = doctorfiltro.get(i).getTitulo();
+         matrizd[i][6] = doctorfiltro.get(i).getEspecialidad();
+         matrizd[i][7]=doctorfiltro.get(i).getTelefono();
+         
+
+         }
+         TABLADOCTORES.setModel(new javax.swing.table.DefaultTableModel(matrizd,new String[]{"Cedula", "Nombre","Apellido", "Genero","Edad", "Titulo","Especialidad","Telefono"
+                }
+                 
+        ));    
 
 
         // TODO add your handling code here:
@@ -189,6 +291,12 @@ public class Doctores extends javax.swing.JFrame {
     private void jButton3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton3ActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_jButton3ActionPerformed
+
+    private void jButton5ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton5ActionPerformed
+        // TODO add your handling code here:
+        listadoctor=seleccionar();
+        mostrar();
+    }//GEN-LAST:event_jButton5ActionPerformed
 
     /**
      * @param args the command line arguments
@@ -234,6 +342,6 @@ public class Doctores extends javax.swing.JFrame {
     private javax.swing.JButton jButton5;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JScrollPane jScrollPane1;
-    private javax.swing.JTextField jtextfielcedula;
+    private javax.swing.JTextField jTextFieldbcedula;
     // End of variables declaration//GEN-END:variables
 }
