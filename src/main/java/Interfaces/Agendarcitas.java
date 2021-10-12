@@ -45,6 +45,7 @@ public class Agendarcitas extends javax.swing.JFrame {
         this.setLocationRelativeTo(null);
         
         jComboBoxdoctor.setSelectedItem("Doctores");
+        mostrardoctores();
         
     }
     public Agendarcitas(String cedula){
@@ -89,6 +90,39 @@ public class Agendarcitas extends javax.swing.JFrame {
             }
         }
     }
+        
+        public void mostrarpacientes(){
+            Connection conn = null;
+        String SQL_SELECT = "select cedula,primernombre,primerapellido,edad,telefono1,genero,direccion,num_ficha from pacientes\n" +"where cedula ='" + jTextFieldcedula.getText() + "' ;";
+        PreparedStatement stmt = null;
+        ResultSet rs = null;
+        
+        try {
+            conn = getConnection();
+            stmt = conn.prepareStatement(SQL_SELECT);
+            rs = stmt.executeQuery();
+            if (rs.next()) {
+            jTextFieldnombre.setText(rs.getString("primernombre"));    
+            jTextFieldapellido.setText(rs.getString("primerapellido")); 
+            jTextFieldedad.setText(rs.getString("edad")); 
+            jTextFieldgenero.setText(rs.getString("genero")); 
+            jTextFieldtelefono.setText(rs.getString("telefono1"));
+            jTextFielddireccion.setText(rs.getString("direccion"));
+            }
+            } 
+            catch (SQLException ex) {
+            ex.printStackTrace(System.out);
+        } finally {
+            try {
+                close(rs);
+                close(stmt);
+                close(conn);
+            } catch (SQLException ex) {
+                ex.printStackTrace(System.out);
+            }
+        }
+        }
+    
 
     /**
      * This method is called from within the constructor to initialize the form.
@@ -113,7 +147,6 @@ public class Agendarcitas extends javax.swing.JFrame {
         jTextFieldhoraf = new javax.swing.JTextField();
         jLabel11 = new javax.swing.JLabel();
         jComboBoxdoctor = new javax.swing.JComboBox<>();
-        jTextFieldfecha = new javax.swing.JTextField();
         jPanel3 = new javax.swing.JPanel();
         jButtonagendar = new javax.swing.JButton();
         jButtoncancelar = new javax.swing.JButton();
@@ -196,9 +229,7 @@ public class Agendarcitas extends javax.swing.JFrame {
                     .addGroup(jPanelcitaLayout.createSequentialGroup()
                         .addComponent(jLabel8)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(jDateChooser1, javax.swing.GroupLayout.PREFERRED_SIZE, 90, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(18, 18, 18)
-                        .addComponent(jTextFieldfecha, javax.swing.GroupLayout.PREFERRED_SIZE, 107, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addComponent(jDateChooser1, javax.swing.GroupLayout.PREFERRED_SIZE, 142, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addGroup(jPanelcitaLayout.createSequentialGroup()
                         .addComponent(jLabel9)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
@@ -218,10 +249,9 @@ public class Agendarcitas extends javax.swing.JFrame {
             .addGroup(jPanelcitaLayout.createSequentialGroup()
                 .addComponent(jLabel7)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addGroup(jPanelcitaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                    .addComponent(jLabel8)
-                    .addComponent(jDateChooser1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jTextFieldfecha, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGroup(jPanelcitaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(jLabel8, javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addComponent(jDateChooser1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(18, 18, 18)
                 .addGroup(jPanelcitaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel9)
@@ -483,6 +513,8 @@ public class Agendarcitas extends javax.swing.JFrame {
 
     private void jButtonbuscarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonbuscarActionPerformed
         // TODO add your handling code here:
+         mostrarpacientes();
+         mostrardoctores();
     }//GEN-LAST:event_jButtonbuscarActionPerformed
 
     private void jTextFieldtelefonoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextFieldtelefonoActionPerformed
@@ -519,11 +551,10 @@ public class Agendarcitas extends javax.swing.JFrame {
         horafin=jTextFieldhoraf.getText();
         telefono1=jTextFieldtelefono.getText();
         doctor=jComboBoxdoctor.getSelectedItem().toString();
-        jTextFieldfecha.setText(fecha);
         fecha = df.format(jDateChooser1.getDate());
 
         if(Cedula.matches("^[0-9]{10}$")){
-            
+            mostrarpacientes();
             if(!horainicio.matches("^([01]?[0-9]|2[0-3]):[0-5][0-9]$")){
                 if(!horafin.matches("^([01]?[0-9]|2[0-3]):[0-5][0-9]$")){
                         
@@ -532,12 +563,29 @@ public class Agendarcitas extends javax.swing.JFrame {
                          micita.setHorafin(horafin);
  
                          listacita.add(micita);
+                         Connection conn = null;
+                         PreparedStatement stmt = null;
+                         String SQL_INSERT="INSERT INTO citas(fecha, hora_inicio, hora_fin, id_doctor)VALUES ('"+fecha+"', '"+horainicio+"', '"+horafin+"');";
+                         try {
+                         conn = getConnection();
+                         stmt = conn.prepareStatement(SQL_INSERT);
+                         stmt.executeUpdate();
+                         } catch (SQLException ex) {
+                           ex.printStackTrace(System.out);
+                         }
+                         finally{
+                             try {
+                                close(stmt);
+                                close(conn);
+                            } catch (SQLException ex) {
+                                ex.printStackTrace(System.out);
+                            }
+                        }
                          jTextFieldcedula.setText("");
                          jTextFieldnombre.setText(""); 
                          jTextFieldapellido.setText(""); 
                          jTextFieldedad.setText("");
                          jTextFielddireccion.setText("");
-                         jTextFieldfecha.setText("");
                          jTextFieldtelefono.setText("");
                          jTextFieldhorai.setText("");
                          jTextFieldhoraf.setText("");
@@ -633,7 +681,6 @@ public class Agendarcitas extends javax.swing.JFrame {
     private javax.swing.JTextField jTextFieldcedula;
     private javax.swing.JTextField jTextFielddireccion;
     private javax.swing.JTextField jTextFieldedad;
-    private javax.swing.JTextField jTextFieldfecha;
     private javax.swing.JTextField jTextFieldgenero;
     private javax.swing.JTextField jTextFieldhoraf;
     private javax.swing.JTextField jTextFieldhorai;
