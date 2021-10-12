@@ -11,6 +11,7 @@ package Clases;
  */
 public class Tratamientoo {
     
+    
     private String nombre;
     private String tipo;
     private String duracionaño;

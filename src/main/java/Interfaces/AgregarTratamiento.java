@@ -5,7 +5,14 @@
  */
 package Interfaces;
 
+import static Clases.ConexionBD.close;
+import static Clases.ConexionBD.getConnection;
 import Clases.Tratamientoo;
+import java.sql.Connection;
+import java.sql.PreparedStatement;
+import java.sql.ResultSet;
+import java.sql.SQLException;
+import java.text.DateFormat;
 import java.util.ArrayList;
 import javax.swing.JOptionPane;
 /**
@@ -14,16 +21,23 @@ import javax.swing.JOptionPane;
  */
 public class AgregarTratamiento extends javax.swing.JFrame {
 
+        DateFormat df= DateFormat.getDateInstance();
+
+    ArrayList<Tratamientoo> listatratamiento= new ArrayList <>();
+    int id = 0;
     String nombre;
     String tipo;
-    String duracion;
+    String duraño;
+    String durmes;
+    String durdia;
     String costo;
-    ArrayList<Tratamientoo> listatratamiento = new ArrayList();
+    
     /**
      * Creates new form AgregarTratamiento
      */
     public AgregarTratamiento() {
         initComponents();
+        
         
         box01.addItem("0 años");
         box01.addItem("1 año");
@@ -57,6 +71,54 @@ public class AgregarTratamiento extends javax.swing.JFrame {
         box03.addItem("9 dias");
         box03.addItem("10 dias");
     }
+    
+    
+        public AgregarTratamiento(int id) {
+        initComponents();
+        this.id=id;
+        
+        this.setLocationRelativeTo(null); 
+        
+        Connection conn = null;
+        String SQL_SELECT = "SELECT * FROM tratamiento WHERE id = "+id+";";
+        PreparedStatement stmt = null;
+        ResultSet rs = null;
+        
+        try {
+            conn = getConnection();
+            stmt = conn.prepareStatement(SQL_SELECT);
+            rs = stmt.executeQuery();
+            while (rs.next()) {
+                String idtratamiento = rs.getString("idtratamiento");                
+                String nombre = rs.getString("nombre");
+                String tipo = rs.getString("tipo");
+                String duracionaño = rs.getString("duracionaño");
+                String duracionmes = rs.getString("duracionmes");
+                String duraciondia = rs.getString("duraciondia");
+                String costo = rs.getString("costo");
+
+                txtNombre.setText(nombre);   
+                txtTipo.setText(tipo);
+                box01.setSelectedItem(duracionaño);
+                box02.setSelectedItem(duracionmes);
+                box03.setSelectedItem(duraciondia);
+                txtCosto.setText(costo);
+
+            }
+        } catch (SQLException ex) {
+            ex.printStackTrace(System.out);
+        } finally {
+            try {
+                close(rs);
+                close(stmt);
+                close(conn);
+            } catch (SQLException ex) {
+                ex.printStackTrace(System.out);
+            }
+        }
+        
+        
+    }
 
     /**
      * This method is called from within the constructor to initialize the form.
@@ -81,11 +143,9 @@ public class AgregarTratamiento extends javax.swing.JFrame {
         box02 = new javax.swing.JComboBox<>();
         box03 = new javax.swing.JComboBox<>();
         txtTipo = new javax.swing.JTextField();
+        btnRegresar = new javax.swing.JButton();
         btnGuardar = new javax.swing.JButton();
         btnCancelar = new javax.swing.JButton();
-        btnRegresar = new javax.swing.JButton();
-        jScrollPane1 = new javax.swing.JScrollPane();
-        tblTratamiento = new javax.swing.JTable();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -124,7 +184,7 @@ public class AgregarTratamiento extends javax.swing.JFrame {
                 .addComponent(jLabel5)
                 .addGap(18, 18, 18)
                 .addComponent(jLabel6)
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addContainerGap(51, Short.MAX_VALUE))
         );
 
         jLabel2.setText("Informacion Requerida");
@@ -135,15 +195,6 @@ public class AgregarTratamiento extends javax.swing.JFrame {
         box02.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Mes" }));
 
         box03.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Dia" }));
-
-        btnGuardar.setText("Guardar");
-        btnGuardar.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btnGuardarActionPerformed(evt);
-            }
-        });
-
-        btnCancelar.setText("Cancelar");
 
         javax.swing.GroupLayout jPanel2Layout = new javax.swing.GroupLayout(jPanel2);
         jPanel2.setLayout(jPanel2Layout);
@@ -160,12 +211,8 @@ public class AgregarTratamiento extends javax.swing.JFrame {
                         .addComponent(box03, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addComponent(txtNombre, javax.swing.GroupLayout.PREFERRED_SIZE, 137, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(txtTipo, javax.swing.GroupLayout.PREFERRED_SIZE, 137, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(txtCosto, javax.swing.GroupLayout.PREFERRED_SIZE, 137, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addGroup(jPanel2Layout.createSequentialGroup()
-                        .addComponent(btnGuardar)
-                        .addGap(18, 18, 18)
-                        .addComponent(btnCancelar)))
-                .addContainerGap(12, Short.MAX_VALUE))
+                    .addComponent(txtCosto, javax.swing.GroupLayout.PREFERRED_SIZE, 137, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addContainerGap(33, Short.MAX_VALUE))
         );
         jPanel2Layout.setVerticalGroup(
             jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -181,11 +228,7 @@ public class AgregarTratamiento extends javax.swing.JFrame {
                     .addComponent(box02, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(18, 18, 18)
                 .addComponent(txtCosto, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(18, 18, 18)
-                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(btnGuardar)
-                    .addComponent(btnCancelar))
-                .addContainerGap(12, Short.MAX_VALUE))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
         btnRegresar.setText("Regresar");
@@ -195,18 +238,14 @@ public class AgregarTratamiento extends javax.swing.JFrame {
             }
         });
 
-        tblTratamiento.setModel(new javax.swing.table.DefaultTableModel(
-            new Object [][] {
-                {null, null, null, null, null, null},
-                {null, null, null, null, null, null},
-                {null, null, null, null, null, null},
-                {null, null, null, null, null, null}
-            },
-            new String [] {
-                "Nombre Tratamiento", "Tipo", "Duracion Año", "Duracion Mes", "Duracion", "Costo"
+        btnGuardar.setText("Guardar");
+        btnGuardar.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnGuardarActionPerformed(evt);
             }
-        ));
-        jScrollPane1.setViewportView(tblTratamiento);
+        });
+
+        btnCancelar.setText("Cancelar");
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -229,10 +268,12 @@ public class AgregarTratamiento extends javax.swing.JFrame {
                         .addGap(81, 81, 81)
                         .addComponent(btnRegresar)))
                 .addContainerGap())
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 417, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(45, 45, 45))
+            .addGroup(layout.createSequentialGroup()
+                .addGap(138, 138, 138)
+                .addComponent(btnGuardar)
+                .addGap(18, 18, 18)
+                .addComponent(btnCancelar)
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -247,9 +288,11 @@ public class AgregarTratamiento extends javax.swing.JFrame {
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .addComponent(jPanel2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                .addGap(18, 18, 18)
-                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 142, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(17, 17, 17))
+                .addGap(30, 30, 30)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(btnGuardar)
+                    .addComponent(btnCancelar))
+                .addGap(124, 124, 124))
         );
 
         pack();
@@ -265,76 +308,64 @@ public class AgregarTratamiento extends javax.swing.JFrame {
     private void btnGuardarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnGuardarActionPerformed
         // TODO add your handling code here:
         
+       new Tratamiento().setVisible(true);
+        this.dispose();
+        
         if(txtNombre.getText().equals("") || txtTipo.getText().equals(" ") || txtCosto.getText().equals("")){
             JOptionPane.showMessageDialog(null, "Hay campos vacios");
 
         }else{
             
-            nombre = txtNombre.getText();
-
-            if(nombre.matches("[a-z].*")){
-                //if(nombre01.matches("^[a-zA-z]{0,}$")){
-
-                    Tratamientoo mitratamiento = new Tratamientoo(txtNombre.getText(), txtTipo.getText(),  box01.getSelectedItem().toString(), box02.getSelectedItem().toString(), box03.getSelectedItem().toString(), txtCosto.getText());
-                    listatratamiento.add(mitratamiento);
-
-                    mostrar();
-
-                    txtNombre.setText("");
-                    txtTipo.setText("");
-                    txtCosto.setText("");
-
-//                }else{
-//                    //lblerror.setText("El nombre solo debe teber letras");
-//                    JOptionPane.showMessageDialog(null, "Error: Nombre - Debe contener solo letras");
-//                }
-            }else{
-                //lblerror.setText("La cédula debe tener 10 números");
-                JOptionPane.showMessageDialog(null, "Daton Incorrectos");
-            }
+            Tratamientoo mitratamiento = new Tratamientoo();
             
+            nombre = txtNombre.getText();
+            tipo = txtTipo.getText();
+            duraño = box01.getSelectedItem().toString();
+            durmes = box02.getSelectedItem().toString();
+            durdia = box03.getSelectedItem().toString();
+            
+            
+
+            mitratamiento.setNombre(nombre);
+            mitratamiento.setTipo(tipo);
+            mitratamiento.setDuracionaño(duraño);
+            mitratamiento.setDuracionmes(durmes);
+            mitratamiento.setDuraciondia(durdia);
+
+            
+            listatratamiento.add(mitratamiento);
+            
+            Connection conn = null;
+            PreparedStatement stmt = null;
+            String SQL_INSERT="INSERT INTO public.tratamiento(idtratamiento, nombre, tipo, duracionaño, duracionmes, duraciondia, costo)VALUES ('1', '"+nombre+"', '"+tipo+"', '"+duraño+"', '"+durmes+"', '"+durdia+"');";  
+            
+           
+           try {
+                    conn = getConnection();
+                    stmt = conn.prepareStatement(SQL_INSERT);
+                    stmt.executeUpdate();
+                } catch (SQLException ex) {
+                    ex.printStackTrace(System.out);
+                }
+                finally{
+                    try {
+                        close(stmt);
+                        close(conn);
+                    } catch (SQLException ex) {
+                        ex.printStackTrace(System.out);
+                    }
+                }
+                
+                txtNombre.setText(""); 
+                txtTipo.setText(""); 
+                txtCosto.setText("");
+   
         }
+          
     }//GEN-LAST:event_btnGuardarActionPerformed
 
     
-    public void mostrar(){
-    
-           
-        String matris[][] = new String[listatratamiento.size()][6];
-        
-        for (int i = 0; i < listatratamiento.size(); i++) {
-            
-            matris [i][0] = listatratamiento.get(i).getNombre();
-            matris [i][1] = listatratamiento.get(i).getTipo();
-            matris [i][2] = listatratamiento.get(i).getDuracionaño();
-            matris [i][3] = listatratamiento.get(i).getDuracionmes();
-            matris [i][4] = listatratamiento.get(i).getDuraciondia();
-            matris [i][5] = listatratamiento.get(i).getCosto();
 
-            
-        }
-        
-        tblTratamiento.setModel(new javax.swing.table.DefaultTableModel(
-              
-            matris,
-            new String [] {
-                "Nombre Tratamiento", "Tipo", "Duracion Año", "Duracion Mes", "Duracion", "Costo"
-            }
-        ));  
-    }
-    
-        void nuevo(){
-        
-        txtNombre.setText("");
-        txtTipo.setText("");
-        txtCosto.setText("");
-
-        box01.setSelectedItem("Año");
-        box02.setSelectedItem("Mes");
-        box03.setSelectedItem("Dia");
-        //txtCedula.requestFocus();
-        
-    }
     /**
      * @param args the command line arguments
      */
@@ -387,8 +418,6 @@ public class AgregarTratamiento extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel6;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel2;
-    private javax.swing.JScrollPane jScrollPane1;
-    private javax.swing.JTable tblTratamiento;
     private javax.swing.JTextField txtCosto;
     private javax.swing.JTextField txtNombre;
     private javax.swing.JTextField txtTipo;

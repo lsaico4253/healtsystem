@@ -5,12 +5,17 @@
  */
 package Interfaces;
 
+import Clases.Tratamientoo;
+import java.util.ArrayList;
+
 /**
  *
  * @author Santiago
  */
 public class Tratamiento extends javax.swing.JFrame {
 
+    
+    ArrayList<Tratamientoo> listatratamiento = new ArrayList();
     /**
      * Creates new form Tratamiento
      */
@@ -34,6 +39,8 @@ public class Tratamiento extends javax.swing.JFrame {
         btnAgregar = new javax.swing.JButton();
         btnBuscar = new javax.swing.JButton();
         btnRegresar = new javax.swing.JButton();
+        jScrollPane1 = new javax.swing.JScrollPane();
+        tblTratamiento = new javax.swing.JTable();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -64,6 +71,19 @@ public class Tratamiento extends javax.swing.JFrame {
             }
         });
 
+        tblTratamiento.setModel(new javax.swing.table.DefaultTableModel(
+            new Object [][] {
+                {null, null, null, null, null, null, null},
+                {null, null, null, null, null, null, null},
+                {null, null, null, null, null, null, null},
+                {null, null, null, null, null, null, null}
+            },
+            new String [] {
+                "ID", "Nombre", "Tipo", "Año", "Mes", "Dia", "Costo"
+            }
+        ));
+        jScrollPane1.setViewportView(tblTratamiento);
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
@@ -71,7 +91,9 @@ public class Tratamiento extends javax.swing.JFrame {
             .addGroup(layout.createSequentialGroup()
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(layout.createSequentialGroup()
-                        .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addContainerGap()
+                        .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 417, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                             .addComponent(btnAgregar, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                             .addComponent(btnBuscar, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
@@ -98,11 +120,16 @@ public class Tratamiento extends javax.swing.JFrame {
                         .addComponent(btnRegresar)))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addComponent(jLabel2, javax.swing.GroupLayout.PREFERRED_SIZE, 39, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(96, 96, 96)
-                .addComponent(btnBuscar)
-                .addGap(18, 18, 18)
-                .addComponent(btnAgregar)
-                .addContainerGap(78, Short.MAX_VALUE))
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(layout.createSequentialGroup()
+                        .addGap(96, 96, 96)
+                        .addComponent(btnBuscar)
+                        .addGap(18, 18, 18)
+                        .addComponent(btnAgregar))
+                    .addGroup(layout.createSequentialGroup()
+                        .addGap(43, 43, 43)
+                        .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 142, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addContainerGap(53, Short.MAX_VALUE))
         );
 
         pack();
@@ -124,6 +151,35 @@ public class Tratamiento extends javax.swing.JFrame {
         this.dispose();
         new Dasboard().setVisible(true);
     }//GEN-LAST:event_btnRegresarActionPerformed
+
+    
+    
+        public void mostrar(){
+    
+           
+        String matris[][] = new String[listatratamiento.size()][6];
+        
+        for (int i = 0; i < listatratamiento.size(); i++) {
+            
+            matris [i][0] = listatratamiento.get(i).getNombre();
+            matris [i][1] = listatratamiento.get(i).getTipo();
+            matris [i][2] = listatratamiento.get(i).getDuracionaño();
+            matris [i][3] = listatratamiento.get(i).getDuracionmes();
+            matris [i][4] = listatratamiento.get(i).getDuraciondia();
+            matris [i][5] = listatratamiento.get(i).getCosto();
+
+            
+        }
+        
+        tblTratamiento.setModel(new javax.swing.table.DefaultTableModel(
+              
+            matris,
+            new String [] {
+                "Nombre Tratamiento", "Tipo", "Duracion Año", "Duracion Mes", "Duracion", "Costo"
+            }
+        ));  
+    }
+    
 
 
     /**
@@ -167,5 +223,7 @@ public class Tratamiento extends javax.swing.JFrame {
     private javax.swing.JButton btnRegresar;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
+    private javax.swing.JScrollPane jScrollPane1;
+    private javax.swing.JTable tblTratamiento;
     // End of variables declaration//GEN-END:variables
 }
