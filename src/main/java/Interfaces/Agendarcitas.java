@@ -7,6 +7,12 @@ package Interfaces;
 
 
 import Clases.Cita;
+import static Clases.ConexionBD.close;
+import static Clases.ConexionBD.getConnection;
+import java.sql.Connection;
+import java.sql.PreparedStatement;
+import java.sql.ResultSet;
+import java.sql.SQLException;
 import java.text.DateFormat;
 import java.util.ArrayList;
 import javax.swing.JOptionPane;
@@ -35,11 +41,13 @@ public class Agendarcitas extends javax.swing.JFrame {
      */
     public Agendarcitas() {
         initComponents();
+        jButtoneditar.setVisible(false);
         this.setLocationRelativeTo(null);
+        
         jComboBoxdoctor.setSelectedItem("Doctores");
-        jComboBoxdoctor.addItem("Luis Saico");
-        jComboBoxdoctor.addItem("Martha Lopez");
-        jComboBoxdoctor.addItem("Carlitos Segundo");
+        
+    }
+    public Agendarcitas(String cedula){
         
     }
     public void leer(){
@@ -54,6 +62,32 @@ public class Agendarcitas extends javax.swing.JFrame {
         doctor=jComboBoxdoctor.getSelectedItem().toString();
         fecha = df.format(jDateChooser1.getDate());
 
+    }
+    public void mostrardoctores(){
+        Connection conn = null;
+        String SQL_SELECT = "select (id_doctor,primernombre,primerapellido) from public.doctores;";
+        PreparedStatement stmt = null;
+        ResultSet rs = null;
+        
+        try {
+            conn = getConnection();
+            stmt = conn.prepareStatement(SQL_SELECT);
+            rs = stmt.executeQuery();
+            while (rs.next()) {
+            jComboBoxdoctor.addItem(rs.getString("primernombre")+" "+rs.getString("primerapellido"));
+            }
+            } 
+            catch (SQLException ex) {
+            ex.printStackTrace(System.out);
+        } finally {
+            try {
+                close(rs);
+                close(stmt);
+                close(conn);
+            } catch (SQLException ex) {
+                ex.printStackTrace(System.out);
+            }
+        }
     }
 
     /**
@@ -469,6 +503,8 @@ public class Agendarcitas extends javax.swing.JFrame {
 
     private void jButtonagendarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonagendarActionPerformed
         
+        new Citas().setVisible(true);
+        this.dispose();
         if(jTextFieldcedula.getText().equals("") || jTextFieldnombre.getText().equals(" ") || jTextFieldapellido.getText().equals("") || jTextFieldedad.getText().equals("")|| jTextFielddireccion.getText().equals("")|| jTextFieldgenero.getText().equals("")|| jTextFieldhorai.getText().equals("")|| jTextFieldhoraf.getText().equals("")|| jComboBoxdoctor.getSelectedItem().equals("") ){
             JOptionPane.showMessageDialog(null, "Hay campos vacios");
         }else{ 
@@ -487,6 +523,7 @@ public class Agendarcitas extends javax.swing.JFrame {
         fecha = df.format(jDateChooser1.getDate());
 
         if(Cedula.matches("^[0-9]{10}$")){
+            
             if(!horainicio.matches("^([01]?[0-9]|2[0-3]):[0-5][0-9]$")){
                 if(!horafin.matches("^([01]?[0-9]|2[0-3]):[0-5][0-9]$")){
                         
