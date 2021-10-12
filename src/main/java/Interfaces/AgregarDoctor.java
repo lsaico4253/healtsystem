@@ -30,9 +30,9 @@ public class AgregarDoctor extends javax.swing.JFrame {
         String Edad="";
         String telefono1="";
         String telefono2="";
-        String genero="";
+        int genero;
         String Direccion="";
-        String jornada="";
+        int jornada;
         String titulo ="";
         String universidad ="";
         String especialidad ="";
@@ -482,12 +482,12 @@ public class AgregarDoctor extends javax.swing.JFrame {
             titulo = txtTitulo.getText();
             universidad = txtUniversidad.getText();
             especialidad = txtEspecialidad.getText();
-            jornada = box02.getItemAt(0);
+            jornada = box02.getSelectedIndex();
             if(generoMdoctor.isSelected()){
-                genero="Hombre";
+                genero=1;
             }
                 if(generoFdoctor.isSelected()){
-                    genero="Mujer";
+                    genero=2;
                 }
                 
                 midoctor.setCedula(Cedula);
@@ -496,11 +496,9 @@ public class AgregarDoctor extends javax.swing.JFrame {
                 midoctor.setApellido(Apellido);
                 midoctor.setSegundo_apellido(Segundoapellido);
                 midoctor.setEdad(Edad);
-                midoctor.setGenero(genero);
                 midoctor.setTelefono(telefono1);
                 midoctor.setTelefono2(telefono2);
                 midoctor.setDireccion(Direccion);
-                //midoctor.setJornada(jornada);
                 midoctor.setTitulo(titulo);
                 midoctor.setUniversidad(universidad);
                 midoctor.setEspecialidad(especialidad);
@@ -512,7 +510,7 @@ public class AgregarDoctor extends javax.swing.JFrame {
                 listadoctor.add(midoctor);
                 Connection conn = null;
                 PreparedStatement stmt = null;
-                String SQL_INSERT="INSERT INTO pacientes(num_ficha, afiliacion, cedula, primernombre, segundonombre, primerapellido, segundoapellido, edad, direccion, genero, telefono1, telefono2)VALUES ('F01', 'No Afliado', '"+Cedula+"', '"+Nombre+"', '"+Segundonombre+"', '"+Apellido+"', '"+Segundoapellido+"', '"+Edad+"', '"+Direccion+"', '"+genero+"', '"+telefono1+"', '"+telefono2+"');";
+                String SQL_INSERT="INSERT INTO public.doctores(titulo, jornada, especialidad, universidad, cedula, primernombre, segundonombre, primerapellido, segundoapellido, telefono1, telefono2, direccion, genero, edad) VALUES ('"+titulo+"', '"+jornada+"', '"+especialidad+"', '"+universidad+"', '"+Cedula+"', '"+Nombre+"', '"+Segundonombre+"', '"+Apellido+"', '"+Segundoapellido+"', '"+telefono1+"', '"+telefono2+"', '"+Direccion+"', '"+genero+"', '"+Edad+"');";
                 try {
                     conn = getConnection();
                     stmt = conn.prepareStatement(SQL_INSERT);
@@ -554,7 +552,7 @@ public class AgregarDoctor extends javax.swing.JFrame {
 
     private void btneditActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btneditActionPerformed
         // TODO add your handling code here:
-        
+        String genero2="";
         if(textceduladoctor.getText().equals("") || textPrimerNombredoctor.getText().equals(" ") || textPrimerApellidodoctor.getText().equals("") || textTelefono1doctor.getText().equals("") ){
             JOptionPane.showMessageDialog(null, "Hay campos vacios");
         }else{
@@ -572,10 +570,12 @@ public class AgregarDoctor extends javax.swing.JFrame {
             universidad = txtUniversidad.getText();
             especialidad = txtEspecialidad.getText();
             if(generoMdoctor.isSelected()){
-                genero="Hombre";
+                genero=1;
+                genero2="hombre";
             }
                 if(generoFdoctor.isSelected()){
-                    genero="Mujer";
+                    genero=2;
+                    genero2="mujer";
                 }
                 
                 midoctor.setCedula(Cedula);
@@ -584,7 +584,7 @@ public class AgregarDoctor extends javax.swing.JFrame {
                 midoctor.setApellido(Apellido);
                 midoctor.setSegundo_apellido(Segundoapellido);
                 midoctor.setEdad(Edad);
-                midoctor.setGenero(genero);
+                midoctor.setGenero(genero2);
                 midoctor.setTelefono(telefono1);
                 midoctor.setTelefono2(telefono2);
                 midoctor.setDireccion(Direccion);
