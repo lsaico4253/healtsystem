@@ -38,7 +38,7 @@ public class Detallefactura extends javax.swing.JFrame {
         PreparedStatement stmt = null;
         ResultSet rs = null;
         Tratamientoo tratamiento = null;
-        ArrayList <Tratamientoo> pacientes = new ArrayList<>();
+        ArrayList <Tratamientoo> tratamie = new ArrayList<>();
 
         try {
             conn = getConnection();
@@ -56,7 +56,7 @@ public class Detallefactura extends javax.swing.JFrame {
 
                 tratamiento = new Tratamientoo(nombre, tipo, duracionaño, duracionmes, duraciondia, costo);
 
-                pacientes.add(tratamiento);
+                tratamie.add(tratamiento);
             }
         } catch (SQLException ex) {
             ex.printStackTrace(System.out);
@@ -69,7 +69,7 @@ public class Detallefactura extends javax.swing.JFrame {
                 ex.printStackTrace(System.out);
             }
         }
-        return pacientes;
+        return tratamie;
     }
     
     public void mostrar(){
@@ -89,7 +89,7 @@ public class Detallefactura extends javax.swing.JFrame {
          TABLADETALLE.setModel(new javax.swing.table.DefaultTableModel(
                 matrizp,
                 new String[]{
-                    "Cédula", "Nombres", "Apellidos", "Edad","Genero","Num ficha","Afiliacion","Telefono","Telefono1"
+                    "ID TRATMIENTO", "NOMBRE", "TIPO", "DURACION AÑO","DURACION MES","DURACION DIA","COSTO"
                 }
                  
         ));
