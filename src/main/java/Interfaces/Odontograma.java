@@ -205,6 +205,7 @@ public class Odontograma extends javax.swing.JFrame {
         jCheckBox220 = new javax.swing.JCheckBox();
         jCheckBox221 = new javax.swing.JCheckBox();
         jCheckBox222 = new javax.swing.JCheckBox();
+        jDateChooser1 = new com.toedter.calendar.JDateChooser();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -290,7 +291,9 @@ public class Odontograma extends javax.swing.JFrame {
                             .addComponent(jLabel3)
                             .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 48, javax.swing.GroupLayout.PREFERRED_SIZE))
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(jScrollPane1)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(jScrollPane1)
+                            .addComponent(jDateChooser1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                         .addGap(88, 88, 88)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                             .addComponent(jLabel4)
@@ -697,9 +700,11 @@ public class Odontograma extends javax.swing.JFrame {
                                     .addComponent(jLabel1)
                                     .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                                     .addComponent(jLabel4))
-                                .addGap(27, 27, 27)
-                                .addComponent(jLabel3)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 35, Short.MAX_VALUE))
+                                .addGap(19, 19, 19)
+                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                                    .addComponent(jLabel3)
+                                    .addComponent(jDateChooser1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                             .addGroup(layout.createSequentialGroup()
                                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                                     .addGroup(layout.createSequentialGroup()
@@ -1010,7 +1015,7 @@ public class Odontograma extends javax.swing.JFrame {
                     .addComponent(jLabel31)
                     .addComponent(jLabel28)
                     .addComponent(jLabel25))
-                .addGap(522, 522, 522))
+                .addGap(98, 98, 98))
         );
 
         pack();
@@ -1192,6 +1197,7 @@ public class Odontograma extends javax.swing.JFrame {
     private javax.swing.JCheckBox jCheckBox97;
     private javax.swing.JCheckBox jCheckBox98;
     private javax.swing.JCheckBox jCheckBox99;
+    private com.toedter.calendar.JDateChooser jDateChooser1;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel10;
     private javax.swing.JLabel jLabel11;

@@ -23,8 +23,6 @@ public class Ficha extends Persona{
 
     public Ficha() {
     }
-    
-    
 
     public Ficha(String alergia_Antibiotico, String alergia_alimentos, String especifique_antibiotico, String especifique_alimentos, String cirugias, String enfermedad, String medicamento, String observacion, String nomb_medico) {
         this.alergia_Antibiotico = alergia_Antibiotico;
@@ -122,8 +120,5 @@ public class Ficha extends Persona{
     public void setNomb_medico(String nomb_medico) {
         this.nomb_medico = nomb_medico;
     }
-    
-    
-    
-    
+
 }
