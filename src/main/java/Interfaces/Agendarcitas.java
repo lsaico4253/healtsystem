@@ -21,7 +21,7 @@ import javax.swing.JOptionPane;
  *
  * @author HP
  */
-public class Agendarcitas extends javax.swing.JFrame {
+public final class Agendarcitas extends javax.swing.JFrame {
     DateFormat df= DateFormat.getDateInstance();
     String Cedula="";
         String Nombre="";
@@ -41,11 +41,11 @@ public class Agendarcitas extends javax.swing.JFrame {
      */
     public Agendarcitas() {
         initComponents();
+        mostrardoctores();
         jButtoneditar.setVisible(false);
         this.setLocationRelativeTo(null);
         
         jComboBoxdoctor.setSelectedItem("Doctores");
-        mostrardoctores();
         
     }
     public Agendarcitas(String cedula){
@@ -65,8 +65,9 @@ public class Agendarcitas extends javax.swing.JFrame {
 
     }
     public void mostrardoctores(){
+        
         Connection conn = null;
-        String SQL_SELECT = "select (id_doctor,primernombre,primerapellido) from public.doctores;";
+        String SQL_SELECT = "SELECT (id_doctor,primernombre,primerapellido) FROM public.doctores;";
         PreparedStatement stmt = null;
         ResultSet rs = null;
         
@@ -74,9 +75,9 @@ public class Agendarcitas extends javax.swing.JFrame {
             conn = getConnection();
             stmt = conn.prepareStatement(SQL_SELECT);
             rs = stmt.executeQuery();
-            while (rs.next()) {
-            jComboBoxdoctor.addItem(rs.getString("primernombre")+" "+rs.getString("primerapellido"));
-            }
+                while (rs.next()) {
+                jComboBoxdoctor.addItem(rs.getString("primernombre")+" "+rs.getString("primerapellido"));
+                }
             } 
             catch (SQLException ex) {
             ex.printStackTrace(System.out);
