@@ -11,7 +11,15 @@ package Clases;
  */
 public class Tratamientoo {
     
-    
+    private String ID;
+
+    public String getID() {
+        return ID;
+    }
+
+    public void setID(String ID) {
+        this.ID = ID;
+    }
     private String nombre;
     private String tipo;
     private String duracionaño;

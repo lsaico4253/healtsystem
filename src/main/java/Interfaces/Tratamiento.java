@@ -5,7 +5,14 @@
  */
 package Interfaces;
 
+import Clases.Cita;
+import static Clases.ConexionBD.close;
+import static Clases.ConexionBD.getConnection;
 import Clases.Tratamientoo;
+import java.sql.Connection;
+import java.sql.PreparedStatement;
+import java.sql.ResultSet;
+import java.sql.SQLException;
 import java.util.ArrayList;
 
 /**
@@ -16,15 +23,59 @@ public class Tratamiento extends javax.swing.JFrame {
 
     
     ArrayList<Tratamientoo> listatratamiento = new ArrayList();
+    private static final String SQL_SELECT = "SELECT * FROM tratamiento";
+    
     /**
      * Creates new form Tratamiento
      */
     public Tratamiento() {
 
-        setLocationRelativeTo(null);
+        this.setLocationRelativeTo(null);
         initComponents();
+        listatratamiento=seleccionar();
+        mostrar();
     }
+    
+    public ArrayList <Tratamientoo> seleccionar() {
+        Connection conn = null;
+        PreparedStatement stmt = null;
+        ResultSet rs = null;
+        Tratamientoo tratamiento = null;
+        ArrayList <Tratamientoo> tratamientos = new ArrayList<>();
+       try {
+            conn = getConnection();
+            stmt = conn.prepareStatement(SQL_SELECT);
+            rs = stmt.executeQuery();
+            while (rs.next()) {
+                
+                //int idtratamiento = rs.getInt("idtratamiento");
+                String nombre = rs.getString("nombre");
+                String tipo = rs.getString("tipo");
+                String duracionaño = rs.getString("duracionaño");
+                String duracionmes = rs.getString("duracionmes");
+                String duraciondia = rs.getString("duraciondia");
+                String costo = rs.getString("costo");
+                
 
+                tratamiento = new Tratamientoo (nombre, tipo, duracionaño, duracionmes, duraciondia, costo);
+
+                tratamientos.add(tratamiento);
+            }
+        } catch (SQLException ex) {
+            ex.printStackTrace(System.out);
+        } finally {
+            try {
+                close(rs);
+                close(stmt);
+                close(conn);
+            } catch (SQLException ex) {
+                ex.printStackTrace(System.out);
+            }
+        }
+        return tratamientos;
+    } 
+       
+    
     /**
      * This method is called from within the constructor to initialize the form.
      * WARNING: Do NOT modify this code. The content of this method is always
@@ -139,6 +190,7 @@ public class Tratamiento extends javax.swing.JFrame {
         // TODO add your handling code here:
         
         new AgregarTratamiento().setVisible(true);
+        this.dispose();
     }//GEN-LAST:event_btnAgregarActionPerformed
 
     private void btnBuscarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnBuscarActionPerformed
@@ -157,16 +209,16 @@ public class Tratamiento extends javax.swing.JFrame {
         public void mostrar(){
     
            
-        String matris[][] = new String[listatratamiento.size()][6];
+        String matris[][] = new String[listatratamiento.size()][7];
         
         for (int i = 0; i < listatratamiento.size(); i++) {
             
-            matris [i][0] = listatratamiento.get(i).getNombre();
-            matris [i][1] = listatratamiento.get(i).getTipo();
-            matris [i][2] = listatratamiento.get(i).getDuracionaño();
-            matris [i][3] = listatratamiento.get(i).getDuracionmes();
-            matris [i][4] = listatratamiento.get(i).getDuraciondia();
-            matris [i][5] = listatratamiento.get(i).getCosto();
+            matris [i][1] = listatratamiento.get(i).getNombre();
+            matris [i][2] = listatratamiento.get(i).getTipo();
+            matris [i][3] = listatratamiento.get(i).getDuracionaño();
+            matris [i][4] = listatratamiento.get(i).getDuracionmes();
+            matris [i][5] = listatratamiento.get(i).getDuraciondia();
+            matris [i][6] = listatratamiento.get(i).getCosto();
 
             
         }
@@ -175,7 +227,7 @@ public class Tratamiento extends javax.swing.JFrame {
               
             matris,
             new String [] {
-                "Nombre Tratamiento", "Tipo", "Duracion Año", "Duracion Mes", "Duracion", "Costo"
+                "ID", "Nombre", "Tipo", "Año", "Mes", "Dia", "Costo"
             }
         ));  
     }
