@@ -67,27 +67,33 @@ public final class Agendarcitas extends javax.swing.JFrame {
     public void mostrardoctores(){
         
         Connection conn = null;
-        String SQL_SELECT = "SELECT (id_doctor,primernombre,primerapellido) FROM public.doctores;";
         PreparedStatement stmt = null;
         ResultSet rs = null;
+        String SQL_SELECT = "SELECT * FROM public.doctores;";
         
         try {
             conn = getConnection();
             stmt = conn.prepareStatement(SQL_SELECT);
             rs = stmt.executeQuery();
-                while (rs.next()) {
-                jComboBoxdoctor.addItem(rs.getString("primernombre")+" "+rs.getString("primerapellido"));
+            while (rs.next()) {
+                
+                    jComboBoxdoctor.addItem(rs.getString("primernombre")+" "+rs.getString("primerapellido"));
+                    
                 }
             } 
             catch (SQLException ex) {
+                
             ex.printStackTrace(System.out);
+            
         } finally {
             try {
                 close(rs);
                 close(stmt);
                 close(conn);
             } catch (SQLException ex) {
+                
                 ex.printStackTrace(System.out);
+                
             }
         }
     }
@@ -216,8 +222,6 @@ public final class Agendarcitas extends javax.swing.JFrame {
         jLabel10.setText("Hora final:");
 
         jLabel11.setText("Doctor:");
-
-        jComboBoxdoctor.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
 
         javax.swing.GroupLayout jPanelcitaLayout = new javax.swing.GroupLayout(jPanelcita);
         jPanelcita.setLayout(jPanelcitaLayout);
