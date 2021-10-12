@@ -4,7 +4,6 @@
  * and open the template in the editor.
  */
 package Interfaces;
-
 import static Clases.ConexionBD.close;
 import static Clases.ConexionBD.getConnection;
 import Clases.Paciente;
@@ -49,9 +48,9 @@ public class Pacientes extends javax.swing.JFrame {
             rs = stmt.executeQuery();
             while (rs.next()) {
                 int idPaciente = rs.getInt("id");
-                String primer_nombre = rs.getString("primer_nombre");
-                String segundo_nombre = rs.getString("segundo_nombre");
-                String primer_apellido = rs.getString("primer_apellido");
+                String primer_nombre = rs.getString("primernombre");
+                String segundo_nombre = rs.getString("segundoapellido");
+                String primer_apellido = rs.getString("primerapellido");
                 String segundo_apellido = rs.getString("segundoapellido");
                 String cedula2 = rs.getString("cedula");
                 String afiliacion = rs.getString("afiliacion");
@@ -206,24 +205,22 @@ public class Pacientes extends javax.swing.JFrame {
                 .addGap(34, 34, 34)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(jLabel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(jScrollPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 407, Short.MAX_VALUE))
+                    .addComponent(jScrollPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 818, Short.MAX_VALUE))
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(layout.createSequentialGroup()
                         .addGap(18, 18, 18)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                             .addComponent(jButton1, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                             .addComponent(jButton2, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                            .addComponent(jTextFieldbcedula)))
+                            .addComponent(jTextFieldbcedula)
+                            .addComponent(jButton3, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
                     .addGroup(layout.createSequentialGroup()
                         .addGap(46, 46, 46)
                         .addComponent(btcUpdate))
                     .addGroup(layout.createSequentialGroup()
                         .addGap(40, 40, 40)
-                        .addComponent(jButtonRegresarD))
-                    .addGroup(layout.createSequentialGroup()
-                        .addGap(432, 432, 432)
-                        .addComponent(jButton3, javax.swing.GroupLayout.PREFERRED_SIZE, 127, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addContainerGap())
+                        .addComponent(jButtonRegresarD)))
+                .addGap(13, 13, 13))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -233,7 +230,7 @@ public class Pacientes extends javax.swing.JFrame {
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(layout.createSequentialGroup()
-                        .addComponent(jScrollPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 558, Short.MAX_VALUE)
+                        .addComponent(jScrollPane1)
                         .addGap(45, 45, 45))
                     .addGroup(layout.createSequentialGroup()
                         .addComponent(jButtonRegresarD)
@@ -243,9 +240,9 @@ public class Pacientes extends javax.swing.JFrame {
                         .addComponent(jTextFieldbcedula, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGap(8, 8, 8)
                         .addComponent(jButton2)
-                        .addGap(95, 95, 95)
+                        .addGap(69, 69, 69)
                         .addComponent(jButton3)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 137, Short.MAX_VALUE)
                         .addComponent(btcUpdate)
                         .addGap(69, 69, 69))))
         );
