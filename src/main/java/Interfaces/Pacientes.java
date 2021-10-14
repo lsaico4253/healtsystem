@@ -12,6 +12,7 @@ import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.util.ArrayList;
+import javax.swing.JOptionPane;
 
 /**
  *
@@ -316,13 +317,25 @@ public class Pacientes extends javax.swing.JFrame {
     }//GEN-LAST:event_jButton2ActionPerformed
 
     private void jButtonRegresarDActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonRegresarDActionPerformed
+        
+        int response03 = JOptionPane.showConfirmDialog(this, "¿Seguro que desea regresar al Inicio?", "Confirmar", JOptionPane.YES_NO_OPTION, JOptionPane.QUESTION_MESSAGE);
+        
+        if(response03 == JOptionPane.YES_OPTION){
+        
         this.dispose();
+        
+        }
     }//GEN-LAST:event_jButtonRegresarDActionPerformed
 
     private void btcUpdateActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btcUpdateActionPerformed
         // TODO add your handling code here:
+        int response04 = JOptionPane.showConfirmDialog(this, "¿Actualizar Tabla?", "Confirmar", JOptionPane.YES_NO_OPTION, JOptionPane.QUESTION_MESSAGE);
+        
+        if(response04 == JOptionPane.YES_OPTION){
+        
         listapaciente=seleccionar();
         mostrar();
+        }
     }//GEN-LAST:event_btcUpdateActionPerformed
 
     /**

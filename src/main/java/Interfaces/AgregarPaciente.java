@@ -33,6 +33,7 @@ public class AgregarPaciente extends javax.swing.JFrame {
         String genero="";
         String Direccion="";
         String ficha = "";
+        boolean validacion = false;
         ArrayList<Paciente>listaPaciente= new ArrayList();
         
     public AgregarPaciente() {
@@ -77,6 +78,8 @@ public class AgregarPaciente extends javax.swing.JFrame {
                 String generoe = rs.getString("genero");
                 String telefono1e = rs.getString("telefono1");
                 String telefono2e = rs.getString("telefono2");
+                
+                
                 textcedulapaciente.setText(cedula2);
                 textPrimerNombre.setText(primer_nombre);   
                 textSegundoNombre.setText(segundo_nombre);
@@ -367,7 +370,7 @@ public class AgregarPaciente extends javax.swing.JFrame {
                 btnRegresarActionPerformed(evt);
             }
         });
-        getContentPane().add(btnRegresar, new org.netbeans.lib.awtextra.AbsoluteConstraints(400, 20, 110, 20));
+        getContentPane().add(btnRegresar, new org.netbeans.lib.awtextra.AbsoluteConstraints(390, 20, 110, 20));
 
         jLabel13.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
         jLabel13.setForeground(new java.awt.Color(102, 153, 255));
@@ -413,12 +416,24 @@ public class AgregarPaciente extends javax.swing.JFrame {
 
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
         // TODO add your handling code here:
+   
+        int response01 = JOptionPane.showConfirmDialog(this, "¿Seguro que desea guardar?", "Confirmar", JOptionPane.YES_NO_OPTION, JOptionPane.QUESTION_MESSAGE);
+        
+        if(response01 == JOptionPane.YES_OPTION){
+ 
+        
+        new Pacientes().setVisible(true);
+        this.dispose();  
+        
+        
         new Pacientes().setVisible(true);
         this.dispose();
         if(textcedulapaciente.getText().equals("") || textPrimerNombre.getText().equals(" ") || textPrimerApellido.getText().equals("") || textTelefono1.getText().equals("") ){
             JOptionPane.showMessageDialog(null, "Hay campos vacios");
         }else{
             Paciente mipaciente = new Paciente();
+            
+            
             Cedula=textcedulapaciente.getText();
             Nombre=textPrimerNombre.getText();
             Segundo_nombre=textSegundoNombre.getText();
@@ -436,19 +451,56 @@ public class AgregarPaciente extends javax.swing.JFrame {
                     genero="Mujer";
                 }
                 
-                mipaciente.setCedula(Cedula);
-                mipaciente.setNombre(Nombre);
-                mipaciente.setSegundo_nombre(Segundo_nombre);
-                mipaciente.setApellido(Apellido);
-                mipaciente.setSegundo_apellido(Segundo_apellido);
-                mipaciente.setEdad(Edad);
-                mipaciente.setGenero(genero);
-                mipaciente.setTelefono(telefono1);
-                mipaciente.setTelefono2(telefono2);
-                mipaciente.setDireccion(Direccion);
-                mipaciente.setNum_ficha(ficha);
+
+                if((textcedulapaciente.getText().matches("^\\d{10}$"))){
+                    mipaciente.setCedula(Cedula);
+                    
+                    if((textPrimerNombre.getText().matches("^[A-Z].{3,25}$"))){
+                    mipaciente.setNombre(Nombre);
+                    
+                    if((textSegundoNombre.getText().matches("^[A-Z].{3,25}$"))){
+                    mipaciente.setSegundo_nombre(Segundo_nombre);
+                    
+                    if((textPrimerApellido.getText().matches("^[A-Z].{3,25}$"))){
+                    mipaciente.setApellido(Apellido);
+                    
+                    if((textSegundoApellido.getText().matches("^[A-Z].{3,25}$"))){
+                    mipaciente.setSegundo_apellido(Segundo_apellido);
+                    
+                    
+                    mipaciente.setEdad(Edad);
+                    mipaciente.setGenero(genero);
+                    mipaciente.setTelefono(telefono1);
+                    mipaciente.setTelefono2(telefono2);
+                    mipaciente.setDireccion(Direccion);
+                    mipaciente.setNum_ficha(ficha);
+                    
+                    listaPaciente.add(mipaciente);
+    
+              
+                  }else{
+                    JOptionPane.showMessageDialog(null, "Ingresa correctamente el Segundo Apellido");
+                }
+                    
+                }else{
+                    JOptionPane.showMessageDialog(null, "Ingresa correctamente el Primer Apellido");
+                }
+                    
+                    }else{
+                    JOptionPane.showMessageDialog(null, "Ingresa correctamente el Segundo Nombre");
+                }
+                    
+                    }else{
+                    JOptionPane.showMessageDialog(null, "Ingresa correctamente el Primer Nombre");
+                }
+                    }else{
+                    
+                    JOptionPane.showMessageDialog(null, "Ingresa correctamente la Cedula");
+                }
+              
                 
-                listaPaciente.add(mipaciente);
+              
+                
                 Connection conn = null;
                 PreparedStatement stmt = null;
                 String SQL_INSERT="INSERT INTO pacientes(num_ficha, afiliacion, cedula, primernombre, segundonombre, primerapellido, segundoapellido, edad, direccion, genero, telefono1, telefono2)VALUES ('F01', 'No Afliado', '"+Cedula+"', '"+Nombre+"', '"+Segundo_nombre+"', '"+Apellido+"', '"+Segundo_apellido+"', '"+Edad+"', '"+Direccion+"', '"+genero+"', '"+telefono1+"', '"+telefono2+"');";
@@ -479,8 +531,14 @@ public class AgregarPaciente extends javax.swing.JFrame {
                 textDireccion.setText("");
                 txtFicha.setText("");
                 
+      
+        }
+        
                 
-                
+        }else if(response01 == JOptionPane.NO_OPTION){
+            JOptionPane.showMessageDialog(null, "Datos No Guardados");
+        }else if(response01 == JOptionPane.CLOSED_OPTION){
+            JOptionPane.showMessageDialog(null, "Datos No Guardados");
         }
 
     }//GEN-LAST:event_jButton1ActionPerformed
@@ -491,7 +549,11 @@ public class AgregarPaciente extends javax.swing.JFrame {
 
     private void btneditActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btneditActionPerformed
         // TODO add your handling code here:
-        if(textcedulapaciente.getText().equals("") || textPrimerNombre.getText().equals(" ") || textPrimerApellido.getText().equals("") || textTelefono1.getText().equals("") ){
+        
+        int response = JOptionPane.showConfirmDialog(this, "¿Seguro que desea modificarlo?", "Confirmar", JOptionPane.YES_NO_OPTION, JOptionPane.QUESTION_MESSAGE);
+        
+        if(response == JOptionPane.YES_OPTION){
+           if(textcedulapaciente.getText().equals("") || textPrimerNombre.getText().equals(" ") || textPrimerApellido.getText().equals("") || textTelefono1.getText().equals("") ){
             JOptionPane.showMessageDialog(null, "Hay campos vacios");
         }else{
             Paciente mipaciente = new Paciente();
@@ -567,17 +629,37 @@ public class AgregarPaciente extends javax.swing.JFrame {
                 txtFicha.setText("");
                 new Pacientes().setVisible(true);
                 this.dispose();
-                
-                
+                 
+            
         }
+
+                
+        }else if(response == JOptionPane.NO_OPTION){
+            JOptionPane.showMessageDialog(null, "Modificacion Cancelada");
+        }else if(response == JOptionPane.CLOSED_OPTION){
+            JOptionPane.showMessageDialog(null, "Modificacion Cancelada");
+        }
+        
+        
     }//GEN-LAST:event_btneditActionPerformed
 
     private void btnRegresarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnRegresarActionPerformed
         // TODO add your handling code here:
+        int response02 = JOptionPane.showConfirmDialog(this, "¿Seguro que desea regresar al Inicio?", "Confirmar", JOptionPane.YES_NO_OPTION, JOptionPane.QUESTION_MESSAGE);
+        
+        if(response02 == JOptionPane.YES_OPTION){
+        
+        this.dispose();
+        new Dasboard().setVisible(true);
+        
+        
+        }
+        
     }//GEN-LAST:event_btnRegresarActionPerformed
 
     private void btnCancelarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnCancelarActionPerformed
         // TODO add your handling code here:
+        
     }//GEN-LAST:event_btnCancelarActionPerformed
 
     private void spinnerEdadAncestorAdded(javax.swing.event.AncestorEvent evt) {//GEN-FIRST:event_spinnerEdadAncestorAdded
