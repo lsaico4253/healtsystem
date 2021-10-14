@@ -10,16 +10,18 @@ package Clases;
  * @author HP
  */
 public class Cita {
+    private int id_citas;
     private String fecha;
     private String doctor;
     private String horainicio;
     private String horafin;
 
-    public Cita(String fecha, String doctor, String horainicio, String horafin) {
+    public Cita(int id_citas,String fecha, String doctor, String horainicio, String horafin) {
         this.fecha = fecha;
         this.doctor = doctor;
         this.horainicio = horainicio;
         this.horafin = horafin;
+        this.id_citas=id_citas;
     }
 
     public Cita() {
@@ -79,6 +81,20 @@ public class Cita {
      */
     public void setHorafin(String horafin) {
         this.horafin = horafin;
+    }
+
+    /**
+     * @return the id_citas
+     */
+    public int getId_citas() {
+        return id_citas;
+    }
+
+    /**
+     * @param id_citas the id_cita to set
+     */
+    public void setId_citas(int id_citas) {
+        this.id_citas = id_citas;
     }
     
     

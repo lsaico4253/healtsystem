@@ -24,6 +24,7 @@ import javax.swing.JOptionPane;
  */
 public final class Agendarcitas extends javax.swing.JFrame {
     DateFormat df= DateFormat.getDateInstance();
+    int id_citas=0;
     String Cedula="";
         String Nombre="";
         String Apellido="";
@@ -47,7 +48,49 @@ public final class Agendarcitas extends javax.swing.JFrame {
         this.setLocationRelativeTo(null);
         jComboBoxdoctor.setSelectedItem("Doctores");   
     }
-    public Agendarcitas(String cedula){
+    public Agendarcitas(int id_citas){
+        initComponents();
+        this.id_citas=id_citas;
+        jButtonagendar.setVisible(false);
+        this.setLocationRelativeTo(null); 
+        
+        Connection conn = null;
+        String SQL_SELECT = "SELECT * FROM citas WHERE id_citas = "+id_citas+";";
+        PreparedStatement stmt = null;
+        ResultSet rs = null;
+        
+        try {
+            conn = getConnection();
+            stmt = conn.prepareStatement(SQL_SELECT);
+            rs = stmt.executeQuery();
+            while (rs.next()) {
+                id_citas = rs.getInt("id_citas");
+                String fecha = rs.getString("fecha");
+                String horainicio = rs.getString("hora_inicio");
+                String horafin = rs.getString("hora_fin");
+                String doctor = rs.getString("id_doctor");
+                
+                jTextFieldnombre.setText("");
+                jTextFieldapellido.setText("");
+                jTextFieldtelefono.setText("");
+                jTextFielddireccion.setText("");
+                jTextFieldgenero.setText("");
+                jTextFieldhorai.setText("");
+                jTextFieldedad.setText("");
+                jTextFieldhoraf.setText("");
+                }
+                }catch(SQLException ex) {
+                   ex.printStackTrace(System.out);
+                   } finally {
+                     try {
+                       close(rs);
+                       close(stmt);
+                       close(conn);
+                     } catch (SQLException ex) {
+                        ex.printStackTrace(System.out);
+                     }
+        }
+  
         
     }
     public void leer(){
