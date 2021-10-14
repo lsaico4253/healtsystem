@@ -699,7 +699,7 @@ public class Odontograma extends javax.swing.JFrame {
                                     .addComponent(jLabel4))
                                 .addGap(27, 27, 27)
                                 .addComponent(jLabel3)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 35, Short.MAX_VALUE))
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 41, Short.MAX_VALUE))
                             .addGroup(layout.createSequentialGroup()
                                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                                     .addGroup(layout.createSequentialGroup()
@@ -1010,7 +1010,7 @@ public class Odontograma extends javax.swing.JFrame {
                     .addComponent(jLabel31)
                     .addComponent(jLabel28)
                     .addComponent(jLabel25))
-                .addGap(522, 522, 522))
+                .addGap(516, 516, 516))
         );
 
         pack();

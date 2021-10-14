@@ -44,9 +44,7 @@ public final class Agendarcitas extends javax.swing.JFrame {
         mostrardoctores();
         jButtoneditar.setVisible(false);
         this.setLocationRelativeTo(null);
-        
-        jComboBoxdoctor.setSelectedItem("Doctores");
-        
+        jComboBoxdoctor.setSelectedItem("Doctores");   
     }
     public Agendarcitas(String cedula){
         
@@ -210,6 +208,16 @@ public final class Agendarcitas extends javax.swing.JFrame {
         jLabel7.setText("Datos cita:");
 
         jLabel8.setText("Fecha:");
+
+        jDateChooser1.addAncestorListener(new javax.swing.event.AncestorListener() {
+            public void ancestorAdded(javax.swing.event.AncestorEvent evt) {
+                jDateChooser1AncestorAdded(evt);
+            }
+            public void ancestorMoved(javax.swing.event.AncestorEvent evt) {
+            }
+            public void ancestorRemoved(javax.swing.event.AncestorEvent evt) {
+            }
+        });
 
         jLabel9.setText("Hora inicio:");
 
@@ -499,7 +507,7 @@ public final class Agendarcitas extends javax.swing.JFrame {
                 .addGap(29, 29, 29)
                 .addComponent(jPanelcita, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(18, 18, 18)
-                .addComponent(jPanel3, javax.swing.GroupLayout.PREFERRED_SIZE, 38, Short.MAX_VALUE)
+                .addComponent(jPanel3, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addComponent(jButton1)
                 .addGap(21, 21, 21))
@@ -616,6 +624,10 @@ public final class Agendarcitas extends javax.swing.JFrame {
         new Citas().setVisible(true);
         new Agendarcitas().setVisible(false);
     }//GEN-LAST:event_jButtonregresarActionPerformed
+
+    private void jDateChooser1AncestorAdded(javax.swing.event.AncestorEvent evt) {//GEN-FIRST:event_jDateChooser1AncestorAdded
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jDateChooser1AncestorAdded
 
     /**
      * @param args the command line arguments

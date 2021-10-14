@@ -32,6 +32,7 @@ public class Citas extends javax.swing.JFrame {
         listacita=seleccionar();
         mostrar();
     }
+    
     public ArrayList <Cita> seleccionar() {
         Connection conn = null;
         PreparedStatement stmt = null;
@@ -43,7 +44,7 @@ public class Citas extends javax.swing.JFrame {
             stmt = conn.prepareStatement(SQL_SELECT);
             rs = stmt.executeQuery();
             while (rs.next()) {
-                int iddoctor = rs.getInt("id");/////
+                int id_cita = rs.getInt("id_citas");
                 String fecha = rs.getString("fecha");
                 String horainicio = rs.getString("hora_inicio");
                 String horafin = rs.getString("hora_fin");
@@ -103,6 +104,7 @@ public class Citas extends javax.swing.JFrame {
         jLabel1 = new javax.swing.JLabel();
         jButtoneditar = new javax.swing.JButton();
         jButtonactualizar = new javax.swing.JButton();
+        jButton1 = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -159,6 +161,13 @@ public class Citas extends javax.swing.JFrame {
             }
         });
 
+        jButton1.setText("Ficha Medica");
+        jButton1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton1ActionPerformed(evt);
+            }
+        });
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
@@ -176,8 +185,9 @@ public class Citas extends javax.swing.JFrame {
                             .addComponent(jButtonactualizar)
                             .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                                 .addComponent(jButtonagregar, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                .addComponent(jButtoneditar, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))))
-                .addContainerGap(14, Short.MAX_VALUE))
+                                .addComponent(jButtoneditar, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                            .addComponent(jButton1))))
+                .addContainerGap(36, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -189,7 +199,9 @@ public class Citas extends javax.swing.JFrame {
                     .addGroup(layout.createSequentialGroup()
                         .addComponent(jButtonagregar)
                         .addGap(34, 34, 34)
-                        .addComponent(jButtoneditar))
+                        .addComponent(jButtoneditar)
+                        .addGap(36, 36, 36)
+                        .addComponent(jButton1))
                     .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 315, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addComponent(jButtonactualizar)
@@ -227,6 +239,11 @@ public class Citas extends javax.swing.JFrame {
         mostrar();
     }//GEN-LAST:event_jButtonactualizarActionPerformed
 
+    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
+        new Ficha_medica().setVisible(true);
+        this.dispose();
+    }//GEN-LAST:event_jButton1ActionPerformed
+
     /**
      * @param args the command line arguments
      */
@@ -263,6 +280,7 @@ public class Citas extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JButton jButton1;
     private javax.swing.JButton jButtonactualizar;
     private javax.swing.JButton jButtonagregar;
     private javax.swing.JButton jButtoneditar;
