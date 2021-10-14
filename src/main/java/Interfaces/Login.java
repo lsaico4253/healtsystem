@@ -67,7 +67,6 @@ public class Login extends javax.swing.JFrame {
         getContentPane().add(lblusername, new org.netbeans.lib.awtextra.AbsoluteConstraints(170, 520, 80, -1));
 
         btnexit.setFont(new java.awt.Font("Poppins Medium", 0, 12)); // NOI18N
-        btnexit.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Interfaces/Media/baseline_logout_black_24dp.png"))); // NOI18N
         btnexit.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
         btnexit.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -86,11 +85,7 @@ public class Login extends javax.swing.JFrame {
         getContentPane().add(btnlogin, new org.netbeans.lib.awtextra.AbsoluteConstraints(220, 610, 160, -1));
         getContentPane().add(txtuser, new org.netbeans.lib.awtextra.AbsoluteConstraints(270, 520, 170, -1));
         getContentPane().add(txtpass, new org.netbeans.lib.awtextra.AbsoluteConstraints(270, 550, 170, -1));
-
-        lbluser.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Interfaces/Media/user.png"))); // NOI18N
         getContentPane().add(lbluser, new org.netbeans.lib.awtextra.AbsoluteConstraints(190, 180, -1, -1));
-
-        lblbackground.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Interfaces/Media/fondo.png"))); // NOI18N
         getContentPane().add(lblbackground, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, -1, -1));
 
         pack();

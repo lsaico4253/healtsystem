@@ -9,6 +9,7 @@ package Interfaces;
 import Clases.Cita;
 import static Clases.ConexionBD.close;
 import static Clases.ConexionBD.getConnection;
+import java.awt.Color;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
@@ -221,6 +222,13 @@ public final class Agendarcitas extends javax.swing.JFrame {
 
         jLabel9.setText("Hora inicio:");
 
+        jTextFieldhorai.setForeground(new java.awt.Color(153, 153, 153));
+        jTextFieldhorai.setText("13:00:59");
+        jTextFieldhorai.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mousePressed(java.awt.event.MouseEvent evt) {
+                jTextFieldhoraiMousePressed(evt);
+            }
+        });
         jTextFieldhorai.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jTextFieldhoraiActionPerformed(evt);
@@ -228,6 +236,19 @@ public final class Agendarcitas extends javax.swing.JFrame {
         });
 
         jLabel10.setText("Hora final:");
+
+        jTextFieldhoraf.setForeground(new java.awt.Color(153, 153, 153));
+        jTextFieldhoraf.setText("10:00:59");
+        jTextFieldhoraf.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mousePressed(java.awt.event.MouseEvent evt) {
+                jTextFieldhorafMousePressed(evt);
+            }
+        });
+        jTextFieldhoraf.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyPressed(java.awt.event.KeyEvent evt) {
+                jTextFieldhorafKeyPressed(evt);
+            }
+        });
 
         jLabel11.setText("Doctor:");
 
@@ -623,11 +644,28 @@ public final class Agendarcitas extends javax.swing.JFrame {
         // TODO add your handling code here:
         new Citas().setVisible(true);
         new Agendarcitas().setVisible(false);
+        this.dispose();
     }//GEN-LAST:event_jButtonregresarActionPerformed
 
     private void jDateChooser1AncestorAdded(javax.swing.event.AncestorEvent evt) {//GEN-FIRST:event_jDateChooser1AncestorAdded
         // TODO add your handling code here:
     }//GEN-LAST:event_jDateChooser1AncestorAdded
+
+    private void jTextFieldhoraiMousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jTextFieldhoraiMousePressed
+        // TODO add your handling code here:
+        jTextFieldhorai.setText("");
+        jTextFieldhorai.setForeground(Color.BLACK);
+    }//GEN-LAST:event_jTextFieldhoraiMousePressed
+
+    private void jTextFieldhorafKeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_jTextFieldhorafKeyPressed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jTextFieldhorafKeyPressed
+
+    private void jTextFieldhorafMousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jTextFieldhorafMousePressed
+        // TODO add your handling code here:
+        jTextFieldhoraf.setText("");
+        jTextFieldhoraf.setForeground(Color.BLACK);
+    }//GEN-LAST:event_jTextFieldhorafMousePressed
 
     /**
      * @param args the command line arguments
