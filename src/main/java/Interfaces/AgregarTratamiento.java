@@ -21,16 +21,16 @@ import javax.swing.JOptionPane;
  */
 public class AgregarTratamiento extends javax.swing.JFrame {
 
-        DateFormat df= DateFormat.getDateInstance();
+    DateFormat df= DateFormat.getDateInstance();
 
     ArrayList<Tratamientoo> listatratamiento= new ArrayList <>();
-    int id = 0;
+    
     String nombre;
     String tipo;
     String duraño;
     String durmes;
     String durdia;
-    String costo;
+    String costotra;
     
     /**
      * Creates new form AgregarTratamiento
@@ -75,7 +75,7 @@ public class AgregarTratamiento extends javax.swing.JFrame {
     
         public AgregarTratamiento(int id) {
         initComponents();
-        this.id=id;
+  
         
         this.setLocationRelativeTo(null); 
         
@@ -323,6 +323,7 @@ public class AgregarTratamiento extends javax.swing.JFrame {
             duraño = box01.getSelectedItem().toString();
             durmes = box02.getSelectedItem().toString();
             durdia = box03.getSelectedItem().toString();
+            costotra = txtCosto.getText();
             
             
 
@@ -331,13 +332,14 @@ public class AgregarTratamiento extends javax.swing.JFrame {
             mitratamiento.setDuracionaño(duraño);
             mitratamiento.setDuracionmes(durmes);
             mitratamiento.setDuraciondia(durdia);
+            mitratamiento.setCosto(costotra);
 
             
             listatratamiento.add(mitratamiento);
             
             Connection conn = null;
             PreparedStatement stmt = null;
-            String SQL_INSERT="INSERT INTO public.tratamiento(idtratamiento, nombre, tipo, duracionaño, duracionmes, duraciondia, costo)VALUES ('1', '"+nombre+"', '"+tipo+"', '"+duraño+"', '"+durmes+"', '"+durdia+"');";  
+            String SQL_INSERT="INSERT INTO public.tratamiento(nombre, tipo, duracionaño, duracionmes, duraciondia, costo)VALUES ('"+nombre+"', '"+tipo+"', '"+duraño+"', '"+durmes+"', '"+durdia+"', '"+costotra+"');";  
             
            
            try {

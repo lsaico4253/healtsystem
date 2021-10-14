@@ -92,6 +92,7 @@ public class Tratamiento extends javax.swing.JFrame {
         btnRegresar = new javax.swing.JButton();
         jScrollPane1 = new javax.swing.JScrollPane();
         tblTratamiento = new javax.swing.JTable();
+        btnActualizar = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -124,16 +125,23 @@ public class Tratamiento extends javax.swing.JFrame {
 
         tblTratamiento.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
-                {null, null, null, null, null, null, null},
-                {null, null, null, null, null, null, null},
-                {null, null, null, null, null, null, null},
-                {null, null, null, null, null, null, null}
+                {null, null, null, null, null, null},
+                {null, null, null, null, null, null},
+                {null, null, null, null, null, null},
+                {null, null, null, null, null, null}
             },
             new String [] {
-                "ID", "Nombre", "Tipo", "Año", "Mes", "Dia", "Costo"
+                "Nombre", "Tipo", "Año", "Mes", "Dia", "Costo"
             }
         ));
         jScrollPane1.setViewportView(tblTratamiento);
+
+        btnActualizar.setText("Actualizar");
+        btnActualizar.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnActualizarActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -145,9 +153,10 @@ public class Tratamiento extends javax.swing.JFrame {
                         .addContainerGap()
                         .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 417, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                            .addComponent(btnAgregar, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                            .addComponent(btnBuscar, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(btnBuscar, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 71, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(btnActualizar, javax.swing.GroupLayout.Alignment.TRAILING)
+                            .addComponent(btnAgregar, javax.swing.GroupLayout.Alignment.TRAILING)))
                     .addGroup(layout.createSequentialGroup()
                         .addContainerGap()
                         .addComponent(jLabel2, javax.swing.GroupLayout.PREFERRED_SIZE, 202, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -176,11 +185,13 @@ public class Tratamiento extends javax.swing.JFrame {
                         .addGap(96, 96, 96)
                         .addComponent(btnBuscar)
                         .addGap(18, 18, 18)
-                        .addComponent(btnAgregar))
+                        .addComponent(btnAgregar)
+                        .addGap(18, 18, 18)
+                        .addComponent(btnActualizar))
                     .addGroup(layout.createSequentialGroup()
-                        .addGap(43, 43, 43)
+                        .addGap(37, 37, 37)
                         .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 142, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addContainerGap(53, Short.MAX_VALUE))
+                .addContainerGap(37, Short.MAX_VALUE))
         );
 
         pack();
@@ -204,30 +215,35 @@ public class Tratamiento extends javax.swing.JFrame {
         new Dasboard().setVisible(true);
     }//GEN-LAST:event_btnRegresarActionPerformed
 
+    private void btnActualizarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnActualizarActionPerformed
+        // TODO add your handling code here:
+        listatratamiento=seleccionar();
+        mostrar();
+    }//GEN-LAST:event_btnActualizarActionPerformed
+
     
     
         public void mostrar(){
     
            
-        String matris[][] = new String[listatratamiento.size()][7];
+        String matris[][] = new String[listatratamiento.size()][6];
         
         for (int i = 0; i < listatratamiento.size(); i++) {
             
-            matris [i][1] = listatratamiento.get(i).getNombre();
-            matris [i][2] = listatratamiento.get(i).getTipo();
-            matris [i][3] = listatratamiento.get(i).getDuracionaño();
-            matris [i][4] = listatratamiento.get(i).getDuracionmes();
-            matris [i][5] = listatratamiento.get(i).getDuraciondia();
-            matris [i][6] = listatratamiento.get(i).getCosto();
+            matris [i][0] = listatratamiento.get(i).getNombre();
+            matris [i][1] = listatratamiento.get(i).getTipo();
+            matris [i][2] = listatratamiento.get(i).getDuracionaño();
+            matris [i][3] = listatratamiento.get(i).getDuracionmes();
+            matris [i][4] = listatratamiento.get(i).getDuraciondia();
+            matris [i][5] = listatratamiento.get(i).getCosto();
 
-            
         }
         
         tblTratamiento.setModel(new javax.swing.table.DefaultTableModel(
               
             matris,
             new String [] {
-                "ID", "Nombre", "Tipo", "Año", "Mes", "Dia", "Costo"
+                "Nombre", "Tipo", "Año", "Mes", "Dia", "Costo"
             }
         ));  
     }
@@ -270,6 +286,7 @@ public class Tratamiento extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JButton btnActualizar;
     private javax.swing.JButton btnAgregar;
     private javax.swing.JButton btnBuscar;
     private javax.swing.JButton btnRegresar;
