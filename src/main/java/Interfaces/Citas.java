@@ -32,6 +32,7 @@ public class Citas extends javax.swing.JFrame {
         listacita=seleccionar();
         mostrar();
     }
+    
     public ArrayList <Cita> seleccionar() {
         Connection conn = null;
         PreparedStatement stmt = null;
@@ -43,7 +44,7 @@ public class Citas extends javax.swing.JFrame {
             stmt = conn.prepareStatement(SQL_SELECT);
             rs = stmt.executeQuery();
             while (rs.next()) {
-                int iddoctor = rs.getInt("id");/////
+                int id_cita = rs.getInt("id_citas");
                 String fecha = rs.getString("fecha");
                 String horainicio = rs.getString("hora_inicio");
                 String horafin = rs.getString("hora_fin");
