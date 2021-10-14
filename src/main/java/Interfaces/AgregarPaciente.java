@@ -64,7 +64,9 @@ public class AgregarPaciente extends javax.swing.JFrame {
             rs = stmt.executeQuery();
             while (rs.next()) {
                 String primer_nombre = rs.getString("primernombre");                
-                String segundo_nombre = rs.getString("segundonombre");
+                String segundo_nombre = rs
+                        
+                        .getString("segundonombre");
                 String primer_apellido = rs.getString("primerapellido");
                 String segundo_apellido = rs.getString("segundoapellido");
                 String cedula2 = rs.getString("cedula");
