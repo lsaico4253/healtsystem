@@ -7,6 +7,7 @@ package Interfaces;
 import static Clases.ConexionBD.close;
 import static Clases.ConexionBD.getConnection;
 import Clases.Paciente;
+import java.awt.Color;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
@@ -31,6 +32,7 @@ public class Pacientes extends javax.swing.JFrame {
     public Pacientes() {
         initComponents();
         this.setLocationRelativeTo(null);
+          this.getContentPane().setBackground(Color.white);
         listapaciente=seleccionar();
         mostrar();
              
@@ -134,7 +136,7 @@ public class Pacientes extends javax.swing.JFrame {
                 {null, null, null, null, null, null, null, null, null, null, null, null}
             },
             new String [] {
-                "Cédula", "1. Nombre", "2. Nombre", "1. Apellido", "2. Apellido", "Edad", "Genero", "Teléfono 1", "Teléfono 2", "Dirección", "numficha", "afiliacion"
+                "CEDULA", "1. NOMBRE", "2. NOMBRE", "1. APELLIDO", "2. APELLIDO", "EDAD", "GENERO", "TELEFONO1", "TELEFONO 2", "DIRECCION", "# DE FICHA", "afiliacion"
             }
         ) {
             boolean[] canEdit = new boolean [] {
@@ -147,7 +149,9 @@ public class Pacientes extends javax.swing.JFrame {
         });
         jScrollPane1.setViewportView(jTablepacientes);
 
-        jButton1.setFont(new java.awt.Font("Poppins", 0, 12)); // NOI18N
+        jButton1.setBackground(new java.awt.Color(51, 102, 255));
+        jButton1.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
+        jButton1.setForeground(new java.awt.Color(255, 255, 255));
         jButton1.setText("Agregar Paciente");
         jButton1.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -155,7 +159,9 @@ public class Pacientes extends javax.swing.JFrame {
             }
         });
 
-        jButton2.setFont(new java.awt.Font("Poppins", 0, 12)); // NOI18N
+        jButton2.setBackground(new java.awt.Color(51, 102, 255));
+        jButton2.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
+        jButton2.setForeground(new java.awt.Color(255, 255, 255));
         jButton2.setText("Buscar Paciente");
         jButton2.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -163,6 +169,9 @@ public class Pacientes extends javax.swing.JFrame {
             }
         });
 
+        jButton3.setBackground(new java.awt.Color(51, 102, 255));
+        jButton3.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
+        jButton3.setForeground(new java.awt.Color(255, 255, 255));
         jButton3.setText("Editar Paciente");
         jButton3.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -171,13 +180,21 @@ public class Pacientes extends javax.swing.JFrame {
         });
 
         jTextFieldbcedula.setFont(new java.awt.Font("Poppins", 0, 11)); // NOI18N
+        jTextFieldbcedula.setForeground(new java.awt.Color(204, 204, 204));
+        jTextFieldbcedula.setText("Ingrese el numero de cedula");
         jTextFieldbcedula.setToolTipText("Ingrese la cédula del paciente que desea buscar");
+        jTextFieldbcedula.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mousePressed(java.awt.event.MouseEvent evt) {
+                jTextFieldbcedulaMousePressed(evt);
+            }
+        });
         jTextFieldbcedula.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jTextFieldbcedulaActionPerformed(evt);
             }
         });
 
+        jButtonRegresarD.setBackground(new java.awt.Color(153, 153, 153));
         jButtonRegresarD.setFont(new java.awt.Font("Poppins", 0, 12)); // NOI18N
         jButtonRegresarD.setText("Regresar");
         jButtonRegresarD.addActionListener(new java.awt.event.ActionListener() {
@@ -186,6 +203,9 @@ public class Pacientes extends javax.swing.JFrame {
             }
         });
 
+        btcUpdate.setBackground(new java.awt.Color(51, 102, 255));
+        btcUpdate.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
+        btcUpdate.setForeground(new java.awt.Color(255, 255, 255));
         btcUpdate.setText("Actualizar");
         btcUpdate.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -194,8 +214,10 @@ public class Pacientes extends javax.swing.JFrame {
         });
 
         jLabel1.setFont(new java.awt.Font("Poppins", 0, 18)); // NOI18N
+        jLabel1.setForeground(new java.awt.Color(0, 0, 255));
         jLabel1.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabel1.setText("Pacientes Registrados");
+        jLabel1.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(51, 102, 255)));
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -204,48 +226,56 @@ public class Pacientes extends javax.swing.JFrame {
             .addGroup(layout.createSequentialGroup()
                 .addGap(34, 34, 34)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jLabel1, javax.swing.GroupLayout.DEFAULT_SIZE, 887, Short.MAX_VALUE)
-                    .addComponent(jScrollPane1))
+                    .addComponent(jLabel1, javax.swing.GroupLayout.DEFAULT_SIZE, 898, Short.MAX_VALUE)
+                    .addComponent(jScrollPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 898, Short.MAX_VALUE))
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(layout.createSequentialGroup()
-                        .addGap(28, 28, 28)
-                        .addComponent(btcUpdate))
-                    .addGroup(layout.createSequentialGroup()
-                        .addGap(22, 22, 22)
-                        .addComponent(jButtonRegresarD))
-                    .addGroup(layout.createSequentialGroup()
-                        .addGap(18, 18, 18)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(jButton3, javax.swing.GroupLayout.PREFERRED_SIZE, 127, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                                .addComponent(jButton1, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                .addComponent(jButton2, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                .addComponent(jTextFieldbcedula)))))
-                .addGap(35, 35, 35))
+                            .addGroup(layout.createSequentialGroup()
+                                .addComponent(jTextFieldbcedula, javax.swing.GroupLayout.DEFAULT_SIZE, 174, Short.MAX_VALUE)
+                                .addContainerGap())
+                            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                                .addGap(0, 0, Short.MAX_VALUE)
+                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                                    .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                        .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                                            .addComponent(jButtonRegresarD)
+                                            .addContainerGap())
+                                        .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                                            .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                                                .addComponent(jButton3, javax.swing.GroupLayout.PREFERRED_SIZE, 127, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                                .addComponent(jButton1))
+                                            .addGap(25, 25, 25)))
+                                    .addComponent(btcUpdate, javax.swing.GroupLayout.PREFERRED_SIZE, 127, javax.swing.GroupLayout.PREFERRED_SIZE)))))
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addComponent(jButton2)
+                        .addGap(21, 21, 21))))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
                 .addGap(4, 4, 4)
-                .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 36, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 36, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jButtonRegresarD))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(layout.createSequentialGroup()
                         .addComponent(jScrollPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 558, Short.MAX_VALUE)
                         .addGap(45, 45, 45))
                     .addGroup(layout.createSequentialGroup()
-                        .addComponent(jButtonRegresarD)
-                        .addGap(102, 102, 102)
                         .addComponent(jButton1)
-                        .addGap(76, 76, 76)
-                        .addComponent(jTextFieldbcedula, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(8, 8, 8)
-                        .addComponent(jButton2)
-                        .addGap(85, 85, 85)
+                        .addGap(18, 18, 18)
                         .addComponent(jButton3)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addGap(20, 20, 20)
                         .addComponent(btcUpdate)
-                        .addGap(69, 69, 69))))
+                        .addGap(42, 42, 42)
+                        .addComponent(jTextFieldbcedula, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(18, 18, 18)
+                        .addComponent(jButton2)
+                        .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))))
         );
 
         jTextFieldbcedula.getAccessibleContext().setAccessibleDescription("");
@@ -337,6 +367,12 @@ public class Pacientes extends javax.swing.JFrame {
         mostrar();
         }
     }//GEN-LAST:event_btcUpdateActionPerformed
+
+    private void jTextFieldbcedulaMousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jTextFieldbcedulaMousePressed
+        jTextFieldbcedula.setText("");
+        jTextFieldbcedula.setForeground(Color.BLACK);
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jTextFieldbcedulaMousePressed
 
     /**
      * @param args the command line arguments
