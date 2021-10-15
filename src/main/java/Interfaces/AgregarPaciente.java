@@ -212,6 +212,7 @@ public class AgregarPaciente extends javax.swing.JFrame {
         getContentPane().add(jLabel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 280, -1, -1));
 
         textcedulapaciente.setForeground(new java.awt.Color(204, 204, 204));
+        textcedulapaciente.setHorizontalAlignment(javax.swing.JTextField.CENTER);
         textcedulapaciente.setText("Ingrese la cedula");
         textcedulapaciente.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mousePressed(java.awt.event.MouseEvent evt) {
@@ -226,6 +227,7 @@ public class AgregarPaciente extends javax.swing.JFrame {
         getContentPane().add(textcedulapaciente, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 150, 210, -1));
 
         textPrimerNombre.setForeground(new java.awt.Color(204, 204, 204));
+        textPrimerNombre.setHorizontalAlignment(javax.swing.JTextField.CENTER);
         textPrimerNombre.setText("Ingrese el Primer nombre");
         textPrimerNombre.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mousePressed(java.awt.event.MouseEvent evt) {
@@ -240,6 +242,7 @@ public class AgregarPaciente extends javax.swing.JFrame {
         getContentPane().add(textPrimerNombre, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 180, 210, -1));
 
         textSegundoNombre.setForeground(new java.awt.Color(204, 204, 204));
+        textSegundoNombre.setHorizontalAlignment(javax.swing.JTextField.CENTER);
         textSegundoNombre.setText("Ingrese el Segundo nombre");
         textSegundoNombre.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mousePressed(java.awt.event.MouseEvent evt) {
@@ -249,6 +252,7 @@ public class AgregarPaciente extends javax.swing.JFrame {
         getContentPane().add(textSegundoNombre, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 210, 210, -1));
 
         textPrimerApellido.setForeground(new java.awt.Color(204, 204, 204));
+        textPrimerApellido.setHorizontalAlignment(javax.swing.JTextField.CENTER);
         textPrimerApellido.setText("Ingrese el Primer apellido");
         textPrimerApellido.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mousePressed(java.awt.event.MouseEvent evt) {
@@ -258,6 +262,7 @@ public class AgregarPaciente extends javax.swing.JFrame {
         getContentPane().add(textPrimerApellido, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 240, 210, -1));
 
         textSegundoApellido.setForeground(new java.awt.Color(204, 204, 204));
+        textSegundoApellido.setHorizontalAlignment(javax.swing.JTextField.CENTER);
         textSegundoApellido.setText("Ingrese el Segundo apellido");
         textSegundoApellido.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mousePressed(java.awt.event.MouseEvent evt) {
@@ -284,6 +289,7 @@ public class AgregarPaciente extends javax.swing.JFrame {
         getContentPane().add(jLabel12, new org.netbeans.lib.awtextra.AbsoluteConstraints(120, 460, -1, 30));
 
         textTelefono1.setForeground(new java.awt.Color(204, 204, 204));
+        textTelefono1.setHorizontalAlignment(javax.swing.JTextField.CENTER);
         textTelefono1.setText("Ingrese el numero de telefono");
         textTelefono1.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mousePressed(java.awt.event.MouseEvent evt) {
@@ -293,6 +299,7 @@ public class AgregarPaciente extends javax.swing.JFrame {
         getContentPane().add(textTelefono1, new org.netbeans.lib.awtextra.AbsoluteConstraints(190, 390, 180, -1));
 
         textTelefono2.setForeground(new java.awt.Color(204, 204, 204));
+        textTelefono2.setHorizontalAlignment(javax.swing.JTextField.CENTER);
         textTelefono2.setText("Ingrese el numero de telefono");
         textTelefono2.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mousePressed(java.awt.event.MouseEvent evt) {
@@ -302,6 +309,7 @@ public class AgregarPaciente extends javax.swing.JFrame {
         getContentPane().add(textTelefono2, new org.netbeans.lib.awtextra.AbsoluteConstraints(190, 430, 180, -1));
 
         textDireccion.setForeground(new java.awt.Color(204, 204, 204));
+        textDireccion.setHorizontalAlignment(javax.swing.JTextField.CENTER);
         textDireccion.setText("Ingrese la direccion");
         textDireccion.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mousePressed(java.awt.event.MouseEvent evt) {
