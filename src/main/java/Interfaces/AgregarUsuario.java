@@ -7,6 +7,7 @@ package Interfaces;
 
 import static Clases.ConexionBD.close;
 import static Clases.ConexionBD.getConnection;
+import java.awt.Color;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.SQLException;
@@ -23,6 +24,7 @@ public class AgregarUsuario extends javax.swing.JFrame {
      */
     public AgregarUsuario() {
         initComponents();
+              this.getContentPane().setBackground(Color.white);
     }
 
     /**
@@ -45,12 +47,46 @@ public class AgregarUsuario extends javax.swing.JFrame {
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
+        txtuser.setForeground(new java.awt.Color(204, 204, 204));
+        txtuser.setHorizontalAlignment(javax.swing.JTextField.CENTER);
+        txtuser.setText("Ingrese el usuario");
+        txtuser.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        txtuser.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mousePressed(java.awt.event.MouseEvent evt) {
+                txtuserMousePressed(evt);
+            }
+        });
+
         jLabel1.setText("Usuario");
 
         jLabel2.setText("Contraseña");
 
         jLabel3.setText("Repita su contraseña");
 
+        txtpass1.setForeground(new java.awt.Color(204, 204, 204));
+        txtpass1.setHorizontalAlignment(javax.swing.JTextField.CENTER);
+        txtpass1.setText("12345678");
+        txtpass1.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        txtpass1.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mousePressed(java.awt.event.MouseEvent evt) {
+                txtpass1MousePressed(evt);
+            }
+        });
+        txtpass1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                txtpass1ActionPerformed(evt);
+            }
+        });
+
+        txtpass2.setForeground(new java.awt.Color(204, 204, 204));
+        txtpass2.setHorizontalAlignment(javax.swing.JTextField.CENTER);
+        txtpass2.setText("12345678");
+        txtpass2.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        txtpass2.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mousePressed(java.awt.event.MouseEvent evt) {
+                txtpass2MousePressed(evt);
+            }
+        });
         txtpass2.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 txtpass2ActionPerformed(evt);
@@ -58,10 +94,13 @@ public class AgregarUsuario extends javax.swing.JFrame {
         });
 
         jLabel4.setFont(new java.awt.Font("Poppins", 0, 24)); // NOI18N
+        jLabel4.setForeground(new java.awt.Color(0, 0, 255));
         jLabel4.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabel4.setText("Crear Usuario");
+        jLabel4.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(51, 153, 255)));
 
         jButton1.setText("Guardar");
+        jButton1.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         jButton1.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jButton1ActionPerformed(evt);
@@ -82,10 +121,10 @@ public class AgregarUsuario extends javax.swing.JFrame {
                             .addComponent(jLabel1)
                             .addComponent(jLabel3))
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                            .addComponent(txtpass2, javax.swing.GroupLayout.DEFAULT_SIZE, 115, Short.MAX_VALUE)
-                            .addComponent(txtuser)
-                            .addComponent(txtpass1))))
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
+                            .addComponent(txtuser, javax.swing.GroupLayout.DEFAULT_SIZE, 131, Short.MAX_VALUE)
+                            .addComponent(txtpass1)
+                            .addComponent(txtpass2))))
                 .addGap(63, 63, 63))
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
@@ -95,12 +134,12 @@ public class AgregarUsuario extends javax.swing.JFrame {
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addGap(19, 19, 19)
-                .addComponent(jLabel4, javax.swing.GroupLayout.PREFERRED_SIZE, 24, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(9, 9, 9)
+                .addComponent(jLabel4)
                 .addGap(18, 18, 18)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(txtuser, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jLabel1))
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(jLabel1, javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addComponent(txtuser, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(18, 18, 18)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel2)
@@ -153,6 +192,29 @@ public class AgregarUsuario extends javax.swing.JFrame {
             }
         }
     }//GEN-LAST:event_jButton1ActionPerformed
+
+    private void txtuserMousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_txtuserMousePressed
+         txtuser.setText("");
+        txtuser.setForeground(Color.BLACK);       
+// TODO add your handling code here:
+    }//GEN-LAST:event_txtuserMousePressed
+
+    private void txtpass1MousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_txtpass1MousePressed
+             
+        txtpass1.setText("");
+        txtpass1.setForeground(Color.BLACK); 
+        // TODO add your handling code here:
+    }//GEN-LAST:event_txtpass1MousePressed
+
+    private void txtpass1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtpass1ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_txtpass1ActionPerformed
+
+    private void txtpass2MousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_txtpass2MousePressed
+         txtpass2.setText("");
+        txtpass2.setForeground(Color.BLACK);  
+        // TODO add your handling code here:
+    }//GEN-LAST:event_txtpass2MousePressed
 
     /**
      * @param args the command line arguments
