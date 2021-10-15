@@ -3,6 +3,7 @@ package Interfaces;
 
 import static Clases.ConexionBD.close;
 import static Clases.ConexionBD.getConnection;
+import java.awt.Color;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
@@ -17,6 +18,7 @@ public class Login extends javax.swing.JFrame {
   
     public Login() {
         initComponents();
+        this.getContentPane().setBackground(Color.white);
         this.setLocationRelativeTo(null);
     }
 
@@ -43,29 +45,31 @@ public class Login extends javax.swing.JFrame {
         txtpass = new javax.swing.JPasswordField();
         lbluser = new javax.swing.JLabel();
         lblbackground = new javax.swing.JLabel();
+        jSeparator1 = new javax.swing.JSeparator();
+        jSeparator2 = new javax.swing.JSeparator();
+        jSeparator4 = new javax.swing.JSeparator();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setUndecorated(true);
-        getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         lbltitle.setFont(new java.awt.Font("Poppins Medium", 0, 24)); // NOI18N
-        lbltitle.setForeground(new java.awt.Color(0, 0, 51));
+        lbltitle.setForeground(new java.awt.Color(0, 0, 255));
+        lbltitle.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         lbltitle.setText("Centro Odontológico M&M");
-        getContentPane().add(lbltitle, new org.netbeans.lib.awtextra.AbsoluteConstraints(140, 40, 330, -1));
+        lbltitle.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(51, 153, 255)));
+        lbltitle.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
 
         lblcopyright.setFont(new java.awt.Font("Poppins", 0, 12)); // NOI18N
-        lblcopyright.setForeground(new java.awt.Color(255, 255, 255));
+        lblcopyright.setForeground(new java.awt.Color(0, 0, 255));
         lblcopyright.setText("Health System 2021");
-        getContentPane().add(lblcopyright, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 770, -1, -1));
 
         lblpassword.setFont(new java.awt.Font("Poppins Medium", 0, 18)); // NOI18N
         lblpassword.setText("Contraseña");
-        getContentPane().add(lblpassword, new org.netbeans.lib.awtextra.AbsoluteConstraints(130, 550, -1, -1));
 
         lblusername.setFont(new java.awt.Font("Poppins Medium", 0, 18)); // NOI18N
         lblusername.setText("Usuario");
-        getContentPane().add(lblusername, new org.netbeans.lib.awtextra.AbsoluteConstraints(170, 520, 80, -1));
 
+        btnexit.setBackground(new java.awt.Color(0, 0, 255));
         btnexit.setFont(new java.awt.Font("Poppins Medium", 0, 12)); // NOI18N
         btnexit.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
         btnexit.addActionListener(new java.awt.event.ActionListener() {
@@ -73,20 +77,139 @@ public class Login extends javax.swing.JFrame {
                 btnexitActionPerformed(evt);
             }
         });
-        getContentPane().add(btnexit, new org.netbeans.lib.awtextra.AbsoluteConstraints(550, 750, 40, -1));
 
         btnlogin.setFont(new java.awt.Font("Poppins SemiBold", 0, 12)); // NOI18N
         btnlogin.setText("Ingresar");
+        btnlogin.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         btnlogin.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btnloginActionPerformed(evt);
             }
         });
-        getContentPane().add(btnlogin, new org.netbeans.lib.awtextra.AbsoluteConstraints(220, 610, 160, -1));
-        getContentPane().add(txtuser, new org.netbeans.lib.awtextra.AbsoluteConstraints(270, 520, 170, -1));
-        getContentPane().add(txtpass, new org.netbeans.lib.awtextra.AbsoluteConstraints(270, 550, 170, -1));
-        getContentPane().add(lbluser, new org.netbeans.lib.awtextra.AbsoluteConstraints(190, 180, -1, -1));
-        getContentPane().add(lblbackground, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, -1, -1));
+
+        txtuser.setForeground(new java.awt.Color(204, 204, 204));
+        txtuser.setHorizontalAlignment(javax.swing.JTextField.CENTER);
+        txtuser.setText("Ingrese el usuario");
+        txtuser.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        txtuser.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mousePressed(java.awt.event.MouseEvent evt) {
+                txtuserMousePressed(evt);
+            }
+        });
+        txtuser.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                txtuserActionPerformed(evt);
+            }
+        });
+
+        txtpass.setForeground(new java.awt.Color(204, 204, 204));
+        txtpass.setHorizontalAlignment(javax.swing.JTextField.CENTER);
+        txtpass.setText("123456666669");
+        txtpass.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        txtpass.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mousePressed(java.awt.event.MouseEvent evt) {
+                txtpassMousePressed(evt);
+            }
+        });
+
+        jSeparator1.setBackground(new java.awt.Color(0, 0, 255));
+        jSeparator1.setForeground(new java.awt.Color(51, 102, 255));
+        jSeparator1.setOpaque(true);
+
+        jSeparator2.setBackground(new java.awt.Color(0, 0, 255));
+        jSeparator2.setForeground(new java.awt.Color(0, 0, 255));
+        jSeparator2.setOrientation(javax.swing.SwingConstants.VERTICAL);
+        jSeparator2.setOpaque(true);
+
+        jSeparator4.setBackground(new java.awt.Color(0, 0, 255));
+        jSeparator4.setForeground(new java.awt.Color(0, 0, 255));
+        jSeparator4.setOrientation(javax.swing.SwingConstants.VERTICAL);
+        jSeparator4.setOpaque(true);
+
+        javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
+        getContentPane().setLayout(layout);
+        layout.setHorizontalGroup(
+            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(layout.createSequentialGroup()
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(layout.createSequentialGroup()
+                        .addComponent(lblbackground)
+                        .addGap(10, 10, 10)
+                        .addComponent(jSeparator4, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addGroup(layout.createSequentialGroup()
+                                .addGap(14, 14, 14)
+                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addComponent(lbltitle, javax.swing.GroupLayout.PREFERRED_SIZE, 400, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addGroup(layout.createSequentialGroup()
+                                        .addGap(320, 320, 320)
+                                        .addComponent(lbluser))
+                                    .addGroup(layout.createSequentialGroup()
+                                        .addGap(34, 34, 34)
+                                        .addComponent(lblusername, javax.swing.GroupLayout.PREFERRED_SIZE, 80, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                        .addGap(66, 66, 66)
+                                        .addComponent(txtuser, javax.swing.GroupLayout.PREFERRED_SIZE, 170, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                    .addGroup(layout.createSequentialGroup()
+                                        .addGap(21, 21, 21)
+                                        .addComponent(lblpassword)
+                                        .addGap(66, 66, 66)
+                                        .addComponent(txtpass, javax.swing.GroupLayout.PREFERRED_SIZE, 170, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                    .addGroup(layout.createSequentialGroup()
+                                        .addGap(2, 2, 2)
+                                        .addComponent(lblcopyright)
+                                        .addGap(258, 258, 258)
+                                        .addComponent(btnexit)))
+                                .addGap(18, 18, 18))
+                            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addComponent(btnlogin, javax.swing.GroupLayout.PREFERRED_SIZE, 160, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addGap(132, 132, 132)))
+                        .addComponent(jSeparator2))
+                    .addGroup(layout.createSequentialGroup()
+                        .addContainerGap()
+                        .addComponent(jSeparator1)))
+                .addContainerGap())
+        );
+        layout.setVerticalGroup(
+            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(layout.createSequentialGroup()
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(layout.createSequentialGroup()
+                        .addGap(11, 11, 11)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(lblbackground)
+                            .addGroup(layout.createSequentialGroup()
+                                .addGap(11, 11, 11)
+                                .addComponent(jSeparator4, javax.swing.GroupLayout.PREFERRED_SIZE, 321, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addGroup(layout.createSequentialGroup()
+                                .addComponent(lbltitle, javax.swing.GroupLayout.PREFERRED_SIZE, 59, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addGap(63, 63, 63)
+                                .addComponent(lbluser)
+                                .addGap(55, 55, 55)
+                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addComponent(lblusername)
+                                    .addGroup(layout.createSequentialGroup()
+                                        .addGap(5, 5, 5)
+                                        .addComponent(txtuser, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                                .addGap(5, 5, 5)
+                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addComponent(lblpassword)
+                                    .addGroup(layout.createSequentialGroup()
+                                        .addGap(5, 5, 5)
+                                        .addComponent(txtpass, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                                .addGap(27, 27, 27)
+                                .addComponent(btnlogin)
+                                .addGap(21, 21, 21)
+                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addComponent(lblcopyright)
+                                    .addComponent(btnexit)))))
+                    .addGroup(layout.createSequentialGroup()
+                        .addGap(23, 23, 23)
+                        .addComponent(jSeparator2, javax.swing.GroupLayout.PREFERRED_SIZE, 320, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(jSeparator1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap())
+        );
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
@@ -159,6 +282,24 @@ public class Login extends javax.swing.JFrame {
         this.dispose();
     }//GEN-LAST:event_btnexitActionPerformed
 
+    private void txtuserActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtuserActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_txtuserActionPerformed
+
+    private void txtuserMousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_txtuserMousePressed
+       txtuser.setText("");
+        txtuser.setForeground(Color.BLACK);
+
+        // TODO add your handling code here:
+    }//GEN-LAST:event_txtuserMousePressed
+
+    private void txtpassMousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_txtpassMousePressed
+        txtpass.setText("");
+        txtpass.setForeground(Color.BLACK);
+
+        // TODO add your handling code here:
+    }//GEN-LAST:event_txtpassMousePressed
+
     /**
      * @param args the command line arguments
      */
@@ -191,6 +332,9 @@ public class Login extends javax.swing.JFrame {
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton btnexit;
     private javax.swing.JButton btnlogin;
+    private javax.swing.JSeparator jSeparator1;
+    private javax.swing.JSeparator jSeparator2;
+    private javax.swing.JSeparator jSeparator4;
     private javax.swing.JLabel lblbackground;
     private javax.swing.JLabel lblcopyright;
     private javax.swing.JLabel lblpassword;

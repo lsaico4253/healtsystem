@@ -120,7 +120,7 @@ public class Tratamiento extends javax.swing.JFrame {
                 btnAgregarActionPerformed(evt);
             }
         });
-        getContentPane().add(btnAgregar, new org.netbeans.lib.awtextra.AbsoluteConstraints(457, 147, -1, -1));
+        getContentPane().add(btnAgregar, new org.netbeans.lib.awtextra.AbsoluteConstraints(448, 147, 80, -1));
 
         btnBuscar.setBackground(new java.awt.Color(51, 153, 255));
         btnBuscar.setForeground(new java.awt.Color(255, 255, 255));
@@ -131,7 +131,7 @@ public class Tratamiento extends javax.swing.JFrame {
                 btnBuscarActionPerformed(evt);
             }
         });
-        getContentPane().add(btnBuscar, new org.netbeans.lib.awtextra.AbsoluteConstraints(457, 188, 71, -1));
+        getContentPane().add(btnBuscar, new org.netbeans.lib.awtextra.AbsoluteConstraints(448, 188, 80, -1));
 
         btnRegresar.setText("Regresar al Inicio");
         btnRegresar.addActionListener(new java.awt.event.ActionListener() {
@@ -165,7 +165,7 @@ public class Tratamiento extends javax.swing.JFrame {
                 btnActualizarActionPerformed(evt);
             }
         });
-        getContentPane().add(btnActualizar, new org.netbeans.lib.awtextra.AbsoluteConstraints(457, 237, -1, -1));
+        getContentPane().add(btnActualizar, new org.netbeans.lib.awtextra.AbsoluteConstraints(450, 240, 80, -1));
         getContentPane().add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(120, 340, 300, 20));
 
         pack();
