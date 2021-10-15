@@ -7,6 +7,7 @@ package Interfaces;
 
 import static Clases.ConexionBD.close;
 import static Clases.ConexionBD.getConnection;
+import java.awt.Color;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.SQLException;
@@ -23,6 +24,7 @@ public class CrearHorario extends javax.swing.JFrame {
      */
     public CrearHorario() {
         initComponents();
+        this.getContentPane().setBackground(Color.WHITE);
     }
 
     /**
@@ -46,8 +48,27 @@ public class CrearHorario extends javax.swing.JFrame {
 
         jLabel1.setText("Horario de Ingreso: ");
 
+        txtingreso.setForeground(new java.awt.Color(204, 204, 204));
+        txtingreso.setHorizontalAlignment(javax.swing.JTextField.CENTER);
+        txtingreso.setText("Digite la hora de ingreso");
+        txtingreso.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        txtingreso.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mousePressed(java.awt.event.MouseEvent evt) {
+                txtingresoMousePressed(evt);
+            }
+        });
+
         jLabel2.setText("Horario de Salida");
 
+        txtsalida.setForeground(new java.awt.Color(204, 204, 204));
+        txtsalida.setHorizontalAlignment(javax.swing.JTextField.CENTER);
+        txtsalida.setText("Digite la hora de salida");
+        txtsalida.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        txtsalida.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mousePressed(java.awt.event.MouseEvent evt) {
+                txtsalidaMousePressed(evt);
+            }
+        });
         txtsalida.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 txtsalidaActionPerformed(evt);
@@ -55,6 +76,7 @@ public class CrearHorario extends javax.swing.JFrame {
         });
 
         btnguardar.setText("Guardar");
+        btnguardar.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         btnguardar.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btnguardarActionPerformed(evt);
@@ -62,33 +84,48 @@ public class CrearHorario extends javax.swing.JFrame {
         });
 
         btnborrar.setText("Borrar");
+        btnborrar.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
 
+        jLabel3.setBackground(new java.awt.Color(51, 51, 51));
+        jLabel3.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
+        jLabel3.setForeground(new java.awt.Color(0, 0, 255));
         jLabel3.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabel3.setText("Ingresar Horario");
+        jLabel3.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 255)));
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+            .addGroup(layout.createSequentialGroup()
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jLabel1)
-                    .addComponent(jLabel2)
-                    .addComponent(btnguardar))
-                .addGap(18, 18, 18)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                    .addComponent(txtingreso)
-                    .addComponent(txtsalida, javax.swing.GroupLayout.PREFERRED_SIZE, 112, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(btnborrar, javax.swing.GroupLayout.Alignment.TRAILING))
-                .addContainerGap())
-            .addComponent(jLabel3, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(jLabel1)
+                            .addComponent(jLabel2)
+                            .addComponent(btnguardar))
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addGroup(layout.createSequentialGroup()
+                                .addGap(90, 90, 90)
+                                .addComponent(btnborrar)
+                                .addGap(26, 26, 26))
+                            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addComponent(txtingreso, javax.swing.GroupLayout.PREFERRED_SIZE, 150, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addComponent(txtsalida, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 150, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                .addContainerGap())))
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                        .addComponent(jLabel3, javax.swing.GroupLayout.PREFERRED_SIZE, 185, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(49, 49, 49))))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                .addComponent(jLabel3, javax.swing.GroupLayout.DEFAULT_SIZE, 53, Short.MAX_VALUE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addContainerGap()
+                .addComponent(jLabel3, javax.swing.GroupLayout.DEFAULT_SIZE, 39, Short.MAX_VALUE)
+                .addGap(18, 18, 18)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel1)
                     .addComponent(txtingreso, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
@@ -142,6 +179,20 @@ public class CrearHorario extends javax.swing.JFrame {
         
         
     }//GEN-LAST:event_btnguardarActionPerformed
+
+    private void txtingresoMousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_txtingresoMousePressed
+          txtingreso.setText("");
+        txtingreso.setForeground(Color.BLACK);
+
+        // TODO add your handling code here:
+    }//GEN-LAST:event_txtingresoMousePressed
+
+    private void txtsalidaMousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_txtsalidaMousePressed
+       
+           txtsalida.setText("");
+        txtsalida.setForeground(Color.BLACK);
+        // TODO add your handling code here:
+    }//GEN-LAST:event_txtsalidaMousePressed
 
     /**
      * @param args the command line arguments
