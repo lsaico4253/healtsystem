@@ -165,6 +165,7 @@ public class AgregarPaciente extends javax.swing.JFrame {
         jSeparator7 = new javax.swing.JSeparator();
         jSeparator8 = new javax.swing.JSeparator();
         jSeparator9 = new javax.swing.JSeparator();
+        jLabel17 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setBackground(new java.awt.Color(51, 51, 255));
@@ -402,6 +403,7 @@ public class AgregarPaciente extends javax.swing.JFrame {
         getContentPane().add(jSeparator7, new org.netbeans.lib.awtextra.AbsoluteConstraints(120, 410, 60, 50));
         getContentPane().add(jSeparator8, new org.netbeans.lib.awtextra.AbsoluteConstraints(120, 450, 60, 60));
         getContentPane().add(jSeparator9, new org.netbeans.lib.awtextra.AbsoluteConstraints(120, 510, 60, 70));
+        getContentPane().add(jLabel17, new org.netbeans.lib.awtextra.AbsoluteConstraints(240, 608, 48, 29));
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
@@ -811,6 +813,7 @@ public class AgregarPaciente extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel14;
     private javax.swing.JLabel jLabel15;
     private javax.swing.JLabel jLabel16;
+    private javax.swing.JLabel jLabel17;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
