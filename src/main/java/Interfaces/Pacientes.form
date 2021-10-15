@@ -254,6 +254,7 @@
         <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
           <Color blue="cc" green="cc" red="cc" type="rgb"/>
         </Property>
+        <Property name="horizontalAlignment" type="int" value="0"/>
         <Property name="text" type="java.lang.String" value="Ingrese el numero de cedula"/>
         <Property name="toolTipText" type="java.lang.String" value="Ingrese la c&#xe9;dula del paciente que desea buscar"/>
       </Properties>

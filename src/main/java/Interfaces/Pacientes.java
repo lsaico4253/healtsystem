@@ -181,6 +181,7 @@ public class Pacientes extends javax.swing.JFrame {
 
         jTextFieldbcedula.setFont(new java.awt.Font("Poppins", 0, 11)); // NOI18N
         jTextFieldbcedula.setForeground(new java.awt.Color(204, 204, 204));
+        jTextFieldbcedula.setHorizontalAlignment(javax.swing.JTextField.CENTER);
         jTextFieldbcedula.setText("Ingrese el numero de cedula");
         jTextFieldbcedula.setToolTipText("Ingrese la cédula del paciente que desea buscar");
         jTextFieldbcedula.addMouseListener(new java.awt.event.MouseAdapter() {
