@@ -7,6 +7,7 @@ package Interfaces;
 
 import static Clases.ConexionBD.close;
 import static Clases.ConexionBD.getConnection;
+import java.awt.Color;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.SQLException;
@@ -23,6 +24,7 @@ public class AgregarHorario extends javax.swing.JFrame {
      */
     public AgregarHorario() {
         initComponents();
+        this.getContentPane().setBackground(Color.white);
     }
 
     /**
@@ -39,52 +41,95 @@ public class AgregarHorario extends javax.swing.JFrame {
         txts = new javax.swing.JTextField();
         jLabel1 = new javax.swing.JLabel();
         jLabel2 = new javax.swing.JLabel();
+        jLabel3 = new javax.swing.JLabel();
+        jSeparator1 = new javax.swing.JSeparator();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
         btnAgregar.setText("Agregar");
+        btnAgregar.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         btnAgregar.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btnAgregarActionPerformed(evt);
             }
         });
 
-        jLabel1.setText("Hora Inicio");
+        txti.setForeground(new java.awt.Color(204, 204, 204));
+        txti.setHorizontalAlignment(javax.swing.JTextField.CENTER);
+        txti.setText("Hora de Inicio");
+        txti.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        txti.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mousePressed(java.awt.event.MouseEvent evt) {
+                txtiMousePressed(evt);
+            }
+        });
 
-        jLabel2.setText("Hora Salida");
+        txts.setForeground(new java.awt.Color(204, 204, 204));
+        txts.setHorizontalAlignment(javax.swing.JTextField.CENTER);
+        txts.setText("Hora de Salida");
+        txts.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        txts.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mousePressed(java.awt.event.MouseEvent evt) {
+                txtsMousePressed(evt);
+            }
+        });
+
+        jLabel1.setText("Hora Inicio:");
+
+        jLabel2.setText("Hora Salida:");
+
+        jLabel3.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
+        jLabel3.setForeground(new java.awt.Color(51, 153, 255));
+        jLabel3.setText("AGREGAR HORARIO");
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addGap(76, 76, 76)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                    .addComponent(btnAgregar, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(layout.createSequentialGroup()
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(jLabel2)
-                            .addComponent(jLabel1))
-                        .addGap(56, 56, 56)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                            .addComponent(txti, javax.swing.GroupLayout.DEFAULT_SIZE, 91, Short.MAX_VALUE)
-                            .addComponent(txts))))
-                .addContainerGap(66, Short.MAX_VALUE))
+                            .addGroup(layout.createSequentialGroup()
+                                .addGap(76, 76, 76)
+                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                                    .addComponent(btnAgregar, javax.swing.GroupLayout.PREFERRED_SIZE, 201, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                            .addComponent(jLabel2)
+                                            .addComponent(jLabel1))
+                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                                            .addComponent(txti)
+                                            .addComponent(txts, javax.swing.GroupLayout.DEFAULT_SIZE, 100, Short.MAX_VALUE)))))
+                            .addGroup(layout.createSequentialGroup()
+                                .addContainerGap()
+                                .addComponent(jLabel3)))
+                        .addGap(0, 56, Short.MAX_VALUE))
+                    .addGroup(layout.createSequentialGroup()
+                        .addContainerGap()
+                        .addComponent(jSeparator1)))
+                .addContainerGap())
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                .addGap(39, 39, 39)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(txti, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jLabel1))
-                .addGap(18, 18, 18)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(txts, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jLabel2))
+                .addContainerGap()
+                .addComponent(jLabel3, javax.swing.GroupLayout.PREFERRED_SIZE, 24, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(jSeparator1, javax.swing.GroupLayout.PREFERRED_SIZE, 10, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 8, Short.MAX_VALUE)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(jLabel2, javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(txti, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(jLabel1))
+                        .addGap(18, 18, 18)
+                        .addComponent(txts, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
                 .addGap(18, 18, 18)
                 .addComponent(btnAgregar)
-                .addContainerGap(35, Short.MAX_VALUE))
+                .addGap(19, 19, 19))
         );
 
         pack();
@@ -118,6 +163,20 @@ public class AgregarHorario extends javax.swing.JFrame {
         }
         
     }//GEN-LAST:event_btnAgregarActionPerformed
+
+    private void txtiMousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_txtiMousePressed
+      txti.setText("");
+    txti.setForeground(Color.BLACK);
+   
+        // TODO add your handling code here:
+    }//GEN-LAST:event_txtiMousePressed
+
+    private void txtsMousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_txtsMousePressed
+     txts.setText("");
+    txts.setForeground(Color.BLACK);
+
+        // TODO add your handling code here:
+    }//GEN-LAST:event_txtsMousePressed
 
     /**
      * @param args the command line arguments
@@ -158,6 +217,8 @@ public class AgregarHorario extends javax.swing.JFrame {
     private javax.swing.JButton btnAgregar;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
+    private javax.swing.JLabel jLabel3;
+    private javax.swing.JSeparator jSeparator1;
     private javax.swing.JTextField txti;
     private javax.swing.JTextField txts;
     // End of variables declaration//GEN-END:variables

@@ -185,6 +185,7 @@ public class AgregarDoctor extends javax.swing.JFrame {
         textPrimerApellidodoctor = new javax.swing.JTextField();
         textSegundoApellidodoctor = new javax.swing.JTextField();
         jLabel18 = new javax.swing.JLabel();
+        jLabel19 = new javax.swing.JLabel();
 
         label1.setText("label1");
 
@@ -255,6 +256,8 @@ public class AgregarDoctor extends javax.swing.JFrame {
         jLabel10.setText("Dirección:");
         getContentPane().add(jLabel10, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 550, -1, -1));
 
+        textTelefono1doctor.setForeground(new java.awt.Color(204, 204, 204));
+        textTelefono1doctor.setHorizontalAlignment(javax.swing.JTextField.CENTER);
         textTelefono1doctor.setText("Ingrese el  Número de teléfono");
         textTelefono1doctor.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mousePressed(java.awt.event.MouseEvent evt) {
@@ -268,6 +271,8 @@ public class AgregarDoctor extends javax.swing.JFrame {
         });
         getContentPane().add(textTelefono1doctor, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 390, 170, -1));
 
+        textTelefono2doctor.setForeground(new java.awt.Color(204, 204, 204));
+        textTelefono2doctor.setHorizontalAlignment(javax.swing.JTextField.CENTER);
         textTelefono2doctor.setText("Ingrese el Número de teléfono");
         textTelefono2doctor.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mousePressed(java.awt.event.MouseEvent evt) {
@@ -281,6 +286,8 @@ public class AgregarDoctor extends javax.swing.JFrame {
         });
         getContentPane().add(textTelefono2doctor, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 420, 170, -1));
 
+        txtTitulo.setForeground(new java.awt.Color(204, 204, 204));
+        txtTitulo.setHorizontalAlignment(javax.swing.JTextField.CENTER);
         txtTitulo.setText("Ingrese el Título");
         txtTitulo.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mousePressed(java.awt.event.MouseEvent evt) {
@@ -289,6 +296,8 @@ public class AgregarDoctor extends javax.swing.JFrame {
         });
         getContentPane().add(txtTitulo, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 450, 170, -1));
 
+        txtUniversidad.setForeground(new java.awt.Color(204, 204, 204));
+        txtUniversidad.setHorizontalAlignment(javax.swing.JTextField.CENTER);
         txtUniversidad.setText("Ingrese la Universidad");
         txtUniversidad.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mousePressed(java.awt.event.MouseEvent evt) {
@@ -309,6 +318,8 @@ public class AgregarDoctor extends javax.swing.JFrame {
         });
         getContentPane().add(txtEspecialidad, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 510, 170, -1));
 
+        textDirecciondoctor.setForeground(new java.awt.Color(204, 204, 204));
+        textDirecciondoctor.setHorizontalAlignment(javax.swing.JTextField.CENTER);
         textDirecciondoctor.setText("Ingrese la Dirección");
         textDirecciondoctor.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mousePressed(java.awt.event.MouseEvent evt) {
@@ -379,6 +390,8 @@ public class AgregarDoctor extends javax.swing.JFrame {
         });
         getContentPane().add(btnCancelar, new org.netbeans.lib.awtextra.AbsoluteConstraints(390, 620, -1, -1));
 
+        textceduladoctor.setForeground(new java.awt.Color(204, 204, 204));
+        textceduladoctor.setHorizontalAlignment(javax.swing.JTextField.CENTER);
         textceduladoctor.setText("Ingrese el  Número de cedula");
         textceduladoctor.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mousePressed(java.awt.event.MouseEvent evt) {
@@ -392,6 +405,8 @@ public class AgregarDoctor extends javax.swing.JFrame {
         });
         getContentPane().add(textceduladoctor, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 150, 170, -1));
 
+        textPrimerNombredoctor.setForeground(new java.awt.Color(204, 204, 204));
+        textPrimerNombredoctor.setHorizontalAlignment(javax.swing.JTextField.CENTER);
         textPrimerNombredoctor.setText("Ingrese el Primer nombre");
         textPrimerNombredoctor.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mousePressed(java.awt.event.MouseEvent evt) {
@@ -405,6 +420,8 @@ public class AgregarDoctor extends javax.swing.JFrame {
         });
         getContentPane().add(textPrimerNombredoctor, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 190, 170, -1));
 
+        textSegundoNombredoctor.setForeground(new java.awt.Color(204, 204, 204));
+        textSegundoNombredoctor.setHorizontalAlignment(javax.swing.JTextField.CENTER);
         textSegundoNombredoctor.setText("Ingrese el Segundo nombre");
         textSegundoNombredoctor.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mousePressed(java.awt.event.MouseEvent evt) {
@@ -418,6 +435,8 @@ public class AgregarDoctor extends javax.swing.JFrame {
         });
         getContentPane().add(textSegundoNombredoctor, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 230, 170, -1));
 
+        textPrimerApellidodoctor.setForeground(new java.awt.Color(204, 204, 204));
+        textPrimerApellidodoctor.setHorizontalAlignment(javax.swing.JTextField.CENTER);
         textPrimerApellidodoctor.setText("Ingrese el Primer apellido");
         textPrimerApellidodoctor.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mousePressed(java.awt.event.MouseEvent evt) {
@@ -431,6 +450,8 @@ public class AgregarDoctor extends javax.swing.JFrame {
         });
         getContentPane().add(textPrimerApellidodoctor, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 270, 170, -1));
 
+        textSegundoApellidodoctor.setForeground(new java.awt.Color(204, 204, 204));
+        textSegundoApellidodoctor.setHorizontalAlignment(javax.swing.JTextField.CENTER);
         textSegundoApellidodoctor.setText("Ingrese el Segundo apellido");
         textSegundoApellidodoctor.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mousePressed(java.awt.event.MouseEvent evt) {
@@ -446,6 +467,7 @@ public class AgregarDoctor extends javax.swing.JFrame {
 
         jLabel18.setText("logo");
         getContentPane().add(jLabel18, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 40, -1, -1));
+        getContentPane().add(jLabel19, new org.netbeans.lib.awtextra.AbsoluteConstraints(130, 650, -1, 20));
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
@@ -809,6 +831,7 @@ public class AgregarDoctor extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel16;
     private javax.swing.JLabel jLabel17;
     private javax.swing.JLabel jLabel18;
+    private javax.swing.JLabel jLabel19;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;

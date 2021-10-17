@@ -33,6 +33,7 @@ public class AgregarPaciente extends javax.swing.JFrame {
         String genero="";
         String Direccion="";
         String ficha = "";
+        boolean validacion = false;
         ArrayList<Paciente>listaPaciente= new ArrayList();
         
     public AgregarPaciente() {
@@ -77,6 +78,8 @@ public class AgregarPaciente extends javax.swing.JFrame {
                 String generoe = rs.getString("genero");
                 String telefono1e = rs.getString("telefono1");
                 String telefono2e = rs.getString("telefono2");
+                
+                
                 textcedulapaciente.setText(cedula2);
                 textPrimerNombre.setText(primer_nombre);   
                 textSegundoNombre.setText(segundo_nombre);
@@ -162,6 +165,7 @@ public class AgregarPaciente extends javax.swing.JFrame {
         jSeparator7 = new javax.swing.JSeparator();
         jSeparator8 = new javax.swing.JSeparator();
         jSeparator9 = new javax.swing.JSeparator();
+        jLabel17 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setBackground(new java.awt.Color(51, 51, 255));
@@ -208,6 +212,7 @@ public class AgregarPaciente extends javax.swing.JFrame {
         getContentPane().add(jLabel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 280, -1, -1));
 
         textcedulapaciente.setForeground(new java.awt.Color(204, 204, 204));
+        textcedulapaciente.setHorizontalAlignment(javax.swing.JTextField.CENTER);
         textcedulapaciente.setText("Ingrese la cedula");
         textcedulapaciente.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mousePressed(java.awt.event.MouseEvent evt) {
@@ -222,6 +227,7 @@ public class AgregarPaciente extends javax.swing.JFrame {
         getContentPane().add(textcedulapaciente, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 150, 210, -1));
 
         textPrimerNombre.setForeground(new java.awt.Color(204, 204, 204));
+        textPrimerNombre.setHorizontalAlignment(javax.swing.JTextField.CENTER);
         textPrimerNombre.setText("Ingrese el Primer nombre");
         textPrimerNombre.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mousePressed(java.awt.event.MouseEvent evt) {
@@ -236,6 +242,7 @@ public class AgregarPaciente extends javax.swing.JFrame {
         getContentPane().add(textPrimerNombre, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 180, 210, -1));
 
         textSegundoNombre.setForeground(new java.awt.Color(204, 204, 204));
+        textSegundoNombre.setHorizontalAlignment(javax.swing.JTextField.CENTER);
         textSegundoNombre.setText("Ingrese el Segundo nombre");
         textSegundoNombre.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mousePressed(java.awt.event.MouseEvent evt) {
@@ -245,6 +252,7 @@ public class AgregarPaciente extends javax.swing.JFrame {
         getContentPane().add(textSegundoNombre, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 210, 210, -1));
 
         textPrimerApellido.setForeground(new java.awt.Color(204, 204, 204));
+        textPrimerApellido.setHorizontalAlignment(javax.swing.JTextField.CENTER);
         textPrimerApellido.setText("Ingrese el Primer apellido");
         textPrimerApellido.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mousePressed(java.awt.event.MouseEvent evt) {
@@ -254,6 +262,7 @@ public class AgregarPaciente extends javax.swing.JFrame {
         getContentPane().add(textPrimerApellido, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 240, 210, -1));
 
         textSegundoApellido.setForeground(new java.awt.Color(204, 204, 204));
+        textSegundoApellido.setHorizontalAlignment(javax.swing.JTextField.CENTER);
         textSegundoApellido.setText("Ingrese el Segundo apellido");
         textSegundoApellido.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mousePressed(java.awt.event.MouseEvent evt) {
@@ -280,6 +289,7 @@ public class AgregarPaciente extends javax.swing.JFrame {
         getContentPane().add(jLabel12, new org.netbeans.lib.awtextra.AbsoluteConstraints(120, 460, -1, 30));
 
         textTelefono1.setForeground(new java.awt.Color(204, 204, 204));
+        textTelefono1.setHorizontalAlignment(javax.swing.JTextField.CENTER);
         textTelefono1.setText("Ingrese el numero de telefono");
         textTelefono1.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mousePressed(java.awt.event.MouseEvent evt) {
@@ -289,6 +299,7 @@ public class AgregarPaciente extends javax.swing.JFrame {
         getContentPane().add(textTelefono1, new org.netbeans.lib.awtextra.AbsoluteConstraints(190, 390, 180, -1));
 
         textTelefono2.setForeground(new java.awt.Color(204, 204, 204));
+        textTelefono2.setHorizontalAlignment(javax.swing.JTextField.CENTER);
         textTelefono2.setText("Ingrese el numero de telefono");
         textTelefono2.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mousePressed(java.awt.event.MouseEvent evt) {
@@ -298,6 +309,7 @@ public class AgregarPaciente extends javax.swing.JFrame {
         getContentPane().add(textTelefono2, new org.netbeans.lib.awtextra.AbsoluteConstraints(190, 430, 180, -1));
 
         textDireccion.setForeground(new java.awt.Color(204, 204, 204));
+        textDireccion.setHorizontalAlignment(javax.swing.JTextField.CENTER);
         textDireccion.setText("Ingrese la direccion");
         textDireccion.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mousePressed(java.awt.event.MouseEvent evt) {
@@ -367,7 +379,7 @@ public class AgregarPaciente extends javax.swing.JFrame {
                 btnRegresarActionPerformed(evt);
             }
         });
-        getContentPane().add(btnRegresar, new org.netbeans.lib.awtextra.AbsoluteConstraints(400, 20, 110, 20));
+        getContentPane().add(btnRegresar, new org.netbeans.lib.awtextra.AbsoluteConstraints(390, 20, 110, 20));
 
         jLabel13.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
         jLabel13.setForeground(new java.awt.Color(102, 153, 255));
@@ -399,6 +411,7 @@ public class AgregarPaciente extends javax.swing.JFrame {
         getContentPane().add(jSeparator7, new org.netbeans.lib.awtextra.AbsoluteConstraints(120, 410, 60, 50));
         getContentPane().add(jSeparator8, new org.netbeans.lib.awtextra.AbsoluteConstraints(120, 450, 60, 60));
         getContentPane().add(jSeparator9, new org.netbeans.lib.awtextra.AbsoluteConstraints(120, 510, 60, 70));
+        getContentPane().add(jLabel17, new org.netbeans.lib.awtextra.AbsoluteConstraints(240, 608, 48, 29));
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
@@ -413,12 +426,24 @@ public class AgregarPaciente extends javax.swing.JFrame {
 
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
         // TODO add your handling code here:
+   
+        int response01 = JOptionPane.showConfirmDialog(this, "¿Seguro que desea guardar?", "Confirmar", JOptionPane.YES_NO_OPTION, JOptionPane.QUESTION_MESSAGE);
+        
+        if(response01 == JOptionPane.YES_OPTION){
+ 
+        
+        new Pacientes().setVisible(true);
+        this.dispose();  
+        
+        
         new Pacientes().setVisible(true);
         this.dispose();
         if(textcedulapaciente.getText().equals("") || textPrimerNombre.getText().equals(" ") || textPrimerApellido.getText().equals("") || textTelefono1.getText().equals("") ){
             JOptionPane.showMessageDialog(null, "Hay campos vacios");
         }else{
             Paciente mipaciente = new Paciente();
+            
+            
             Cedula=textcedulapaciente.getText();
             Nombre=textPrimerNombre.getText();
             Segundo_nombre=textSegundoNombre.getText();
@@ -436,19 +461,56 @@ public class AgregarPaciente extends javax.swing.JFrame {
                     genero="Mujer";
                 }
                 
-                mipaciente.setCedula(Cedula);
-                mipaciente.setNombre(Nombre);
-                mipaciente.setSegundo_nombre(Segundo_nombre);
-                mipaciente.setApellido(Apellido);
-                mipaciente.setSegundo_apellido(Segundo_apellido);
-                mipaciente.setEdad(Edad);
-                mipaciente.setGenero(genero);
-                mipaciente.setTelefono(telefono1);
-                mipaciente.setTelefono2(telefono2);
-                mipaciente.setDireccion(Direccion);
-                mipaciente.setNum_ficha(ficha);
+
+                if((textcedulapaciente.getText().matches("^\\d{10}$"))){
+                    mipaciente.setCedula(Cedula);
+                    
+                    if((textPrimerNombre.getText().matches("^[A-Z].{3,25}$"))){
+                    mipaciente.setNombre(Nombre);
+                    
+                    if((textSegundoNombre.getText().matches("^[A-Z].{3,25}$"))){
+                    mipaciente.setSegundo_nombre(Segundo_nombre);
+                    
+                    if((textPrimerApellido.getText().matches("^[A-Z].{3,25}$"))){
+                    mipaciente.setApellido(Apellido);
+                    
+                    if((textSegundoApellido.getText().matches("^[A-Z].{3,25}$"))){
+                    mipaciente.setSegundo_apellido(Segundo_apellido);
+                    
+                    
+                    mipaciente.setEdad(Edad);
+                    mipaciente.setGenero(genero);
+                    mipaciente.setTelefono(telefono1);
+                    mipaciente.setTelefono2(telefono2);
+                    mipaciente.setDireccion(Direccion);
+                    mipaciente.setNum_ficha(ficha);
+                    
+                    listaPaciente.add(mipaciente);
+    
+              
+                  }else{
+                    JOptionPane.showMessageDialog(null, "Ingresa correctamente el Segundo Apellido");
+                }
+                    
+                }else{
+                    JOptionPane.showMessageDialog(null, "Ingresa correctamente el Primer Apellido");
+                }
+                    
+                    }else{
+                    JOptionPane.showMessageDialog(null, "Ingresa correctamente el Segundo Nombre");
+                }
+                    
+                    }else{
+                    JOptionPane.showMessageDialog(null, "Ingresa correctamente el Primer Nombre");
+                }
+                    }else{
+                    
+                    JOptionPane.showMessageDialog(null, "Ingresa correctamente la Cedula");
+                }
+              
                 
-                listaPaciente.add(mipaciente);
+              
+                
                 Connection conn = null;
                 PreparedStatement stmt = null;
                 String SQL_INSERT="INSERT INTO pacientes(num_ficha, afiliacion, cedula, primernombre, segundonombre, primerapellido, segundoapellido, edad, direccion, genero, telefono1, telefono2)VALUES ('F01', 'No Afliado', '"+Cedula+"', '"+Nombre+"', '"+Segundo_nombre+"', '"+Apellido+"', '"+Segundo_apellido+"', '"+Edad+"', '"+Direccion+"', '"+genero+"', '"+telefono1+"', '"+telefono2+"');";
@@ -479,8 +541,14 @@ public class AgregarPaciente extends javax.swing.JFrame {
                 textDireccion.setText("");
                 txtFicha.setText("");
                 
+      
+        }
+        
                 
-                
+        }else if(response01 == JOptionPane.NO_OPTION){
+            JOptionPane.showMessageDialog(null, "Datos No Guardados");
+        }else if(response01 == JOptionPane.CLOSED_OPTION){
+            JOptionPane.showMessageDialog(null, "Datos No Guardados");
         }
 
     }//GEN-LAST:event_jButton1ActionPerformed
@@ -491,7 +559,11 @@ public class AgregarPaciente extends javax.swing.JFrame {
 
     private void btneditActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btneditActionPerformed
         // TODO add your handling code here:
-        if(textcedulapaciente.getText().equals("") || textPrimerNombre.getText().equals(" ") || textPrimerApellido.getText().equals("") || textTelefono1.getText().equals("") ){
+        
+        int response = JOptionPane.showConfirmDialog(this, "¿Seguro que desea modificarlo?", "Confirmar", JOptionPane.YES_NO_OPTION, JOptionPane.QUESTION_MESSAGE);
+        
+        if(response == JOptionPane.YES_OPTION){
+           if(textcedulapaciente.getText().equals("") || textPrimerNombre.getText().equals(" ") || textPrimerApellido.getText().equals("") || textTelefono1.getText().equals("") ){
             JOptionPane.showMessageDialog(null, "Hay campos vacios");
         }else{
             Paciente mipaciente = new Paciente();
@@ -567,17 +639,37 @@ public class AgregarPaciente extends javax.swing.JFrame {
                 txtFicha.setText("");
                 new Pacientes().setVisible(true);
                 this.dispose();
-                
-                
+                 
+            
         }
+
+                
+        }else if(response == JOptionPane.NO_OPTION){
+            JOptionPane.showMessageDialog(null, "Modificacion Cancelada");
+        }else if(response == JOptionPane.CLOSED_OPTION){
+            JOptionPane.showMessageDialog(null, "Modificacion Cancelada");
+        }
+        
+        
     }//GEN-LAST:event_btneditActionPerformed
 
     private void btnRegresarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnRegresarActionPerformed
         // TODO add your handling code here:
+        int response02 = JOptionPane.showConfirmDialog(this, "¿Seguro que desea regresar al Inicio?", "Confirmar", JOptionPane.YES_NO_OPTION, JOptionPane.QUESTION_MESSAGE);
+        
+        if(response02 == JOptionPane.YES_OPTION){
+        
+        this.dispose();
+        new Dasboard().setVisible(true);
+        
+        
+        }
+        
     }//GEN-LAST:event_btnRegresarActionPerformed
 
     private void btnCancelarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnCancelarActionPerformed
         // TODO add your handling code here:
+        
     }//GEN-LAST:event_btnCancelarActionPerformed
 
     private void spinnerEdadAncestorAdded(javax.swing.event.AncestorEvent evt) {//GEN-FIRST:event_spinnerEdadAncestorAdded
@@ -729,6 +821,7 @@ public class AgregarPaciente extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel14;
     private javax.swing.JLabel jLabel15;
     private javax.swing.JLabel jLabel16;
+    private javax.swing.JLabel jLabel17;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;

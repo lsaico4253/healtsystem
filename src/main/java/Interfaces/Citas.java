@@ -9,6 +9,7 @@ import Clases.Cita;
 import static Clases.ConexionBD.close;
 import static Clases.ConexionBD.getConnection;
 import Clases.Paciente;
+import java.awt.Color;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
@@ -28,6 +29,7 @@ public class Citas extends javax.swing.JFrame {
      */
     public Citas() {
         initComponents();
+        this.getContentPane().setBackground(Color.WHITE);
         this.setLocationRelativeTo(null);
         listacita=seleccionar();
         mostrar();
@@ -44,14 +46,14 @@ public class Citas extends javax.swing.JFrame {
             stmt = conn.prepareStatement(SQL_SELECT);
             rs = stmt.executeQuery();
             while (rs.next()) {
-                int id_cita = rs.getInt("id_citas");
+                int id_citas = rs.getInt("id_citas");
                 String fecha = rs.getString("fecha");
                 String horainicio = rs.getString("hora_inicio");
                 String horafin = rs.getString("hora_fin");
                 String doctor = rs.getString("id_doctor");
                 
 
-                cita = new Cita (fecha, horainicio, horafin, doctor);
+                cita = new Cita (id_citas,fecha, horainicio, horafin, doctor);
 
                 citas.add(cita);
             }
@@ -70,7 +72,7 @@ public class Citas extends javax.swing.JFrame {
     }
     
     public void mostrar(){
-     String matrizp [][] = new String[listacita.size()][5];
+     String matrizp [][] = new String[listacita.size()][4];
      
      for (int i = 0; i < listacita.size(); i++) {
          matrizp[i][0] = listacita.get(i).getFecha();
@@ -100,11 +102,13 @@ public class Citas extends javax.swing.JFrame {
         jScrollPane1 = new javax.swing.JScrollPane();
         jTablecita = new javax.swing.JTable();
         jButtonagregar = new javax.swing.JButton();
-        jPanel1 = new javax.swing.JPanel();
-        jLabel1 = new javax.swing.JLabel();
         jButtoneditar = new javax.swing.JButton();
         jButtonactualizar = new javax.swing.JButton();
         jButton1 = new javax.swing.JButton();
+        jButtonregresar = new javax.swing.JButton();
+        jDateChooser1 = new com.toedter.calendar.JDateChooser();
+        jButtonbuscar = new javax.swing.JButton();
+        jLabel1 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -121,52 +125,68 @@ public class Citas extends javax.swing.JFrame {
         ));
         jScrollPane1.setViewportView(jTablecita);
 
+        jButtonagregar.setBackground(new java.awt.Color(102, 153, 255));
+        jButtonagregar.setForeground(new java.awt.Color(255, 255, 255));
         jButtonagregar.setText("Agregar");
+        jButtonagregar.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         jButtonagregar.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jButtonagregarActionPerformed(evt);
             }
         });
 
-        jLabel1.setText("Cita Agendada");
-
-        javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
-        jPanel1.setLayout(jPanel1Layout);
-        jPanel1Layout.setHorizontalGroup(
-            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel1Layout.createSequentialGroup()
-                .addGap(62, 62, 62)
-                .addComponent(jLabel1)
-                .addContainerGap(94, Short.MAX_VALUE))
-        );
-        jPanel1Layout.setVerticalGroup(
-            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
-                .addContainerGap(21, Short.MAX_VALUE)
-                .addComponent(jLabel1)
-                .addContainerGap())
-        );
-
+        jButtoneditar.setBackground(new java.awt.Color(102, 153, 255));
+        jButtoneditar.setForeground(new java.awt.Color(255, 255, 255));
         jButtoneditar.setText("Editar");
+        jButtoneditar.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         jButtoneditar.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jButtoneditarActionPerformed(evt);
             }
         });
 
+        jButtonactualizar.setBackground(new java.awt.Color(102, 153, 255));
+        jButtonactualizar.setForeground(new java.awt.Color(255, 255, 255));
         jButtonactualizar.setText("Actualizar");
+        jButtonactualizar.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         jButtonactualizar.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jButtonactualizarActionPerformed(evt);
             }
         });
 
+        jButton1.setBackground(new java.awt.Color(102, 153, 255));
+        jButton1.setForeground(new java.awt.Color(255, 255, 255));
         jButton1.setText("Ficha Medica");
+        jButton1.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         jButton1.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jButton1ActionPerformed(evt);
             }
         });
+
+        jButtonregresar.setText("Regresar");
+        jButtonregresar.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButtonregresarActionPerformed(evt);
+            }
+        });
+
+        jButtonbuscar.setBackground(new java.awt.Color(153, 153, 153));
+        jButtonbuscar.setForeground(new java.awt.Color(255, 255, 255));
+        jButtonbuscar.setText("Buscar");
+        jButtonbuscar.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        jButtonbuscar.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButtonbuscarActionPerformed(evt);
+            }
+        });
+
+        jLabel1.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
+        jLabel1.setForeground(new java.awt.Color(0, 0, 255));
+        jLabel1.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        jLabel1.setText("Cita Agendada");
+        jLabel1.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(51, 153, 255)));
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -175,37 +195,54 @@ public class Citas extends javax.swing.JFrame {
             .addGroup(layout.createSequentialGroup()
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(layout.createSequentialGroup()
-                        .addGap(97, 97, 97)
-                        .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addGroup(layout.createSequentialGroup()
                         .addContainerGap()
                         .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 414, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(18, 18, 18)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(jButtonactualizar)
-                            .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                                .addComponent(jButtonagregar, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                .addComponent(jButtoneditar, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                            .addComponent(jButton1))))
-                .addContainerGap(36, Short.MAX_VALUE))
+                            .addComponent(jDateChooser1, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                                .addGap(0, 0, Short.MAX_VALUE)
+                                .addComponent(jButtonbuscar)
+                                .addGap(28, 28, 28))
+                            .addGroup(layout.createSequentialGroup()
+                                .addGap(10, 10, 10)
+                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                                    .addComponent(jButtoneditar, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                    .addComponent(jButtonactualizar, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                    .addComponent(jButtonagregar, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                    .addComponent(jButton1, javax.swing.GroupLayout.DEFAULT_SIZE, 104, Short.MAX_VALUE))
+                                .addGap(0, 13, Short.MAX_VALUE))))
+                    .addGroup(layout.createSequentialGroup()
+                        .addGap(34, 34, 34)
+                        .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 360, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addComponent(jButtonregresar)))
+                .addContainerGap())
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                .addContainerGap()
-                .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGap(9, 9, 9)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(jButtonregresar)
+                    .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 36, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(18, 18, 18)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(layout.createSequentialGroup()
+                        .addGap(4, 4, 4)
                         .addComponent(jButtonagregar)
-                        .addGap(34, 34, 34)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                         .addComponent(jButtoneditar)
-                        .addGap(36, 36, 36)
-                        .addComponent(jButton1))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                        .addComponent(jButtonactualizar)
+                        .addGap(11, 11, 11)
+                        .addComponent(jButton1)
+                        .addGap(18, 18, 18)
+                        .addComponent(jDateChooser1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                        .addComponent(jButtonbuscar))
                     .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 315, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addComponent(jButtonactualizar)
-                .addContainerGap())
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
         pack();
@@ -219,20 +256,23 @@ public class Citas extends javax.swing.JFrame {
 
     private void jButtoneditarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtoneditarActionPerformed
         // TODO add your handling code here:
-        /*int seleccion = jTablecita.getSelectedRow();
-        String cedula = jTablecita.getValueAt(seleccion, 0).toString();        
+        int seleccion = jTablecita.getSelectedRow();
+        String fecha = jTablecita.getValueAt(seleccion, 0).toString();        
         listacita.forEach((e) -> {
-            if(e.getCedula().equals(cedula)){
-                int id = e.getId();
-                new AgregarPaciente(id).setVisible(true);
+            if(e.getFecha().equals(fecha)){
+                int id_citas = e.getId_citas();
+                new Agendarcitas(id_citas).setVisible(true);
                 mostrar();
-                jTextFieldbcedula.setText("");
+                jDateChooser1.setDateFormatString("");
             }
-        });*/
-        
-        
+        });
+  
     }//GEN-LAST:event_jButtoneditarActionPerformed
-
+    public ArrayList <Cita> editar(){
+    ArrayList <Cita> editar_cita = new ArrayList <>();
+    
+    return editar_cita;
+    }
     private void jButtonactualizarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonactualizarActionPerformed
         // TODO add your handling code here:
         listacita=seleccionar();
@@ -243,6 +283,42 @@ public class Citas extends javax.swing.JFrame {
         new Ficha_medica().setVisible(true);
         this.dispose();
     }//GEN-LAST:event_jButton1ActionPerformed
+
+    private void jButtonregresarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonregresarActionPerformed
+        // TODO add your handling code here:
+        new Dasboard().setVisible(true);
+        new Citas().setVisible(false);
+        this.dispose();
+    }//GEN-LAST:event_jButtonregresarActionPerformed
+
+    private void jButtonbuscarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonbuscarActionPerformed
+        //Buscar cita por fecha
+        String fecha=jDateChooser1.getDateFormatString();
+        var citafiltro = new ArrayList<Cita>();
+        
+        listacita.forEach((e) -> {
+                if(e.getFecha().equals(fecha)){                    
+                    citafiltro.add(e); 
+                    }
+                });
+        String matrizp [][] = new String[citafiltro.size()][4];
+     
+         for (int i = 0; i < citafiltro.size(); i++) {
+         matrizp[i][0] = citafiltro.get(i).getFecha();
+         matrizp[i][1] = citafiltro.get(i).getHorainicio();
+         matrizp[i][2] = citafiltro.get(i).getHorafin();
+         matrizp[i][3] = citafiltro.get(i).getDoctor();
+
+         }
+         jTablecita.setModel(new javax.swing.table.DefaultTableModel(
+                matrizp,
+                new String[]{
+                    "Fecha", "Hora inicio", "Hora fin", "Doctor"
+                }               
+        
+        ));
+        
+    }//GEN-LAST:event_jButtonbuscarActionPerformed
 
     /**
      * @param args the command line arguments
@@ -283,9 +359,11 @@ public class Citas extends javax.swing.JFrame {
     private javax.swing.JButton jButton1;
     private javax.swing.JButton jButtonactualizar;
     private javax.swing.JButton jButtonagregar;
+    private javax.swing.JButton jButtonbuscar;
     private javax.swing.JButton jButtoneditar;
+    private javax.swing.JButton jButtonregresar;
+    private com.toedter.calendar.JDateChooser jDateChooser1;
     private javax.swing.JLabel jLabel1;
-    private javax.swing.JPanel jPanel1;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JTable jTablecita;
     // End of variables declaration//GEN-END:variables
