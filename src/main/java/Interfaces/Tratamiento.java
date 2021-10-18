@@ -8,6 +8,7 @@ package Interfaces;
 import Clases.Cita;
 import static Clases.ConexionBD.close;
 import static Clases.ConexionBD.getConnection;
+import Clases.Paciente;
 import Clases.Tratamientoo;
 import java.awt.Color;
 import java.sql.Connection;
@@ -97,6 +98,7 @@ public class Tratamiento extends javax.swing.JFrame {
         tblTratamiento = new javax.swing.JTable();
         btnActualizar = new javax.swing.JButton();
         jLabel3 = new javax.swing.JLabel();
+        txtBuscador = new javax.swing.JTextField();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
@@ -132,7 +134,7 @@ public class Tratamiento extends javax.swing.JFrame {
                 btnBuscarActionPerformed(evt);
             }
         });
-        getContentPane().add(btnBuscar, new org.netbeans.lib.awtextra.AbsoluteConstraints(448, 188, 80, -1));
+        getContentPane().add(btnBuscar, new org.netbeans.lib.awtextra.AbsoluteConstraints(450, 230, 80, -1));
 
         btnRegresar.setText("Regresar al Inicio");
         btnRegresar.addActionListener(new java.awt.event.ActionListener() {
@@ -166,8 +168,9 @@ public class Tratamiento extends javax.swing.JFrame {
                 btnActualizarActionPerformed(evt);
             }
         });
-        getContentPane().add(btnActualizar, new org.netbeans.lib.awtextra.AbsoluteConstraints(450, 240, 80, -1));
+        getContentPane().add(btnActualizar, new org.netbeans.lib.awtextra.AbsoluteConstraints(450, 260, 80, -1));
         getContentPane().add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(120, 340, 300, 20));
+        getContentPane().add(txtBuscador, new org.netbeans.lib.awtextra.AbsoluteConstraints(450, 200, 100, -1));
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
@@ -187,6 +190,38 @@ public class Tratamiento extends javax.swing.JFrame {
 
     private void btnBuscarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnBuscarActionPerformed
         // TODO add your handling code here:
+        
+        String trata=txtBuscador.getText();
+        var tratafiltro = new ArrayList<Tratamientoo>();
+        
+        listatratamiento.forEach((es) -> {
+                if(es.getNombre().equals(trata)){                    
+                    tratafiltro.add(es); 
+                    }
+                });
+        
+        String matriz[][] = new String[tratafiltro.size()][7];
+                
+           for( int j=0; j<tratafiltro.size(); j++){
+               
+               matriz [j][0] = tratafiltro.get(j).getID();
+                matriz [j][1] = tratafiltro.get(j).getNombre();
+                matriz[j][2] = tratafiltro.get(j).getTipo();
+                matriz[j][3] = tratafiltro.get(j).getDuracionaño();
+                matriz[j][4] = tratafiltro.get(j).getDuracionmes();
+                matriz[j][5] = tratafiltro.get(j).getDuraciondia();
+                matriz[j][6] = tratafiltro.get(j).getCosto();
+              
+    
+        }
+        
+        tblTratamiento.setModel(new javax.swing.table.DefaultTableModel(
+              
+            matriz,
+            new String [] {
+                "Nombre", "Tipo", "Año", "Mes", "Dia", "Costo"
+            }
+        )); 
     }//GEN-LAST:event_btnBuscarActionPerformed
 
     private void btnRegresarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnRegresarActionPerformed
@@ -276,5 +311,6 @@ public class Tratamiento extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel3;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JTable tblTratamiento;
+    private javax.swing.JTextField txtBuscador;
     // End of variables declaration//GEN-END:variables
 }
