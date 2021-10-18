@@ -665,6 +665,11 @@ public final class Agendarcitas extends javax.swing.JFrame {
 
     private void jButtonagendarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonagendarActionPerformed
         
+         int respons02 = JOptionPane.showConfirmDialog(this, "¿Seguro que desea guardar?", "Confirmar", JOptionPane.YES_NO_OPTION, JOptionPane.QUESTION_MESSAGE);
+        
+        if(respons02 == JOptionPane.YES_OPTION){
+            
+        
         new Citas().setVisible(true);
         this.dispose();
         if(jTextFieldcedula.getText().equals("") || jTextFieldnombre.getText().equals(" ") || jTextFieldapellido.getText().equals("") || jTextFieldedad.getText().equals("")|| jTextFielddireccion.getText().equals("")|| jTextFieldgenero.getText().equals("")|| jTextFieldhorai.getText().equals("")|| jTextFieldhoraf.getText().equals("")|| jComboBoxdoctor.getSelectedItem().equals("") ){
@@ -734,13 +739,26 @@ public final class Agendarcitas extends javax.swing.JFrame {
         }
         }
         
+        }else if(respons02 == JOptionPane.NO_OPTION){
+            JOptionPane.showMessageDialog(null, "Datos No Guardados");
+        }else if(respons02 == JOptionPane.CLOSED_OPTION){
+            JOptionPane.showMessageDialog(null, "Datos No Guardados");
+        }
+        
     }//GEN-LAST:event_jButtonagendarActionPerformed
 
     private void jButtonregresarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonregresarActionPerformed
         // TODO add your handling code here:
+        
+
+        int responsee02 = JOptionPane.showConfirmDialog(this, "¿Seguro que desea regresar al Inicio?", "Confirmar", JOptionPane.YES_NO_OPTION, JOptionPane.QUESTION_MESSAGE);
+        
+        if(responsee02 == JOptionPane.YES_OPTION){
+
         new Citas().setVisible(true);
         new Agendarcitas().setVisible(false);
         this.dispose();
+        }
     }//GEN-LAST:event_jButtonregresarActionPerformed
 
     private void jDateChooser1AncestorAdded(javax.swing.event.AncestorEvent evt) {//GEN-FIRST:event_jDateChooser1AncestorAdded
