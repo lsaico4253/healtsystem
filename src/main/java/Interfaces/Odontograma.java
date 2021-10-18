@@ -10,7 +10,7 @@ package Interfaces;
  * @author Carlos
  */
 public class Odontograma extends javax.swing.JFrame {
-
+    String mensaje="";
     /**
      * Creates new form Odontograma
      */
@@ -37,76 +37,76 @@ public class Odontograma extends javax.swing.JFrame {
         jLabel5 = new javax.swing.JLabel();
         jScrollPane3 = new javax.swing.JScrollPane();
         text_apellido = new javax.swing.JTextPane();
-        jCheckBox13 = new javax.swing.JCheckBox();
-        jCheckBox14 = new javax.swing.JCheckBox();
-        jCheckBox15 = new javax.swing.JCheckBox();
-        jCheckBox16 = new javax.swing.JCheckBox();
-        jCheckBox17 = new javax.swing.JCheckBox();
-        jCheckBox18 = new javax.swing.JCheckBox();
-        jCheckBox19 = new javax.swing.JCheckBox();
-        jCheckBox20 = new javax.swing.JCheckBox();
-        jCheckBox21 = new javax.swing.JCheckBox();
-        jCheckBox22 = new javax.swing.JCheckBox();
-        jCheckBox23 = new javax.swing.JCheckBox();
-        jCheckBox24 = new javax.swing.JCheckBox();
-        jCheckBox25 = new javax.swing.JCheckBox();
-        jCheckBox26 = new javax.swing.JCheckBox();
-        jCheckBox27 = new javax.swing.JCheckBox();
-        jCheckBox28 = new javax.swing.JCheckBox();
-        jCheckBox29 = new javax.swing.JCheckBox();
-        jCheckBox30 = new javax.swing.JCheckBox();
-        jCheckBox31 = new javax.swing.JCheckBox();
-        jCheckBox32 = new javax.swing.JCheckBox();
-        jCheckBox33 = new javax.swing.JCheckBox();
-        jCheckBox34 = new javax.swing.JCheckBox();
-        jCheckBox35 = new javax.swing.JCheckBox();
-        jCheckBox36 = new javax.swing.JCheckBox();
-        jCheckBox37 = new javax.swing.JCheckBox();
-        jCheckBox38 = new javax.swing.JCheckBox();
-        jCheckBox39 = new javax.swing.JCheckBox();
-        jCheckBox40 = new javax.swing.JCheckBox();
-        jCheckBox41 = new javax.swing.JCheckBox();
-        jCheckBox42 = new javax.swing.JCheckBox();
-        jCheckBox43 = new javax.swing.JCheckBox();
-        jCheckBox44 = new javax.swing.JCheckBox();
-        jCheckBox45 = new javax.swing.JCheckBox();
-        jCheckBox46 = new javax.swing.JCheckBox();
-        jCheckBox47 = new javax.swing.JCheckBox();
-        jCheckBox48 = new javax.swing.JCheckBox();
-        jCheckBox49 = new javax.swing.JCheckBox();
-        jCheckBox50 = new javax.swing.JCheckBox();
-        jCheckBox51 = new javax.swing.JCheckBox();
-        jCheckBox52 = new javax.swing.JCheckBox();
-        jCheckBox53 = new javax.swing.JCheckBox();
-        jCheckBox54 = new javax.swing.JCheckBox();
-        jCheckBox55 = new javax.swing.JCheckBox();
-        jCheckBox56 = new javax.swing.JCheckBox();
-        jCheckBox57 = new javax.swing.JCheckBox();
-        jCheckBox58 = new javax.swing.JCheckBox();
-        jCheckBox59 = new javax.swing.JCheckBox();
-        jCheckBox60 = new javax.swing.JCheckBox();
-        jCheckBox61 = new javax.swing.JCheckBox();
-        jCheckBox62 = new javax.swing.JCheckBox();
-        jCheckBox63 = new javax.swing.JCheckBox();
-        jCheckBox64 = new javax.swing.JCheckBox();
-        jCheckBox65 = new javax.swing.JCheckBox();
-        jCheckBox66 = new javax.swing.JCheckBox();
-        jCheckBox67 = new javax.swing.JCheckBox();
-        jCheckBox68 = new javax.swing.JCheckBox();
-        jCheckBox69 = new javax.swing.JCheckBox();
-        jCheckBox70 = new javax.swing.JCheckBox();
-        jCheckBox71 = new javax.swing.JCheckBox();
-        jCheckBox77 = new javax.swing.JCheckBox();
-        jCheckBox78 = new javax.swing.JCheckBox();
-        jCheckBox79 = new javax.swing.JCheckBox();
-        jCheckBox80 = new javax.swing.JCheckBox();
-        jCheckBox81 = new javax.swing.JCheckBox();
-        jCheckBox82 = new javax.swing.JCheckBox();
-        jCheckBox83 = new javax.swing.JCheckBox();
-        jCheckBox84 = new javax.swing.JCheckBox();
-        jCheckBox85 = new javax.swing.JCheckBox();
-        jCheckBox86 = new javax.swing.JCheckBox();
-        jCheckBox87 = new javax.swing.JCheckBox();
+        oclusal17 = new javax.swing.JCheckBox();
+        palatino17 = new javax.swing.JCheckBox();
+        vestibular17 = new javax.swing.JCheckBox();
+        distal17 = new javax.swing.JCheckBox();
+        mesial17 = new javax.swing.JCheckBox();
+        oclusal16 = new javax.swing.JCheckBox();
+        palatino16 = new javax.swing.JCheckBox();
+        vestibular16 = new javax.swing.JCheckBox();
+        distal16 = new javax.swing.JCheckBox();
+        mesial16 = new javax.swing.JCheckBox();
+        oclusal15 = new javax.swing.JCheckBox();
+        palatino15 = new javax.swing.JCheckBox();
+        vestibular15 = new javax.swing.JCheckBox();
+        distal15 = new javax.swing.JCheckBox();
+        mesial15 = new javax.swing.JCheckBox();
+        palatino12 = new javax.swing.JCheckBox();
+        vestibular12 = new javax.swing.JCheckBox();
+        distal12 = new javax.swing.JCheckBox();
+        mesial12 = new javax.swing.JCheckBox();
+        incisal11 = new javax.swing.JCheckBox();
+        palatino11 = new javax.swing.JCheckBox();
+        vestibular11 = new javax.swing.JCheckBox();
+        distal11 = new javax.swing.JCheckBox();
+        mesial11 = new javax.swing.JCheckBox();
+        oclusal14 = new javax.swing.JCheckBox();
+        palatino14 = new javax.swing.JCheckBox();
+        vestibular14 = new javax.swing.JCheckBox();
+        distal14 = new javax.swing.JCheckBox();
+        mesial14 = new javax.swing.JCheckBox();
+        incisal13 = new javax.swing.JCheckBox();
+        palatino13 = new javax.swing.JCheckBox();
+        vestibular13 = new javax.swing.JCheckBox();
+        distal13 = new javax.swing.JCheckBox();
+        mesial13 = new javax.swing.JCheckBox();
+        incisal12 = new javax.swing.JCheckBox();
+        palatino23 = new javax.swing.JCheckBox();
+        vestibular23 = new javax.swing.JCheckBox();
+        mesial23 = new javax.swing.JCheckBox();
+        distal23 = new javax.swing.JCheckBox();
+        oclusal24 = new javax.swing.JCheckBox();
+        palatino24 = new javax.swing.JCheckBox();
+        vestibular24 = new javax.swing.JCheckBox();
+        mesial24 = new javax.swing.JCheckBox();
+        distal24 = new javax.swing.JCheckBox();
+        incisal21 = new javax.swing.JCheckBox();
+        palatino21 = new javax.swing.JCheckBox();
+        vestibular21 = new javax.swing.JCheckBox();
+        mesial21 = new javax.swing.JCheckBox();
+        distal21 = new javax.swing.JCheckBox();
+        incisal22 = new javax.swing.JCheckBox();
+        palatino22 = new javax.swing.JCheckBox();
+        vestibular22 = new javax.swing.JCheckBox();
+        mesial22 = new javax.swing.JCheckBox();
+        distal22 = new javax.swing.JCheckBox();
+        incisal23 = new javax.swing.JCheckBox();
+        palatino27 = new javax.swing.JCheckBox();
+        vestibular27 = new javax.swing.JCheckBox();
+        mesial27 = new javax.swing.JCheckBox();
+        distal27 = new javax.swing.JCheckBox();
+        oclusal25 = new javax.swing.JCheckBox();
+        palatino25 = new javax.swing.JCheckBox();
+        vestibular25 = new javax.swing.JCheckBox();
+        mesial25 = new javax.swing.JCheckBox();
+        distal25 = new javax.swing.JCheckBox();
+        oclusal26 = new javax.swing.JCheckBox();
+        palatino26 = new javax.swing.JCheckBox();
+        vestibular26 = new javax.swing.JCheckBox();
+        mesial26 = new javax.swing.JCheckBox();
+        distal26 = new javax.swing.JCheckBox();
+        oclusal27 = new javax.swing.JCheckBox();
         jLabel2 = new javax.swing.JLabel();
         jLabel6 = new javax.swing.JLabel();
         jLabel7 = new javax.swing.JLabel();
@@ -135,76 +135,81 @@ public class Odontograma extends javax.swing.JFrame {
         jLabel30 = new javax.swing.JLabel();
         jLabel31 = new javax.swing.JLabel();
         jLabel32 = new javax.swing.JLabel();
-        jCheckBox72 = new javax.swing.JCheckBox();
-        jCheckBox73 = new javax.swing.JCheckBox();
-        jCheckBox74 = new javax.swing.JCheckBox();
-        jCheckBox75 = new javax.swing.JCheckBox();
-        jCheckBox76 = new javax.swing.JCheckBox();
-        jCheckBox97 = new javax.swing.JCheckBox();
-        jCheckBox98 = new javax.swing.JCheckBox();
-        jCheckBox99 = new javax.swing.JCheckBox();
-        jCheckBox100 = new javax.swing.JCheckBox();
-        jCheckBox101 = new javax.swing.JCheckBox();
-        jCheckBox152 = new javax.swing.JCheckBox();
-        jCheckBox153 = new javax.swing.JCheckBox();
-        jCheckBox154 = new javax.swing.JCheckBox();
-        jCheckBox155 = new javax.swing.JCheckBox();
-        jCheckBox156 = new javax.swing.JCheckBox();
-        jCheckBox168 = new javax.swing.JCheckBox();
-        jCheckBox169 = new javax.swing.JCheckBox();
-        jCheckBox170 = new javax.swing.JCheckBox();
-        jCheckBox171 = new javax.swing.JCheckBox();
-        jCheckBox172 = new javax.swing.JCheckBox();
-        jCheckBox173 = new javax.swing.JCheckBox();
-        jCheckBox174 = new javax.swing.JCheckBox();
-        jCheckBox175 = new javax.swing.JCheckBox();
-        jCheckBox176 = new javax.swing.JCheckBox();
-        jCheckBox177 = new javax.swing.JCheckBox();
-        jCheckBox178 = new javax.swing.JCheckBox();
-        jCheckBox179 = new javax.swing.JCheckBox();
-        jCheckBox180 = new javax.swing.JCheckBox();
-        jCheckBox181 = new javax.swing.JCheckBox();
-        jCheckBox182 = new javax.swing.JCheckBox();
-        jCheckBox183 = new javax.swing.JCheckBox();
-        jCheckBox184 = new javax.swing.JCheckBox();
-        jCheckBox185 = new javax.swing.JCheckBox();
-        jCheckBox186 = new javax.swing.JCheckBox();
-        jCheckBox187 = new javax.swing.JCheckBox();
-        jCheckBox188 = new javax.swing.JCheckBox();
-        jCheckBox189 = new javax.swing.JCheckBox();
-        jCheckBox190 = new javax.swing.JCheckBox();
-        jCheckBox191 = new javax.swing.JCheckBox();
-        jCheckBox192 = new javax.swing.JCheckBox();
-        jCheckBox193 = new javax.swing.JCheckBox();
-        jCheckBox194 = new javax.swing.JCheckBox();
-        jCheckBox195 = new javax.swing.JCheckBox();
-        jCheckBox196 = new javax.swing.JCheckBox();
-        jCheckBox197 = new javax.swing.JCheckBox();
-        jCheckBox198 = new javax.swing.JCheckBox();
-        jCheckBox199 = new javax.swing.JCheckBox();
-        jCheckBox200 = new javax.swing.JCheckBox();
-        jCheckBox201 = new javax.swing.JCheckBox();
-        jCheckBox202 = new javax.swing.JCheckBox();
-        jCheckBox203 = new javax.swing.JCheckBox();
-        jCheckBox204 = new javax.swing.JCheckBox();
-        jCheckBox205 = new javax.swing.JCheckBox();
-        jCheckBox206 = new javax.swing.JCheckBox();
-        jCheckBox207 = new javax.swing.JCheckBox();
-        jCheckBox208 = new javax.swing.JCheckBox();
-        jCheckBox209 = new javax.swing.JCheckBox();
-        jCheckBox210 = new javax.swing.JCheckBox();
-        jCheckBox211 = new javax.swing.JCheckBox();
-        jCheckBox212 = new javax.swing.JCheckBox();
-        jCheckBox213 = new javax.swing.JCheckBox();
-        jCheckBox214 = new javax.swing.JCheckBox();
-        jCheckBox215 = new javax.swing.JCheckBox();
-        jCheckBox216 = new javax.swing.JCheckBox();
-        jCheckBox217 = new javax.swing.JCheckBox();
-        jCheckBox218 = new javax.swing.JCheckBox();
-        jCheckBox219 = new javax.swing.JCheckBox();
-        jCheckBox220 = new javax.swing.JCheckBox();
-        jCheckBox221 = new javax.swing.JCheckBox();
-        jCheckBox222 = new javax.swing.JCheckBox();
+        oclusal47 = new javax.swing.JCheckBox();
+        vestibular47 = new javax.swing.JCheckBox();
+        lingual47 = new javax.swing.JCheckBox();
+        distal47 = new javax.swing.JCheckBox();
+        mesial47 = new javax.swing.JCheckBox();
+        oclusal46 = new javax.swing.JCheckBox();
+        vestibular46 = new javax.swing.JCheckBox();
+        lingual46 = new javax.swing.JCheckBox();
+        distal46 = new javax.swing.JCheckBox();
+        mesial46 = new javax.swing.JCheckBox();
+        oclusal45 = new javax.swing.JCheckBox();
+        vestibular45 = new javax.swing.JCheckBox();
+        lingual45 = new javax.swing.JCheckBox();
+        distal45 = new javax.swing.JCheckBox();
+        mesial45 = new javax.swing.JCheckBox();
+        vestibular42 = new javax.swing.JCheckBox();
+        lingual42 = new javax.swing.JCheckBox();
+        distal42 = new javax.swing.JCheckBox();
+        mesial42 = new javax.swing.JCheckBox();
+        incisal41 = new javax.swing.JCheckBox();
+        vestibular41 = new javax.swing.JCheckBox();
+        lingual41 = new javax.swing.JCheckBox();
+        distal41 = new javax.swing.JCheckBox();
+        mesial41 = new javax.swing.JCheckBox();
+        oclusal44 = new javax.swing.JCheckBox();
+        vestibular44 = new javax.swing.JCheckBox();
+        lingual44 = new javax.swing.JCheckBox();
+        distal44 = new javax.swing.JCheckBox();
+        mesial44 = new javax.swing.JCheckBox();
+        incisal43 = new javax.swing.JCheckBox();
+        vestibular43 = new javax.swing.JCheckBox();
+        lingual43 = new javax.swing.JCheckBox();
+        distal43 = new javax.swing.JCheckBox();
+        mesial43 = new javax.swing.JCheckBox();
+        incisal42 = new javax.swing.JCheckBox();
+        vestibular33 = new javax.swing.JCheckBox();
+        lingual33 = new javax.swing.JCheckBox();
+        mesial33 = new javax.swing.JCheckBox();
+        distal33 = new javax.swing.JCheckBox();
+        oclusal34 = new javax.swing.JCheckBox();
+        vestibular34 = new javax.swing.JCheckBox();
+        lingual34 = new javax.swing.JCheckBox();
+        mesial34 = new javax.swing.JCheckBox();
+        distal34 = new javax.swing.JCheckBox();
+        incisal31 = new javax.swing.JCheckBox();
+        vestibular31 = new javax.swing.JCheckBox();
+        lingual31 = new javax.swing.JCheckBox();
+        mesial31 = new javax.swing.JCheckBox();
+        distal31 = new javax.swing.JCheckBox();
+        incisal32 = new javax.swing.JCheckBox();
+        vestibular32 = new javax.swing.JCheckBox();
+        lingual32 = new javax.swing.JCheckBox();
+        mesial32 = new javax.swing.JCheckBox();
+        distal32 = new javax.swing.JCheckBox();
+        incisal33 = new javax.swing.JCheckBox();
+        vestibular37 = new javax.swing.JCheckBox();
+        lingual37 = new javax.swing.JCheckBox();
+        mesial37 = new javax.swing.JCheckBox();
+        distal37 = new javax.swing.JCheckBox();
+        oclusal35 = new javax.swing.JCheckBox();
+        vestibular35 = new javax.swing.JCheckBox();
+        lingual35 = new javax.swing.JCheckBox();
+        mesial35 = new javax.swing.JCheckBox();
+        distal35 = new javax.swing.JCheckBox();
+        oclusal36 = new javax.swing.JCheckBox();
+        vestibular36 = new javax.swing.JCheckBox();
+        lingual36 = new javax.swing.JCheckBox();
+        mesial36 = new javax.swing.JCheckBox();
+        distal36 = new javax.swing.JCheckBox();
+        oclusal37 = new javax.swing.JCheckBox();
+        jDateChooser1 = new com.toedter.calendar.JDateChooser();
+        odonto_guardar = new javax.swing.JButton();
+        odonto_limpiar = new javax.swing.JButton();
+        regresar = new javax.swing.JButton();
+        resultado = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -278,6 +283,28 @@ public class Odontograma extends javax.swing.JFrame {
 
         jLabel32.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Interfaces/Media/i3.7.png"))); // NOI18N
 
+        mesial36.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                mesial36ActionPerformed(evt);
+            }
+        });
+
+        odonto_guardar.setText("Guardar");
+        odonto_guardar.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                odonto_guardarActionPerformed(evt);
+            }
+        });
+
+        odonto_limpiar.setText("limpiar");
+        odonto_limpiar.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                odonto_limpiarActionPerformed(evt);
+            }
+        });
+
+        regresar.setText("Regresar");
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
@@ -289,8 +316,13 @@ public class Odontograma extends javax.swing.JFrame {
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                             .addComponent(jLabel3)
                             .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 48, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(jScrollPane1)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addGroup(layout.createSequentialGroup()
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addComponent(jScrollPane1))
+                            .addGroup(layout.createSequentialGroup()
+                                .addGap(21, 21, 21)
+                                .addComponent(jDateChooser1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
                         .addGap(88, 88, 88)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                             .addComponent(jLabel4)
@@ -299,157 +331,341 @@ public class Odontograma extends javax.swing.JFrame {
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                             .addComponent(jScrollPane2, javax.swing.GroupLayout.DEFAULT_SIZE, 174, Short.MAX_VALUE)
                             .addComponent(jScrollPane3))
-                        .addGap(731, 731, 731))
+                        .addGap(790, 790, 790))
                     .addGroup(layout.createSequentialGroup()
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addGroup(layout.createSequentialGroup()
-                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                                    .addGroup(layout.createSequentialGroup()
-                                        .addComponent(jCheckBox16, javax.swing.GroupLayout.PREFERRED_SIZE, 18, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                            .addComponent(jCheckBox14)
-                                            .addGroup(layout.createSequentialGroup()
-                                                .addComponent(jCheckBox13, javax.swing.GroupLayout.PREFERRED_SIZE, 18, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                                                .addComponent(jCheckBox17))
-                                            .addComponent(jCheckBox15))
-                                        .addGap(18, 18, 18)
-                                        .addComponent(jCheckBox21, javax.swing.GroupLayout.PREFERRED_SIZE, 18, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                            .addComponent(jCheckBox19)
-                                            .addGroup(layout.createSequentialGroup()
-                                                .addComponent(jCheckBox18, javax.swing.GroupLayout.PREFERRED_SIZE, 18, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                                                .addComponent(jCheckBox22))
-                                            .addComponent(jCheckBox20))
-                                        .addGap(18, 18, 18)
-                                        .addComponent(jCheckBox26, javax.swing.GroupLayout.PREFERRED_SIZE, 18, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                            .addComponent(jCheckBox24)
-                                            .addGroup(layout.createSequentialGroup()
-                                                .addComponent(jCheckBox23, javax.swing.GroupLayout.PREFERRED_SIZE, 18, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                                                .addComponent(jCheckBox27))
-                                            .addComponent(jCheckBox25))
-                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                        .addComponent(jCheckBox40, javax.swing.GroupLayout.PREFERRED_SIZE, 18, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                            .addComponent(jCheckBox38)
-                                            .addGroup(layout.createSequentialGroup()
-                                                .addComponent(jCheckBox37, javax.swing.GroupLayout.PREFERRED_SIZE, 18, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                                                .addComponent(jCheckBox41))
-                                            .addComponent(jCheckBox39)))
-                                    .addGroup(layout.createSequentialGroup()
-                                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                            .addGroup(layout.createSequentialGroup()
-                                                .addGap(14, 14, 14)
-                                                .addComponent(jLabel11)
-                                                .addGap(162, 162, 162))
-                                            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                                                .addComponent(jLabel10)
-                                                .addGap(56, 56, 56)))
-                                        .addComponent(jLabel9)
-                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                        .addComponent(jLabel8)
-                                        .addGap(22, 22, 22)))
+                                .addComponent(distal47, javax.swing.GroupLayout.PREFERRED_SIZE, 18, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addComponent(vestibular47)
                                     .addGroup(layout.createSequentialGroup()
-                                        .addComponent(jCheckBox45, javax.swing.GroupLayout.PREFERRED_SIZE, 18, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                            .addComponent(jCheckBox43)
                                             .addGroup(layout.createSequentialGroup()
-                                                .addComponent(jCheckBox42, javax.swing.GroupLayout.PREFERRED_SIZE, 18, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                                .addComponent(oclusal47, javax.swing.GroupLayout.PREFERRED_SIZE, 18, javax.swing.GroupLayout.PREFERRED_SIZE)
                                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                                                .addComponent(jCheckBox46))
-                                            .addComponent(jCheckBox44))
-                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                                        .addComponent(jCheckBox30, javax.swing.GroupLayout.PREFERRED_SIZE, 18, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                            .addComponent(jCheckBox28)
-                                            .addGroup(layout.createSequentialGroup()
-                                                .addComponent(jCheckBox47, javax.swing.GroupLayout.PREFERRED_SIZE, 18, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                                                .addComponent(jCheckBox31))
-                                            .addComponent(jCheckBox29))
-                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                        .addComponent(jCheckBox35, javax.swing.GroupLayout.PREFERRED_SIZE, 18, javax.swing.GroupLayout.PREFERRED_SIZE))
-                                    .addGroup(layout.createSequentialGroup()
-                                        .addGap(20, 20, 20)
-                                        .addComponent(jLabel7)
-                                        .addGap(53, 53, 53)
-                                        .addComponent(jLabel6)))
+                                                .addComponent(mesial47))
+                                            .addComponent(lingual47))
+                                        .addGap(18, 18, 18)
+                                        .addComponent(distal46, javax.swing.GroupLayout.PREFERRED_SIZE, 18, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                                .addGap(12, 12, 12)
                                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addComponent(vestibular46)
                                     .addGroup(layout.createSequentialGroup()
+                                        .addComponent(oclusal46, javax.swing.GroupLayout.PREFERRED_SIZE, 18, javax.swing.GroupLayout.PREFERRED_SIZE)
                                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                            .addComponent(jCheckBox33)
-                                            .addGroup(layout.createSequentialGroup()
-                                                .addComponent(jCheckBox32, javax.swing.GroupLayout.PREFERRED_SIZE, 18, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                                                .addComponent(jCheckBox36))
-                                            .addComponent(jCheckBox34)))
+                                        .addComponent(mesial46))
+                                    .addComponent(lingual46))
+                                .addGap(18, 18, 18)
+                                .addComponent(distal45, javax.swing.GroupLayout.PREFERRED_SIZE, 18, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addComponent(vestibular45)
                                     .addGroup(layout.createSequentialGroup()
-                                        .addGap(3, 3, 3)
-                                        .addComponent(jLabel2))))
-                            .addGroup(javax.swing.GroupLayout.Alignment.LEADING, layout.createSequentialGroup()
-                                .addGap(15, 15, 15)
-                                .addComponent(jLabel19)
-                                .addGap(53, 53, 53)
-                                .addComponent(jLabel20)
-                                .addGap(49, 49, 49)
-                                .addComponent(jLabel21)
-                                .addGap(225, 225, 225)
-                                .addComponent(jLabel24)
-                                .addGap(56, 56, 56)
-                                .addComponent(jLabel25, javax.swing.GroupLayout.PREFERRED_SIZE, 43, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                                        .addComponent(oclusal45, javax.swing.GroupLayout.PREFERRED_SIZE, 18, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                                        .addComponent(mesial45))
+                                    .addComponent(lingual45))
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addComponent(distal44, javax.swing.GroupLayout.PREFERRED_SIZE, 18, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addComponent(vestibular44)
+                                    .addGroup(layout.createSequentialGroup()
+                                        .addComponent(oclusal44, javax.swing.GroupLayout.PREFERRED_SIZE, 18, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                                        .addComponent(mesial44))
+                                    .addComponent(lingual44))
+                                .addComponent(distal43, javax.swing.GroupLayout.PREFERRED_SIZE, 18, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addComponent(vestibular43)
+                                    .addGroup(layout.createSequentialGroup()
+                                        .addComponent(incisal43, javax.swing.GroupLayout.PREFERRED_SIZE, 18, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                                        .addComponent(mesial43))
+                                    .addComponent(lingual43)))
+                            .addGroup(layout.createSequentialGroup()
+                                .addGap(319, 319, 319)
+                                .addComponent(jLabel22)
+                                .addGap(38, 38, 38)
+                                .addComponent(jLabel23)))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                        .addComponent(distal42, javax.swing.GroupLayout.PREFERRED_SIZE, 18, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(vestibular42)
+                            .addGroup(layout.createSequentialGroup()
+                                .addComponent(incisal42, javax.swing.GroupLayout.PREFERRED_SIZE, 18, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                                .addComponent(mesial42))
+                            .addComponent(lingual42))
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(jCheckBox60, javax.swing.GroupLayout.PREFERRED_SIZE, 18, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(distal41, javax.swing.GroupLayout.PREFERRED_SIZE, 18, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(vestibular41)
+                            .addGroup(layout.createSequentialGroup()
+                                .addComponent(incisal41, javax.swing.GroupLayout.PREFERRED_SIZE, 18, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                                .addComponent(mesial41))
+                            .addComponent(lingual41))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(mesial31, javax.swing.GroupLayout.PREFERRED_SIZE, 18, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addGroup(layout.createSequentialGroup()
                                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addComponent(jCheckBox58)
+                                    .addComponent(vestibular31)
                                     .addGroup(layout.createSequentialGroup()
-                                        .addComponent(jCheckBox57, javax.swing.GroupLayout.PREFERRED_SIZE, 18, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                        .addComponent(incisal31, javax.swing.GroupLayout.PREFERRED_SIZE, 18, javax.swing.GroupLayout.PREFERRED_SIZE)
                                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                                        .addComponent(jCheckBox61))
-                                    .addComponent(jCheckBox59))
+                                        .addComponent(distal31))
+                                    .addComponent(lingual31))
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(jCheckBox65, javax.swing.GroupLayout.PREFERRED_SIZE, 18, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addComponent(jCheckBox63)
-                                    .addGroup(layout.createSequentialGroup()
-                                        .addComponent(jCheckBox62, javax.swing.GroupLayout.PREFERRED_SIZE, 18, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                                        .addComponent(jCheckBox66))
-                                    .addComponent(jCheckBox64))
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(jCheckBox50, javax.swing.GroupLayout.PREFERRED_SIZE, 18, javax.swing.GroupLayout.PREFERRED_SIZE))
-                            .addGroup(layout.createSequentialGroup()
-                                .addComponent(jLabel12)
-                                .addGap(45, 45, 45)
-                                .addComponent(jLabel14)))
+                                .addComponent(mesial32, javax.swing.GroupLayout.PREFERRED_SIZE, 18, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED))
+                            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                                .addComponent(jLabel26, javax.swing.GroupLayout.PREFERRED_SIZE, 43, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addGap(47, 47, 47)))
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addGroup(layout.createSequentialGroup()
+                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addComponent(vestibular32)
+                                    .addGroup(layout.createSequentialGroup()
+                                        .addComponent(incisal32, javax.swing.GroupLayout.PREFERRED_SIZE, 18, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                                        .addComponent(distal32))
+                                    .addComponent(lingual32))
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addComponent(mesial33, javax.swing.GroupLayout.PREFERRED_SIZE, 18, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addComponent(jLabel27))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addGroup(layout.createSequentialGroup()
+                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addGroup(layout.createSequentialGroup()
+                                        .addComponent(incisal33, javax.swing.GroupLayout.PREFERRED_SIZE, 18, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                                        .addComponent(distal33))
+                                    .addComponent(lingual33)
+                                    .addComponent(vestibular33))
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                                .addComponent(mesial34, javax.swing.GroupLayout.PREFERRED_SIZE, 18, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addComponent(jLabel28))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addGroup(layout.createSequentialGroup()
+                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addComponent(vestibular34)
+                                    .addGroup(layout.createSequentialGroup()
+                                        .addComponent(oclusal34, javax.swing.GroupLayout.PREFERRED_SIZE, 18, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                                        .addComponent(distal34))
+                                    .addComponent(lingual34))
+                                .addGap(18, 18, 18)
+                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                                    .addGroup(layout.createSequentialGroup()
+                                        .addComponent(mesial35, javax.swing.GroupLayout.PREFERRED_SIZE, 18, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                            .addGroup(layout.createSequentialGroup()
+                                                .addComponent(oclusal35, javax.swing.GroupLayout.PREFERRED_SIZE, 18, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                                                .addComponent(distal35))
+                                            .addComponent(lingual35)
+                                            .addComponent(vestibular35)))
+                                    .addGroup(layout.createSequentialGroup()
+                                        .addComponent(jLabel30)
+                                        .addGap(30, 30, 30)))
+                                .addComponent(mesial36, javax.swing.GroupLayout.PREFERRED_SIZE, 18, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addComponent(jLabel29))
+                        .addGap(8, 8, 8)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                            .addGroup(layout.createSequentialGroup()
+                                .addGap(0, 0, Short.MAX_VALUE)
+                                .addComponent(jLabel31)
+                                .addGap(30, 30, 30))
+                            .addComponent(lingual36, javax.swing.GroupLayout.Alignment.LEADING)
+                            .addGroup(javax.swing.GroupLayout.Alignment.LEADING, layout.createSequentialGroup()
+                                .addComponent(oclusal36, javax.swing.GroupLayout.PREFERRED_SIZE, 18, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                                .addComponent(distal36)
+                                .addGap(18, 18, 18)
+                                .addComponent(mesial37, javax.swing.GroupLayout.PREFERRED_SIZE, 18, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addComponent(vestibular36, javax.swing.GroupLayout.Alignment.LEADING))
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addGroup(layout.createSequentialGroup()
+                                .addGap(11, 11, 11)
+                                .addComponent(jLabel32))
+                            .addGroup(layout.createSequentialGroup()
+                                .addGap(18, 18, 18)
+                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addComponent(vestibular37)
+                                    .addGroup(layout.createSequentialGroup()
+                                        .addComponent(oclusal37, javax.swing.GroupLayout.PREFERRED_SIZE, 18, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                                        .addComponent(distal37))
+                                    .addComponent(lingual37))))
+                        .addGap(71, 71, 71))
+                    .addGroup(layout.createSequentialGroup()
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                            .addGroup(layout.createSequentialGroup()
+                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                                    .addGroup(layout.createSequentialGroup()
+                                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                                            .addGroup(layout.createSequentialGroup()
+                                                .addComponent(distal17, javax.swing.GroupLayout.PREFERRED_SIZE, 18, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                                    .addComponent(palatino17)
+                                                    .addGroup(layout.createSequentialGroup()
+                                                        .addComponent(oclusal17, javax.swing.GroupLayout.PREFERRED_SIZE, 18, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                                                        .addComponent(mesial17))
+                                                    .addComponent(vestibular17))
+                                                .addGap(18, 18, 18)
+                                                .addComponent(distal16, javax.swing.GroupLayout.PREFERRED_SIZE, 18, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                                    .addComponent(palatino16)
+                                                    .addGroup(layout.createSequentialGroup()
+                                                        .addComponent(oclusal16, javax.swing.GroupLayout.PREFERRED_SIZE, 18, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                                                        .addComponent(mesial16))
+                                                    .addComponent(vestibular16))
+                                                .addGap(18, 18, 18)
+                                                .addComponent(distal15, javax.swing.GroupLayout.PREFERRED_SIZE, 18, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                                    .addComponent(palatino15)
+                                                    .addGroup(layout.createSequentialGroup()
+                                                        .addComponent(oclusal15, javax.swing.GroupLayout.PREFERRED_SIZE, 18, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                                                        .addComponent(mesial15))
+                                                    .addComponent(vestibular15))
+                                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                                .addComponent(distal14, javax.swing.GroupLayout.PREFERRED_SIZE, 18, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                                    .addComponent(palatino14)
+                                                    .addGroup(layout.createSequentialGroup()
+                                                        .addComponent(oclusal14, javax.swing.GroupLayout.PREFERRED_SIZE, 18, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                                                        .addComponent(mesial14))
+                                                    .addComponent(vestibular14)))
+                                            .addGroup(layout.createSequentialGroup()
+                                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                                    .addGroup(layout.createSequentialGroup()
+                                                        .addGap(14, 14, 14)
+                                                        .addComponent(jLabel11)
+                                                        .addGap(162, 162, 162))
+                                                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                                                        .addComponent(jLabel10)
+                                                        .addGap(56, 56, 56)))
+                                                .addComponent(jLabel9)
+                                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                                .addComponent(jLabel8)
+                                                .addGap(22, 22, 22)))
+                                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                            .addGroup(layout.createSequentialGroup()
+                                                .addComponent(distal13, javax.swing.GroupLayout.PREFERRED_SIZE, 18, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                                    .addComponent(palatino13)
+                                                    .addGroup(layout.createSequentialGroup()
+                                                        .addComponent(incisal13, javax.swing.GroupLayout.PREFERRED_SIZE, 18, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                                                        .addComponent(mesial13))
+                                                    .addComponent(vestibular13))
+                                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                                                .addComponent(distal12, javax.swing.GroupLayout.PREFERRED_SIZE, 18, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                                    .addComponent(palatino12)
+                                                    .addGroup(layout.createSequentialGroup()
+                                                        .addComponent(incisal12, javax.swing.GroupLayout.PREFERRED_SIZE, 18, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                                                        .addComponent(mesial12))
+                                                    .addComponent(vestibular12))
+                                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                                .addComponent(distal11, javax.swing.GroupLayout.PREFERRED_SIZE, 18, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                            .addGroup(layout.createSequentialGroup()
+                                                .addGap(20, 20, 20)
+                                                .addComponent(jLabel7)
+                                                .addGap(53, 53, 53)
+                                                .addComponent(jLabel6)))
+                                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                            .addGroup(layout.createSequentialGroup()
+                                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                                    .addComponent(palatino11)
+                                                    .addGroup(layout.createSequentialGroup()
+                                                        .addComponent(incisal11, javax.swing.GroupLayout.PREFERRED_SIZE, 18, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                                                        .addComponent(mesial11))
+                                                    .addComponent(vestibular11)))
+                                            .addGroup(layout.createSequentialGroup()
+                                                .addGap(3, 3, 3)
+                                                .addComponent(jLabel2))))
+                                    .addGroup(javax.swing.GroupLayout.Alignment.LEADING, layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                                        .addComponent(resultado, javax.swing.GroupLayout.PREFERRED_SIZE, 568, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                        .addGroup(javax.swing.GroupLayout.Alignment.LEADING, layout.createSequentialGroup()
+                                            .addGap(15, 15, 15)
+                                            .addComponent(jLabel19)
+                                            .addGap(53, 53, 53)
+                                            .addComponent(jLabel20)
+                                            .addGap(49, 49, 49)
+                                            .addComponent(jLabel21)
+                                            .addGap(225, 225, 225)
+                                            .addComponent(jLabel24)
+                                            .addGap(56, 56, 56)
+                                            .addComponent(jLabel25, javax.swing.GroupLayout.PREFERRED_SIZE, 43, javax.swing.GroupLayout.PREFERRED_SIZE))))
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addComponent(mesial21, javax.swing.GroupLayout.PREFERRED_SIZE, 18, javax.swing.GroupLayout.PREFERRED_SIZE)
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                                     .addGroup(layout.createSequentialGroup()
-                                        .addComponent(jCheckBox67, javax.swing.GroupLayout.PREFERRED_SIZE, 18, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                            .addComponent(palatino21)
+                                            .addGroup(layout.createSequentialGroup()
+                                                .addComponent(incisal21, javax.swing.GroupLayout.PREFERRED_SIZE, 18, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                                                .addComponent(distal21))
+                                            .addComponent(vestibular21))
+                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                        .addComponent(mesial22, javax.swing.GroupLayout.PREFERRED_SIZE, 18, javax.swing.GroupLayout.PREFERRED_SIZE)
                                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                                        .addComponent(jCheckBox51))
-                                    .addComponent(jCheckBox49)
-                                    .addComponent(jCheckBox48)))
+                                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                            .addComponent(palatino22)
+                                            .addGroup(layout.createSequentialGroup()
+                                                .addComponent(incisal22, javax.swing.GroupLayout.PREFERRED_SIZE, 18, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                                                .addComponent(distal22))
+                                            .addComponent(vestibular22))
+                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                        .addComponent(mesial23, javax.swing.GroupLayout.PREFERRED_SIZE, 18, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                    .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                                        .addComponent(odonto_limpiar)
+                                        .addGroup(layout.createSequentialGroup()
+                                            .addComponent(jLabel12)
+                                            .addGap(45, 45, 45)
+                                            .addComponent(jLabel14)))))
+                            .addGroup(layout.createSequentialGroup()
+                                .addComponent(odonto_guardar)
+                                .addGap(131, 131, 131)))
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addGroup(layout.createSequentialGroup()
+                                .addComponent(incisal23, javax.swing.GroupLayout.PREFERRED_SIZE, 18, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                                .addComponent(distal23))
+                            .addComponent(vestibular23)
+                            .addComponent(palatino23)
                             .addGroup(layout.createSequentialGroup()
                                 .addGap(3, 3, 3)
-                                .addComponent(jLabel16)))
+                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addComponent(regresar)
+                                    .addComponent(jLabel16))))
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addGroup(layout.createSequentialGroup()
                                 .addGap(25, 25, 25)
@@ -460,230 +676,51 @@ public class Odontograma extends javax.swing.JFrame {
                                 .addComponent(jLabel18))
                             .addGroup(layout.createSequentialGroup()
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                                .addComponent(jCheckBox55, javax.swing.GroupLayout.PREFERRED_SIZE, 18, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addComponent(mesial24, javax.swing.GroupLayout.PREFERRED_SIZE, 18, javax.swing.GroupLayout.PREFERRED_SIZE)
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addComponent(jCheckBox53)
+                                    .addComponent(palatino24)
                                     .addGroup(layout.createSequentialGroup()
-                                        .addComponent(jCheckBox52, javax.swing.GroupLayout.PREFERRED_SIZE, 18, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                        .addComponent(oclusal24, javax.swing.GroupLayout.PREFERRED_SIZE, 18, javax.swing.GroupLayout.PREFERRED_SIZE)
                                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                                        .addComponent(jCheckBox56))
-                                    .addComponent(jCheckBox54))
+                                        .addComponent(distal24))
+                                    .addComponent(vestibular24))
                                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                                     .addGroup(layout.createSequentialGroup()
                                         .addGap(18, 18, 18)
-                                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                                            .addGroup(layout.createSequentialGroup()
-                                                .addComponent(jCheckBox80, javax.swing.GroupLayout.PREFERRED_SIZE, 18, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                                    .addGroup(layout.createSequentialGroup()
-                                                        .addComponent(jCheckBox77, javax.swing.GroupLayout.PREFERRED_SIZE, 18, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                                                        .addComponent(jCheckBox81))
-                                                    .addComponent(jCheckBox79)))
-                                            .addGroup(layout.createSequentialGroup()
-                                                .addComponent(jCheckBox78)
-                                                .addGap(36, 36, 36)))
-                                        .addComponent(jCheckBox85, javax.swing.GroupLayout.PREFERRED_SIZE, 18, javax.swing.GroupLayout.PREFERRED_SIZE))
-                                    .addGroup(layout.createSequentialGroup()
-                                        .addGap(30, 30, 30)
-                                        .addComponent(jLabel15)))
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addComponent(jCheckBox83)
-                                    .addGroup(layout.createSequentialGroup()
-                                        .addComponent(jCheckBox82, javax.swing.GroupLayout.PREFERRED_SIZE, 18, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                                        .addComponent(jCheckBox86))
-                                    .addComponent(jCheckBox84))
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(jCheckBox70, javax.swing.GroupLayout.PREFERRED_SIZE, 18, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addComponent(jCheckBox68)
-                                    .addGroup(layout.createSequentialGroup()
-                                        .addComponent(jCheckBox87, javax.swing.GroupLayout.PREFERRED_SIZE, 18, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                                        .addComponent(jCheckBox71))
-                                    .addComponent(jCheckBox69)))))
-                    .addGroup(layout.createSequentialGroup()
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addGroup(layout.createSequentialGroup()
-                                .addComponent(jCheckBox75, javax.swing.GroupLayout.PREFERRED_SIZE, 18, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addComponent(jCheckBox73)
-                                    .addGroup(layout.createSequentialGroup()
-                                        .addComponent(jCheckBox72, javax.swing.GroupLayout.PREFERRED_SIZE, 18, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                                        .addComponent(jCheckBox76))
-                                    .addComponent(jCheckBox74))
-                                .addGap(18, 18, 18)
-                                .addComponent(jCheckBox100, javax.swing.GroupLayout.PREFERRED_SIZE, 18, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addComponent(jCheckBox98)
-                                    .addGroup(layout.createSequentialGroup()
-                                        .addComponent(jCheckBox97, javax.swing.GroupLayout.PREFERRED_SIZE, 18, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                                        .addComponent(jCheckBox101))
-                                    .addComponent(jCheckBox99))
-                                .addGap(18, 18, 18)
-                                .addComponent(jCheckBox155, javax.swing.GroupLayout.PREFERRED_SIZE, 18, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addComponent(jCheckBox153)
-                                    .addGroup(layout.createSequentialGroup()
-                                        .addComponent(jCheckBox152, javax.swing.GroupLayout.PREFERRED_SIZE, 18, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                                        .addComponent(jCheckBox156))
-                                    .addComponent(jCheckBox154))
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(jCheckBox180, javax.swing.GroupLayout.PREFERRED_SIZE, 18, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addComponent(jCheckBox178)
-                                    .addGroup(layout.createSequentialGroup()
-                                        .addComponent(jCheckBox177, javax.swing.GroupLayout.PREFERRED_SIZE, 18, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                                        .addComponent(jCheckBox181))
-                                    .addComponent(jCheckBox179))
-                                .addComponent(jCheckBox185, javax.swing.GroupLayout.PREFERRED_SIZE, 18, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addComponent(jCheckBox183)
-                                    .addGroup(layout.createSequentialGroup()
-                                        .addComponent(jCheckBox182, javax.swing.GroupLayout.PREFERRED_SIZE, 18, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                                        .addComponent(jCheckBox186))
-                                    .addComponent(jCheckBox184)))
-                            .addGroup(layout.createSequentialGroup()
-                                .addGap(319, 319, 319)
-                                .addComponent(jLabel22)
-                                .addGap(38, 38, 38)
-                                .addComponent(jLabel23)))
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                        .addComponent(jCheckBox170, javax.swing.GroupLayout.PREFERRED_SIZE, 18, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(jCheckBox168)
-                            .addGroup(layout.createSequentialGroup()
-                                .addComponent(jCheckBox187, javax.swing.GroupLayout.PREFERRED_SIZE, 18, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                                .addComponent(jCheckBox171))
-                            .addComponent(jCheckBox169))
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(jCheckBox175, javax.swing.GroupLayout.PREFERRED_SIZE, 18, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(jCheckBox173)
-                            .addGroup(layout.createSequentialGroup()
-                                .addComponent(jCheckBox172, javax.swing.GroupLayout.PREFERRED_SIZE, 18, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                                .addComponent(jCheckBox176))
-                            .addComponent(jCheckBox174))
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(jCheckBox200, javax.swing.GroupLayout.PREFERRED_SIZE, 18, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addGroup(layout.createSequentialGroup()
-                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addComponent(jCheckBox198)
-                                    .addGroup(layout.createSequentialGroup()
-                                        .addComponent(jCheckBox197, javax.swing.GroupLayout.PREFERRED_SIZE, 18, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                                        .addComponent(jCheckBox201))
-                                    .addComponent(jCheckBox199))
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(jCheckBox205, javax.swing.GroupLayout.PREFERRED_SIZE, 18, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED))
-                            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                                .addComponent(jLabel26, javax.swing.GroupLayout.PREFERRED_SIZE, 43, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addGap(47, 47, 47)))
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addGroup(layout.createSequentialGroup()
-                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addComponent(jCheckBox203)
-                                    .addGroup(layout.createSequentialGroup()
-                                        .addComponent(jCheckBox202, javax.swing.GroupLayout.PREFERRED_SIZE, 18, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                                        .addComponent(jCheckBox206))
-                                    .addComponent(jCheckBox204))
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(jCheckBox190, javax.swing.GroupLayout.PREFERRED_SIZE, 18, javax.swing.GroupLayout.PREFERRED_SIZE))
-                            .addComponent(jLabel27))
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addGroup(layout.createSequentialGroup()
-                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addGroup(layout.createSequentialGroup()
-                                        .addComponent(jCheckBox207, javax.swing.GroupLayout.PREFERRED_SIZE, 18, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                                        .addComponent(jCheckBox191))
-                                    .addComponent(jCheckBox189)
-                                    .addComponent(jCheckBox188))
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                                .addComponent(jCheckBox195, javax.swing.GroupLayout.PREFERRED_SIZE, 18, javax.swing.GroupLayout.PREFERRED_SIZE))
-                            .addComponent(jLabel28))
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addGroup(layout.createSequentialGroup()
-                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addComponent(jCheckBox193)
-                                    .addGroup(layout.createSequentialGroup()
-                                        .addComponent(jCheckBox192, javax.swing.GroupLayout.PREFERRED_SIZE, 18, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                                        .addComponent(jCheckBox196))
-                                    .addComponent(jCheckBox194))
-                                .addGap(18, 18, 18)
-                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                                    .addGroup(layout.createSequentialGroup()
-                                        .addComponent(jCheckBox215, javax.swing.GroupLayout.PREFERRED_SIZE, 18, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                        .addComponent(mesial25, javax.swing.GroupLayout.PREFERRED_SIZE, 18, javax.swing.GroupLayout.PREFERRED_SIZE)
                                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                                             .addGroup(layout.createSequentialGroup()
-                                                .addComponent(jCheckBox212, javax.swing.GroupLayout.PREFERRED_SIZE, 18, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                                .addComponent(oclusal25, javax.swing.GroupLayout.PREFERRED_SIZE, 18, javax.swing.GroupLayout.PREFERRED_SIZE)
                                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                                                .addComponent(jCheckBox216))
-                                            .addComponent(jCheckBox214)
-                                            .addComponent(jCheckBox213)))
+                                                .addComponent(distal25))
+                                            .addComponent(vestibular25))
+                                        .addComponent(mesial26, javax.swing.GroupLayout.PREFERRED_SIZE, 18, javax.swing.GroupLayout.PREFERRED_SIZE))
                                     .addGroup(layout.createSequentialGroup()
-                                        .addComponent(jLabel30)
-                                        .addGap(30, 30, 30))))
-                            .addGroup(layout.createSequentialGroup()
-                                .addComponent(jLabel29)
-                                .addGap(143, 143, 143)))
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                            .addGroup(layout.createSequentialGroup()
-                                .addComponent(jCheckBox220, javax.swing.GroupLayout.PREFERRED_SIZE, 18, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                        .addGap(30, 30, 30)
+                                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                                            .addComponent(palatino25)
+                                            .addComponent(jLabel15))))
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addComponent(jCheckBox218)
+                                    .addComponent(palatino26)
                                     .addGroup(layout.createSequentialGroup()
-                                        .addComponent(jCheckBox217, javax.swing.GroupLayout.PREFERRED_SIZE, 18, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                        .addComponent(oclusal26, javax.swing.GroupLayout.PREFERRED_SIZE, 18, javax.swing.GroupLayout.PREFERRED_SIZE)
                                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                                        .addComponent(jCheckBox221))
-                                    .addComponent(jCheckBox219)))
-                            .addGroup(layout.createSequentialGroup()
-                                .addComponent(jLabel31)
-                                .addGap(30, 30, 30)))
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addGroup(layout.createSequentialGroup()
-                                .addComponent(jCheckBox210, javax.swing.GroupLayout.PREFERRED_SIZE, 18, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                        .addComponent(distal26))
+                                    .addComponent(vestibular26))
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addComponent(mesial27, javax.swing.GroupLayout.PREFERRED_SIZE, 18, javax.swing.GroupLayout.PREFERRED_SIZE)
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addComponent(jCheckBox208)
+                                    .addComponent(palatino27)
                                     .addGroup(layout.createSequentialGroup()
-                                        .addComponent(jCheckBox222, javax.swing.GroupLayout.PREFERRED_SIZE, 18, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                        .addComponent(oclusal27, javax.swing.GroupLayout.PREFERRED_SIZE, 18, javax.swing.GroupLayout.PREFERRED_SIZE)
                                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                                        .addComponent(jCheckBox211))
-                                    .addComponent(jCheckBox209)))
-                            .addGroup(layout.createSequentialGroup()
-                                .addGap(28, 28, 28)
-                                .addComponent(jLabel32)))))
-                .addGap(59, 59, 59))
+                                        .addComponent(distal27))
+                                    .addComponent(vestibular27))))
+                        .addGap(59, 59, 59))))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -697,13 +734,20 @@ public class Odontograma extends javax.swing.JFrame {
                                     .addComponent(jLabel1)
                                     .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                                     .addComponent(jLabel4))
-                                .addGap(27, 27, 27)
-                                .addComponent(jLabel3)
+                                .addGap(19, 19, 19)
+                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                                    .addComponent(jLabel3)
+                                    .addComponent(jDateChooser1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 41, Short.MAX_VALUE))
                             .addGroup(layout.createSequentialGroup()
                                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                                     .addGroup(layout.createSequentialGroup()
-                                        .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                            .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                            .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                                                .addComponent(odonto_guardar)
+                                                .addComponent(odonto_limpiar)
+                                                .addComponent(regresar)))
                                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                                         .addComponent(jScrollPane3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                                     .addComponent(jLabel5, javax.swing.GroupLayout.Alignment.TRAILING))
@@ -726,77 +770,77 @@ public class Odontograma extends javax.swing.JFrame {
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addGroup(layout.createSequentialGroup()
-                                .addComponent(jCheckBox33)
+                                .addComponent(palatino11)
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addComponent(jCheckBox32)
-                                    .addComponent(jCheckBox35)
-                                    .addComponent(jCheckBox36))
+                                    .addComponent(incisal11)
+                                    .addComponent(distal11)
+                                    .addComponent(mesial11))
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(jCheckBox34))
+                                .addComponent(vestibular11))
                             .addGroup(layout.createSequentialGroup()
-                                .addComponent(jCheckBox58)
+                                .addComponent(palatino21)
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addComponent(jCheckBox57)
-                                    .addComponent(jCheckBox60)
-                                    .addComponent(jCheckBox61))
+                                    .addComponent(incisal21)
+                                    .addComponent(mesial21)
+                                    .addComponent(distal21))
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(jCheckBox59))
+                                .addComponent(vestibular21))
                             .addGroup(layout.createSequentialGroup()
-                                .addComponent(jCheckBox63)
+                                .addComponent(palatino22)
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addComponent(jCheckBox62)
-                                    .addComponent(jCheckBox65)
-                                    .addComponent(jCheckBox66))
+                                    .addComponent(incisal22)
+                                    .addComponent(mesial22)
+                                    .addComponent(distal22))
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(jCheckBox64))
+                                .addComponent(vestibular22))
                             .addGroup(layout.createSequentialGroup()
-                                .addComponent(jCheckBox48)
+                                .addComponent(palatino23)
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addComponent(jCheckBox67)
-                                    .addComponent(jCheckBox50)
-                                    .addComponent(jCheckBox51))
+                                    .addComponent(incisal23)
+                                    .addComponent(mesial23)
+                                    .addComponent(distal23))
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(jCheckBox49))
+                                .addComponent(vestibular23))
                             .addGroup(layout.createSequentialGroup()
-                                .addComponent(jCheckBox53)
+                                .addComponent(palatino24)
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addComponent(jCheckBox52)
-                                    .addComponent(jCheckBox56)
-                                    .addComponent(jCheckBox55))
+                                    .addComponent(oclusal24)
+                                    .addComponent(distal24)
+                                    .addComponent(mesial24))
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(jCheckBox54))
+                                .addComponent(vestibular24))
                             .addGroup(layout.createSequentialGroup()
-                                .addComponent(jCheckBox78)
+                                .addComponent(palatino25)
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addComponent(jCheckBox77)
-                                    .addComponent(jCheckBox80)
-                                    .addComponent(jCheckBox81))
+                                    .addComponent(oclusal25)
+                                    .addComponent(mesial25)
+                                    .addComponent(distal25))
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(jCheckBox79))
+                                .addComponent(vestibular25))
                             .addGroup(layout.createSequentialGroup()
-                                .addComponent(jCheckBox83)
+                                .addComponent(palatino26)
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addComponent(jCheckBox82)
-                                    .addComponent(jCheckBox85)
-                                    .addComponent(jCheckBox86))
+                                    .addComponent(oclusal26)
+                                    .addComponent(mesial26)
+                                    .addComponent(distal26))
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(jCheckBox84))
+                                .addComponent(vestibular26))
                             .addGroup(layout.createSequentialGroup()
-                                .addComponent(jCheckBox68)
+                                .addComponent(palatino27)
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addComponent(jCheckBox87)
-                                    .addComponent(jCheckBox70)
-                                    .addComponent(jCheckBox71))
+                                    .addComponent(oclusal27)
+                                    .addComponent(mesial27)
+                                    .addComponent(distal27))
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(jCheckBox69))))
+                                .addComponent(vestibular27))))
                     .addGroup(layout.createSequentialGroup()
                         .addGap(0, 0, Short.MAX_VALUE)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
@@ -806,194 +850,193 @@ public class Odontograma extends javax.swing.JFrame {
                                     .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                                             .addGroup(layout.createSequentialGroup()
-                                                .addComponent(jCheckBox14)
+                                                .addComponent(palatino17)
                                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                                                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                                    .addComponent(jCheckBox13)
-                                                    .addComponent(jCheckBox16)
-                                                    .addComponent(jCheckBox17))
+                                                    .addComponent(oclusal17)
+                                                    .addComponent(distal17)
+                                                    .addComponent(mesial17))
                                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                                .addComponent(jCheckBox15))
+                                                .addComponent(vestibular17))
                                             .addGroup(layout.createSequentialGroup()
-                                                .addComponent(jCheckBox19)
+                                                .addComponent(palatino16)
                                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                                                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                                    .addComponent(jCheckBox18)
-                                                    .addComponent(jCheckBox21)
-                                                    .addComponent(jCheckBox22))
+                                                    .addComponent(oclusal16)
+                                                    .addComponent(distal16)
+                                                    .addComponent(mesial16))
                                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                                .addComponent(jCheckBox20)))
+                                                .addComponent(vestibular16)))
                                         .addGroup(layout.createSequentialGroup()
-                                            .addComponent(jCheckBox24)
+                                            .addComponent(palatino15)
                                             .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                                             .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                                .addComponent(jCheckBox23)
-                                                .addComponent(jCheckBox26)
-                                                .addComponent(jCheckBox27))
+                                                .addComponent(oclusal15)
+                                                .addComponent(distal15)
+                                                .addComponent(mesial15))
                                             .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                            .addComponent(jCheckBox25))))
+                                            .addComponent(vestibular15))))
                                 .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                                     .addGroup(layout.createSequentialGroup()
-                                        .addComponent(jCheckBox28)
+                                        .addComponent(palatino12)
                                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                            .addComponent(jCheckBox47)
-                                            .addComponent(jCheckBox30)
-                                            .addComponent(jCheckBox31))
+                                            .addComponent(incisal12)
+                                            .addComponent(distal12)
+                                            .addComponent(mesial12))
                                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                        .addComponent(jCheckBox29))
+                                        .addComponent(vestibular12))
                                     .addGroup(layout.createSequentialGroup()
-                                        .addComponent(jCheckBox43)
+                                        .addComponent(palatino13)
                                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                            .addComponent(jCheckBox42)
-                                            .addComponent(jCheckBox45)
-                                            .addComponent(jCheckBox46))
+                                            .addComponent(incisal13)
+                                            .addComponent(distal13)
+                                            .addComponent(mesial13))
                                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                        .addComponent(jCheckBox44))))
+                                        .addComponent(vestibular13))))
                             .addGroup(layout.createSequentialGroup()
                                 .addComponent(jLabel8)
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(jCheckBox38)
+                                .addComponent(palatino14)
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addComponent(jCheckBox37)
-                                    .addComponent(jCheckBox40)
-                                    .addComponent(jCheckBox41))
+                                    .addComponent(oclusal14)
+                                    .addComponent(distal14)
+                                    .addComponent(mesial14))
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(jCheckBox39)))))
+                                .addComponent(vestibular14)))))
                 .addGap(27, 27, 27)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                     .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                         .addGroup(layout.createSequentialGroup()
-                            .addComponent(jCheckBox173)
+                            .addComponent(vestibular41)
                             .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                             .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                .addComponent(jCheckBox172)
-                                .addComponent(jCheckBox175)
-                                .addComponent(jCheckBox176))
+                                .addComponent(incisal41)
+                                .addComponent(distal41)
+                                .addComponent(mesial41))
                             .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                            .addComponent(jCheckBox174))
+                            .addComponent(lingual41))
                         .addGroup(layout.createSequentialGroup()
-                            .addComponent(jCheckBox198)
+                            .addComponent(vestibular31)
                             .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                             .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                .addComponent(jCheckBox197)
-                                .addComponent(jCheckBox200)
-                                .addComponent(jCheckBox201))
+                                .addComponent(incisal31)
+                                .addComponent(mesial31)
+                                .addComponent(distal31))
                             .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                            .addComponent(jCheckBox199))
+                            .addComponent(lingual31))
                         .addGroup(layout.createSequentialGroup()
-                            .addComponent(jCheckBox203)
+                            .addComponent(vestibular32)
                             .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                             .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                .addComponent(jCheckBox202)
-                                .addComponent(jCheckBox205)
-                                .addComponent(jCheckBox206))
+                                .addComponent(incisal32)
+                                .addComponent(mesial32)
+                                .addComponent(distal32))
                             .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                            .addComponent(jCheckBox204))
+                            .addComponent(lingual32))
                         .addGroup(layout.createSequentialGroup()
-                            .addComponent(jCheckBox188)
+                            .addComponent(vestibular33)
                             .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                             .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                .addComponent(jCheckBox207)
-                                .addComponent(jCheckBox190)
-                                .addComponent(jCheckBox191))
+                                .addComponent(incisal33)
+                                .addComponent(mesial33)
+                                .addComponent(distal33))
                             .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                            .addComponent(jCheckBox189))
+                            .addComponent(lingual33))
                         .addGroup(layout.createSequentialGroup()
-                            .addComponent(jCheckBox193)
+                            .addComponent(vestibular34)
                             .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                             .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                .addComponent(jCheckBox192)
-                                .addComponent(jCheckBox196)
-                                .addComponent(jCheckBox195))
+                                .addComponent(oclusal34)
+                                .addComponent(distal34)
+                                .addComponent(mesial34))
                             .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                            .addComponent(jCheckBox194))
+                            .addComponent(lingual34))
                         .addGroup(layout.createSequentialGroup()
-                            .addComponent(jCheckBox213)
+                            .addComponent(vestibular37)
                             .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                             .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                .addComponent(jCheckBox212)
-                                .addComponent(jCheckBox215)
-                                .addComponent(jCheckBox216))
+                                .addComponent(oclusal37)
+                                .addComponent(distal37))
                             .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                            .addComponent(jCheckBox214))
+                            .addComponent(lingual37))
                         .addGroup(layout.createSequentialGroup()
-                            .addComponent(jCheckBox218)
+                            .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                .addComponent(vestibular35)
+                                .addComponent(vestibular36))
                             .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                             .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                .addComponent(jCheckBox217)
-                                .addComponent(jCheckBox220)
-                                .addComponent(jCheckBox221))
-                            .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                            .addComponent(jCheckBox219))
-                        .addGroup(layout.createSequentialGroup()
-                            .addComponent(jCheckBox208)
-                            .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                            .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                .addComponent(jCheckBox222)
-                                .addComponent(jCheckBox210)
-                                .addComponent(jCheckBox211))
-                            .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                            .addComponent(jCheckBox209)))
+                                .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                                    .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                        .addComponent(oclusal35)
+                                        .addComponent(mesial35)
+                                        .addComponent(distal35)
+                                        .addComponent(mesial36)
+                                        .addComponent(oclusal36)
+                                        .addComponent(distal36))
+                                    .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                    .addComponent(lingual35))
+                                .addComponent(lingual36, javax.swing.GroupLayout.Alignment.TRAILING)
+                                .addComponent(mesial37))))
                     .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                             .addGroup(layout.createSequentialGroup()
-                                .addComponent(jCheckBox73)
+                                .addComponent(vestibular47)
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addComponent(jCheckBox72)
-                                    .addComponent(jCheckBox75)
-                                    .addComponent(jCheckBox76))
+                                    .addComponent(oclusal47)
+                                    .addComponent(distal47)
+                                    .addComponent(mesial47))
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(jCheckBox74))
+                                .addComponent(lingual47))
                             .addGroup(layout.createSequentialGroup()
-                                .addComponent(jCheckBox98)
+                                .addComponent(vestibular46)
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addComponent(jCheckBox97)
-                                    .addComponent(jCheckBox100)
-                                    .addComponent(jCheckBox101))
+                                    .addComponent(oclusal46)
+                                    .addComponent(mesial46)
+                                    .addComponent(distal46))
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(jCheckBox99)))
+                                .addComponent(lingual46)))
                         .addGroup(layout.createSequentialGroup()
-                            .addComponent(jCheckBox153)
+                            .addComponent(vestibular45)
                             .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                             .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                .addComponent(jCheckBox152)
-                                .addComponent(jCheckBox155)
-                                .addComponent(jCheckBox156))
+                                .addComponent(oclusal45)
+                                .addComponent(distal45)
+                                .addComponent(mesial45))
                             .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                            .addComponent(jCheckBox154))
+                            .addComponent(lingual45))
                         .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addGroup(layout.createSequentialGroup()
-                                .addComponent(jCheckBox168)
+                                .addComponent(vestibular42)
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addComponent(jCheckBox187)
-                                    .addComponent(jCheckBox170)
-                                    .addComponent(jCheckBox171))
+                                    .addComponent(incisal42)
+                                    .addComponent(distal42)
+                                    .addComponent(mesial42))
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(jCheckBox169))
+                                .addComponent(lingual42))
                             .addGroup(layout.createSequentialGroup()
-                                .addComponent(jCheckBox183)
+                                .addComponent(vestibular43)
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addComponent(jCheckBox182)
-                                    .addComponent(jCheckBox185)
-                                    .addComponent(jCheckBox186))
+                                    .addComponent(incisal43)
+                                    .addComponent(distal43)
+                                    .addComponent(mesial43))
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(jCheckBox184))))
+                                .addComponent(lingual43))))
                     .addGroup(layout.createSequentialGroup()
-                        .addComponent(jCheckBox178)
+                        .addComponent(vestibular44)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(jCheckBox177)
-                            .addComponent(jCheckBox180)
-                            .addComponent(jCheckBox181))
+                            .addComponent(oclusal44)
+                            .addComponent(distal44)
+                            .addComponent(mesial44))
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(jCheckBox179)))
+                        .addComponent(lingual44)))
                 .addGap(18, 18, 18)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(jLabel20)
@@ -1010,11 +1053,613 @@ public class Odontograma extends javax.swing.JFrame {
                     .addComponent(jLabel31)
                     .addComponent(jLabel28)
                     .addComponent(jLabel25))
-                .addGap(516, 516, 516))
+                .addGap(79, 79, 79)
+                .addComponent(resultado, javax.swing.GroupLayout.PREFERRED_SIZE, 162, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(275, 275, 275))
         );
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
+
+    private void mesial36ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_mesial36ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_mesial36ActionPerformed
+
+    private void odonto_guardarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_odonto_guardarActionPerformed
+        if(incisal11.isSelected()){
+            mensaje="incisal de la piesa 11";
+        }
+        if(mesial11.isSelected()){
+            mensaje="mesial de la piesa 11";
+        }
+        if(distal11.isSelected()){
+            mensaje="distal de la piesa 11";
+        }
+        if(vestibular11.isSelected()){
+            mensaje="vestibular de la piesa 11";
+        }
+        if(palatino11.isSelected()){
+            mensaje="palatino de la piesa 11";
+        }
+        if(incisal12.isSelected()){
+            mensaje="incisal de la piesa 12";
+        }
+        if(mesial12.isSelected()){
+            mensaje="mesial de la piesa 12";
+        }
+        if(distal12.isSelected()){
+            mensaje="distal de la piesa 12";
+        }
+        if(vestibular12.isSelected()){
+            mensaje="vestibular de la piesa 12";
+        }
+        if(palatino12.isSelected()){
+            mensaje="palatino de la piesa 12";
+        }
+        if(incisal13.isSelected()){
+            mensaje="incisal de la piesa 13";
+        }
+        if(mesial13.isSelected()){
+            mensaje="mesial de la piesa 13";
+        }
+        if(distal13.isSelected()){
+            mensaje="distal de la piesa 13";
+        }
+        if(vestibular13.isSelected()){
+            mensaje="vestibular de la piesa 13";
+        }
+        if(palatino13.isSelected()){
+            mensaje="palatino de la piesa 13";
+        }
+        if(oclusal14.isSelected()){
+            mensaje="oclusal de la piesa 14";
+        }
+        if(mesial14.isSelected()){
+            mensaje="mesial de la piesa 14";
+        }
+        if(distal14.isSelected()){
+            mensaje="distal de la piesa 14";
+        }
+        if(vestibular14.isSelected()){
+            mensaje="vestibular de la piesa 14";
+        }
+        if(palatino15.isSelected()){
+            mensaje="palatino de la piesa 15";
+        }
+        if(oclusal15.isSelected()){
+            mensaje="oclusal de la piesa 15";
+        }
+        if(mesial15.isSelected()){
+            mensaje="mesial de la piesa 15";
+        }
+        if(distal15.isSelected()){
+            mensaje="distal de la piesa 15";
+        }
+        if(vestibular15.isSelected()){
+            mensaje="vestibular de la piesa 15";
+        }
+        if(palatino15.isSelected()){
+            mensaje="palatino de la piesa 15";
+        }
+        if(oclusal16.isSelected()){
+            mensaje="oclusal de la piesa 16";
+        }
+        if(mesial16.isSelected()){
+            mensaje="mesial de la piesa 16";
+        }
+        if(distal16.isSelected()){
+            mensaje="distal de la piesa 16";
+        }
+        if(vestibular16.isSelected()){
+            mensaje="vestibular de la piesa 16";
+        }
+        if(palatino16.isSelected()){
+            mensaje="palatino de la piesa 16";
+        }
+        if(oclusal17.isSelected()){
+            mensaje="oclusal de la piesa 17";
+        }
+        if(mesial17.isSelected()){
+            mensaje="mesial de la piesa 17";
+        }
+        if(distal17.isSelected()){
+            mensaje="distal de la piesa 17";
+        }
+        if(vestibular17.isSelected()){
+            mensaje="vestibular de la piesa 17";
+        }
+        if(palatino17.isSelected()){
+            mensaje="palatino de la piesa 17";
+        }
+        if(incisal21.isSelected()){
+            mensaje="incisal de la piesa 21";
+        }
+        if(mesial21.isSelected()){
+            mensaje="mesial de la piesa 21";
+        }
+        if(distal21.isSelected()){
+            mensaje="distal de la piesa 21";
+        }
+        if(vestibular21.isSelected()){
+            mensaje="vestibular de la piesa 21";
+        }
+        if(palatino21.isSelected()){
+            mensaje="palatino de la piesa 21";
+        }
+        if(incisal22.isSelected()){
+            mensaje="incisal de la piesa 22";
+        }
+        if(mesial22.isSelected()){
+            mensaje="mesial de la piesa 22";
+        }
+        if(distal22.isSelected()){
+            mensaje="distal de la piesa 22";
+        }
+        if(vestibular22.isSelected()){
+            mensaje="vestibular de la piesa 22";
+        }
+        if(palatino22.isSelected()){
+            mensaje="palatino de la piesa 22";
+        }
+        if(incisal23.isSelected()){
+            mensaje="incisal de la piesa 23";
+        }
+        if(mesial23.isSelected()){
+            mensaje="mesial de la piesa 23";
+        }
+        if(distal23.isSelected()){
+            mensaje="distal de la piesa 23";
+        }
+        if(vestibular23.isSelected()){
+            mensaje="vestibular de la piesa 23";
+        }
+        if(palatino23.isSelected()){
+            mensaje="palatino de la piesa 23";
+        }
+        if(oclusal24.isSelected()){
+            mensaje="oclusal de la piesa 24";
+        }
+        if(mesial24.isSelected()){
+            mensaje="mesial de la piesa 24";
+        }
+        if(distal24.isSelected()){
+            mensaje="distal de la piesa 24";
+        }
+        if(vestibular24.isSelected()){
+            mensaje="vestibular de la piesa 24";
+        }
+        if(palatino24.isSelected()){
+            mensaje="palatino de la piesa 24";
+        }
+        if(oclusal25.isSelected()){
+            mensaje="oclusal de la piesa 25";
+        }
+        if(mesial25.isSelected()){
+            mensaje="mesial de la piesa 25";
+        }
+        if(distal25.isSelected()){
+            mensaje="distal de la piesa 25";
+        }
+        if(vestibular25.isSelected()){
+            mensaje="vestibular de la piesa 25";
+        }
+        if(palatino25.isSelected()){
+            mensaje="palatino de la piesa 25";
+        }
+        if(oclusal26.isSelected()){
+            mensaje="oclusal de la piesa 26";
+        }
+        if(mesial26.isSelected()){
+            mensaje="mesial de la piesa 26";
+        }
+        if(distal26.isSelected()){
+            mensaje="distal de la piesa 26";
+        }
+        if(vestibular26.isSelected()){
+            mensaje="vestibular de la piesa 26";
+        }
+        if(palatino26.isSelected()){
+            mensaje="palatino de la piesa 26";
+        }
+        if(oclusal27.isSelected()){
+            mensaje="oclusal de la piesa 27";
+        }
+        if(mesial27.isSelected()){
+            mensaje="mesial de la piesa 27";
+        }
+        if(distal27.isSelected()){
+            mensaje="distal de la piesa 27";
+        }
+        if(vestibular27.isSelected()){
+            mensaje="vestibular de la piesa 27";
+        }
+        if(palatino27.isSelected()){
+            mensaje="palatino de la piesa 27";
+        }
+        if(incisal31.isSelected()){
+            mensaje="incisal de la piesa 31";
+        }
+        if(mesial31.isSelected()){
+            mensaje="mesial de la piesa 31";
+        }
+        if(distal31.isSelected()){
+            mensaje="distal de la piesa 31";
+        }
+        if(vestibular31.isSelected()){
+            mensaje="vestibular de la piesa 31";
+        }
+        if(lingual32.isSelected()){
+            mensaje="lingual de la piesa 32";
+        }
+        if(incisal32.isSelected()){
+            mensaje="incisal de la piesa 32";
+        }
+        if(mesial32.isSelected()){
+            mensaje="mesial de la piesa 32";
+        }
+        if(distal32.isSelected()){
+            mensaje="distal de la piesa 32";
+        }
+        if(vestibular32.isSelected()){
+            mensaje="vestibular de la piesa 32";
+        }
+        if(lingual32.isSelected()){
+            mensaje="lingual de la piesa 32";
+        }
+        if(incisal33.isSelected()){
+            mensaje="incisal de la piesa 33";
+        }
+        if(mesial33.isSelected()){
+            mensaje="mesial de la piesa 33";
+        }
+        if(distal33.isSelected()){
+            mensaje="distal de la piesa 33";
+        }
+        if(vestibular33.isSelected()){
+            mensaje="vestibular de la piesa 33";
+        }
+        if(lingual33.isSelected()){
+            mensaje="lingual de la piesa 33";
+        }
+        if(oclusal34.isSelected()){
+            mensaje="oclusal de la piesa 34";
+        }
+        if(mesial34.isSelected()){
+            mensaje="mesial de la piesa 34";
+        }
+        if(distal34.isSelected()){
+            mensaje="distal de la piesa 34";
+        }
+        if(vestibular34.isSelected()){
+            mensaje="vestibular de la piesa 34";
+        }
+        if(lingual34.isSelected()){
+            mensaje="lingual de la piesa 34";
+        }
+        if(oclusal35.isSelected()){
+            mensaje="oclusal de la piesa 35";
+        }
+        if(mesial35.isSelected()){
+            mensaje="mesial de la piesa 35";
+        }
+        if(distal35.isSelected()){
+            mensaje="distal de la piesa 35";
+        }
+        if(vestibular35.isSelected()){
+            mensaje="vestibular de la piesa 35";
+        }
+        if(lingual35.isSelected()){
+            mensaje="lingual de la piesa 35";
+        }
+        if(oclusal36.isSelected()){
+            mensaje="oclusal de la piesa 36";
+        }
+        if(mesial36.isSelected()){
+            mensaje="mesial de la piesa 36";
+        }
+        if(distal36.isSelected()){
+            mensaje="distal de la piesa 36";
+        }
+        if(vestibular36.isSelected()){
+            mensaje="vestibular de la piesa 36";
+        }
+        if(lingual36.isSelected()){
+            mensaje="lingual de la piesa 36";
+        }
+        if(oclusal37.isSelected()){
+            mensaje="oclusal de la piesa 37";
+        }
+        if(mesial37.isSelected()){
+            mensaje="mesial de la piesa 37";
+        }
+        if(distal37.isSelected()){
+            mensaje="distal de la piesa 37";
+        }
+        if(vestibular37.isSelected()){
+            mensaje="vestibular de la piesa 37";
+        }
+        if(lingual41.isSelected()){
+            mensaje="lingual de la piesa 41";
+        }
+        if(incisal41.isSelected()){
+            mensaje="incisal de la piesa 41";
+        }
+        if(mesial41.isSelected()){
+            mensaje="mesial de la piesa 41";
+        }
+        if(distal41.isSelected()){
+            mensaje="distal de la piesa 41";
+        }
+        if(vestibular41.isSelected()){
+            mensaje="vestibular de la piesa 41";
+        }
+        if(lingual41.isSelected()){
+            mensaje="lingual de la piesa 41";
+        }
+        if(incisal42.isSelected()){
+            mensaje="incisal de la piesa 42";
+        }
+        if(mesial42.isSelected()){
+            mensaje="mesial de la piesa 42";
+        }
+        if(distal42.isSelected()){
+            mensaje="distal de la piesa 42";
+        }
+        if(vestibular42.isSelected()){
+            mensaje="vestibular de la piesa 42";
+        }
+        if(lingual42.isSelected()){
+            mensaje="lingual de la piesa 42";
+        }
+        if(incisal43.isSelected()){
+            mensaje="incisal de la piesa 43";
+        }
+        if(mesial43.isSelected()){
+            mensaje="mesial de la piesa 43";
+        }
+        if(distal43.isSelected()){
+            mensaje="distal de la piesa 43";
+        }
+        if(vestibular43.isSelected()){
+            mensaje="vestibular de la piesa 43";
+        }
+        if(lingual43.isSelected()){
+            mensaje="lingual de la piesa 43";
+        }
+        if(oclusal44.isSelected()){
+            mensaje="oclusal de la piesa 44";
+        }
+        if(mesial44.isSelected()){
+            mensaje="mesial de la piesa 44";
+        }
+        if(distal44.isSelected()){
+            mensaje="distal de la piesa 44";
+        }
+        if(vestibular44.isSelected()){
+            mensaje="vestibular de la piesa 44";
+        }
+        if(lingual44.isSelected()){
+            mensaje="lingual de la piesa 44";
+        }
+        if(oclusal45.isSelected()){
+            mensaje="oclusal de la piesa 45";
+        }
+        if(mesial45.isSelected()){
+            mensaje="mesial de la piesa 45";
+        }
+        if(distal45.isSelected()){
+            mensaje="distal de la piesa 45";
+        }
+        if(vestibular45.isSelected()){
+            mensaje="vestibular de la piesa 45";
+        }
+        if(lingual45.isSelected()){
+            mensaje="lingual de la piesa 45";
+        }
+        if(oclusal46.isSelected()){
+            mensaje="oclusal de la piesa 46";
+        }
+        if(mesial46.isSelected()){
+            mensaje="mesial de la piesa 46";
+        }
+        if(distal46.isSelected()){
+            mensaje="distal de la piesa 46";
+        }
+        if(vestibular46.isSelected()){
+            mensaje="vestibular de la piesa 46";
+        }
+        if(lingual46.isSelected()){
+            mensaje="lingual de la piesa 46";
+        }
+        if(oclusal47.isSelected()){
+            mensaje="oclusal de la piesa 47";
+        }
+        if(mesial47.isSelected()){
+            mensaje="mesial de la piesa 47";
+        }
+        if(distal47.isSelected()){
+            mensaje="distal de la piesa 47";
+        }
+        if(vestibular47.isSelected()){
+            mensaje="vestibular de la piesa 47";
+        }
+        if(lingual47.isSelected()){
+            mensaje="lingual de la piesa 47";
+        }
+        
+        resultado.setText(mensaje);
+    }//GEN-LAST:event_odonto_guardarActionPerformed
+
+    private void odonto_limpiarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_odonto_limpiarActionPerformed
+        incisal11.setSelected(false);
+        mesial11.setSelected(false);
+        distal11.setSelected(false);
+        palatino11.setSelected(false);
+        vestibular11.setSelected(false);
+        
+        incisal12.setSelected(false);
+        mesial12.setSelected(false);
+        distal12.setSelected(false);
+        palatino12.setSelected(false);
+        vestibular12.setSelected(false);
+        
+        incisal13.setSelected(false);
+        mesial13.setSelected(false);
+        distal13.setSelected(false);
+        palatino13.setSelected(false);
+        vestibular13.setSelected(false);
+        
+        oclusal14.setSelected(false);
+        mesial14.setSelected(false);
+        distal14.setSelected(false);
+        palatino14.setSelected(false);
+        vestibular14.setSelected(false);
+        
+        oclusal15.setSelected(false);
+        mesial15.setSelected(false);
+        distal15.setSelected(false);
+        palatino15.setSelected(false);
+        vestibular15.setSelected(false);
+        
+        oclusal16.setSelected(false);
+        mesial16.setSelected(false);
+        distal16.setSelected(false);
+        palatino16.setSelected(false);
+        vestibular16.setSelected(false);
+        
+        oclusal17.setSelected(false);
+        mesial17.setSelected(false);
+        distal17.setSelected(false);
+        palatino17.setSelected(false);
+        vestibular17.setSelected(false);
+        
+        incisal21.setSelected(false);
+        mesial21.setSelected(false);
+        distal21.setSelected(false);
+        palatino21.setSelected(false);
+        vestibular21.setSelected(false);
+        
+        incisal22.setSelected(false);
+        mesial22.setSelected(false);
+        distal22.setSelected(false);
+        palatino22.setSelected(false);
+        vestibular22.setSelected(false);
+        
+        incisal23.setSelected(false);
+        mesial23.setSelected(false);
+        distal23.setSelected(false);
+        palatino23.setSelected(false);
+        vestibular23.setSelected(false);
+        
+        oclusal24.setSelected(false);
+        mesial24.setSelected(false);
+        distal24.setSelected(false);
+        palatino24.setSelected(false);
+        vestibular24.setSelected(false);
+        
+        oclusal25.setSelected(false);
+        mesial25.setSelected(false);
+        distal25.setSelected(false);
+        palatino25.setSelected(false);
+        vestibular25.setSelected(false);
+        
+        oclusal26.setSelected(false);
+        mesial26.setSelected(false);
+        distal26.setSelected(false);
+        palatino26.setSelected(false);
+        vestibular26.setSelected(false);
+        
+        oclusal27.setSelected(false);
+        mesial27.setSelected(false);
+        distal27.setSelected(false);
+        palatino27.setSelected(false);
+        vestibular27.setSelected(false);
+        
+        incisal31.setSelected(false);
+        mesial31.setSelected(false);
+        distal31.setSelected(false);
+        lingual31.setSelected(false);
+        vestibular31.setSelected(false);
+        
+        incisal32.setSelected(false);
+        mesial32.setSelected(false);
+        distal32.setSelected(false);
+        lingual32.setSelected(false);
+        vestibular32.setSelected(false);
+        
+        incisal33.setSelected(false);
+        mesial33.setSelected(false);
+        distal33.setSelected(false);
+        lingual33.setSelected(false);
+        vestibular33.setSelected(false);
+        
+        oclusal34.setSelected(false);
+        mesial34.setSelected(false);
+        distal34.setSelected(false);
+        lingual34.setSelected(false);
+        vestibular34.setSelected(false);
+        
+        oclusal35.setSelected(false);
+        mesial35.setSelected(false);
+        distal35.setSelected(false);
+        lingual35.setSelected(false);
+        vestibular35.setSelected(false);
+        
+        oclusal36.setSelected(false);
+        mesial36.setSelected(false);
+        distal36.setSelected(false);
+        lingual36.setSelected(false);
+        vestibular36.setSelected(false);
+        
+        oclusal37.setSelected(false);
+        mesial37.setSelected(false);
+        distal37.setSelected(false);
+        lingual37.setSelected(false);
+        vestibular37.setSelected(false);
+        
+        incisal41.setSelected(false);
+        mesial41.setSelected(false);
+        distal41.setSelected(false);
+        lingual41.setSelected(false);
+        vestibular41.setSelected(false);
+        
+        incisal42.setSelected(false);
+        mesial42.setSelected(false);
+        distal42.setSelected(false);
+        lingual42.setSelected(false);
+        vestibular42.setSelected(false);
+        
+        incisal43.setSelected(false);
+        mesial42.setSelected(false);
+        distal42.setSelected(false);
+        lingual42.setSelected(false);
+        vestibular42.setSelected(false);
+        
+        oclusal44.setSelected(false);
+        mesial44.setSelected(false);
+        distal44.setSelected(false);
+        lingual44.setSelected(false);
+        vestibular44.setSelected(false);
+        
+        oclusal45.setSelected(false);
+        mesial45.setSelected(false);
+        distal45.setSelected(false);
+        lingual45.setSelected(false);
+        vestibular45.setSelected(false);
+        
+        oclusal46.setSelected(false);
+        mesial46.setSelected(false);
+        distal46.setSelected(false);
+        lingual46.setSelected(false);
+        vestibular46.setSelected(false);
+        
+        oclusal47.setSelected(false);
+        mesial47.setSelected(false);
+        distal47.setSelected(false);
+        lingual47.setSelected(false);
+        vestibular47.setSelected(false);
+    
+    }//GEN-LAST:event_odonto_limpiarActionPerformed
 
     /**
      * @param args the command line arguments
@@ -1052,146 +1697,47 @@ public class Odontograma extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JCheckBox jCheckBox100;
-    private javax.swing.JCheckBox jCheckBox101;
-    private javax.swing.JCheckBox jCheckBox13;
-    private javax.swing.JCheckBox jCheckBox14;
-    private javax.swing.JCheckBox jCheckBox15;
-    private javax.swing.JCheckBox jCheckBox152;
-    private javax.swing.JCheckBox jCheckBox153;
-    private javax.swing.JCheckBox jCheckBox154;
-    private javax.swing.JCheckBox jCheckBox155;
-    private javax.swing.JCheckBox jCheckBox156;
-    private javax.swing.JCheckBox jCheckBox16;
-    private javax.swing.JCheckBox jCheckBox168;
-    private javax.swing.JCheckBox jCheckBox169;
-    private javax.swing.JCheckBox jCheckBox17;
-    private javax.swing.JCheckBox jCheckBox170;
-    private javax.swing.JCheckBox jCheckBox171;
-    private javax.swing.JCheckBox jCheckBox172;
-    private javax.swing.JCheckBox jCheckBox173;
-    private javax.swing.JCheckBox jCheckBox174;
-    private javax.swing.JCheckBox jCheckBox175;
-    private javax.swing.JCheckBox jCheckBox176;
-    private javax.swing.JCheckBox jCheckBox177;
-    private javax.swing.JCheckBox jCheckBox178;
-    private javax.swing.JCheckBox jCheckBox179;
-    private javax.swing.JCheckBox jCheckBox18;
-    private javax.swing.JCheckBox jCheckBox180;
-    private javax.swing.JCheckBox jCheckBox181;
-    private javax.swing.JCheckBox jCheckBox182;
-    private javax.swing.JCheckBox jCheckBox183;
-    private javax.swing.JCheckBox jCheckBox184;
-    private javax.swing.JCheckBox jCheckBox185;
-    private javax.swing.JCheckBox jCheckBox186;
-    private javax.swing.JCheckBox jCheckBox187;
-    private javax.swing.JCheckBox jCheckBox188;
-    private javax.swing.JCheckBox jCheckBox189;
-    private javax.swing.JCheckBox jCheckBox19;
-    private javax.swing.JCheckBox jCheckBox190;
-    private javax.swing.JCheckBox jCheckBox191;
-    private javax.swing.JCheckBox jCheckBox192;
-    private javax.swing.JCheckBox jCheckBox193;
-    private javax.swing.JCheckBox jCheckBox194;
-    private javax.swing.JCheckBox jCheckBox195;
-    private javax.swing.JCheckBox jCheckBox196;
-    private javax.swing.JCheckBox jCheckBox197;
-    private javax.swing.JCheckBox jCheckBox198;
-    private javax.swing.JCheckBox jCheckBox199;
-    private javax.swing.JCheckBox jCheckBox20;
-    private javax.swing.JCheckBox jCheckBox200;
-    private javax.swing.JCheckBox jCheckBox201;
-    private javax.swing.JCheckBox jCheckBox202;
-    private javax.swing.JCheckBox jCheckBox203;
-    private javax.swing.JCheckBox jCheckBox204;
-    private javax.swing.JCheckBox jCheckBox205;
-    private javax.swing.JCheckBox jCheckBox206;
-    private javax.swing.JCheckBox jCheckBox207;
-    private javax.swing.JCheckBox jCheckBox208;
-    private javax.swing.JCheckBox jCheckBox209;
-    private javax.swing.JCheckBox jCheckBox21;
-    private javax.swing.JCheckBox jCheckBox210;
-    private javax.swing.JCheckBox jCheckBox211;
-    private javax.swing.JCheckBox jCheckBox212;
-    private javax.swing.JCheckBox jCheckBox213;
-    private javax.swing.JCheckBox jCheckBox214;
-    private javax.swing.JCheckBox jCheckBox215;
-    private javax.swing.JCheckBox jCheckBox216;
-    private javax.swing.JCheckBox jCheckBox217;
-    private javax.swing.JCheckBox jCheckBox218;
-    private javax.swing.JCheckBox jCheckBox219;
-    private javax.swing.JCheckBox jCheckBox22;
-    private javax.swing.JCheckBox jCheckBox220;
-    private javax.swing.JCheckBox jCheckBox221;
-    private javax.swing.JCheckBox jCheckBox222;
-    private javax.swing.JCheckBox jCheckBox23;
-    private javax.swing.JCheckBox jCheckBox24;
-    private javax.swing.JCheckBox jCheckBox25;
-    private javax.swing.JCheckBox jCheckBox26;
-    private javax.swing.JCheckBox jCheckBox27;
-    private javax.swing.JCheckBox jCheckBox28;
-    private javax.swing.JCheckBox jCheckBox29;
-    private javax.swing.JCheckBox jCheckBox30;
-    private javax.swing.JCheckBox jCheckBox31;
-    private javax.swing.JCheckBox jCheckBox32;
-    private javax.swing.JCheckBox jCheckBox33;
-    private javax.swing.JCheckBox jCheckBox34;
-    private javax.swing.JCheckBox jCheckBox35;
-    private javax.swing.JCheckBox jCheckBox36;
-    private javax.swing.JCheckBox jCheckBox37;
-    private javax.swing.JCheckBox jCheckBox38;
-    private javax.swing.JCheckBox jCheckBox39;
-    private javax.swing.JCheckBox jCheckBox40;
-    private javax.swing.JCheckBox jCheckBox41;
-    private javax.swing.JCheckBox jCheckBox42;
-    private javax.swing.JCheckBox jCheckBox43;
-    private javax.swing.JCheckBox jCheckBox44;
-    private javax.swing.JCheckBox jCheckBox45;
-    private javax.swing.JCheckBox jCheckBox46;
-    private javax.swing.JCheckBox jCheckBox47;
-    private javax.swing.JCheckBox jCheckBox48;
-    private javax.swing.JCheckBox jCheckBox49;
-    private javax.swing.JCheckBox jCheckBox50;
-    private javax.swing.JCheckBox jCheckBox51;
-    private javax.swing.JCheckBox jCheckBox52;
-    private javax.swing.JCheckBox jCheckBox53;
-    private javax.swing.JCheckBox jCheckBox54;
-    private javax.swing.JCheckBox jCheckBox55;
-    private javax.swing.JCheckBox jCheckBox56;
-    private javax.swing.JCheckBox jCheckBox57;
-    private javax.swing.JCheckBox jCheckBox58;
-    private javax.swing.JCheckBox jCheckBox59;
-    private javax.swing.JCheckBox jCheckBox60;
-    private javax.swing.JCheckBox jCheckBox61;
-    private javax.swing.JCheckBox jCheckBox62;
-    private javax.swing.JCheckBox jCheckBox63;
-    private javax.swing.JCheckBox jCheckBox64;
-    private javax.swing.JCheckBox jCheckBox65;
-    private javax.swing.JCheckBox jCheckBox66;
-    private javax.swing.JCheckBox jCheckBox67;
-    private javax.swing.JCheckBox jCheckBox68;
-    private javax.swing.JCheckBox jCheckBox69;
-    private javax.swing.JCheckBox jCheckBox70;
-    private javax.swing.JCheckBox jCheckBox71;
-    private javax.swing.JCheckBox jCheckBox72;
-    private javax.swing.JCheckBox jCheckBox73;
-    private javax.swing.JCheckBox jCheckBox74;
-    private javax.swing.JCheckBox jCheckBox75;
-    private javax.swing.JCheckBox jCheckBox76;
-    private javax.swing.JCheckBox jCheckBox77;
-    private javax.swing.JCheckBox jCheckBox78;
-    private javax.swing.JCheckBox jCheckBox79;
-    private javax.swing.JCheckBox jCheckBox80;
-    private javax.swing.JCheckBox jCheckBox81;
-    private javax.swing.JCheckBox jCheckBox82;
-    private javax.swing.JCheckBox jCheckBox83;
-    private javax.swing.JCheckBox jCheckBox84;
-    private javax.swing.JCheckBox jCheckBox85;
-    private javax.swing.JCheckBox jCheckBox86;
-    private javax.swing.JCheckBox jCheckBox87;
-    private javax.swing.JCheckBox jCheckBox97;
-    private javax.swing.JCheckBox jCheckBox98;
-    private javax.swing.JCheckBox jCheckBox99;
+    private javax.swing.JCheckBox distal11;
+    private javax.swing.JCheckBox distal12;
+    private javax.swing.JCheckBox distal13;
+    private javax.swing.JCheckBox distal14;
+    private javax.swing.JCheckBox distal15;
+    private javax.swing.JCheckBox distal16;
+    private javax.swing.JCheckBox distal17;
+    private javax.swing.JCheckBox distal21;
+    private javax.swing.JCheckBox distal22;
+    private javax.swing.JCheckBox distal23;
+    private javax.swing.JCheckBox distal24;
+    private javax.swing.JCheckBox distal25;
+    private javax.swing.JCheckBox distal26;
+    private javax.swing.JCheckBox distal27;
+    private javax.swing.JCheckBox distal31;
+    private javax.swing.JCheckBox distal32;
+    private javax.swing.JCheckBox distal33;
+    private javax.swing.JCheckBox distal34;
+    private javax.swing.JCheckBox distal35;
+    private javax.swing.JCheckBox distal36;
+    private javax.swing.JCheckBox distal37;
+    private javax.swing.JCheckBox distal41;
+    private javax.swing.JCheckBox distal42;
+    private javax.swing.JCheckBox distal43;
+    private javax.swing.JCheckBox distal44;
+    private javax.swing.JCheckBox distal45;
+    private javax.swing.JCheckBox distal46;
+    private javax.swing.JCheckBox distal47;
+    private javax.swing.JCheckBox incisal11;
+    private javax.swing.JCheckBox incisal12;
+    private javax.swing.JCheckBox incisal13;
+    private javax.swing.JCheckBox incisal21;
+    private javax.swing.JCheckBox incisal22;
+    private javax.swing.JCheckBox incisal23;
+    private javax.swing.JCheckBox incisal31;
+    private javax.swing.JCheckBox incisal32;
+    private javax.swing.JCheckBox incisal33;
+    private javax.swing.JCheckBox incisal41;
+    private javax.swing.JCheckBox incisal42;
+    private javax.swing.JCheckBox incisal43;
+    private com.toedter.calendar.JDateChooser jDateChooser1;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel10;
     private javax.swing.JLabel jLabel11;
@@ -1227,8 +1773,112 @@ public class Odontograma extends javax.swing.JFrame {
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JScrollPane jScrollPane2;
     private javax.swing.JScrollPane jScrollPane3;
+    private javax.swing.JCheckBox lingual31;
+    private javax.swing.JCheckBox lingual32;
+    private javax.swing.JCheckBox lingual33;
+    private javax.swing.JCheckBox lingual34;
+    private javax.swing.JCheckBox lingual35;
+    private javax.swing.JCheckBox lingual36;
+    private javax.swing.JCheckBox lingual37;
+    private javax.swing.JCheckBox lingual41;
+    private javax.swing.JCheckBox lingual42;
+    private javax.swing.JCheckBox lingual43;
+    private javax.swing.JCheckBox lingual44;
+    private javax.swing.JCheckBox lingual45;
+    private javax.swing.JCheckBox lingual46;
+    private javax.swing.JCheckBox lingual47;
+    private javax.swing.JCheckBox mesial11;
+    private javax.swing.JCheckBox mesial12;
+    private javax.swing.JCheckBox mesial13;
+    private javax.swing.JCheckBox mesial14;
+    private javax.swing.JCheckBox mesial15;
+    private javax.swing.JCheckBox mesial16;
+    private javax.swing.JCheckBox mesial17;
+    private javax.swing.JCheckBox mesial21;
+    private javax.swing.JCheckBox mesial22;
+    private javax.swing.JCheckBox mesial23;
+    private javax.swing.JCheckBox mesial24;
+    private javax.swing.JCheckBox mesial25;
+    private javax.swing.JCheckBox mesial26;
+    private javax.swing.JCheckBox mesial27;
+    private javax.swing.JCheckBox mesial31;
+    private javax.swing.JCheckBox mesial32;
+    private javax.swing.JCheckBox mesial33;
+    private javax.swing.JCheckBox mesial34;
+    private javax.swing.JCheckBox mesial35;
+    private javax.swing.JCheckBox mesial36;
+    private javax.swing.JCheckBox mesial37;
+    private javax.swing.JCheckBox mesial41;
+    private javax.swing.JCheckBox mesial42;
+    private javax.swing.JCheckBox mesial43;
+    private javax.swing.JCheckBox mesial44;
+    private javax.swing.JCheckBox mesial45;
+    private javax.swing.JCheckBox mesial46;
+    private javax.swing.JCheckBox mesial47;
+    private javax.swing.JCheckBox oclusal14;
+    private javax.swing.JCheckBox oclusal15;
+    private javax.swing.JCheckBox oclusal16;
+    private javax.swing.JCheckBox oclusal17;
+    private javax.swing.JCheckBox oclusal24;
+    private javax.swing.JCheckBox oclusal25;
+    private javax.swing.JCheckBox oclusal26;
+    private javax.swing.JCheckBox oclusal27;
+    private javax.swing.JCheckBox oclusal34;
+    private javax.swing.JCheckBox oclusal35;
+    private javax.swing.JCheckBox oclusal36;
+    private javax.swing.JCheckBox oclusal37;
+    private javax.swing.JCheckBox oclusal44;
+    private javax.swing.JCheckBox oclusal45;
+    private javax.swing.JCheckBox oclusal46;
+    private javax.swing.JCheckBox oclusal47;
+    private javax.swing.JButton odonto_guardar;
+    private javax.swing.JButton odonto_limpiar;
+    private javax.swing.JCheckBox palatino11;
+    private javax.swing.JCheckBox palatino12;
+    private javax.swing.JCheckBox palatino13;
+    private javax.swing.JCheckBox palatino14;
+    private javax.swing.JCheckBox palatino15;
+    private javax.swing.JCheckBox palatino16;
+    private javax.swing.JCheckBox palatino17;
+    private javax.swing.JCheckBox palatino21;
+    private javax.swing.JCheckBox palatino22;
+    private javax.swing.JCheckBox palatino23;
+    private javax.swing.JCheckBox palatino24;
+    private javax.swing.JCheckBox palatino25;
+    private javax.swing.JCheckBox palatino26;
+    private javax.swing.JCheckBox palatino27;
+    private javax.swing.JButton regresar;
+    private javax.swing.JLabel resultado;
     private javax.swing.JTextPane text_apellido;
     private javax.swing.JTextPane text_cedula;
     private javax.swing.JTextPane text_nombre;
+    private javax.swing.JCheckBox vestibular11;
+    private javax.swing.JCheckBox vestibular12;
+    private javax.swing.JCheckBox vestibular13;
+    private javax.swing.JCheckBox vestibular14;
+    private javax.swing.JCheckBox vestibular15;
+    private javax.swing.JCheckBox vestibular16;
+    private javax.swing.JCheckBox vestibular17;
+    private javax.swing.JCheckBox vestibular21;
+    private javax.swing.JCheckBox vestibular22;
+    private javax.swing.JCheckBox vestibular23;
+    private javax.swing.JCheckBox vestibular24;
+    private javax.swing.JCheckBox vestibular25;
+    private javax.swing.JCheckBox vestibular26;
+    private javax.swing.JCheckBox vestibular27;
+    private javax.swing.JCheckBox vestibular31;
+    private javax.swing.JCheckBox vestibular32;
+    private javax.swing.JCheckBox vestibular33;
+    private javax.swing.JCheckBox vestibular34;
+    private javax.swing.JCheckBox vestibular35;
+    private javax.swing.JCheckBox vestibular36;
+    private javax.swing.JCheckBox vestibular37;
+    private javax.swing.JCheckBox vestibular41;
+    private javax.swing.JCheckBox vestibular42;
+    private javax.swing.JCheckBox vestibular43;
+    private javax.swing.JCheckBox vestibular44;
+    private javax.swing.JCheckBox vestibular45;
+    private javax.swing.JCheckBox vestibular46;
+    private javax.swing.JCheckBox vestibular47;
     // End of variables declaration//GEN-END:variables
 }
