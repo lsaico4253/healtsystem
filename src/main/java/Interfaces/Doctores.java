@@ -18,6 +18,7 @@ import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.util.ArrayList;
+import javax.swing.JOptionPane;
 public class Doctores extends javax.swing.JFrame {
  ArrayList<Doctor> listadoctor= new ArrayList <>();
  
@@ -276,9 +277,18 @@ public class Doctores extends javax.swing.JFrame {
 
     private void jButton4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton4ActionPerformed
 
+        
+        int respons001 = JOptionPane.showConfirmDialog(this, "¿Seguro que desea regresar al Inicio?", "Confirmar", JOptionPane.YES_NO_OPTION, JOptionPane.QUESTION_MESSAGE);
+        
+        if(respons001 == JOptionPane.YES_OPTION){
+        
+        this.dispose();
         Dasboard  Dasboar= new Dasboard();
         Dasboar.setVisible(true);
-        this.dispose();
+        
+        }
+        
+  
 
     }//GEN-LAST:event_jButton4ActionPerformed
 

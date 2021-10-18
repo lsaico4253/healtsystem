@@ -11,6 +11,7 @@ import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
+import javax.swing.JOptionPane;
 
 /**
  *
@@ -391,6 +392,11 @@ public class Factura extends javax.swing.JFrame {
         lbltotal.setText(".");
 
         jButtonguardarfactura.setText("Guardar");
+        jButtonguardarfactura.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButtonguardarfacturaActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -485,10 +491,34 @@ public class Factura extends javax.swing.JFrame {
 
     private void jButtonregresarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonregresarActionPerformed
         // TODO add your handling code here:
+       
+        int responsee04 = JOptionPane.showConfirmDialog(this, "¿Seguro que desea regresar al Inicio?", "Confirmar", JOptionPane.YES_NO_OPTION, JOptionPane.QUESTION_MESSAGE);
+        
+        if(responsee04 == JOptionPane.YES_OPTION){
         new Ficha_medica().setVisible(true);
         new Factura().setVisible(false);
         this.dispose();
+        
+        }
     }//GEN-LAST:event_jButtonregresarActionPerformed
+
+    private void jButtonguardarfacturaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonguardarfacturaActionPerformed
+        // TODO add your handling code here:
+        int responsee06 = JOptionPane.showConfirmDialog(this, "¿Seguro que desea guardar?", "Confirmar", JOptionPane.YES_NO_OPTION, JOptionPane.QUESTION_MESSAGE);
+        
+        if(responsee06 == JOptionPane.YES_OPTION){
+            
+            
+            new Dasboard().setVisible(true);
+            this.dispose();
+            
+        }else if(responsee06 == JOptionPane.NO_OPTION){
+            JOptionPane.showMessageDialog(null, "Datos No Guardados");
+        }else if(responsee06 == JOptionPane.CLOSED_OPTION){
+            JOptionPane.showMessageDialog(null, "Datos No Guardados");
+        }
+        
+    }//GEN-LAST:event_jButtonguardarfacturaActionPerformed
 
     /**
      * @param args the command line arguments
