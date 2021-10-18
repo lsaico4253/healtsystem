@@ -46,6 +46,7 @@ public class AgregarUsuario extends javax.swing.JFrame {
         jButton1 = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setUndecorated(true);
 
         txtuser.setForeground(new java.awt.Color(204, 204, 204));
         txtuser.setHorizontalAlignment(javax.swing.JTextField.CENTER);
