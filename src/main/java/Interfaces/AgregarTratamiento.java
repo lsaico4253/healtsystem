@@ -266,9 +266,9 @@ public class AgregarTratamiento extends javax.swing.JFrame {
     private void btnGuardarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnGuardarActionPerformed
         // TODO add your handling code here:
       
-         int response01 = JOptionPane.showConfirmDialog(this, "¿Seguro que desea guardar?", "Confirmar", JOptionPane.YES_NO_OPTION, JOptionPane.QUESTION_MESSAGE);
+         int respons01 = JOptionPane.showConfirmDialog(this, "¿Seguro que desea guardar?", "Confirmar", JOptionPane.YES_NO_OPTION, JOptionPane.QUESTION_MESSAGE);
         
-        if(response01 == JOptionPane.YES_OPTION){
+        if(respons01 == JOptionPane.YES_OPTION){
             
         
        new Tratamiento().setVisible(true);
@@ -328,9 +328,9 @@ public class AgregarTratamiento extends javax.swing.JFrame {
         }
         
         
-        }else if(response01 == JOptionPane.NO_OPTION){
+        }else if(respons01 == JOptionPane.NO_OPTION){
             JOptionPane.showMessageDialog(null, "Datos No Guardados");
-        }else if(response01 == JOptionPane.CLOSED_OPTION){
+        }else if(respons01 == JOptionPane.CLOSED_OPTION){
             JOptionPane.showMessageDialog(null, "Datos No Guardados");
         }
           
