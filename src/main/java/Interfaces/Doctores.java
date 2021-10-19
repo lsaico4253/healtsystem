@@ -284,7 +284,7 @@ public class Doctores extends javax.swing.JFrame {
         if(respons001 == JOptionPane.YES_OPTION){
         
         this.dispose();
-        Doctores  Dasboar= new Doctores();
+        Dasboard  Dasboar= new Dasboard();
         Dasboar.setVisible(true);
         
         }

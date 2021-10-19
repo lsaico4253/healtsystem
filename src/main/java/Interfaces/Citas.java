@@ -15,6 +15,7 @@ import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.util.ArrayList;
+import javax.swing.JOptionPane;
 
 /**
  *
@@ -286,9 +287,15 @@ public class Citas extends javax.swing.JFrame {
 
     private void jButtonregresarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonregresarActionPerformed
         // TODO add your handling code here:
-        new Dasboard().setVisible(true);
-        new Citas().setVisible(false);
+        
+        int responsee07 = JOptionPane.showConfirmDialog(this, "¿Seguro que desea regresar al Inicio?", "Confirmar", JOptionPane.YES_NO_OPTION, JOptionPane.QUESTION_MESSAGE);
+        
+        if(responsee07 == JOptionPane.YES_OPTION){
         this.dispose();
+        new Dasboard().setVisible(true);
+        
+        }
+        
     }//GEN-LAST:event_jButtonregresarActionPerformed
 
     private void jButtonbuscarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonbuscarActionPerformed
