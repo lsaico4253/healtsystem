@@ -5,6 +5,14 @@
  */
 package Interfaces;
 
+import static Clases.ConexionBD.close;
+import static Clases.ConexionBD.getConnection;
+import Clases.Paciente;
+import java.sql.Connection;
+import java.sql.PreparedStatement;
+import java.sql.ResultSet;
+import java.sql.SQLException;
+import java.util.ArrayList;
 import javax.swing.JOptionPane;
 
 /**
@@ -12,6 +20,8 @@ import javax.swing.JOptionPane;
  * @author HP
  */
 public class Reportepaciente1 extends javax.swing.JFrame {
+    ArrayList<Paciente> listapaciente= new ArrayList <>();
+    private static final String SQL_SELECT = "SELECT * FROM pacientes";
 
     /**
      * Creates new form Reportetratamiento
@@ -19,7 +29,79 @@ public class Reportepaciente1 extends javax.swing.JFrame {
     public Reportepaciente1() {
         initComponents();
         this.setLocationRelativeTo(null);
+        listapaciente=seleccionar();
+        mostrar();
+           
     }
+    
+     public void mostrar(){
+     String matrizp [][] = new String[listapaciente.size()][9];
+     
+     for (int i = 0; i < listapaciente.size(); i++) {
+         matrizp[i][0] = listapaciente.get(i).getCedula();
+         matrizp[i][1] = listapaciente.get(i).getNombre();
+         matrizp[i][2] = listapaciente.get(i).getApellido();
+         matrizp[i][3] = listapaciente.get(i).getEdad();
+         matrizp[i][4]=listapaciente.get(i).getGenero();
+         matrizp[i][5] = listapaciente.get(i).getNum_ficha();
+         matrizp[i][6] = listapaciente.get(i).getAfiliacion();
+         matrizp[i][7]=listapaciente.get(i).getTelefono();
+         matrizp[i][8]=listapaciente.get(i).getTelefono2();
+
+         }
+         jTablepacientes.setModel(new javax.swing.table.DefaultTableModel(
+                matrizp,
+                new String[]{
+                    "Cédula", "Nombres", "Apellidos", "Edad","Genero","Num ficha","Afiliacion","Telefono","Telefono1"
+                }
+                 
+        ));
+    }
+    
+    public ArrayList <Paciente> seleccionar() {
+        Connection conn = null;
+        PreparedStatement stmt = null;
+        ResultSet rs = null;
+        Paciente paciente = null;
+        ArrayList <Paciente> pacientes = new ArrayList<>();
+
+        try {
+            conn = getConnection();
+            stmt = conn.prepareStatement(SQL_SELECT);
+            rs = stmt.executeQuery();
+            while (rs.next()) {
+                int idPaciente = rs.getInt("id");
+                String primer_nombre = rs.getString("primernombre");
+                String segundo_nombre = rs.getString("segundoapellido");
+                String primer_apellido = rs.getString("primerapellido");
+                String segundo_apellido = rs.getString("segundoapellido");
+                String cedula2 = rs.getString("cedula");
+                String afiliacion = rs.getString("afiliacion");
+                String num_ficha = rs.getString("num_ficha");
+                String edad = rs.getString("edad");
+                String direccion = rs.getString("direccion");
+                String genero = rs.getString("genero");
+                String telefono1 = rs.getString("telefono1");
+                String telefono2 = rs.getString("telefono2");
+
+                paciente = new Paciente(num_ficha, afiliacion, idPaciente, cedula2, primer_nombre, segundo_nombre, primer_apellido, segundo_apellido, edad, direccion, genero, telefono1, telefono2);
+
+                pacientes.add(paciente);
+            }
+        } catch (SQLException ex) {
+            ex.printStackTrace(System.out);
+        } finally {
+            try {
+                close(rs);
+                close(stmt);
+                close(conn);
+            } catch (SQLException ex) {
+                ex.printStackTrace(System.out);
+            }
+        }
+        return pacientes;
+    }
+    
 
     /**
      * This method is called from within the constructor to initialize the form.
@@ -33,7 +115,7 @@ public class Reportepaciente1 extends javax.swing.JFrame {
         jPanel1 = new javax.swing.JPanel();
         jLabel1 = new javax.swing.JLabel();
         jScrollPane1 = new javax.swing.JScrollPane();
-        jTablepaciente = new javax.swing.JTable();
+        jTablepacientes = new javax.swing.JTable();
         jButtonregresar = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
@@ -45,7 +127,7 @@ public class Reportepaciente1 extends javax.swing.JFrame {
         jLabel1.setForeground(new java.awt.Color(0, 0, 255));
         jLabel1.setText("Reporte Pacientes");
 
-        jTablepaciente.setModel(new javax.swing.table.DefaultTableModel(
+        jTablepacientes.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
                 {null, null, null, null},
                 {null, null, null, null},
@@ -56,7 +138,7 @@ public class Reportepaciente1 extends javax.swing.JFrame {
                 "Title 1", "Title 2", "Title 3", "Title 4"
             }
         ));
-        jScrollPane1.setViewportView(jTablepaciente);
+        jScrollPane1.setViewportView(jTablepacientes);
 
         jButtonregresar.setBackground(new java.awt.Color(204, 204, 255));
         jButtonregresar.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
@@ -162,6 +244,6 @@ public class Reportepaciente1 extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel1;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JScrollPane jScrollPane1;
-    private javax.swing.JTable jTablepaciente;
+    private javax.swing.JTable jTablepacientes;
     // End of variables declaration//GEN-END:variables
 }
