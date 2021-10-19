@@ -433,8 +433,6 @@ public class AgregarPaciente extends javax.swing.JFrame {
         if(response01 == JOptionPane.YES_OPTION){
  
         
-        new Pacientes().setVisible(true);
-        this.dispose();  
         
         
         new Pacientes().setVisible(true);
@@ -514,7 +512,7 @@ public class AgregarPaciente extends javax.swing.JFrame {
                 
                 Connection conn = null;
                 PreparedStatement stmt = null;
-                String SQL_INSERT="INSERT INTO pacientes(num_ficha, afiliacion, cedula, primernombre, segundonombre, primerapellido, segundoapellido, edad, direccion, genero, telefono1, telefono2)VALUES ('F01', 'No Afliado', '"+Cedula+"', '"+Nombre+"', '"+Segundo_nombre+"', '"+Apellido+"', '"+Segundo_apellido+"', '"+Edad+"', '"+Direccion+"', '"+genero+"', '"+telefono1+"', '"+telefono2+"');";
+                String SQL_INSERT="INSERT INTO pacientes(afiliacion, cedula, primernombre, segundonombre, primerapellido, segundoapellido, edad, direccion, genero, telefono1, telefono2)VALUES ( 'No Afliado', '"+Cedula+"', '"+Nombre+"', '"+Segundo_nombre+"', '"+Apellido+"', '"+Segundo_apellido+"', '"+Edad+"', '"+Direccion+"', '"+genero+"', '"+telefono1+"', '"+telefono2+"');";
                 try {
                     conn = getConnection();
                     stmt = conn.prepareStatement(SQL_INSERT);
