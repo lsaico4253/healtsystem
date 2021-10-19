@@ -16,6 +16,7 @@ import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.util.ArrayList;
 import javax.swing.JOptionPane;
+import javax.swing.SpinnerNumberModel;
 /**
  *
  * @author 
@@ -48,6 +49,11 @@ public class AgregarDoctor extends javax.swing.JFrame {
         
         box02.setSelectedItem("Tipos");
         CargarHorarios();
+        
+        SpinnerNumberModel spinner_Edad=new SpinnerNumberModel();
+        spinner_Edad.setMaximum(100);
+        spinner_Edad.setMinimum(0);
+        spinnerEdaddoctor.setModel(spinner_Edad);
     }
         
     public AgregarDoctor(int id){

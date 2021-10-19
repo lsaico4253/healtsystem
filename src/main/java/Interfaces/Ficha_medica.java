@@ -17,6 +17,7 @@ import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.text.DateFormat;
 import java.util.Date;
+import javax.swing.SpinnerNumberModel;
 import javax.swing.text.html.HTML;
 
 
@@ -52,6 +53,10 @@ public class Ficha_medica extends javax.swing.JFrame {
         this.getContentPane().setBackground(Color.white);
         this.setLocationRelativeTo(null);
         
+        SpinnerNumberModel spinner_Edad=new SpinnerNumberModel();
+        spinner_Edad.setMaximum(100);
+        spinner_Edad.setMinimum(0);
+        edad_ficha.setModel(spinner_Edad);
     }
      public void leer(){
         Cedula = cedula_ficha.getText();

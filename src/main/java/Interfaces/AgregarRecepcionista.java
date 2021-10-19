@@ -53,6 +53,10 @@ public class AgregarRecepcionista extends javax.swing.JFrame {
         box01.addItem("Vespertino");
         box01.addItem("Nocturno");
         
+        SpinnerNumberModel spinner_Edad=new SpinnerNumberModel();
+        spinner_Edad.setMaximum(100);
+        spinner_Edad.setMinimum(0);
+        spinnerEdadAsistente.setModel(spinner_Edad);
     }
     
     public AgregarRecepcionista(int id) {

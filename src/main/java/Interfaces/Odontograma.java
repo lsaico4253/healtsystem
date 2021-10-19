@@ -209,7 +209,8 @@ public class Odontograma extends javax.swing.JFrame {
         odonto_guardar = new javax.swing.JButton();
         odonto_limpiar = new javax.swing.JButton();
         regresar = new javax.swing.JButton();
-        resultado = new javax.swing.JLabel();
+        jScrollPane4 = new javax.swing.JScrollPane();
+        resultado = new javax.swing.JTextArea();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -304,6 +305,15 @@ public class Odontograma extends javax.swing.JFrame {
         });
 
         regresar.setText("Regresar");
+        regresar.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                regresarActionPerformed(evt);
+            }
+        });
+
+        resultado.setColumns(20);
+        resultado.setRows(5);
+        jScrollPane4.setViewportView(resultado);
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -608,19 +618,17 @@ public class Odontograma extends javax.swing.JFrame {
                                             .addGroup(layout.createSequentialGroup()
                                                 .addGap(3, 3, 3)
                                                 .addComponent(jLabel2))))
-                                    .addGroup(javax.swing.GroupLayout.Alignment.LEADING, layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                                        .addComponent(resultado, javax.swing.GroupLayout.PREFERRED_SIZE, 568, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                        .addGroup(javax.swing.GroupLayout.Alignment.LEADING, layout.createSequentialGroup()
-                                            .addGap(15, 15, 15)
-                                            .addComponent(jLabel19)
-                                            .addGap(53, 53, 53)
-                                            .addComponent(jLabel20)
-                                            .addGap(49, 49, 49)
-                                            .addComponent(jLabel21)
-                                            .addGap(225, 225, 225)
-                                            .addComponent(jLabel24)
-                                            .addGap(56, 56, 56)
-                                            .addComponent(jLabel25, javax.swing.GroupLayout.PREFERRED_SIZE, 43, javax.swing.GroupLayout.PREFERRED_SIZE))))
+                                    .addGroup(javax.swing.GroupLayout.Alignment.LEADING, layout.createSequentialGroup()
+                                        .addGap(15, 15, 15)
+                                        .addComponent(jLabel19)
+                                        .addGap(53, 53, 53)
+                                        .addComponent(jLabel20)
+                                        .addGap(49, 49, 49)
+                                        .addComponent(jLabel21)
+                                        .addGap(225, 225, 225)
+                                        .addComponent(jLabel24)
+                                        .addGap(56, 56, 56)
+                                        .addComponent(jLabel25, javax.swing.GroupLayout.PREFERRED_SIZE, 43, javax.swing.GroupLayout.PREFERRED_SIZE)))
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                                 .addComponent(mesial21, javax.swing.GroupLayout.PREFERRED_SIZE, 18, javax.swing.GroupLayout.PREFERRED_SIZE)
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
@@ -721,6 +729,10 @@ public class Odontograma extends javax.swing.JFrame {
                                         .addComponent(distal27))
                                     .addComponent(vestibular27))))
                         .addGap(59, 59, 59))))
+            .addGroup(layout.createSequentialGroup()
+                .addGap(294, 294, 294)
+                .addComponent(jScrollPane4, javax.swing.GroupLayout.PREFERRED_SIZE, 551, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(0, 0, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -1053,9 +1065,9 @@ public class Odontograma extends javax.swing.JFrame {
                     .addComponent(jLabel31)
                     .addComponent(jLabel28)
                     .addComponent(jLabel25))
-                .addGap(79, 79, 79)
-                .addComponent(resultado, javax.swing.GroupLayout.PREFERRED_SIZE, 162, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(275, 275, 275))
+                .addGap(99, 99, 99)
+                .addComponent(jScrollPane4, javax.swing.GroupLayout.PREFERRED_SIZE, 176, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(241, 241, 241))
         );
 
         pack();
@@ -1661,6 +1673,11 @@ public class Odontograma extends javax.swing.JFrame {
     
     }//GEN-LAST:event_odonto_limpiarActionPerformed
 
+    private void regresarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_regresarActionPerformed
+        this.dispose();
+        new Ficha_medica().setVisible(true);
+    }//GEN-LAST:event_regresarActionPerformed
+
     /**
      * @param args the command line arguments
      */
@@ -1773,6 +1790,7 @@ public class Odontograma extends javax.swing.JFrame {
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JScrollPane jScrollPane2;
     private javax.swing.JScrollPane jScrollPane3;
+    private javax.swing.JScrollPane jScrollPane4;
     private javax.swing.JCheckBox lingual31;
     private javax.swing.JCheckBox lingual32;
     private javax.swing.JCheckBox lingual33;
@@ -1848,7 +1866,7 @@ public class Odontograma extends javax.swing.JFrame {
     private javax.swing.JCheckBox palatino26;
     private javax.swing.JCheckBox palatino27;
     private javax.swing.JButton regresar;
-    private javax.swing.JLabel resultado;
+    private javax.swing.JTextArea resultado;
     private javax.swing.JTextPane text_apellido;
     private javax.swing.JTextPane text_cedula;
     private javax.swing.JTextPane text_nombre;
