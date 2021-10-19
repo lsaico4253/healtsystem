@@ -354,6 +354,7 @@ public class Pacientes extends javax.swing.JFrame {
         if(response03 == JOptionPane.YES_OPTION){
         
         this.dispose();
+        new Dasboard().setVisible(true);
         
         }
     }//GEN-LAST:event_jButtonRegresarDActionPerformed

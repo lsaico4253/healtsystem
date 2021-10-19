@@ -36,6 +36,7 @@ public class Reportes extends javax.swing.JFrame {
         jButtonreportepaciente = new javax.swing.JButton();
         jButtonreportetratamiento = new javax.swing.JButton();
         jButton1 = new javax.swing.JButton();
+        jLabel1 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -48,6 +49,7 @@ public class Reportes extends javax.swing.JFrame {
         jButtonreportedoctor.setBackground(new java.awt.Color(51, 102, 255));
         jButtonreportedoctor.setFont(new java.awt.Font("Segoe UI Semibold", 0, 14)); // NOI18N
         jButtonreportedoctor.setForeground(new java.awt.Color(255, 255, 255));
+        jButtonreportedoctor.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Interfaces/Media/imagen_doctor.png"))); // NOI18N
         jButtonreportedoctor.setText("Doctores");
         jButtonreportedoctor.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -58,6 +60,7 @@ public class Reportes extends javax.swing.JFrame {
         jButtonreportepaciente.setBackground(new java.awt.Color(51, 102, 255));
         jButtonreportepaciente.setFont(new java.awt.Font("Segoe UI Semibold", 0, 14)); // NOI18N
         jButtonreportepaciente.setForeground(new java.awt.Color(255, 255, 255));
+        jButtonreportepaciente.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Interfaces/Media/imagen_paciente.png"))); // NOI18N
         jButtonreportepaciente.setText("Pacientes");
         jButtonreportepaciente.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -68,6 +71,7 @@ public class Reportes extends javax.swing.JFrame {
         jButtonreportetratamiento.setBackground(new java.awt.Color(51, 102, 255));
         jButtonreportetratamiento.setFont(new java.awt.Font("Segoe UI Semibold", 0, 14)); // NOI18N
         jButtonreportetratamiento.setForeground(new java.awt.Color(255, 255, 255));
+        jButtonreportetratamiento.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Interfaces/Media/imagen_tratamiento.png"))); // NOI18N
         jButtonreportetratamiento.setText("Tratamientos");
         jButtonreportetratamiento.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -83,6 +87,8 @@ public class Reportes extends javax.swing.JFrame {
             }
         });
 
+        jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Interfaces/Media/imagen_reportes.png"))); // NOI18N
+
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
         jPanel1Layout.setHorizontalGroup(
@@ -90,12 +96,14 @@ public class Reportes extends javax.swing.JFrame {
             .addGroup(jPanel1Layout.createSequentialGroup()
                 .addGap(0, 0, Short.MAX_VALUE)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
-                    .addComponent(jButtonreportetratamiento, javax.swing.GroupLayout.DEFAULT_SIZE, 149, Short.MAX_VALUE)
+                    .addComponent(jButtonreportetratamiento, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .addComponent(jButtonreportepaciente, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .addComponent(jButtonreportedoctor, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
             .addGroup(jPanel1Layout.createSequentialGroup()
-                .addGap(122, 122, 122)
+                .addGap(24, 24, 24)
+                .addComponent(jLabel1)
+                .addGap(64, 64, 64)
                 .addComponent(jLabelREPORTES)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 64, Short.MAX_VALUE)
                 .addComponent(jButton1))
@@ -104,17 +112,19 @@ public class Reportes extends javax.swing.JFrame {
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel1Layout.createSequentialGroup()
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(jButton1)
                     .addGroup(jPanel1Layout.createSequentialGroup()
                         .addContainerGap()
-                        .addComponent(jLabelREPORTES))
-                    .addComponent(jButton1))
+                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(jLabel1)
+                            .addComponent(jLabelREPORTES))))
                 .addGap(18, 18, 18)
                 .addComponent(jButtonreportedoctor, javax.swing.GroupLayout.PREFERRED_SIZE, 42, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(18, 18, 18)
                 .addComponent(jButtonreportepaciente, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(18, 18, 18)
                 .addComponent(jButtonreportetratamiento, javax.swing.GroupLayout.PREFERRED_SIZE, 41, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(42, Short.MAX_VALUE))
+                .addContainerGap(35, Short.MAX_VALUE))
         );
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
@@ -199,6 +209,7 @@ public class Reportes extends javax.swing.JFrame {
     private javax.swing.JButton jButtonreportedoctor;
     private javax.swing.JButton jButtonreportepaciente;
     private javax.swing.JButton jButtonreportetratamiento;
+    private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabelREPORTES;
     private javax.swing.JPanel jPanel1;
     // End of variables declaration//GEN-END:variables
