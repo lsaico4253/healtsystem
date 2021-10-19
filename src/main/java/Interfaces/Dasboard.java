@@ -120,7 +120,12 @@ public class Dasboard extends javax.swing.JFrame {
         jButton3.setFont(new java.awt.Font("Poppins", 0, 14)); // NOI18N
         jButton3.setForeground(new java.awt.Color(255, 255, 255));
         jButton3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Interfaces/Media/imagen_administracion.png"))); // NOI18N
-        jButton3.setText("Administración");
+        jButton3.setText("Agregar usuario");
+        jButton3.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton3ActionPerformed(evt);
+            }
+        });
 
         jButton9.setBackground(new java.awt.Color(102, 153, 255));
         jButton9.setFont(new java.awt.Font("Poppins", 0, 14)); // NOI18N
@@ -246,6 +251,11 @@ public class Dasboard extends javax.swing.JFrame {
         new Reportes().setVisible(true);
         this.dispose();
     }//GEN-LAST:event_jButton6ActionPerformed
+
+    private void jButton3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton3ActionPerformed
+        new AgregarUsuario().setVisible(true);
+        this.dispose();
+    }//GEN-LAST:event_jButton3ActionPerformed
 
     /**
      * @param args the command line arguments

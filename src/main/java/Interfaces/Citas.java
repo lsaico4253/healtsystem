@@ -103,7 +103,6 @@ public class Citas extends javax.swing.JFrame {
         jScrollPane1 = new javax.swing.JScrollPane();
         jTablecita = new javax.swing.JTable();
         jButtonagregar = new javax.swing.JButton();
-        jButtoneditar = new javax.swing.JButton();
         jButtonactualizar = new javax.swing.JButton();
         jButton1 = new javax.swing.JButton();
         jButtonregresar = new javax.swing.JButton();
@@ -134,16 +133,6 @@ public class Citas extends javax.swing.JFrame {
         jButtonagregar.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jButtonagregarActionPerformed(evt);
-            }
-        });
-
-        jButtoneditar.setBackground(new java.awt.Color(102, 153, 255));
-        jButtoneditar.setForeground(new java.awt.Color(255, 255, 255));
-        jButtoneditar.setText("Editar");
-        jButtoneditar.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
-        jButtoneditar.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButtoneditarActionPerformed(evt);
             }
         });
 
@@ -214,7 +203,6 @@ public class Citas extends javax.swing.JFrame {
                                     .addComponent(jDateChooser1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                                     .addGroup(layout.createSequentialGroup()
                                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                                            .addComponent(jButtoneditar, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                                             .addComponent(jButtonactualizar, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                                             .addComponent(jButton1, javax.swing.GroupLayout.DEFAULT_SIZE, 104, Short.MAX_VALUE)
                                             .addComponent(jButtonagregar, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
@@ -235,11 +223,9 @@ public class Citas extends javax.swing.JFrame {
                 .addComponent(jButtonregresar)
                 .addGap(35, 35, 35)
                 .addComponent(jButtonagregar)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addComponent(jButtoneditar)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addGap(29, 29, 29)
                 .addComponent(jButtonactualizar)
-                .addGap(11, 11, 11)
+                .addGap(30, 30, 30)
                 .addComponent(jButton1)
                 .addGap(18, 18, 18)
                 .addComponent(jDateChooser1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -264,21 +250,6 @@ public class Citas extends javax.swing.JFrame {
         new Agendarcitas().setVisible(true);
         this.dispose();
     }//GEN-LAST:event_jButtonagregarActionPerformed
-
-    private void jButtoneditarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtoneditarActionPerformed
-        // TODO add your handling code here:
-        int seleccion = jTablecita.getSelectedRow();
-        String fecha = jTablecita.getValueAt(seleccion, 0).toString();        
-        listacita.forEach((e) -> {
-            if(e.getFecha().equals(fecha)){
-                int id_citas = e.getId_citas();
-                new Agendarcitas(id_citas).setVisible(true);
-                mostrar();
-                jDateChooser1.setDateFormatString("");
-            }
-        });
-  
-    }//GEN-LAST:event_jButtoneditarActionPerformed
     public ArrayList <Cita> editar(){
     ArrayList <Cita> editar_cita = new ArrayList <>();
     
@@ -377,7 +348,6 @@ public class Citas extends javax.swing.JFrame {
     private javax.swing.JButton jButtonactualizar;
     private javax.swing.JButton jButtonagregar;
     private javax.swing.JButton jButtonbuscar;
-    private javax.swing.JButton jButtoneditar;
     private javax.swing.JButton jButtonregresar;
     private com.toedter.calendar.JDateChooser jDateChooser1;
     private javax.swing.JLabel jLabel1;
