@@ -99,6 +99,7 @@ public class Tratamiento extends javax.swing.JFrame {
         btnActualizar = new javax.swing.JButton();
         jLabel3 = new javax.swing.JLabel();
         txtBuscador = new javax.swing.JTextField();
+        jL = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
@@ -171,6 +172,9 @@ public class Tratamiento extends javax.swing.JFrame {
         getContentPane().add(btnActualizar, new org.netbeans.lib.awtextra.AbsoluteConstraints(450, 260, 80, -1));
         getContentPane().add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(120, 340, 300, 20));
         getContentPane().add(txtBuscador, new org.netbeans.lib.awtextra.AbsoluteConstraints(450, 200, 100, -1));
+
+        jL.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Interfaces/Media/imagen_tratamiento.png"))); // NOI18N
+        getContentPane().add(jL, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 40, -1, -1));
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
@@ -308,6 +312,7 @@ public class Tratamiento extends javax.swing.JFrame {
     private javax.swing.JButton btnAgregar;
     private javax.swing.JButton btnBuscar;
     private javax.swing.JButton btnRegresar;
+    private javax.swing.JLabel jL;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
