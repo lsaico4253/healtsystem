@@ -48,6 +48,7 @@ public class Ficha_medica extends javax.swing.JFrame {
      */
     public Ficha_medica() {
         initComponents();
+        mostrardoctores();
         this.getContentPane().setBackground(Color.white);
         this.setLocationRelativeTo(null);
         
@@ -91,6 +92,39 @@ public class Ficha_medica extends javax.swing.JFrame {
             }
         }
         }
+    public void mostrardoctores(){
+        
+        Connection conn = null;
+        PreparedStatement stmt = null;
+        ResultSet rs = null;
+        String SQL_SELECT = "SELECT * FROM public.doctores;";
+        
+        try {
+            conn = getConnection();
+            stmt = conn.prepareStatement(SQL_SELECT);
+            rs = stmt.executeQuery();
+            while (rs.next()) {
+                
+                    jComboBox1.addItem(rs.getString("primernombre")+" "+rs.getString("primerapellido"));
+                    
+                }
+            } 
+            catch (SQLException ex) {
+                
+            ex.printStackTrace(System.out);
+            
+        } finally {
+            try {
+                close(rs);
+                close(stmt);
+                close(conn);
+            } catch (SQLException ex) {
+                
+                ex.printStackTrace(System.out);
+                
+            }
+        }
+    }
     /**
      * This method is called from within the constructor to initialize the form.
      * WARNING: Do NOT modify this code. The content of this method is always
@@ -136,8 +170,6 @@ public class Ficha_medica extends javax.swing.JFrame {
         boton_odontograma = new javax.swing.JButton();
         boton_guardar = new javax.swing.JButton();
         jLabel20 = new javax.swing.JLabel();
-        jScrollPane14 = new javax.swing.JScrollPane();
-        nombre_medico_ficha = new javax.swing.JTextPane();
         jButton1 = new javax.swing.JButton();
         antibiotico_si = new javax.swing.JRadioButton();
         alimentos_si = new javax.swing.JRadioButton();
@@ -148,6 +180,7 @@ public class Ficha_medica extends javax.swing.JFrame {
         jButtongenerarfactura = new javax.swing.JButton();
         jSeparator1 = new javax.swing.JSeparator();
         jLabel13 = new javax.swing.JLabel();
+        jComboBox1 = new javax.swing.JComboBox<>();
 
         jMenu1.setText("File");
         jMenuBar1.add(jMenu1);
@@ -262,10 +295,6 @@ public class Ficha_medica extends javax.swing.JFrame {
         jLabel20.setText("Nombre del medico responsable:");
         getContentPane().add(jLabel20, new org.netbeans.lib.awtextra.AbsoluteConstraints(11, 550, 200, -1));
 
-        jScrollPane14.setViewportView(nombre_medico_ficha);
-
-        getContentPane().add(jScrollPane14, new org.netbeans.lib.awtextra.AbsoluteConstraints(222, 550, 240, -1));
-
         jButton1.setText("Buscar");
         jButton1.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         jButton1.addActionListener(new java.awt.event.ActionListener() {
@@ -322,6 +351,13 @@ public class Ficha_medica extends javax.swing.JFrame {
         jSeparator1.setForeground(new java.awt.Color(0, 0, 255));
         getContentPane().add(jSeparator1, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 270, 590, 20));
         getContentPane().add(jLabel13, new org.netbeans.lib.awtextra.AbsoluteConstraints(170, 630, 360, 20));
+
+        jComboBox1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jComboBox1ActionPerformed(evt);
+            }
+        });
+        getContentPane().add(jComboBox1, new org.netbeans.lib.awtextra.AbsoluteConstraints(200, 550, 130, -1));
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
@@ -383,7 +419,7 @@ public class Ficha_medica extends javax.swing.JFrame {
         telefono_ficha.setText("");
         direccion_ficha.setText("");
         observaciones_ficha.setText("");
-        nombre_medico_ficha.setText("");
+        //nombre_medico_ficha.setText("");
         medicamento_si.setSelected(false);
         antibiotico_si.setSelected(false);
         alimentos_si.setSelected(false);
@@ -415,6 +451,11 @@ public class Ficha_medica extends javax.swing.JFrame {
     private void medicamento_siActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_medicamento_siActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_medicamento_siActionPerformed
+
+    private void jComboBox1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jComboBox1ActionPerformed
+        // TODO add your handling code here:
+        
+    }//GEN-LAST:event_jComboBox1ActionPerformed
 
     
     /**
@@ -467,6 +508,7 @@ public class Ficha_medica extends javax.swing.JFrame {
     private javax.swing.JButton jButton1;
     private javax.swing.JButton jButton2;
     private javax.swing.JButton jButtongenerarfactura;
+    private javax.swing.JComboBox<String> jComboBox1;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel10;
     private javax.swing.JLabel jLabel11;
@@ -490,7 +532,6 @@ public class Ficha_medica extends javax.swing.JFrame {
     private javax.swing.JMenuBar jMenuBar1;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JScrollPane jScrollPane13;
-    private javax.swing.JScrollPane jScrollPane14;
     private javax.swing.JScrollPane jScrollPane2;
     private javax.swing.JScrollPane jScrollPane3;
     private javax.swing.JScrollPane jScrollPane4;
@@ -498,7 +539,6 @@ public class Ficha_medica extends javax.swing.JFrame {
     private javax.swing.JSeparator jSeparator1;
     private javax.swing.JRadioButton medicamento_si;
     private javax.swing.JTextPane nombre_ficha;
-    private javax.swing.JTextPane nombre_medico_ficha;
     private javax.swing.JTextArea observaciones_ficha;
     private javax.swing.JTextPane telefono_ficha;
     // End of variables declaration//GEN-END:variables

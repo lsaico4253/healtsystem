@@ -214,7 +214,7 @@ public class AgregarDoctor extends javax.swing.JFrame {
                 btneditActionPerformed(evt);
             }
         });
-        getContentPane().add(btnedit, new org.netbeans.lib.awtextra.AbsoluteConstraints(240, 620, -1, -1));
+        getContentPane().add(btnedit, new org.netbeans.lib.awtextra.AbsoluteConstraints(250, 620, -1, -1));
 
         btnRegresar.setText("Regresar al Inicio");
         btnRegresar.addActionListener(new java.awt.event.ActionListener() {
@@ -466,8 +466,8 @@ public class AgregarDoctor extends javax.swing.JFrame {
         });
         getContentPane().add(textSegundoApellidodoctor, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 310, 170, -1));
 
-        jLabel18.setText("logo");
-        getContentPane().add(jLabel18, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 40, -1, -1));
+        jLabel18.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Interfaces/Media/imagen_doctor.png"))); // NOI18N
+        getContentPane().add(jLabel18, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 40, 40, 60));
         getContentPane().add(jLabel19, new org.netbeans.lib.awtextra.AbsoluteConstraints(130, 650, -1, 20));
 
         pack();
@@ -657,7 +657,7 @@ public class AgregarDoctor extends javax.swing.JFrame {
                 txtEspecialidad.setText("");
                 txtTitulo.setText("");
                 txtUniversidad.setText("");
-                new Doctores().setVisible(true);
+                new Pacientes().setVisible(true);
                 this.dispose();
                 
                
@@ -666,6 +666,7 @@ public class AgregarDoctor extends javax.swing.JFrame {
 
     private void btnCancelarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnCancelarActionPerformed
         // TODO add your handling code here:
+        
     }//GEN-LAST:event_btnCancelarActionPerformed
 
     private void box02ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_box02ActionPerformed
@@ -679,6 +680,14 @@ public class AgregarDoctor extends javax.swing.JFrame {
 
     private void btnRegresarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnRegresarActionPerformed
         // TODO add your handling code here:
+        int response02 = JOptionPane.showConfirmDialog(this, "¿Seguro que desea regresar?", "Confirmar", JOptionPane.YES_NO_OPTION, JOptionPane.QUESTION_MESSAGE);
+        
+        if(response02 == JOptionPane.YES_OPTION){
+        
+        this.dispose();
+        new Doctores().setVisible(true);
+        
+        }
     }//GEN-LAST:event_btnRegresarActionPerformed
 
     private void txtEspecialidadActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtEspecialidadActionPerformed

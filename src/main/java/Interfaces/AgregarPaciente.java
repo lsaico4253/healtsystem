@@ -212,7 +212,7 @@ public class AgregarPaciente extends javax.swing.JFrame {
         jLabel6.setText("Segundo Apellido:");
         getContentPane().add(jLabel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 280, -1, -1));
 
-        textcedulapaciente.setForeground(new java.awt.Color(204, 204, 204));
+        textcedulapaciente.setForeground(new java.awt.Color(102, 102, 102));
         textcedulapaciente.setHorizontalAlignment(javax.swing.JTextField.CENTER);
         textcedulapaciente.setText("Ingrese la cedula");
         textcedulapaciente.addMouseListener(new java.awt.event.MouseAdapter() {
@@ -227,7 +227,7 @@ public class AgregarPaciente extends javax.swing.JFrame {
         });
         getContentPane().add(textcedulapaciente, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 150, 210, -1));
 
-        textPrimerNombre.setForeground(new java.awt.Color(204, 204, 204));
+        textPrimerNombre.setForeground(new java.awt.Color(102, 102, 102));
         textPrimerNombre.setHorizontalAlignment(javax.swing.JTextField.CENTER);
         textPrimerNombre.setText("Ingrese el Primer nombre");
         textPrimerNombre.addMouseListener(new java.awt.event.MouseAdapter() {
@@ -242,7 +242,7 @@ public class AgregarPaciente extends javax.swing.JFrame {
         });
         getContentPane().add(textPrimerNombre, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 180, 210, -1));
 
-        textSegundoNombre.setForeground(new java.awt.Color(204, 204, 204));
+        textSegundoNombre.setForeground(new java.awt.Color(102, 102, 102));
         textSegundoNombre.setHorizontalAlignment(javax.swing.JTextField.CENTER);
         textSegundoNombre.setText("Ingrese el Segundo nombre");
         textSegundoNombre.addMouseListener(new java.awt.event.MouseAdapter() {
@@ -252,7 +252,7 @@ public class AgregarPaciente extends javax.swing.JFrame {
         });
         getContentPane().add(textSegundoNombre, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 210, 210, -1));
 
-        textPrimerApellido.setForeground(new java.awt.Color(204, 204, 204));
+        textPrimerApellido.setForeground(new java.awt.Color(102, 102, 102));
         textPrimerApellido.setHorizontalAlignment(javax.swing.JTextField.CENTER);
         textPrimerApellido.setText("Ingrese el Primer apellido");
         textPrimerApellido.addMouseListener(new java.awt.event.MouseAdapter() {
@@ -262,7 +262,7 @@ public class AgregarPaciente extends javax.swing.JFrame {
         });
         getContentPane().add(textPrimerApellido, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 240, 210, -1));
 
-        textSegundoApellido.setForeground(new java.awt.Color(204, 204, 204));
+        textSegundoApellido.setForeground(new java.awt.Color(102, 102, 102));
         textSegundoApellido.setHorizontalAlignment(javax.swing.JTextField.CENTER);
         textSegundoApellido.setText("Ingrese el Segundo apellido");
         textSegundoApellido.addMouseListener(new java.awt.event.MouseAdapter() {
@@ -289,7 +289,7 @@ public class AgregarPaciente extends javax.swing.JFrame {
         jLabel12.setText("Seguro IESS");
         getContentPane().add(jLabel12, new org.netbeans.lib.awtextra.AbsoluteConstraints(120, 460, -1, 30));
 
-        textTelefono1.setForeground(new java.awt.Color(204, 204, 204));
+        textTelefono1.setForeground(new java.awt.Color(102, 102, 102));
         textTelefono1.setHorizontalAlignment(javax.swing.JTextField.CENTER);
         textTelefono1.setText("Ingrese el numero de telefono");
         textTelefono1.addMouseListener(new java.awt.event.MouseAdapter() {
@@ -299,7 +299,7 @@ public class AgregarPaciente extends javax.swing.JFrame {
         });
         getContentPane().add(textTelefono1, new org.netbeans.lib.awtextra.AbsoluteConstraints(190, 390, 180, -1));
 
-        textTelefono2.setForeground(new java.awt.Color(204, 204, 204));
+        textTelefono2.setForeground(new java.awt.Color(102, 102, 102));
         textTelefono2.setHorizontalAlignment(javax.swing.JTextField.CENTER);
         textTelefono2.setText("Ingrese el numero de telefono");
         textTelefono2.addMouseListener(new java.awt.event.MouseAdapter() {
@@ -309,7 +309,7 @@ public class AgregarPaciente extends javax.swing.JFrame {
         });
         getContentPane().add(textTelefono2, new org.netbeans.lib.awtextra.AbsoluteConstraints(190, 430, 180, -1));
 
-        textDireccion.setForeground(new java.awt.Color(204, 204, 204));
+        textDireccion.setForeground(new java.awt.Color(102, 102, 102));
         textDireccion.setHorizontalAlignment(javax.swing.JTextField.CENTER);
         textDireccion.setText("Ingrese la direccion");
         textDireccion.addMouseListener(new java.awt.event.MouseAdapter() {
@@ -688,7 +688,7 @@ public class AgregarPaciente extends javax.swing.JFrame {
     private void textcedulapacienteMousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_textcedulapacienteMousePressed
        
         textcedulapaciente.setText("");
-        textcedulapaciente.setForeground(Color.GRAY);
+        textcedulapaciente.setForeground(Color.BLACK);
   
      
         
@@ -698,7 +698,7 @@ public class AgregarPaciente extends javax.swing.JFrame {
 
     private void textPrimerNombreMousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_textPrimerNombreMousePressed
         textPrimerNombre.setText("");
-        textPrimerNombre.setForeground(Color.GRAY);
+        textPrimerNombre.setForeground(Color.BLACK);
 
         // TODO add your handling code here:
     }//GEN-LAST:event_textPrimerNombreMousePressed
@@ -709,20 +709,20 @@ public class AgregarPaciente extends javax.swing.JFrame {
 
     private void textSegundoNombreMousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_textSegundoNombreMousePressed
         textSegundoNombre.setText("");
-        textSegundoNombre.setForeground(Color.GRAY);
+        textSegundoNombre.setForeground(Color.BLACK);
         // TODO add your handling code here:
     }//GEN-LAST:event_textSegundoNombreMousePressed
 
     private void textPrimerApellidoMousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_textPrimerApellidoMousePressed
       textPrimerApellido.setText("");
-        textPrimerApellido.setForeground(Color.GRAY);
+        textPrimerApellido.setForeground(Color.BLACK);
 
         // TODO add your handling code here:
     }//GEN-LAST:event_textPrimerApellidoMousePressed
 
     private void textSegundoApellidoMousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_textSegundoApellidoMousePressed
          textSegundoApellido.setText("");
-        textSegundoApellido.setForeground(Color.GRAY);
+        textSegundoApellido.setForeground(Color.BLACK);
 
         // TODO add your handling code here:
     }//GEN-LAST:event_textSegundoApellidoMousePressed
@@ -730,7 +730,7 @@ public class AgregarPaciente extends javax.swing.JFrame {
     private void textTelefono1MousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_textTelefono1MousePressed
         
         textTelefono1.setText("");
-        textTelefono1.setForeground(Color.GRAY);
+        textTelefono1.setForeground(Color.BLACK);
 
         // TODO add your handling code here:
     }//GEN-LAST:event_textTelefono1MousePressed
@@ -738,14 +738,14 @@ public class AgregarPaciente extends javax.swing.JFrame {
     private void textTelefono2MousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_textTelefono2MousePressed
           
         textTelefono2.setText("");
-        textTelefono2.setForeground(Color.GRAY);
+        textTelefono2.setForeground(Color.BLACK);
         // TODO add your handling code here:
     }//GEN-LAST:event_textTelefono2MousePressed
 
     private void textDireccionMousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_textDireccionMousePressed
          
         textDireccion.setText("");
-        textDireccion.setForeground(Color.GRAY);
+        textDireccion.setForeground(Color.BLACK);
 
         // TODO add your handling code here:
     }//GEN-LAST:event_textDireccionMousePressed

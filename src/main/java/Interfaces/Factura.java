@@ -144,11 +144,14 @@ public class Factura extends javax.swing.JFrame {
         jMenuItem1.setText("jMenuItem1");
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setBackground(new java.awt.Color(255, 255, 255));
         setUndecorated(true);
 
         jLabel7.setText("Fecha:");
 
         jLabelnumero.setText("Número Factura:");
+
+        jPanel3.setBackground(new java.awt.Color(255, 255, 255));
 
         jLabel1.setText("Cédula Paciente:");
 
@@ -200,6 +203,12 @@ public class Factura extends javax.swing.JFrame {
         });
 
         jLabel9.setText("Teléfono:");
+
+        jComboBoxdoctores.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jComboBoxdoctoresActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout jPanel3Layout = new javax.swing.GroupLayout(jPanel3);
         jPanel3.setLayout(jPanel3Layout);
@@ -300,7 +309,11 @@ public class Factura extends javax.swing.JFrame {
                 .addGap(0, 0, Short.MAX_VALUE))
         );
 
+        jLabelfacturass.setFont(new java.awt.Font("Verdana", 0, 18)); // NOI18N
+        jLabelfacturass.setForeground(new java.awt.Color(0, 0, 255));
         jLabelfacturass.setText("FACTURA");
+
+        jPanel6.setBackground(new java.awt.Color(255, 255, 255));
 
         jLabel10.setText("Nombre de la empresa:");
 
@@ -457,7 +470,7 @@ public class Factura extends javax.swing.JFrame {
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                         .addComponent(jPanel6, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addComponent(jButtonguardarfactura))
-                .addGap(0, 29, Short.MAX_VALUE))
+                .addGap(0, 25, Short.MAX_VALUE))
         );
 
         pack();
@@ -519,6 +532,10 @@ public class Factura extends javax.swing.JFrame {
         }
         
     }//GEN-LAST:event_jButtonguardarfacturaActionPerformed
+
+    private void jComboBoxdoctoresActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jComboBoxdoctoresActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jComboBoxdoctoresActionPerformed
 
     /**
      * @param args the command line arguments
