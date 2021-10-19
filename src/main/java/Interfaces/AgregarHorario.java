@@ -24,6 +24,7 @@ public class AgregarHorario extends javax.swing.JFrame {
      */
     public AgregarHorario() {
         initComponents();
+        this.setLocationRelativeTo(null);
         this.getContentPane().setBackground(Color.white);
     }
 
@@ -162,6 +163,8 @@ public class AgregarHorario extends javax.swing.JFrame {
         }else{
             JOptionPane.showMessageDialog(null, "El formato de hora debe ser HH:MM");
         }
+        new AgregarDoctor().setVisible(true);
+        this.dispose();
         
     }//GEN-LAST:event_btnAgregarActionPerformed
 

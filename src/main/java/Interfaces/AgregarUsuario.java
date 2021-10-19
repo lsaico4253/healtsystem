@@ -25,6 +25,7 @@ public class AgregarUsuario extends javax.swing.JFrame {
      */
     public AgregarUsuario() {
         initComponents();
+        this.setLocationRelativeTo(null);
         this.getContentPane().setBackground(Color.white);
     }
 
