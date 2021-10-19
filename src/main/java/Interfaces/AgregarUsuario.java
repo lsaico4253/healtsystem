@@ -25,6 +25,7 @@ public class AgregarUsuario extends javax.swing.JFrame {
      */
     public AgregarUsuario() {
         initComponents();
+        this.setLocationRelativeTo(null);
         this.getContentPane().setBackground(Color.white);
     }
 
@@ -165,12 +166,9 @@ public class AgregarUsuario extends javax.swing.JFrame {
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
         // TODO add your handling code here:
         
-         if(txtuser.getText().equals("") || txtpass1.getText().equals(" ") || txtpass2.getText().equals(" ")){
+         if(txtuser.getText().equals("") || txtpass1.getToolTipText().equals(" ") || txtpass2.getToolTipText().equals(" ")){
             JOptionPane.showMessageDialog(null, "Hay campos vacios");
         }else{
-             
-         
-             
         
         String usuario=txtuser.getText();
         String pass1 = txtpass1.getText();

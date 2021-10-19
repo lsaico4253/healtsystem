@@ -154,7 +154,6 @@ public class AgregarPaciente extends javax.swing.JFrame {
         btnRegresar = new javax.swing.JButton();
         jLabel13 = new javax.swing.JLabel();
         jLabel14 = new javax.swing.JLabel();
-        btnCancelar = new javax.swing.JButton();
         jLabel16 = new javax.swing.JLabel();
         jSeparator1 = new javax.swing.JSeparator();
         jSeparator2 = new javax.swing.JSeparator();
@@ -391,15 +390,6 @@ public class AgregarPaciente extends javax.swing.JFrame {
         jLabel14.setForeground(new java.awt.Color(102, 153, 255));
         jLabel14.setText("Datos Referenciales");
         getContentPane().add(jLabel14, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 360, -1, -1));
-
-        btnCancelar.setText("Cancelar");
-        btnCancelar.setBorder(javax.swing.BorderFactory.createCompoundBorder());
-        btnCancelar.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btnCancelarActionPerformed(evt);
-            }
-        });
-        getContentPane().add(btnCancelar, new org.netbeans.lib.awtextra.AbsoluteConstraints(340, 570, 80, 20));
 
         jLabel16.setText("logo");
         getContentPane().add(jLabel16, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 150, 120));
@@ -666,11 +656,6 @@ public class AgregarPaciente extends javax.swing.JFrame {
         
     }//GEN-LAST:event_btnRegresarActionPerformed
 
-    private void btnCancelarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnCancelarActionPerformed
-        // TODO add your handling code here:
-        
-    }//GEN-LAST:event_btnCancelarActionPerformed
-
     private void spinnerEdadAncestorAdded(javax.swing.event.AncestorEvent evt) {//GEN-FIRST:event_spinnerEdadAncestorAdded
         // TODO add your handling code here:
     }//GEN-LAST:event_spinnerEdadAncestorAdded
@@ -805,7 +790,6 @@ public class AgregarPaciente extends javax.swing.JFrame {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.ButtonGroup Genero;
-    private javax.swing.JButton btnCancelar;
     private javax.swing.JButton btnRegresar;
     private javax.swing.JButton btnedit;
     private javax.swing.ButtonGroup buttonGroup1;

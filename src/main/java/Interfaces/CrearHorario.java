@@ -24,6 +24,7 @@ public class CrearHorario extends javax.swing.JFrame {
      */
     public CrearHorario() {
         initComponents();
+        this.setLocationRelativeTo(null);
         this.getContentPane().setBackground(Color.WHITE);
     }
 

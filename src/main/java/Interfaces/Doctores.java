@@ -28,6 +28,7 @@ public class Doctores extends javax.swing.JFrame {
      */
     public Doctores() {
         initComponents();
+        this.setLocationRelativeTo(null);
         this.getContentPane().setBackground(Color.white);
         listadoctor=seleccionar();
         mostrar();

@@ -17,6 +17,7 @@ import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.text.DateFormat;
 import java.util.Date;
+import javax.swing.JOptionPane;
 import javax.swing.SpinnerNumberModel;
 import javax.swing.text.html.HTML;
 
@@ -368,6 +369,7 @@ public class Ficha_medica extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void boton_odontogramaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_boton_odontogramaActionPerformed
+        this.dispose();
         new Odontograma().setVisible(true);
     }//GEN-LAST:event_boton_odontogramaActionPerformed
 
@@ -439,14 +441,21 @@ public class Ficha_medica extends javax.swing.JFrame {
     }//GEN-LAST:event_jButton1ActionPerformed
 
     private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
+        int response03 = JOptionPane.showConfirmDialog(this, "¿Seguro que desea regresar al Inicio?", "Confirmar", JOptionPane.YES_NO_OPTION, JOptionPane.QUESTION_MESSAGE);
+        
+        if(response03 == JOptionPane.YES_OPTION){
+        
         this.dispose();
         new Citas().setVisible(true);
+        
+        }  
     }//GEN-LAST:event_jButton2ActionPerformed
 
     private void jButtongenerarfacturaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtongenerarfacturaActionPerformed
         // TODO add your handling code here:
-        new Factura().setVisible(true);
         this.dispose();
+        new Factura().setVisible(true);
+        
     }//GEN-LAST:event_jButtongenerarfacturaActionPerformed
 
     private void alimentos_siActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_alimentos_siActionPerformed

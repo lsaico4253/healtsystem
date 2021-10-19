@@ -31,6 +31,7 @@ public class Asistentes extends javax.swing.JFrame {
     public Asistentes() {
         
         initComponents();
+        this.setLocationRelativeTo(null);
         this.getContentPane().setBackground(Color.white);
         recepcionistas=seleccionar();
         mostrar();
