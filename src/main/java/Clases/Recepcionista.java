@@ -32,7 +32,5 @@ public class Recepcionista extends Persona{
 
     public void setHorario(String horario) {
         this.horario = horario;
-    }
-    
-    
+    }   
 }

@@ -5,20 +5,99 @@
  */
 package Interfaces;
 
+import static Clases.ConexionBD.close;
+import static Clases.ConexionBD.getConnection;
+import Clases.Paciente;
+import Clases.Recepcionista;
 import java.awt.Color;
+import java.sql.Connection;
+import java.sql.PreparedStatement;
+import java.sql.ResultSet;
+import java.sql.SQLException;
+import java.util.ArrayList;
 
 /**
  *
  * @author lsaic
  */
 public class Asistentes extends javax.swing.JFrame {
-
+    
+    ArrayList<Recepcionista> recepcionistas= new ArrayList <>();
+    private static final String SQL_SELECT = "SELECT * FROM asistentes";
     /**
      * Creates new form Asistentes
      */
     public Asistentes() {
+        
         initComponents();
         this.getContentPane().setBackground(Color.white);
+        recepcionistas=seleccionar();
+        mostrar();
+        
+    }
+    
+    public void mostrar(){
+     String matrizp [][] = new String[recepcionistas.size()][9];
+     
+     for (int i = 0; i < recepcionistas.size(); i++) {
+         matrizp[i][0] = recepcionistas.get(i).getCedula();
+         matrizp[i][1] = recepcionistas.get(i).getNombre();
+         matrizp[i][2] = recepcionistas.get(i).getApellido();
+         matrizp[i][4] = recepcionistas.get(i).getEdad();
+         matrizp[i][5]=recepcionistas.get(i).getGenero();
+         matrizp[i][6]=recepcionistas.get(i).getTelefono();
+         matrizp[i][3]=recepcionistas.get(i).getHorario();
+
+         }
+         jTableRecepcionistas.setModel(new javax.swing.table.DefaultTableModel(
+                matrizp,
+                new String[]{
+                    "Cédula", "Nombres", "Apellidos", "Horario", "Edad","Genero","Telefono"
+                }
+                 
+        ));
+    }
+    
+    public ArrayList <Recepcionista> seleccionar() {
+        Connection conn = null;
+        PreparedStatement stmt = null;
+        ResultSet rs = null;
+        Recepcionista recepcionista = null;
+        ArrayList <Recepcionista> recepcionistas = new ArrayList<>();
+
+        try {
+            conn = getConnection();
+            stmt = conn.prepareStatement(SQL_SELECT);
+            rs = stmt.executeQuery();
+            while (rs.next()) {
+                int id = rs.getInt("id");
+                String primer_nombre = rs.getString("primernombre");
+                String segundo_nombre = rs.getString("segundoapellido");
+                String primer_apellido = rs.getString("primerapellido");
+                String segundo_apellido = rs.getString("segundoapellido");
+                String cedula2 = rs.getString("cedula");
+                String edad = rs.getString("edad");
+                String direccion = rs.getString("direccion");
+                String genero = rs.getString("genero");
+                String telefono1 = rs.getString("telefono");
+                String horario = rs.getString("horario");
+
+                recepcionista = new Recepcionista(horario, id, cedula2, primer_nombre, segundo_nombre, primer_apellido, segundo_apellido, edad, direccion, genero, telefono1, telefono1);
+
+                recepcionistas.add(recepcionista);
+            }
+        } catch (SQLException ex) {
+            ex.printStackTrace(System.out);
+        } finally {
+            try {
+                close(rs);
+                close(stmt);
+                close(conn);
+            } catch (SQLException ex) {
+                ex.printStackTrace(System.out);
+            }
+        }
+        return recepcionistas;
     }
 
     /**
@@ -31,13 +110,13 @@ public class Asistentes extends javax.swing.JFrame {
     private void initComponents() {
 
         jScrollPane1 = new javax.swing.JScrollPane();
-        jTable1 = new javax.swing.JTable();
+        jTableRecepcionistas = new javax.swing.JTable();
         jButton1 = new javax.swing.JButton();
         jLabel1 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
-        jTable1.setModel(new javax.swing.table.DefaultTableModel(
+        jTableRecepcionistas.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
                 {null, null, null, null},
                 {null, null, null, null},
@@ -48,7 +127,7 @@ public class Asistentes extends javax.swing.JFrame {
                 "Title 1", "Title 2", "Title 3", "Title 4"
             }
         ));
-        jScrollPane1.setViewportView(jTable1);
+        jScrollPane1.setViewportView(jTableRecepcionistas);
 
         jButton1.setText("Agregar Recepcionista");
         jButton1.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
@@ -61,7 +140,7 @@ public class Asistentes extends javax.swing.JFrame {
         jLabel1.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
         jLabel1.setForeground(new java.awt.Color(0, 0, 255));
         jLabel1.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        jLabel1.setText("ASISTENTES");
+        jLabel1.setText("RECEPCIONISTAS");
         jLabel1.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(51, 153, 255)));
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
@@ -95,6 +174,8 @@ public class Asistentes extends javax.swing.JFrame {
 
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
         // TODO add your handling code here:
+        new AgregarRecepcionista().setVisible(true);
+        
     }//GEN-LAST:event_jButton1ActionPerformed
 
     /**
@@ -136,6 +217,6 @@ public class Asistentes extends javax.swing.JFrame {
     private javax.swing.JButton jButton1;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JScrollPane jScrollPane1;
-    private javax.swing.JTable jTable1;
+    private javax.swing.JTable jTableRecepcionistas;
     // End of variables declaration//GEN-END:variables
 }
