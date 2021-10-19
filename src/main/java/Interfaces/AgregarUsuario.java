@@ -7,6 +7,7 @@ package Interfaces;
 
 import static Clases.ConexionBD.close;
 import static Clases.ConexionBD.getConnection;
+import Clases.Paciente;
 import java.awt.Color;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
@@ -163,6 +164,14 @@ public class AgregarUsuario extends javax.swing.JFrame {
 
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
         // TODO add your handling code here:
+        
+         if(txtuser.getText().equals("") || txtpass1.getText().equals(" ") || txtpass2.getText().equals(" ")){
+            JOptionPane.showMessageDialog(null, "Hay campos vacios");
+        }else{
+             
+         
+             
+        
         String usuario=txtuser.getText();
         String pass1 = txtpass1.getText();
         String pass2 = txtpass2.getText();
@@ -191,7 +200,10 @@ public class AgregarUsuario extends javax.swing.JFrame {
                     ex.printStackTrace(System.out);
                 }
             }
+            
         }
+         }
+        
     }//GEN-LAST:event_jButton1ActionPerformed
 
     private void txtuserMousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_txtuserMousePressed
