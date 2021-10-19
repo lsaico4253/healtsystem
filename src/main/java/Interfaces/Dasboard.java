@@ -117,6 +117,11 @@ public class Dasboard extends javax.swing.JFrame {
         jButton8.setFont(new java.awt.Font("Poppins", 0, 14)); // NOI18N
         jButton8.setForeground(new java.awt.Color(255, 255, 255));
         jButton8.setText("Ingresos/Egresos");
+        jButton8.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton8ActionPerformed(evt);
+            }
+        });
 
         jButton3.setBackground(new java.awt.Color(51, 102, 255));
         jButton3.setFont(new java.awt.Font("Poppins", 0, 14)); // NOI18N
@@ -248,6 +253,14 @@ public class Dasboard extends javax.swing.JFrame {
         new Reportes().setVisible(true);
         this.dispose();
     }//GEN-LAST:event_jButton6ActionPerformed
+
+    private void jButton8ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton8ActionPerformed
+        // TODO add your handling code here:
+        
+        this.dispose();
+        new IngresosEgresos().setVisible(true);
+        
+    }//GEN-LAST:event_jButton8ActionPerformed
 
     /**
      * @param args the command line arguments

@@ -250,9 +250,13 @@ public class AgregarTratamiento extends javax.swing.JFrame {
 
     private void btnRegresarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnRegresarActionPerformed
         // TODO add your handling code here:
+        int responsee03 = JOptionPane.showConfirmDialog(this, "¿Seguro que desea agregar al Inicio?", "Confirmar", JOptionPane.YES_NO_OPTION, JOptionPane.QUESTION_MESSAGE);
         
+        if(responsee03 == JOptionPane.YES_OPTION){
         this.dispose();
         new Tratamiento().setVisible(true);
+        
+        }
     }//GEN-LAST:event_btnRegresarActionPerformed
 
     private void btnGuardarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnGuardarActionPerformed

@@ -178,13 +178,10 @@ public class Tratamiento extends javax.swing.JFrame {
     private void btnAgregarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnAgregarActionPerformed
         // TODO add your handling code here:
        
-        int responsee03 = JOptionPane.showConfirmDialog(this, "¿Seguro que desea regresar al Inicio?", "Confirmar", JOptionPane.YES_NO_OPTION, JOptionPane.QUESTION_MESSAGE);
-        
-        if(responsee03 == JOptionPane.YES_OPTION){
-
+       
         new AgregarTratamiento().setVisible(true);
         this.dispose();
-        }
+        
         
     }//GEN-LAST:event_btnAgregarActionPerformed
 
@@ -227,8 +224,13 @@ public class Tratamiento extends javax.swing.JFrame {
     private void btnRegresarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnRegresarActionPerformed
         // TODO add your handling code here:
         
+        int responsee03 = JOptionPane.showConfirmDialog(this, "¿Seguro que desea agregar al Inicio?", "Confirmar", JOptionPane.YES_NO_OPTION, JOptionPane.QUESTION_MESSAGE);
+        
+        if(responsee03 == JOptionPane.YES_OPTION){
         this.dispose();
         new Dasboard().setVisible(true);
+        
+        }
     }//GEN-LAST:event_btnRegresarActionPerformed
 
     private void btnActualizarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnActualizarActionPerformed
