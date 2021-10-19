@@ -15,6 +15,8 @@ import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
+import java.text.DateFormat;
+import java.util.Date;
 import javax.swing.text.html.HTML;
 
 
@@ -23,9 +25,11 @@ import javax.swing.text.html.HTML;
  * @author Carlos
  */
 public class Ficha_medica extends javax.swing.JFrame {
-    
+  DateFormat df= DateFormat.getDateInstance();
         private static final String SQL_SELECT = "SELECT * FROM ficha_medica";
         ArrayList<Ficha>lista_ficha= new ArrayList();
+        
+        
         String Cedula="";
         String Nombre="";
         String Apellido="";
@@ -54,9 +58,7 @@ public class Ficha_medica extends javax.swing.JFrame {
         Nombre = nombre_ficha.getText();
         Direccion = direccion_ficha.getText();
         Edad=edad_ficha.getValue().toString();
-        
-        
-
+        fecha = df.format(fecha_ficha.getDate());
     }
     
      
@@ -336,7 +338,7 @@ public class Ficha_medica extends javax.swing.JFrame {
        Apellido=apellido_ficha.getText();
        Edad=edad_ficha.getValue().toString();
        telefono=telefono_ficha.getText();
-       //fecha=fecha_ficha.format(fecha_ficha.getDate());
+       fecha=df.format(fecha_ficha.getDate());
        Direccion=direccion_ficha.getText();
        if(antibiotico_si.isSelected()){
                 antibioticos="si";
@@ -353,14 +355,14 @@ public class Ficha_medica extends javax.swing.JFrame {
          mificha.setApellido(Apellido);
          mificha.setEdad(Edad);
          mificha.setTelefono(telefono);
-         //mificha.setFecha(fecha);
          mificha.setDireccion(Direccion);
+         
          
          lista_ficha.add(mificha);
        }
        Connection conn = null;
        PreparedStatement stmt = null;
-       String SQL_INSERT="INSERT INTO ficha_medica(id_ficha, cedula, nombre, apellido, edad, telefono, fecha, direccion, antibiotico, alimentos, cirugias, enfermedad, medicamentos)VALUES('"+Cedula+"', '"+Nombre+"','"+Apellido+"','"+Edad+"','"+telefono+"', '"+fecha+"', '"+Direccion+"', '"+antibioticos+"', '"+alimentos+"', '"+cirugias+"', '"+enfermedad+"', '"+medicamentos+"');";;
+       String SQL_INSERT="INSERT INTO ficha_medica(cedula, nombre, apellido, edad, telefono, fecha, direccion, antibiotico, alimentos, cirugias, enfermedad, medicamentos)VALUES('"+Cedula+"', '"+Nombre+"','"+Apellido+"','"+Edad+"','"+telefono+"', '"+fecha+"', '"+Direccion+"', '"+antibioticos+"', '"+alimentos+"', '"+cirugias+"', '"+enfermedad+"', '"+medicamentos+"');";;
        try {
             conn = getConnection();
             stmt = conn.prepareStatement(SQL_INSERT);
@@ -380,7 +382,13 @@ public class Ficha_medica extends javax.swing.JFrame {
        apellido_ficha.setText(""); 
         telefono_ficha.setText("");
         direccion_ficha.setText("");
-        
+        observaciones_ficha.setText("");
+        nombre_medico_ficha.setText("");
+        medicamento_si.setSelected(false);
+        antibiotico_si.setSelected(false);
+        alimentos_si.setSelected(false);
+        cirugias_si.setSelected(false);
+        enfermedad_si.setSelected(false);
 
     }//GEN-LAST:event_boton_guardarActionPerformed
 

@@ -43,7 +43,7 @@ public class AgregarPaciente extends javax.swing.JFrame {
         this.getContentPane().setBackground(Color.white);
         
         SpinnerNumberModel spinner_Edad=new SpinnerNumberModel();
-        spinner_Edad.setMaximum(70);
+        spinner_Edad.setMaximum(100);
         spinner_Edad.setMinimum(0);
         spinnerEdad.setModel(spinner_Edad);
     }
