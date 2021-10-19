@@ -26,17 +26,17 @@ public final class Agendarcitas extends javax.swing.JFrame {
     DateFormat df= DateFormat.getDateInstance();
     int id_citas=0;
     String Cedula="";
-        String Nombre="";
-        String Apellido="";
-        String Edad="";
-        String telefono1="";
-        String genero="";
-        String Direccion="";
-        String fecha="";
-        String horainicio ="";
-        String horafin ="";
-        String doctor ="";
-        ArrayList<Cita>listacita= new ArrayList();
+    String Nombre="";
+    String Apellido="";
+    String Edad="";
+    String telefono1="";
+    String genero="";
+    String Direccion="";
+    String fecha="";
+    String horainicio ="";
+    String horafin ="";
+    String doctor ="";
+    ArrayList<Cita>listacita= new ArrayList();
 
     /**
      * Creates new form Agendarcitas
@@ -687,6 +687,7 @@ public final class Agendarcitas extends javax.swing.JFrame {
         telefono1=jTextFieldtelefono.getText();
         doctor=jComboBoxdoctor.getSelectedItem().toString();
         fecha = df.format(jDateChooser1.getDate());
+        int id_doctor=jComboBoxdoctor.getSelectedIndex();
 
         if(Cedula.matches("^[0-9]{10}$")){
             mostrarpacientes();
@@ -700,7 +701,7 @@ public final class Agendarcitas extends javax.swing.JFrame {
                          listacita.add(micita);
                          Connection conn = null;
                          PreparedStatement stmt = null;
-                         String SQL_INSERT="INSERT INTO citas(fecha, hora_inicio, hora_fin, id_doctor)VALUES ('"+fecha+"', '"+horainicio+"', '"+horafin+"');";
+                         String SQL_INSERT="INSERT INTO citas(fecha, hora_inicio, hora_fin, id_doctor)VALUES ('"+fecha+"', '"+horainicio+"', '"+horafin+"','"+id_doctor+"');";
                          try {
                          conn = getConnection();
                          stmt = conn.prepareStatement(SQL_INSERT);
