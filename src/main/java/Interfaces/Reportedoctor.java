@@ -5,6 +5,14 @@
  */
 package Interfaces;
 
+import static Clases.ConexionBD.close;
+import static Clases.ConexionBD.getConnection;
+import Clases.Doctor;
+import java.sql.Connection;
+import java.sql.PreparedStatement;
+import java.sql.ResultSet;
+import java.sql.SQLException;
+import java.util.ArrayList;
 import javax.swing.JOptionPane;
 
 /**
@@ -12,13 +20,101 @@ import javax.swing.JOptionPane;
  * @author HP
  */
 public class Reportedoctor extends javax.swing.JFrame {
+    ArrayList<Doctor> listadoctor= new ArrayList <>();
 
     /**
      * Creates new form Reportetratamiento
      */
     public Reportedoctor() {
+        
         initComponents();
         this.setLocationRelativeTo(null);
+        listadoctor=seleccionar();
+        mostrar();
+        
+    }
+    
+    public void mostrar(){
+     String matrizd [][] = new String[listadoctor.size()][8];
+     
+     for (int i = 0; i < listadoctor.size(); i++) {
+         matrizd[i][0] = listadoctor.get(i).getCedula();
+         matrizd[i][1] = listadoctor.get(i).getNombre();
+         matrizd[i][2] = listadoctor.get(i).getApellido();
+         matrizd[i][3] = listadoctor.get(i).getGenero();
+         matrizd[i][4]=listadoctor.get(i).getEdad();
+         matrizd[i][5] = listadoctor.get(i).getTitulo();
+         matrizd[i][6] = listadoctor.get(i).getEspecialidad();
+         matrizd[i][7]=listadoctor.get(i).getTelefono();
+         //matrizd[i][8]=listadoctor.get(i).getTelefono2();
+
+         }
+         jTabledoctor.setModel(new javax.swing.table.DefaultTableModel(matrizd,new String[]{"Cedula", "Nombre","Apellido", "Genero","Edad", "Titulo","Especialidad","Telefono"
+                }
+                 
+        ));
+    }
+    
+    public ArrayList <Doctor> seleccionar() {
+        Connection conn = null;
+        PreparedStatement stmt = null;
+        ResultSet rs = null;
+        Doctor doctor = null;
+        ArrayList <Doctor> doctores = new ArrayList<>();
+        String SQL_SELECT="SELECT * FROM doctores";
+        
+        try {
+            conn = getConnection();
+            stmt = conn.prepareStatement(SQL_SELECT);
+            rs = stmt.executeQuery();
+            while (rs.next()) {
+                
+                Doctor aux = new Doctor();
+                
+                int id = rs.getInt("id_doctor");
+                String primer_nombre = rs.getString("primernombre");
+                String segundo_nombre = rs.getString("segundoapellido");
+                String primer_apellido = rs.getString("primerapellido");
+                String segundo_apellido = rs.getString("segundoapellido");
+                String cedula2 = rs.getString("cedula");
+                String edad = rs.getString("edad");
+                String direccion = rs.getString("direccion");
+                int genero = rs.getInt("genero");
+                String telefono1 = rs.getString("telefono1");
+                String telefono2 = rs.getString("telefono2");
+                String titulo = rs.getString("titulo");
+                String jornada = rs.getString("jornada");
+                String especialidad = rs.getString("especialidad");
+                String universidad = rs.getString("universidad");
+                
+                aux.setId(id);
+                aux.setCedula(cedula2);
+                aux.setNombre(primer_nombre);
+                aux.setApellido(primer_apellido);
+                if(genero==1){
+                    aux.setGenero("Hombre");
+                }else{
+                    aux.setGenero("Mujer");
+                }
+                aux.setEdad(edad);
+                aux.setTitulo(titulo);
+                aux.setEspecialidad(especialidad);
+                aux.setTelefono(telefono1);
+                
+                doctores.add(aux);
+            }
+        } catch (SQLException ex) {
+            ex.printStackTrace(System.out);
+        } finally {
+            try {
+                close(rs);
+                close(stmt);
+                close(conn);
+            } catch (SQLException ex) {
+                ex.printStackTrace(System.out);
+            }
+        }
+        return doctores;
     }
 
     /**
