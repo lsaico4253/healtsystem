@@ -446,8 +446,7 @@ public class AgregarRecepcionista extends javax.swing.JFrame {
 
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
         // TODO add your handling code here:
-        new Pacientes().setVisible(true);
-        this.dispose();
+        
         if(txtCedula.getText().equals("") || txtPrimerNombre.getText().equals(" ") || txtPrimerApellido.getText().equals("") || txtTelefono1.getText().equals("") ){
             JOptionPane.showMessageDialog(null, "Hay campos vacios");
         }else{
@@ -461,6 +460,7 @@ public class AgregarRecepcionista extends javax.swing.JFrame {
             telefono1=txtTelefono1.getText();
             telefono2=txtTelefono2.getText();
             Direccion=txtDireccion.getText();
+            String horario=box01.getSelectedItem().toString();
             if(generoMAsistente.isSelected()){
                 genero="Hombre";
             }
@@ -482,7 +482,7 @@ public class AgregarRecepcionista extends javax.swing.JFrame {
             listaasistente.add(miasistente);
             Connection conn = null;
             PreparedStatement stmt = null;
-            String SQL_INSERT="INSERT INTO pacientes(num_ficha, afiliacion, cedula, primernombre, segundonombre, primerapellido, segundoapellido, edad, direccion, genero, telefono1, telefono2)VALUES ('F01', 'No Afliado', '"+Cedula+"', '"+Nombre+"', '"+Segundonombre+"', '"+Apellido+"', '"+Segundoapellido+"', '"+Edad+"', '"+Direccion+"', '"+genero+"', '"+telefono1+"', '"+telefono2+"');";
+            String SQL_INSERT="INSERT INTO asistentes(primernombre, segundonombre, primerapellido, segundoapellido, edad, direccion, genero, telefono, horario, cedula)VALUES ('"+Nombre+"', '"+Segundonombre+"', '"+Apellido+"', '"+Segundoapellido+"', '"+Edad+"', '"+Direccion+"', '"+genero+"', '"+telefono1+"','"+horario+"','"+Cedula+"');";
             try {
                 conn = getConnection();
                 stmt = conn.prepareStatement(SQL_INSERT);
@@ -508,8 +508,9 @@ public class AgregarRecepcionista extends javax.swing.JFrame {
             txtTelefono1.setText("");
             txtTelefono2.setText("");
             txtDireccion.setText("");
-
-            //errores de la vida
+            new Asistentes().setVisible(true);
+            this.dispose();
+            
         }
     }//GEN-LAST:event_jButton1ActionPerformed
 

@@ -22,7 +22,7 @@ import java.util.ArrayList;
  */
 public class Citas extends javax.swing.JFrame {
     ArrayList<Cita>listacita= new ArrayList();
-    private static final String SQL_SELECT = "SELECT * FROM citas";
+    private static final String SQL_SELECT = "SELECT cit.id_citas, cit.fecha, cit.hora_inicio, cit.hora_fin, d.primernombre, d.primerapellido FROM citas as cit join doctores as d on cit.id_doctor = d.id_doctor";
 
     /**
      * Creates new form Citas
@@ -50,7 +50,7 @@ public class Citas extends javax.swing.JFrame {
                 String fecha = rs.getString("fecha");
                 String horainicio = rs.getString("hora_inicio");
                 String horafin = rs.getString("hora_fin");
-                String doctor = rs.getString("id_doctor");
+                String doctor = rs.getString("primernombre")+" "+ rs.getString("primerapellido");
                 
 
                 cita = new Cita (id_citas,fecha, horainicio, horafin, doctor);
@@ -77,8 +77,8 @@ public class Citas extends javax.swing.JFrame {
      for (int i = 0; i < listacita.size(); i++) {
          matrizp[i][0] = listacita.get(i).getFecha();
          matrizp[i][1] = listacita.get(i).getHorainicio();
-         matrizp[i][2] = listacita.get(i).getHorafin();
-         matrizp[i][3] = listacita.get(i).getDoctor();
+         matrizp[i][3] = listacita.get(i).getHorafin();
+         matrizp[i][2] = listacita.get(i).getDoctor();
 
          }
          jTablecita.setModel(new javax.swing.table.DefaultTableModel(
