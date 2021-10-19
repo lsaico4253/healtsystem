@@ -35,7 +35,7 @@ public class Tratamiento extends javax.swing.JFrame {
 
         this.setLocationRelativeTo(null);
         initComponents();
-           this.getContentPane().setBackground(Color.white);
+        this.getContentPane().setBackground(Color.white);
         listatratamiento=seleccionar();
         mostrar();
     }

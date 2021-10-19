@@ -399,6 +399,11 @@ public class Factura extends javax.swing.JFrame {
         jLabel13.setText("Detalle Factura:");
 
         jButtonagregaritem.setText("Agregar Item");
+        jButtonagregaritem.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButtonagregaritemActionPerformed(evt);
+            }
+        });
 
         jLabeltotal.setText("Total:");
 
@@ -536,6 +541,10 @@ public class Factura extends javax.swing.JFrame {
     private void jComboBoxdoctoresActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jComboBoxdoctoresActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_jComboBoxdoctoresActionPerformed
+
+    private void jButtonagregaritemActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonagregaritemActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jButtonagregaritemActionPerformed
 
     /**
      * @param args the command line arguments

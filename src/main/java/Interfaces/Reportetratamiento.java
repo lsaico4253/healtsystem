@@ -5,6 +5,14 @@
  */
 package Interfaces;
 
+import static Clases.ConexionBD.close;
+import static Clases.ConexionBD.getConnection;
+import Clases.Tratamientoo;
+import java.sql.Connection;
+import java.sql.PreparedStatement;
+import java.sql.ResultSet;
+import java.sql.SQLException;
+import java.util.ArrayList;
 import javax.swing.JOptionPane;
 
 /**
@@ -12,6 +20,8 @@ import javax.swing.JOptionPane;
  * @author HP
  */
 public class Reportetratamiento extends javax.swing.JFrame {
+    ArrayList<Tratamientoo> listatratamiento = new ArrayList();
+    private static final String SQL_SELECT = "SELECT * FROM tratamiento";
 
     /**
      * Creates new form Reportetratamiento
@@ -19,7 +29,73 @@ public class Reportetratamiento extends javax.swing.JFrame {
     public Reportetratamiento() {
         initComponents();
         this.setLocationRelativeTo(null);
+        listatratamiento=seleccionar();
+        mostrar();
     }
+    
+    public void mostrar(){
+    
+           
+        String matris[][] = new String[listatratamiento.size()][6];
+        
+        for (int i = 0; i < listatratamiento.size(); i++) {
+            
+            matris [i][0] = listatratamiento.get(i).getNombre();
+            matris [i][1] = listatratamiento.get(i).getTipo();
+            matris [i][2] = listatratamiento.get(i).getDuracionaño();
+            matris [i][3] = listatratamiento.get(i).getDuracionmes();
+            matris [i][4] = listatratamiento.get(i).getDuraciondia();
+            matris [i][5] = listatratamiento.get(i).getCosto();
+
+        }
+        
+        tblTratamiento.setModel(new javax.swing.table.DefaultTableModel(
+              
+            matris,
+            new String [] {
+                "Nombre", "Tipo", "Año", "Mes", "Dia", "Costo"
+            }
+        ));  
+    }
+    
+    public ArrayList <Tratamientoo> seleccionar() {
+        Connection conn = null;
+        PreparedStatement stmt = null;
+        ResultSet rs = null;
+        Tratamientoo tratamiento = null;
+        ArrayList <Tratamientoo> tratamientos = new ArrayList<>();
+       try {
+            conn = getConnection();
+            stmt = conn.prepareStatement(SQL_SELECT);
+            rs = stmt.executeQuery();
+            while (rs.next()) {
+                
+                //int idtratamiento = rs.getInt("idtratamiento");
+                String nombre = rs.getString("nombre");
+                String tipo = rs.getString("tipo");
+                String duracionaño = rs.getString("duracionaño");
+                String duracionmes = rs.getString("duracionmes");
+                String duraciondia = rs.getString("duraciondia");
+                String costo = rs.getString("costo");
+                
+
+                tratamiento = new Tratamientoo (nombre, tipo, duracionaño, duracionmes, duraciondia, costo);
+
+                tratamientos.add(tratamiento);
+            }
+        } catch (SQLException ex) {
+            ex.printStackTrace(System.out);
+        } finally {
+            try {
+                close(rs);
+                close(stmt);
+                close(conn);
+            } catch (SQLException ex) {
+                ex.printStackTrace(System.out);
+            }
+        }
+        return tratamientos;
+    } 
 
     /**
      * This method is called from within the constructor to initialize the form.
@@ -33,7 +109,7 @@ public class Reportetratamiento extends javax.swing.JFrame {
         jPanel1 = new javax.swing.JPanel();
         jLabel1 = new javax.swing.JLabel();
         jScrollPane1 = new javax.swing.JScrollPane();
-        jTabletratamiento = new javax.swing.JTable();
+        tblTratamiento = new javax.swing.JTable();
         jButtonregresar = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
@@ -45,7 +121,7 @@ public class Reportetratamiento extends javax.swing.JFrame {
         jLabel1.setForeground(new java.awt.Color(0, 0, 255));
         jLabel1.setText("Reporte Tratamientos");
 
-        jTabletratamiento.setModel(new javax.swing.table.DefaultTableModel(
+        tblTratamiento.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
                 {null, null, null, null},
                 {null, null, null, null},
@@ -56,7 +132,7 @@ public class Reportetratamiento extends javax.swing.JFrame {
                 "Title 1", "Title 2", "Title 3", "Title 4"
             }
         ));
-        jScrollPane1.setViewportView(jTabletratamiento);
+        jScrollPane1.setViewportView(tblTratamiento);
 
         jButtonregresar.setBackground(new java.awt.Color(204, 204, 255));
         jButtonregresar.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
@@ -161,6 +237,6 @@ public class Reportetratamiento extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel1;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JScrollPane jScrollPane1;
-    private javax.swing.JTable jTabletratamiento;
+    private javax.swing.JTable tblTratamiento;
     // End of variables declaration//GEN-END:variables
 }
