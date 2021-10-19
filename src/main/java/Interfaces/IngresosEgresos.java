@@ -5,6 +5,7 @@
  */
 package Interfaces;
 
+import java.awt.Color;
 import javax.swing.JOptionPane;
 
 /**
@@ -18,6 +19,8 @@ public class IngresosEgresos extends javax.swing.JFrame {
      */
     public IngresosEgresos() {
         initComponents();
+        this.setLocationRelativeTo(null);
+        this.getContentPane().setBackground(Color.white);
     }
 
     /**
@@ -39,6 +42,7 @@ public class IngresosEgresos extends javax.swing.JFrame {
         jLabel3 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setUndecorated(true);
 
         jLabel1.setText("                      Ingresos y Egresos");
         jLabel1.setBorder(javax.swing.BorderFactory.createEtchedBorder());

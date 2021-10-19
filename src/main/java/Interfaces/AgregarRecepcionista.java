@@ -159,6 +159,7 @@ public class AgregarRecepcionista extends javax.swing.JFrame {
         txtTelefono2 = new javax.swing.JTextField();
         txtDireccion = new javax.swing.JTextField();
         jLabel15 = new javax.swing.JLabel();
+        jLabel16 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setUndecorated(true);
@@ -228,7 +229,7 @@ public class AgregarRecepcionista extends javax.swing.JFrame {
         jLabel2.setText("Cedula:");
         getContentPane().add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(100, 170, -1, -1));
 
-        txtSegundoApellido.setForeground(new java.awt.Color(204, 204, 204));
+        txtSegundoApellido.setForeground(new java.awt.Color(102, 102, 102));
         txtSegundoApellido.setHorizontalAlignment(javax.swing.JTextField.CENTER);
         txtSegundoApellido.setText("Ingrese el segundo apellido");
         txtSegundoApellido.addMouseListener(new java.awt.event.MouseAdapter() {
@@ -243,7 +244,7 @@ public class AgregarRecepcionista extends javax.swing.JFrame {
         });
         getContentPane().add(txtSegundoApellido, new org.netbeans.lib.awtextra.AbsoluteConstraints(153, 288, 180, -1));
 
-        txtPrimerApellido.setForeground(new java.awt.Color(204, 204, 204));
+        txtPrimerApellido.setForeground(new java.awt.Color(102, 102, 102));
         txtPrimerApellido.setHorizontalAlignment(javax.swing.JTextField.CENTER);
         txtPrimerApellido.setText("Ingrese el primer apellido");
         txtPrimerApellido.addMouseListener(new java.awt.event.MouseAdapter() {
@@ -253,7 +254,7 @@ public class AgregarRecepcionista extends javax.swing.JFrame {
         });
         getContentPane().add(txtPrimerApellido, new org.netbeans.lib.awtextra.AbsoluteConstraints(153, 257, 180, -1));
 
-        txtSegundoNombre.setForeground(new java.awt.Color(204, 204, 204));
+        txtSegundoNombre.setForeground(new java.awt.Color(102, 102, 102));
         txtSegundoNombre.setHorizontalAlignment(javax.swing.JTextField.CENTER);
         txtSegundoNombre.setText("Ingrese el segundo nombre");
         txtSegundoNombre.addMouseListener(new java.awt.event.MouseAdapter() {
@@ -263,7 +264,7 @@ public class AgregarRecepcionista extends javax.swing.JFrame {
         });
         getContentPane().add(txtSegundoNombre, new org.netbeans.lib.awtextra.AbsoluteConstraints(153, 226, 180, -1));
 
-        txtPrimerNombre.setForeground(new java.awt.Color(204, 204, 204));
+        txtPrimerNombre.setForeground(new java.awt.Color(102, 102, 102));
         txtPrimerNombre.setHorizontalAlignment(javax.swing.JTextField.CENTER);
         txtPrimerNombre.setText("Ingrese el primer nombre");
         txtPrimerNombre.addMouseListener(new java.awt.event.MouseAdapter() {
@@ -273,7 +274,7 @@ public class AgregarRecepcionista extends javax.swing.JFrame {
         });
         getContentPane().add(txtPrimerNombre, new org.netbeans.lib.awtextra.AbsoluteConstraints(153, 195, 180, -1));
 
-        txtCedula.setForeground(new java.awt.Color(204, 204, 204));
+        txtCedula.setForeground(new java.awt.Color(102, 102, 102));
         txtCedula.setHorizontalAlignment(javax.swing.JTextField.CENTER);
         txtCedula.setText("Ingrese la cédula");
         txtCedula.addMouseListener(new java.awt.event.MouseAdapter() {
@@ -331,7 +332,7 @@ public class AgregarRecepcionista extends javax.swing.JFrame {
         jLabel8.setText("Telefono 1:");
         getContentPane().add(jLabel8, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 390, -1, -1));
 
-        txtTelefono1.setForeground(new java.awt.Color(204, 204, 204));
+        txtTelefono1.setForeground(new java.awt.Color(102, 102, 102));
         txtTelefono1.setHorizontalAlignment(javax.swing.JTextField.CENTER);
         txtTelefono1.setText("Ingrese el número de teléfono");
         txtTelefono1.addMouseListener(new java.awt.event.MouseAdapter() {
@@ -341,7 +342,7 @@ public class AgregarRecepcionista extends javax.swing.JFrame {
         });
         getContentPane().add(txtTelefono1, new org.netbeans.lib.awtextra.AbsoluteConstraints(154, 382, 180, -1));
 
-        txtTelefono2.setForeground(new java.awt.Color(204, 204, 204));
+        txtTelefono2.setForeground(new java.awt.Color(102, 102, 102));
         txtTelefono2.setHorizontalAlignment(javax.swing.JTextField.CENTER);
         txtTelefono2.setText("Ingrese el número de teléfono");
         txtTelefono2.addMouseListener(new java.awt.event.MouseAdapter() {
@@ -351,7 +352,7 @@ public class AgregarRecepcionista extends javax.swing.JFrame {
         });
         getContentPane().add(txtTelefono2, new org.netbeans.lib.awtextra.AbsoluteConstraints(154, 421, 180, -1));
 
-        txtDireccion.setForeground(new java.awt.Color(204, 204, 204));
+        txtDireccion.setForeground(new java.awt.Color(102, 102, 102));
         txtDireccion.setHorizontalAlignment(javax.swing.JTextField.CENTER);
         txtDireccion.setText("Ingrese la dirección");
         txtDireccion.addMouseListener(new java.awt.event.MouseAdapter() {
@@ -366,6 +367,9 @@ public class AgregarRecepcionista extends javax.swing.JFrame {
         });
         getContentPane().add(txtDireccion, new org.netbeans.lib.awtextra.AbsoluteConstraints(154, 459, 180, 60));
         getContentPane().add(jLabel15, new org.netbeans.lib.awtextra.AbsoluteConstraints(274, 615, -1, -1));
+
+        jLabel16.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Interfaces/Media/imagen_recepcion.png"))); // NOI18N
+        getContentPane().add(jLabel16, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 60, -1, -1));
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
@@ -648,6 +652,7 @@ public class AgregarRecepcionista extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel13;
     private javax.swing.JLabel jLabel14;
     private javax.swing.JLabel jLabel15;
+    private javax.swing.JLabel jLabel16;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;

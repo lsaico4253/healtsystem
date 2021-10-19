@@ -16,6 +16,7 @@ public class Odontograma extends javax.swing.JFrame {
      */
     public Odontograma() {
         initComponents();
+        this.setLocationRelativeTo(null);
     }
 
     /**
