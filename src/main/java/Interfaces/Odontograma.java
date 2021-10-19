@@ -256,9 +256,9 @@ public class Odontograma extends javax.swing.JFrame {
 
         jLabel18.setText("molar 27");
 
-        jLabel19.setText("molar 47");
+        jLabel19.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Interfaces/Media/i3.1.png"))); // NOI18N
 
-        jLabel20.setText("molar46");
+        jLabel20.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Interfaces/Media/i3.4.png"))); // NOI18N
 
         jLabel21.setText("molar 45");
 
