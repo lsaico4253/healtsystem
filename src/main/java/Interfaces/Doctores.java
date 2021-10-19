@@ -12,6 +12,7 @@ package Interfaces;
 import static Clases.ConexionBD.close;
 import static Clases.ConexionBD.getConnection;
 import Clases.Doctor;
+import Clases.Paciente;
 import java.awt.Color;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
@@ -283,7 +284,7 @@ public class Doctores extends javax.swing.JFrame {
         if(respons001 == JOptionPane.YES_OPTION){
         
         this.dispose();
-        Dasboard  Dasboar= new Dasboard();
+        Doctores  Dasboar= new Doctores();
         Dasboar.setVisible(true);
         
         }
@@ -292,6 +293,11 @@ public class Doctores extends javax.swing.JFrame {
 
     }//GEN-LAST:event_jButton4ActionPerformed
 
+    public ArrayList <Doctor> editar(){
+    ArrayList <Doctor> editar_doctor = new ArrayList <>();
+    
+    return editar_doctor;
+    }
     private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
 
          new AgregarDoctor().setVisible(true);
@@ -334,6 +340,17 @@ public class Doctores extends javax.swing.JFrame {
 
     private void jButton3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton3ActionPerformed
         // TODO add your handling code here:
+        
+        int seleccion = TABLADOCTORES.getSelectedRow();
+        String cedulaa = TABLADOCTORES.getValueAt(seleccion, 0).toString();        
+        listadoctor.forEach((e) -> {
+            if(e.getCedula().equals(cedulaa)){
+                int id = e.getId();
+                new AgregarDoctor(id).setVisible(true);
+                mostrar();
+                jTextFieldbcedula.setText("");
+            }
+        });
     }//GEN-LAST:event_jButton3ActionPerformed
 
     private void jButton5ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton5ActionPerformed

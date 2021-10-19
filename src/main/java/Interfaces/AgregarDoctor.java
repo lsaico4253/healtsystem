@@ -214,7 +214,7 @@ public class AgregarDoctor extends javax.swing.JFrame {
                 btneditActionPerformed(evt);
             }
         });
-        getContentPane().add(btnedit, new org.netbeans.lib.awtextra.AbsoluteConstraints(250, 620, -1, -1));
+        getContentPane().add(btnedit, new org.netbeans.lib.awtextra.AbsoluteConstraints(240, 620, -1, -1));
 
         btnRegresar.setText("Regresar al Inicio");
         btnRegresar.addActionListener(new java.awt.event.ActionListener() {
@@ -657,7 +657,7 @@ public class AgregarDoctor extends javax.swing.JFrame {
                 txtEspecialidad.setText("");
                 txtTitulo.setText("");
                 txtUniversidad.setText("");
-                new Pacientes().setVisible(true);
+                new Doctores().setVisible(true);
                 this.dispose();
                 
                
